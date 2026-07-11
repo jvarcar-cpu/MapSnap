@@ -13,9 +13,10 @@ docs_engine owns:
 | **Knowledge** | `source/` — vision, doctrines, architecture, Identity, Foundation |
 | **Validation** | `rules/implementation_rules.md`, `source/stable_baseline.md`, `scripts/verify-baseline.mjs` |
 | **Governance** | `rules/`, `source/decisions.md`, `source/changelog.md` |
+| **Institutional memory** | `source/chronicles/`, `source/knowledge_continuity.md` — append-only narrative (Chronicles) and continuity index |
 | **Generated state** | `output/` — steering snapshots from `templates/` |
 | **Implementation context** | `templates/AGENTS.template.md` → `output/AGENTS.md` |
-| **Continuity** | `current_phase.md`, `next_task.md`, `known_issues.md`, changelog |
+| **Continuity** | `current_phase.md`, `next_task.md`, `known_issues.md`, changelog, Chronicles |
 
 ## Hard Rules
 
@@ -32,7 +33,8 @@ docs_engine/
 ├── source/           — authoritative product knowledge
 │   ├── Identity/     — who MapSnap is (protected)
 │   ├── Foundation/   — PDE-wide guardrails inherited from PIE
-│   └── …             — vision, doctrines, phase, baseline, issues
+│   ├── chronicles/   — append-only institutional memory (Chronicles, registry, scope doctrine)
+│   └── …             — vision, doctrines, phase, baseline, issues, knowledge_continuity
 ├── rules/            — engineering discipline and document rules
 ├── templates/        — generation templates for output/
 └── output/           — generated steering snapshots (regenerate, do not hand-edit)

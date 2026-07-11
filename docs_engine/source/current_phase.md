@@ -1,15 +1,16 @@
 # Current Phase
 
 **Phase:** MVP 0.1 — Capture Foundation  
-**Status:** Stable — local-first PWA baseline complete  
+**Status:** Stable — local-first PWA baseline complete; publicly reachable  
 **Started:** 2026-06-28  
-**Stabilized:** 2026-07-07
+**Stabilized:** 2026-07-07  
+**Public presence:** 2026-07-11 — https://mapsnap.se
 
 ## Goal
 
 Ship a working local-first snap capture PWA that proves the core loop: tap → save GPS → revisit via map links.
 
-**Achieved.** MVP 0.1 is a stable baseline ready for PDE handoff or phase 0.2 planning.
+**Achieved.** MVP 0.1 is a stable baseline. On 2026-07-11 MapSnap crossed into public presence at https://mapsnap.se — see CHRONICLE-MSN-0001.
 
 ## Current Baseline (locked)
 
@@ -43,6 +44,15 @@ See `stable_baseline.md` for the full locked interaction + visual baseline.
 - [x] JSON backup/import/export
 - [x] HTTPS dev workflow for secure context
 - [x] Baseline verification script
+- [x] Public production deployment at https://mapsnap.se (2026-07-11)
+
+## Historical Milestone
+
+| Date | Event | Record |
+|------|-------|--------|
+| 2026-07-11 | First public production domain live | CHRONICLE-MSN-0001 — *The First Public Presence* |
+
+MapSnap was developed independently before PDE Foundation operational maturity. It is not a PDE-generated product.
 
 ## Out of Scope This Phase
 

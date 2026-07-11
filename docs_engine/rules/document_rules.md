@@ -62,6 +62,10 @@ Product Identity documents are **protected**.
 | `known_issues.md` | New operational or verification issues |
 | `next_task.md` | Next recommended task after phase or docs pass |
 | `docs_engine_overview.md` | docs_engine role or regeneration workflow changes |
+| `chronicles/MAPSNAP_CHRONICLES.md` | Significant historical milestones only (append-only; never rewrite entries) |
+| `chronicles/chronicle_registry.md` | New Chronicle areas or entry registration |
+| `chronicles/chronicles_scope_doctrine.md` | Chronicle scope or discipline changes |
+| `knowledge_continuity.md` | Institutional memory index updates when Chronicles or production milestones are ratified |
 
 ## Guardrails (Always True)
 

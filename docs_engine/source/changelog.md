@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.1.9] — 2026-07-11
+
+### Added (institutional memory — Chronicle Day 1)
+
+- Ratified **CHRONICLE-MSN-0001 — The First Public Presence** in `chronicles/MAPSNAP_CHRONICLES.md`
+- Established MapSnap Chronicle system: `chronicles/chronicle_registry.md`, `chronicles/chronicles_scope_doctrine.md`
+- Added `knowledge_continuity.md` — institutional memory index; records https://mapsnap.se as first public production domain
+- Public presence milestone: MapSnap available at https://mapsnap.se (Vercel, GitHub CD, HTTPS, DNS)
+- Pre-PDE lineage preserved: MapSnap not described as PDE-generated; Product Onboarding noted as future discovery only
+
+### Changed (docs only)
+
+- `current_phase.md` — public presence milestone recorded; production domain documented
+- `architecture_state.md` — production deployment and hosting boundaries added
+- `docs_engine_overview.md` — Chronicles and knowledge continuity added to docs_engine layers
+- `document_rules.md` — Chronicle and continuity file ownership
+- Regenerated steering outputs in `docs_engine/output/`
+
+### Not changed
+
+- No product code, UI, or SNAP behaviour changes in this pass
+
 ## [0.1.8] — 2026-07-07
 
 ### Documented (docs pass — state synchronization before PDE)

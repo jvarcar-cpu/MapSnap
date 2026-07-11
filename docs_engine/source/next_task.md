@@ -1,17 +1,15 @@
 # Next Task
 
-**Updated:** 2026-07-07  
-**Pass type:** None active — MVP 0.1 baseline stable; docs synchronized for PDE handoff
+**Updated:** 2026-07-11  
+**Pass type:** None active — MVP 0.1 baseline stable; public presence live at https://mapsnap.se
 
 ## Recommended Next Task
 
-**PDE bootstrap** — begin the next PDE product through PIE/Foundation before any feature code.
+**Phase 0.2 — Enrich & Revisit (Feature Pass)** — when explicitly scoped.
 
-MapSnap MVP 0.1 is complete as a stable local-first PWA baseline. The docs_engine state is synchronized. Do not start new MapSnap feature work until explicitly scoped in a new phase.
+MapSnap MVP 0.1 is complete as a stable local-first PWA baseline. CHRONICLE-MSN-0001 records public presence at https://mapsnap.se (2026-07-11). Do not start new MapSnap feature work until explicitly scoped in a new phase.
 
-If continuing MapSnap instead of a new PDE product, the next scoped pass is:
-
-**Phase 0.2 — Enrich & Revisit (Feature Pass)**
+When scoped, Phase 0.2 includes:
 
 - Inline edit for name, note, category on saved snaps
 - Sort options for snap list

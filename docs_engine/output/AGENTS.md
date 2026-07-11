@@ -4,7 +4,7 @@
 
 MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backend.
 
-**Status:** MVP 0.1 stable local-first PWA baseline.
+**Status:** MVP 0.1 stable local-first PWA baseline. Public production domain: https://mapsnap.se (2026-07-11).
 
 ## Before You Code
 
@@ -26,6 +26,7 @@ MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backe
 - One pass type at a time — Bug Fix, Feature, UX, Docs, Storage, Stabilization (see `implementation_rules.md`)
 - Behaviour and visual regressions are bugs — complete the regression checklist every task
 - No implementation before generated steering docs are current
+- MapSnap was not created by PDE — preserve pre-PDE lineage in institutional memory
 
 ## Key Paths
 
@@ -38,6 +39,7 @@ lib/geo.ts                — Geolocation API
 lib/maps.ts               — URL generation
 types/place.ts            — SnapPlace schema
 docs_engine/output/       — generated steering snapshots (must be current)
+docs_engine/source/chronicles/ — append-only institutional memory
 ```
 
 ## After Changes
@@ -45,6 +47,7 @@ docs_engine/output/       — generated steering snapshots (must be current)
 - Update relevant docs_engine source files
 - Add ADR to `decisions.md` if architectural
 - Update `changelog.md` for user-visible changes
+- Append Chronicle entries for significant historical milestones (never rewrite existing entries)
 - Complete regression checklist from `implementation_rules.md`
 - Regenerate `docs_engine/output/` from templates and source
 

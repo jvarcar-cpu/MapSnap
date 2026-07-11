@@ -10,7 +10,7 @@ MapSnap is a tool — like a camera, compass, or flashlight — for people who d
 
 ## Current Phase
 
-**MVP 0.1 — Capture Foundation** — Stable local-first PWA baseline complete (2026-07-07)
+**MVP 0.1 — Capture Foundation** — Stable local-first PWA baseline; publicly reachable at https://mapsnap.se (2026-07-11)
 
 ## Product Identity
 
@@ -62,7 +62,16 @@ Product Identity defines who MapSnap is — philosophy, voice, and language. See
 | Persistence | IndexedDB (`mapsnap-db` / `snaps`) |
 | PWA | Web App Manifest |
 
-Client-only data flow. No API routes for snap CRUD. HTTPS required for secure context (geolocation, mobile testing). docs_engine is the product operating system.
+Client-only data flow. No API routes for snap CRUD. HTTPS required for secure context (geolocation, mobile testing). Production: Vercel, GitHub CD, https://mapsnap.se. docs_engine is the product operating system.
+
+## Institutional Memory
+
+| Entry | Significance |
+|-------|--------------|
+| CHRONICLE-MSN-0001 — *The First Public Presence* | MapSnap publicly available 2026-07-11 at https://mapsnap.se |
+| Pre-PDE lineage | MapSnap was not created by PDE; developed independently |
+
+See `source/chronicles/MAPSNAP_CHRONICLES.md` and `source/knowledge_continuity.md`.
 
 ## Current Baseline
 
@@ -73,6 +82,7 @@ Client-only data flow. No API routes for snap CRUD. HTTPS required for secure co
 - Google Maps and Waze links work; delete works
 - Baseline verification script passes
 - Manual mobile verification still required (long-press camera, denied-permission card)
+- Public production domain: https://mapsnap.se
 
 ## Recent Decisions
 
@@ -81,4 +91,4 @@ Client-only data flow. No API routes for snap CRUD. HTTPS required for secure co
 
 ## Last Updated
 
-2026-07-07
+2026-07-11

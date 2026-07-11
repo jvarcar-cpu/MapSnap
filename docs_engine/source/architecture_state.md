@@ -21,6 +21,7 @@ types/         — place.ts (SnapPlace, SnapCategory)
 docs_engine/   — product governance docs (product operating system)
   source/Identity/ — Product Identity (doctrine, quotes, voice, vocabulary, writing rules)
   source/Foundation/ — PDE Foundation guardrails inherited from PIE
+  source/chronicles/ — append-only institutional memory (Chronicles, registry)
   output/      — generated steering snapshots (regenerate from templates)
 public/        — PWA icon
 ```
@@ -44,6 +45,20 @@ None beyond Next.js ecosystem. No map SDK, no analytics SDK, no auth library.
 | URL generation for maps | Embedded map SDK |
 | File capture for photos | Cloud photo storage |
 | PWA manifest | Push notifications |
+
+## Production Deployment
+
+| Field | Value |
+|-------|-------|
+| **Public domain** | https://mapsnap.se — first public production domain (2026-07-11) |
+| **Hosting** | Vercel |
+| **Source control** | Git repository; GitHub |
+| **Deployment** | Continuous deployment from GitHub |
+| **Transport** | HTTPS |
+
+Production deployment does not change the MVP client-only data model. Snaps remain local-first in the browser; no backend API was added for public launch.
+
+Institutional record: CHRONICLE-MSN-0001 — `docs_engine/source/chronicles/MAPSNAP_CHRONICLES.md`.
 
 ## Known Constraints
 

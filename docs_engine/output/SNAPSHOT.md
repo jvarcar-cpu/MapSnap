@@ -1,12 +1,12 @@
-# MapSnap Snapshot — 2026-07-07
+# MapSnap Snapshot — 2026-07-11
 
 ## Status
 
-MVP 0.1 — stable local-first PWA baseline
+MVP 0.1 — stable local-first PWA baseline; publicly reachable at https://mapsnap.se
 
 ## Phase
 
-MVP 0.1 — Capture Foundation (stable, exit criteria met)
+MVP 0.1 — Capture Foundation (stable, exit criteria met; public presence 2026-07-11)
 
 ## What Works
 
@@ -21,6 +21,8 @@ MVP 0.1 — Capture Foundation (stable, exit criteria met)
 - Product Identity layer complete and protected
 - Foundation guardrails documented
 - Baseline verification script (`scripts/verify-baseline.mjs`) — automated checks pass against dev server
+- Public production deployment at https://mapsnap.se (Vercel, GitHub CD, HTTPS)
+- CHRONICLE-MSN-0001 ratified — first institutional memory entry
 
 ## Known Limitations
 
@@ -40,8 +42,12 @@ MVP 0.1 — Capture Foundation (stable, exit criteria met)
 
 ## Stack
 
-Next.js 15 · TypeScript · Tailwind · Geolocation API · IndexedDB · PWA
+Next.js 15 · TypeScript · Tailwind · Geolocation API · IndexedDB · PWA · Vercel (production)
 
 ## Next Step
 
-PDE bootstrap — begin next PDE product through PIE/Foundation before feature code. MapSnap 0.2 (Enrich & Revisit) deferred until explicitly scoped. See `next_task.md`.
+Phase 0.2 — Enrich & Revisit when explicitly scoped. See `next_task.md`.
+
+## Institutional Memory
+
+CHRONICLE-MSN-0001 — *The First Public Presence* (2026-07-11). MapSnap was not created by PDE.
