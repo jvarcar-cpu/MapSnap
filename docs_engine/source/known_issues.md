@@ -46,7 +46,52 @@ Photos are stored as inline base64 data URLs in IndexedDB. Large photo volume wi
 
 ## MVP-002: No Post-Capture Edit UI
 
-**Severity:** Planned, not implemented  
-**Status:** Out of scope for 0.1
+**Severity:** Planned — Wave 1 roadmap  
+**Status:** Approved for implementation when scoped
 
-Name, note, and category cannot be edited after capture. List shows fallback title "Sparad plats" until edit flow ships in a future phase.
+Name, note, and title cannot be edited after capture. List shows fallback title "Sparad plats" until edit flow ships. Schema fields `name` and `note` exist; UI pending.
+
+---
+
+## FEAS-001: Image Save/Download Platform Variance
+
+**Severity:** Technical feasibility — document before Wave 1  
+**Status:** Active (investigation required)
+
+Saving a Snap image to the device photo roll or downloads folder varies by platform:
+
+- **Desktop:** `<a download>` with data URL or blob URL often works
+- **Android Chrome / PWA:** May support download or share-to-files; verify installed vs tab
+- **iOS Safari / PWA:** Often restricts direct save; may require Web Share API with file or long-press on image — full Photos integration may be limited
+
+Do not claim parity without per-platform verification. Wave 1 must ship best practical behavior with honest failure messaging.
+
+---
+
+## FEAS-002: Snaptiser / Notification / Geofencing Limits
+
+**Severity:** Technical feasibility — blocks proximity MVP claims  
+**Status:** Active (spike required before Wave 3)
+
+PWA and browser constraints affect Snaptisers:
+
+| Capability | PWA reality |
+|------------|-------------|
+| Time-based notifications | Possible with permission; reliability varies when app closed — OS-dependent |
+| Background geofencing | **Not reliably available** in web/PWA without native wrapper |
+| Periodic location checks | Battery cost; requires foreground or limited background APIs |
+| Installed PWA vs browser tab | Behavior may differ — test both |
+
+Roadmap separates: time-based local MVP (feasible), proximity experiment (uncertain), native/backend (deferred).
+
+---
+
+## FEAS-003: Haptic / Audio / Reduced-Motion
+
+**Severity:** Implementation guidance — Wave 1 feedback  
+**Status:** Active
+
+- `navigator.vibrate` unsupported on iOS Safari — degrade gracefully
+- Web Audio for short sounds requires user-gesture context on some browsers
+- `prefers-reduced-motion: reduce` must shorten or disable pulse, radial waves, and sound
+- Sound should be architected for future user disable (settings not in MVP)

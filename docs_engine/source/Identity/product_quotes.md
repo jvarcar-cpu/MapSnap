@@ -42,6 +42,11 @@ Avoid feature descriptions.
 
 ## Core Identity
 
+"MapSnap is not a map app.
+It is the fastest way to save a place that matters and return to it when it matters."
+
+"The app captures the place before it is forgotten."
+
 "The world is the experience.
 MapSnap only remembers it."
 

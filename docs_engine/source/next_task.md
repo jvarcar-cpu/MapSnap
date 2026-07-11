@@ -1,30 +1,38 @@
 # Next Task
 
-**Updated:** 2026-07-11  
-**Pass type:** None active — MVP 0.1 baseline stable; public presence live at https://mapsnap.se
+**Updated:** 2026-07-12  
+**Pass type:** None active — Product Roadmap & Governance pass complete
 
 ## Recommended Next Task
 
-**Phase 0.2 — Enrich & Revisit (Feature Pass)** — when explicitly scoped.
+**Wave 1 — Usage Instruction (Feature or UX Pass)** — when explicitly scoped.
 
-MapSnap MVP 0.1 is complete as a stable local-first PWA baseline. CHRONICLE-MSN-0001 records public presence at https://mapsnap.se (2026-07-11). Do not start new MapSnap feature work until explicitly scoped in a new phase.
+The official roadmap is ratified. Do not start implementation until:
 
-When scoped, Phase 0.2 includes:
+1. A pass type is declared in `current_phase.md`
+2. Generated steering docs are current (`docs_engine/output/`)
+3. Feature Gate answers documented for the specific unit
 
-- Inline edit for name, note, category on saved snaps
-- Sort options for snap list
-- Optional: reverse geocoding for suggested names
+**First implementation unit:** Hero microcopy — *"Tryck för position · Håll inne för position + bild"* (see `implementation_readiness.md` order 2).
 
-Prerequisites before any MapSnap implementation pass:
+**Prerequisites already met:**
 
-1. Regenerated steering docs current (`docs_engine/output/`)
-2. `current_phase.md` updated to declare the new phase and pass type
-3. Identity documents loaded if any user-facing copy changes
-4. Baseline verification passes after implementation
+- Wave 0 baseline reconciliation — `baseline_reconciliation.md`
+- Roadmap, feature gate, ADRs, readiness plan in place
 
 ## Not Next
 
-- Backend or cloud sync (out of scope)
-- Map SDK embedding (out of scope)
+- Backend or cloud sync (Wave 5 — deferred)
+- Changing SNAP short/long-press contract
+- Pre-capture forms or menus
 - Mixed pass types in one change set
-- Implementation before docs_engine output is current
+- Implementation before steering outputs regenerated
+
+## Reference
+
+| Document | Purpose |
+|----------|---------|
+| `product_roadmap.md` | Authoritative phased roadmap |
+| `implementation_readiness.md` | Build sequence and rollback |
+| `feature_gate.md` | Gate before any feature |
+| `baseline_reconciliation.md` | Verified current state |

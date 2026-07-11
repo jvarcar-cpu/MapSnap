@@ -24,8 +24,14 @@ Consistent words create a coherent product. MapSnap has its own language. Use it
 | **Moment** | The experience at capture time — what happened there | ögonblick |
 | **Capture** | The act of saving coordinates (via Snap) | fånga |
 | **Return** | Going back to a saved place | återvända |
+| **Snaptiser** | A reminder or intention attached to a Snap (provisional term) | snaptiser |
+| **CAPTURE** | Pillar — save the place immediately | fånga |
+| **REMEMBER** | Pillar — add meaning after capture | kom ihåg |
+| **DELIGHT** | Pillar — restrained polish without slowing capture | — |
 
 Use **Snap** as a verb and noun. It is the product's central word.
+
+**Snaptiser** status: provisional working term — see `snaptiser_doctrine.md`. Requires explicit product approval before store/marketing use.
 
 **Snappar** is the plural for saved items in user-facing Swedish copy.
 

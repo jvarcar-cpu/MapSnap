@@ -1,80 +1,68 @@
 # Current Phase
 
-**Phase:** MVP 0.1 — Capture Foundation  
-**Status:** Stable — local-first PWA baseline complete; publicly reachable  
-**Started:** 2026-06-28  
-**Stabilized:** 2026-07-07  
-**Public presence:** 2026-07-11 — https://mapsnap.se
+**Phase:** Post-MVP 0.1 — Product Roadmap & Governance  
+**Status:** Roadmap ratified — implementation not started  
+**MVP 0.1 stabilized:** 2026-07-07  
+**Public presence:** 2026-07-11 — https://mapsnap.se  
+**Roadmap ratified:** 2026-07-12
 
 ## Goal
 
-Ship a working local-first snap capture PWA that proves the core loop: tap → save GPS → revisit via map links.
+Establish authoritative product roadmap, feature gate, pillars, and implementation readiness inside docs_engine — without shipping product features in this pass.
 
-**Achieved.** MVP 0.1 is a stable baseline. On 2026-07-11 MapSnap crossed into public presence at https://mapsnap.se — see CHRONICLE-MSN-0001.
+**Achieved.** See `product_roadmap.md`, `feature_gate.md`, `implementation_readiness.md`, ADR-012–018.
 
-## Current Baseline (locked)
+## MVP 0.1 Baseline (locked — unchanged)
 
 - SNAP button visible, large, circular, green, 3D
 - Short tap saves GPS snap to IndexedDB
-- Long press opens camera/file capture + GPS snap with `photoDataUrl`
+- Long press (~600ms) opens camera/file capture + GPS snap with `photoDataUrl`
 - Snaps persist in IndexedDB (`mapsnap-db` / `snaps`)
 - Legacy `mapsnap.snaps.v1` localStorage migrates to IndexedDB on load
 - JSON backup/import/export works
-- Google Maps and Waze links work
+- Google Maps and Waze links work (RETURN)
 - Delete works
+- Empty state encourages first Snap
 - Baseline verification script passes (`scripts/verify-baseline.mjs`)
-- Manual mobile verification still required for long-press camera and denied-permission card
 
-See `stable_baseline.md` for the full locked interaction + visual baseline.
+See `stable_baseline.md` and `baseline_reconciliation.md`.
+
+## Official Roadmap Summary
+
+| Wave | Focus | Backend |
+|------|-------|---------|
+| 0 | Baseline reconciliation | No |
+| 1 | Core value + UX polish (instruction, feedback, title, notes, share, save image, favorite, compact cards) | No |
+| 2 | Organization (search, sort, filter, tags) | No |
+| 3 | Snaptisers (time MVP; proximity experimental) | No for MVP |
+| 4 | Image experience | No |
+| 5 | Backend / cloud | Deferred |
+
+Full detail: `product_roadmap.md`.
 
 ## In Scope This Phase (complete)
 
-- [x] Project scaffold (Next.js, TypeScript, Tailwind)
-- [x] Tap capture with Geolocation API
-- [x] IndexedDB persistence (`mapsnap-db` / `snaps`; legacy localStorage migrated on load)
-- [x] Saved place list with delete
-- [x] Google Maps / Waze URL generation
-- [x] Long press → camera capture flow
-- [x] PWA manifest
-- [x] docs_engine governance + generated steering outputs
-- [x] Product Identity layer
-- [x] Foundation guardrails notes
-- [x] Stable baseline document
-- [x] Swedish UI
-- [x] JSON backup/import/export
-- [x] HTTPS dev workflow for secure context
-- [x] Baseline verification script
-- [x] Public production deployment at https://mapsnap.se (2026-07-11)
-
-## Historical Milestone
-
-| Date | Event | Record |
-|------|-------|--------|
-| 2026-07-11 | First public production domain live | CHRONICLE-MSN-0001 — *The First Public Presence* |
-
-MapSnap was developed independently before PDE Foundation operational maturity. It is not a PDE-generated product.
+- [x] Repository and implementation inspection
+- [x] Baseline reconciliation documented
+- [x] Product positioning and four pillars formalized
+- [x] Feature Gate and Capture Golden Rule
+- [x] Protected SNAP interaction contract (ADR-012)
+- [x] Phased roadmap with prioritization model
+- [x] Snaptisers on roadmap (ADR-015)
+- [x] Image save in Wave 1 (ADR-014)
+- [x] Radial-wave feedback documented (ADR-018)
+- [x] Implementation readiness plan
+- [x] ADRs for major decisions
+- [x] Identity updates (product-approved this pass)
 
 ## Out of Scope This Phase
 
-- Edit name, note, category after capture
-- Search and filter saved places
-- Offline GPS queue
-- Backend or cloud sync
+- Product feature implementation
+- Backend development
+- Changing SNAP gestures
 
-## Exit Criteria (met)
+## Next Phase (when explicitly scoped)
 
-- [x] `npm run dev` works locally over HTTPS
-- [x] Tap SNAP saves location and survives refresh
-- [x] Map buttons open correct external URLs
-- [x] Delete removes snap from list and storage
-- [x] Long press opens camera/file capture and saves photo snap
-- [x] Behaviour + visual regression checklists documented and verifiable
-- [x] docs_engine steering outputs current
+**Wave 1 — Core Value & UX Polish** — start with usage instruction, then feedback polish, then enrichment features per `implementation_readiness.md`.
 
-## Next Phase Preview
-
-**0.2 — Enrich & Revisit:** inline edit for name/note/category, sort options, maybe reverse geocoding for suggested names.
-
-**0.2 UX — First-launch onboarding:** one-time dismissible tip teaching long-press photo capture. See `ux_doctrine.md` roadmap.
-
-See `next_task.md` for the recommended next action after this docs pass.
+See `next_task.md`.

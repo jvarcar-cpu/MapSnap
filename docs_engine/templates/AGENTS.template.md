@@ -12,12 +12,15 @@ MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backe
 4. Read `docs_engine/source/data_doctrine.md`
 5. Read `docs_engine/source/ux_doctrine.md` (Approved UI Baseline)
 6. Check `docs_engine/source/current_phase.md` for scope
-7. Confirm `docs_engine/output/` steering docs are current before any code change
+7. Read `docs_engine/source/product_roadmap.md` and `feature_gate.md` before any feature work
+8. Confirm `docs_engine/output/` steering docs are current before any code change
 
 ## Hard Rules
 
-- Never add backend, auth, database, or map SDK without explicit approval
+- Never add backend, auth, database, or map SDK without explicit approval (Wave 5 deferred — ADR-016)
 - Never require forms before save
+- Never alter protected SNAP contract: short press = position; long press = position + image (ADR-012)
+- Run Feature Gate (`feature_gate.md`) before implementing any new feature
 - Never store Google/Waze URLs as primary data
 - Never use continuous geolocation tracking
 - Keep capture to one tap
@@ -36,6 +39,8 @@ lib/db.ts                 — IndexedDB open + transactions
 lib/geo.ts                — Geolocation API
 lib/maps.ts               — URL generation
 types/place.ts            — SnapPlace schema
+docs_engine/source/product_roadmap.md — authoritative phased roadmap
+docs_engine/source/feature_gate.md   — mandatory feature gate
 docs_engine/output/       — generated steering snapshots (must be current)
 docs_engine/source/chronicles/ — append-only institutional memory
 ```

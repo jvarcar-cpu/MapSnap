@@ -95,3 +95,66 @@
 **Context:** MapSnap MVP 0.1 proved that even a small, single-feature PWA benefits from full engineering governance: Identity layer, behaviour + visual baselines, docs_engine, pass-type discipline, and baseline verification. Attempting thin guardrails or deferring governance creates expensive rework.  
 **Decision:** Future PDE products must be bootstrapped through PIE/Foundation before feature code begins. Small product docs are acceptable; thin engineering guardrails are not. MapSnap's governance model (docs_engine, Identity, stable baseline, verification script) is the minimum bar for new PDE products.  
 **Consequences:** New products inherit Foundation guardrails and complete Identity before implementation. MapSnap remains the reference incubator for this lesson. See `Foundation/foundation_guardrails.md` §7.
+
+---
+
+## ADR-012: Protected SNAP Interaction Contract
+
+**Status:** Accepted  
+**Context:** Product discovery reaffirmed that capture speed is non-negotiable. UX polish and instructions must not alter core gestures.  
+**Decision:** Short press saves position only. Long press saves position and opens image capture. This contract is protected — changes require explicit ADR revision. Wave 1 may add visible instruction microcopy and feedback polish that do not alter gestures.  
+**Consequences:** Feature Gate and regression checklists enforce interaction stability. `capture_doctrine.md` documents the contract.
+
+---
+
+## ADR-013: Local-First Roadmap Priority
+
+**Status:** Accepted  
+**Context:** MapSnap value is proven offline without backend. Feature creep toward cloud-first would delay user value.  
+**Decision:** Official roadmap prioritizes no-backend improvements first (Waves 1–4). Backend/cloud (Wave 5) deferred until local product value is mature and need is proven.  
+**Consequences:** No backend becomes a prerequisite for core use. `product_roadmap.md` is authoritative ordering.
+
+---
+
+## ADR-014: Save/Download Snap Image (Wave 1 Required)
+
+**Status:** Accepted  
+**Context:** Users need the Snap photo outside the app without re-opening the camera. RETURN pillar gap.  
+**Decision:** Wave 1 must include "Spara bild" — download/copy of `photoDataUrl` without removing or altering the Snap-attached image. Platform limitations documented honestly (FEAS-001).  
+**Consequences:** Implementation must verify Android, iOS Safari, desktop behavior. See `image_doctrine.md`.
+
+---
+
+## ADR-015: Snaptisers as Strategic Product Capability
+
+**Status:** Accepted  
+**Context:** A saved place can preserve an intention, not only coordinates. Reminders are strategically valuable but PWA limits apply.  
+**Decision:** Snaptisers enter the official roadmap (Wave 3). Time-based local MVP first; proximity experimental; full background geofencing deferred without verification.  
+**Consequences:** `snaptiser_doctrine.md` governs scope. Provisional vocabulary term until Identity promotes it.
+
+---
+
+## ADR-016: Backend / Cloud Deferral
+
+**Status:** Accepted  
+**Context:** Account systems, sync, and hosted sharing add weight without proven need at current maturity.  
+**Decision:** Wave 5 backend scope is deferred. Core MapSnap must work fully without accounts or cloud.  
+**Consequences:** Reassess only after Waves 1–4 value is shipped and measured.
+
+---
+
+## ADR-017: Compact Card Experiment with Recognizable Thumbnails
+
+**Status:** Accepted (experimental)  
+**Context:** Growing snap lists need denser layout; images are mnemonic aids.  
+**Decision:** Wave 1 includes an experimental compact card layout: ~square thumbnail (80–100px hypothesis), reduced height, detail view for full image. Exact dimensions not fixed until UX validation.  
+**Consequences:** Must pass Feature Gate item 5 (no disproportionate weight). Failure reverts to current banner layout.
+
+---
+
+## ADR-018: Coordinated SNAP Feedback Model
+
+**Status:** Accepted  
+**Context:** Capture should feel confident and polished without delaying persistence.  
+**Decision:** Wave 1 feedback sequence ~500–700ms: press state, haptic, discreet sound, glow, pulse, radial waves at button boundary (sonar-like, quick fade), "Snap sparad" confirmation. Respect `prefers-reduced-motion`. Sound must be disableable later. Persistence must not wait on animation completion.  
+**Consequences:** UX pass scoped separately from gesture changes. Documented in `ux_doctrine.md`.

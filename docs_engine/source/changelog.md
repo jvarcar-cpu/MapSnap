@@ -1,5 +1,38 @@
 # Changelog
 
+## [0.2.0-docs] — 2026-07-12
+
+### Added (Product Roadmap & Governance Pass)
+
+- **Official product roadmap** — `product_roadmap.md` (Waves 0–5, prioritization model, item schema)
+- **Feature Gate** — `feature_gate.md` (seven questions + Capture Golden Rule)
+- **Implementation readiness** — `implementation_readiness.md` (15-unit sequence)
+- **Baseline reconciliation** — `baseline_reconciliation.md` (Wave 0 verification against code)
+- **Image doctrine** — `image_doctrine.md` (memory aid principle)
+- **Snaptiser doctrine** — `snaptiser_doctrine.md` (intention preservation + PWA limits)
+- **ADRs 012–018:** protected SNAP interaction, local-first priority, save image Wave 1, Snaptisers strategic, backend deferral, compact cards experiment, coordinated feedback model
+- **Technical feasibility issues:** FEAS-001 (image save), FEAS-002 (notifications/geofencing), FEAS-003 (haptic/audio/reduced-motion)
+- **Docs validation script** — `scripts/validate_docs.mjs`
+
+### Changed (docs only — product-approved Identity updates)
+
+- `Identity/product_doctrine.md` — positioning, pillars, Capture Golden Rule, product goal
+- `Identity/product_quotes.md` — canonical positioning quotes
+- `Identity/vocabulary.md` — Snaptiser (provisional), pillar terms
+- `product_vision.md` — positioning, pillars, roadmap reference
+- `capture_doctrine.md` — protected interaction contract; long-press 600ms aligned to code
+- `ux_doctrine.md` — Wave 1 instruction, feedback, compact cards, RETURN
+- `data_doctrine.md` — image principle reference
+- `current_phase.md` — roadmap ratified; MVP 0.1 baseline preserved
+- `next_task.md` — Wave 1 usage instruction when scoped
+- `known_issues.md` — feasibility items; MVP-002 → Wave 1
+- `document_rules.md`, `docs_engine_overview.md` — roadmap layer ownership
+- Regenerated steering outputs in `docs_engine/output/`
+
+### Not changed
+
+- No product code, UI, or SNAP behaviour changes in this pass
+
 ## [0.1.9] — 2026-07-11
 
 ### Added (institutional memory — Chronicle Day 1)

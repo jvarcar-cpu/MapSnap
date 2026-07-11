@@ -51,6 +51,12 @@ Product Identity documents are **protected**.
 | `Identity/vocabulary.md` | Official terminology changes (product approval required) |
 | `Identity/writing_rules.md` | Copy composition rules change (product approval required) |
 | `product_vision.md` | Scope or positioning changes |
+| `product_roadmap.md` | Roadmap waves, item status, prioritization |
+| `feature_gate.md` | Feature gate criteria (product approval required) |
+| `implementation_readiness.md` | Implementation sequence or readiness criteria |
+| `baseline_reconciliation.md` | Wave 0 verification updates |
+| `image_doctrine.md` | Image principle or save/export rules |
+| `snaptiser_doctrine.md` | Snaptiser scope or naming status |
 | `capture_doctrine.md` | Capture flow behavior changes |
 | `data_doctrine.md` | Schema, storage, or data model changes |
 | `ux_doctrine.md` | UI patterns or copy strategy changes |
@@ -81,7 +87,9 @@ Derived from `Identity/product_doctrine.md`:
 8. No silent or continuous location tracking
 9. The One-Second Rule — interface must not compete with the real world
 10. Tool First — every feature must improve capture speed, revisiting, or real-world usefulness
-11. Golden Rule — the app must never become more interesting than the place being captured
+11. Golden Rule (Experience) — the app must never become more interesting than the place being captured
+12. Golden Rule (Capture) — every feature must make a Snap more valuable, never harder to create (`feature_gate.md`)
+13. Official roadmap — `product_roadmap.md` is the single authoritative roadmap
 
 ## Prohibited
 

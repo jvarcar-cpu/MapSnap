@@ -3,8 +3,8 @@
 > Generated reference to locked MVP baseline. Full detail: `docs_engine/source/stable_baseline.md`
 
 **Locked:** 2026-06-28  
-**Updated:** 2026-07-11  
-**Status:** MVP 0.1 stable
+**Updated:** 2026-07-12  
+**Status:** MVP 0.1 stable — roadmap ratified; Wave 1 changes pending
 
 ## Interaction Baseline
 

@@ -2,7 +2,7 @@
 
 > Generated from `docs_engine/source/known_issues.md`. Do not hand-edit.
 
-**Updated:** 2026-07-11
+**Updated:** 2026-07-12
 
 ## OPS-001: Stale Dev Server / Wrong Port
 
@@ -42,13 +42,40 @@ Automated baseline verification (`scripts/verify-baseline.mjs`) covers desktop b
 **Severity:** Known constraint (by design for MVP)  
 **Status:** Accepted
 
-Photos are stored as inline base64 data URLs in IndexedDB. Large photo volume will hit quota limits. Backup/export is the approved recovery method. Cloud sync is out of scope for MVP 0.1.
+Photos are stored as inline base64 data URLs in IndexedDB. Large photo volume will hit quota limits. Backup/export is the approved recovery method. Cloud sync is Wave 5 deferred.
 
 ---
 
 ## MVP-002: No Post-Capture Edit UI
 
-**Severity:** Planned, not implemented  
-**Status:** Out of scope for 0.1
+**Severity:** Planned — Wave 1 roadmap  
+**Status:** Approved for implementation when scoped
 
-Name, note, and category cannot be edited after capture. List shows fallback title "Sparad plats" until edit flow ships in a future phase.
+Name, note, and title cannot be edited after capture. List shows fallback title "Sparad plats" until edit flow ships.
+
+---
+
+## FEAS-001: Image Save/Download Platform Variance
+
+**Severity:** Technical feasibility — document before Wave 1  
+**Status:** Active (investigation required)
+
+Saving a Snap image varies by platform (desktop download, Android, iOS Safari/PWA). Do not claim parity without verification. Wave 1 must ship best practical behavior with honest failure messaging.
+
+---
+
+## FEAS-002: Snaptiser / Notification / Geofencing Limits
+
+**Severity:** Technical feasibility — blocks proximity MVP claims  
+**Status:** Active (spike required before Wave 3)
+
+Time-based notifications may work with permission; reliable background geofencing is **not** available in web/PWA without native wrapper. Roadmap separates time MVP, proximity experiment, and deferred native/backend.
+
+---
+
+## FEAS-003: Haptic / Audio / Reduced-Motion
+
+**Severity:** Implementation guidance — Wave 1 feedback  
+**Status:** Active
+
+`navigator.vibrate` unsupported on iOS Safari. Web Audio may need user gesture. `prefers-reduced-motion` must disable or shorten pulse and radial waves. Sound architected for future disable.

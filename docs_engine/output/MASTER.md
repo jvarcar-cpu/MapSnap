@@ -6,11 +6,11 @@
 
 ## Vision
 
-MapSnap is a tool — like a camera, compass, or flashlight — for people who discover places in the real world and need to save them instantly before context fades. Open. SNAP. Close. **Capture first. Organize later.**
+**MapSnap is not a map app. It is the fastest way to save a place that matters and return to it when it matters.** The app captures the place before it is forgotten. Open. SNAP. Close. **Capture first. Organize later.**
 
 ## Current Phase
 
-**MVP 0.1 — Capture Foundation** — Stable local-first PWA baseline; publicly reachable at https://mapsnap.se (2026-07-11)
+**Post-MVP 0.1 — Product Roadmap & Governance** — Roadmap ratified 2026-07-12; implementation not started. MVP 0.1 stable at https://mapsnap.se.
 
 ## Product Identity
 
@@ -18,7 +18,7 @@ Product Identity defines who MapSnap is — philosophy, voice, and language. See
 
 | Document | Purpose |
 |----------|---------|
-| `Identity/product_doctrine.md` | Governing philosophy |
+| `Identity/product_doctrine.md` | Governing philosophy, pillars, golden rules |
 | `Identity/product_quotes.md` | Canonical brand phrases |
 | `Identity/voice.md` | Tone and character |
 | `Identity/vocabulary.md` | Official terminology |
@@ -27,29 +27,42 @@ Product Identity defines who MapSnap is — philosophy, voice, and language. See
 **Doctrine summary:**
 
 - MapSnap is a tool — open, SNAP, close
-- Capture first. Organize later.
+- Four pillars: CAPTURE, REMEMBER, RETURN, DELIGHT
 - Coordinates are truth; everything else is metadata
-- Offline first; thumb first; reality first
-- North Star: see something → SNAP → put phone away → continue living
-- Golden Rule: the app must never become more interesting than the place
-
-**Voice summary:** calm, trustworthy, minimal, human, respectful, outdoors — never marketing or hype.
+- Offline first; thumb first; reality first; feel lighter than it is
+- Golden Rule (Experience): app must never become more interesting than the place
+- Golden Rule (Capture): every feature must make a Snap more valuable, never harder to create
 
 **Protected:** Identity documents must be loaded before any user-facing copy. Changes require explicit product approval.
+
+## Roadmap
+
+**Authoritative:** `source/product_roadmap.md`
+
+| Wave | Focus |
+|------|-------|
+| 0 | Baseline reconciliation (complete) |
+| 1 | Instruction, feedback, title, notes, share, save image, favorite, compact cards |
+| 2 | Search, sort, filter, tags |
+| 3 | Snaptisers (time MVP; proximity experimental) |
+| 4 | Image experience |
+| 5 | Backend/cloud (deferred) |
+
+Feature gate: `source/feature_gate.md` · Readiness: `source/implementation_readiness.md`
 
 ## Guardrails
 
 1. MapSnap is a tool, not a map app, note app, or travel planner
 2. Everything begins with SNAP — capture first, organize later
 3. Coordinates are the source of truth; map providers are output channels only
-4. Offline first — IndexedDB primary; localStorage legacy migration only; backup/export is approved MVP recovery; cloud sync out of scope
+4. Offline first — IndexedDB primary; backup/export approved; cloud sync deferred
 5. Thumb first — one-thumb usability outdoors
-6. No backend in MVP 0.1
+6. Protected SNAP contract: short press = position; long press = position + image (ADR-012)
 7. No silent or continuous location tracking
 8. Behaviour and visual regressions are bugs — both checklists required every task
 9. One pass type at a time: Bug Fix, Feature, UX, Docs, Storage, Stabilization
 10. No implementation before generated steering docs are current
-11. Future PDE products bootstrap through PIE/Foundation before code (ADR-011)
+11. Feature Gate mandatory before any new feature
 
 ## Architecture Summary
 
@@ -62,33 +75,24 @@ Product Identity defines who MapSnap is — philosophy, voice, and language. See
 | Persistence | IndexedDB (`mapsnap-db` / `snaps`) |
 | PWA | Web App Manifest |
 
-Client-only data flow. No API routes for snap CRUD. HTTPS required for secure context (geolocation, mobile testing). Production: Vercel, GitHub CD, https://mapsnap.se. docs_engine is the product operating system.
+Client-only data flow. Production: Vercel, https://mapsnap.se. docs_engine is the product operating system.
 
-## Institutional Memory
+## Current Baseline (MVP 0.1 — locked)
 
-| Entry | Significance |
-|-------|--------------|
-| CHRONICLE-MSN-0001 — *The First Public Presence* | MapSnap publicly available 2026-07-11 at https://mapsnap.se |
-| Pre-PDE lineage | MapSnap was not created by PDE; developed independently |
-
-See `source/chronicles/MAPSNAP_CHRONICLES.md` and `source/knowledge_continuity.md`.
-
-## Current Baseline
-
-- SNAP button: visible, large, circular, green, 3D
-- Short tap → GPS snap → IndexedDB
-- Long press → camera/file capture + GPS snap with `photoDataUrl`
-- JSON backup/import/export works
-- Google Maps and Waze links work; delete works
-- Baseline verification script passes
-- Manual mobile verification still required (long-press camera, denied-permission card)
-- Public production domain: https://mapsnap.se
+- Short tap → GPS → IndexedDB; long press (~600ms) → image + GPS
+- Delete, empty state, Google Maps, Waze, backup/import — **existing**
+- No post-capture edit UI yet — Wave 1
 
 ## Recent Decisions
 
-- **ADR-010:** JSON export/import as approved MVP backup method; no cloud sync
-- **ADR-011:** PIE/Foundation bootstrap before code — MapSnap incubator lesson for all future PDE products
+- **ADR-012:** Protected SNAP interaction contract
+- **ADR-013:** Local-first roadmap priority
+- **ADR-014:** Save/download Snap image — Wave 1 required
+- **ADR-015:** Snaptisers strategic capability
+- **ADR-016:** Backend deferral
+- **ADR-017:** Compact card experiment
+- **ADR-018:** Coordinated feedback with radial waves
 
 ## Last Updated
 
-2026-07-11
+2026-07-12

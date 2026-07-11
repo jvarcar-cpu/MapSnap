@@ -132,10 +132,69 @@ The perfect MapSnap session:
 
 ---
 
-## Golden Rule
+## Golden Rule — Experience
 
 The app should never become more interesting than the place being captured.
 
 The world is the experience.
 
 MapSnap is only the memory.
+
+---
+
+## Golden Rule — Capture Protection
+
+Every new feature must make a Snap more valuable, never harder to create.
+
+No required form before capture.
+
+No menu before capture.
+
+No added confirmation before capture.
+
+No interaction that delays the Snap moment.
+
+Enrichment happens after capture.
+
+See `feature_gate.md` for the mandatory seven-question gate.
+
+---
+
+## Product Positioning
+
+MapSnap is not a map app.
+
+MapSnap is the fastest way to save a place that matters and return to it when it matters.
+
+The app captures the place before it is forgotten.
+
+---
+
+## Product Character
+
+MapSnap must remain:
+
+- fast
+- local-first
+- offline-first
+- calm
+- honest
+- minimal
+- thumb-first
+- practical
+- trustworthy
+
+**Internal product goal:** MapSnap should feel lighter than it is.
+
+---
+
+## Four Product Pillars
+
+| Pillar | Role |
+|--------|------|
+| **CAPTURE** | Save the place immediately — position, optional image, offline, one-second interaction |
+| **REMEMBER** | Add meaning after capture — title, notes, favorite, tags, Snaptiser |
+| **RETURN** | Use the Snap when relevant — maps, share, export, save image |
+| **DELIGHT** | Polished feedback without slowing capture — haptic, sound, pulse, glow, confirmation |
+
+Roadmap detail: `product_roadmap.md`.

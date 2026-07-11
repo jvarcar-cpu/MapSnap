@@ -44,7 +44,7 @@ None beyond Next.js ecosystem. No map SDK, no analytics SDK, no auth library.
 | IndexedDB | Cloud sync |
 | URL generation for maps | Embedded map SDK |
 | File capture for photos | Cloud photo storage |
-| PWA manifest | Push notifications |
+| PWA manifest | Push notifications (Snaptisers — Wave 3; feasibility FEAS-002) |
 
 ## Production Deployment
 

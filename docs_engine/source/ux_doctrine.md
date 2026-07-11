@@ -91,9 +91,9 @@ Do not redesign. Restore and preserve this baseline unless explicitly instructed
 
 - Title: "MapSnap" (2xl bold)
 - SNAP button: ~70% content width, max 320px, circular, green radial gradient, dark ring, layered glow/shadow, breathe idle animation
-- No permanent helper text below the button — the button must speak for itself
-- Accessibility: `aria-label` carries tap/long-press hint for screen readers
-- Success toast "✓ Sparad" floats above button (~1s, with haptic when supported)
+- **MVP 0.1:** No permanent helper text below the button — `aria-label` carries tap/long-press hint for screen readers
+- **Wave 1 (approved):** Brief visible instruction — *"Tryck för position · Håll inne för position + bild"* — calm, unobtrusive, does not obstruct use
+- Success toast "✓ Sparad" floats above button (~1s, with haptic when supported); Wave 1 expands to coordinated feedback including "Snap sparad" (ADR-018)
 - Status: "Hämtar plats…" while capturing
 
 **Snap list**
@@ -120,8 +120,13 @@ Do not redesign. Restore and preserve this baseline unless explicitly instructed
 - Large, centered, impossible to miss
 - Tap = location capture
 - Long press = photo + location capture
-- No permanent helper text below the button — the button must speak for itself
+- **Protected contract** (ADR-012): short press = position; long press = position + image — must not change casually
+- Wave 1: brief visible instruction below hero (see Hero zone)
 - Accessibility: `aria-label` carries tap/long-press hint for screen readers
+
+## Wave 1 Feedback (approved, not yet implemented)
+
+Coordinated capture feedback (~500–700ms): press state, haptic, discreet sound, glow, pulse, **radial waves at button boundary** (sonar-like, fade quickly), "Snap sparad" confirmation. Must not block persistence. Respect `prefers-reduced-motion`. Sound design allows future disable. ADR-018.
 
 ## Camera Flow (Long Press)
 
@@ -157,7 +162,15 @@ Show what matters for revisiting:
 
 ## No Mandatory Forms
 
-Users never fill in fields before their first save. Optional enrichment (name, note, category edit) is a future enhancement — not MVP 0.1.
+Users never fill in fields before their first save. Optional enrichment (name, note, title, favorite, tags) happens after capture — see `product_roadmap.md` Wave 1–2.
+
+## RETURN Actions (existing)
+
+Google Maps and Waze deep links are the approved Return path. Share and save-image are planned Wave 1 additions. No proprietary navigation.
+
+## Compact Cards (experimental — Wave 1)
+
+Direction: square thumbnail ~80–100px hypothesis, reduced card height, detail view for full image. Must preserve recognizable thumbnails — see `image_doctrine.md`, ADR-017.
 
 ## Outdoor Context
 
@@ -169,9 +182,9 @@ Users never fill in fields before their first save. Optional enrichment (name, n
 
 Installable as standalone app. Works offline for viewing saved snaps; GPS and camera require device capabilities.
 
-## Roadmap: First-Launch Onboarding (planned, not implemented)
+## Optional Onboarding Hint (planned, complements Wave 1 instruction)
 
-Replace permanent helper text with a one-time, dismissible tip on the user's very first launch only:
+One-time dismissible tip on first launch — supplements, does not replace, brief hero microcopy:
 
 **💡 Tips**
 
@@ -180,5 +193,3 @@ Replace permanent helper text with a one-time, dismissible tip on the user's ver
 - Dismissible
 - Never shown again after dismissal
 - Persist dismissal in localStorage
-
-This is the preferred future UX for teaching long-press photo capture without cluttering the hero screen.

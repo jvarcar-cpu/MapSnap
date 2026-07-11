@@ -70,7 +70,7 @@ docs_engine holds multiple layers. Each has a distinct purpose. Product Identity
 | **Doctrine** (implementation) | `capture_doctrine.md`, `data_doctrine.md`, `ux_doctrine.md` | How specific domains behave — capture flow, data model, UI patterns | Domain behavior changes |
 | **Architecture** | `architecture_state.md`, `decisions.md` | How the system is structured — stack, boundaries, ADRs | Stack or boundary changes |
 | **Engineering** | `rules/implementation_rules.md`, `rules/architecture_rules.md` | How we build — discipline, layering, regressions | Process or technical standards change |
-| **Roadmap** | `current_phase.md`, `changelog.md` | What ships when — phases, milestones, shipped history | Phase transitions or releases |
+| **Roadmap** | `current_phase.md`, `product_roadmap.md`, `feature_gate.md`, `implementation_readiness.md`, `changelog.md` | What ships when — phases, waves, gates, shipped history | Phase transitions or releases |
 
 ### Vision vs Identity
 
@@ -92,7 +92,7 @@ docs_engine holds multiple layers. Each has a distinct purpose. Product Identity
 
 ### Roadmap vs Identity
 
-**Roadmap** (`current_phase.md`, `changelog.md`) is temporal — what phase we are in, what shipped, what is next.
+**Roadmap** (`product_roadmap.md`, `current_phase.md`, `feature_gate.md`, `changelog.md`) is temporal — what phase we are in, what ships, what is next.
 
 **Identity** is atemporal — valid in MVP 0.1 and in every future version unless product explicitly revises it.
 

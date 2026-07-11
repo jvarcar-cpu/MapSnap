@@ -13,6 +13,7 @@ MapSnap docs_engine composes several artifact types. Each answers a different qu
 | **ADR** | Durable decisions — **which** path was chosen | `docs_engine/source/decisions.md` |
 | **Changelog** | Timeline — **when** meaning changed | `docs_engine/source/changelog.md` |
 | **Phase & Baseline** | Operational state — **what** is current and locked | `source/current_phase.md`, `source/stable_baseline.md` |
+| **Roadmap** | Planned product work — **what** ships next | `source/product_roadmap.md`, `source/feature_gate.md`, `source/implementation_readiness.md` |
 
 Chronicles are append-only. They do not outrank doctrine or ADR authority.
 
@@ -23,6 +24,7 @@ Chronicles are append-only. They do not outrank doctrine or ADR authority.
 | 2026-07-11 | CHRONICLE-MSN-0001 — *The First Public Presence* | MapSnap became publicly available at https://mapsnap.se — first public production domain in this product lineage |
 | 2026-07-11 | Pre-PDE lineage preserved | MapSnap was not created by PDE; developed independently before PDE Foundation operational maturity |
 | 2026-07-11 | Product Onboarding reference case (discovery only) | MapSnap may later inform how externally created products enter the PDE ecosystem — not a ratified PDE decision |
+| 2026-07-12 | Official product roadmap ratified | `product_roadmap.md` — Waves 0–5, Feature Gate, ADRs 012–018; post-MVP 0.1 governance pass |
 
 ## Production Domain Record
 

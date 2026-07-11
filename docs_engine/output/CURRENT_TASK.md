@@ -2,40 +2,44 @@
 
 > Generated from docs_engine source. Do not hand-edit.
 
-**Updated:** 2026-07-11
+**Updated:** 2026-07-12
 
 ## Status
 
-No active implementation pass — Chronicle Day 1 institutionalization complete
+Product Roadmap & Governance pass complete. No active implementation pass.
 
 ## Phase
 
-MVP 0.1 — Capture Foundation (stable; public presence live)
+Post-MVP 0.1 — Roadmap ratified. MVP 0.1 baseline locked.
 
 ## Pass Type
 
-Docs Pass (completed)
+None active.
 
 ## Task
 
-MapSnap Chronicle institutionalization — ratify CHRONICLE-MSN-0001, establish Chronicle registry and knowledge continuity, record public production domain https://mapsnap.se, regenerate steering outputs.
+**When scoped:** Wave 1 — Usage instruction (Feature or UX Pass).
+
+Add calm hero microcopy: *"Tryck för position · Håll inne för position + bild"*
+
+Must not alter SNAP gestures or increase capture time.
 
 ## Prerequisites
 
-- [x] CHRONICLE-MSN-0001 ratified in `source/chronicles/MAPSNAP_CHRONICLES.md`
-- [x] Chronicle registry and scope doctrine created
-- [x] `knowledge_continuity.md` updated with production domain and pre-PDE lineage
-- [x] Source docs updated (`current_phase.md`, `architecture_state.md`, `changelog.md`, etc.)
-- [x] Generated outputs refreshed in `docs_engine/output/`
-- [x] No product code changes in this pass
+- [x] Official roadmap in `product_roadmap.md`
+- [x] Feature gate in `feature_gate.md`
+- [x] Wave 0 baseline reconciliation complete
+- [x] ADRs 012–018 recorded
+- [x] Steering outputs regenerated
+- [ ] Pass type declared in `current_phase.md` before code
 
 ## Done When
 
-- [x] Chronicle system established in MapSnap docs_engine
-- [x] Public presence at https://mapsnap.se recorded institutionally
-- [x] Pre-PDE lineage preserved — not described as PDE-generated
-- [x] All applicable steering outputs regenerated
+- Microcopy visible, unobtrusive, Swedish
+- Short tap and long press unchanged (ADR-012)
+- Behaviour + visual regression checklists pass
+- `ux_doctrine.md` and changelog updated if shipped
 
-## Recommended Next Task
+## Reference
 
-**Phase 0.2 — Enrich & Revisit (Feature Pass)** — when explicitly scoped. See `next_task.md`.
+`implementation_readiness.md` order 2 · `product_roadmap.md` Wave 1 item 1

@@ -16,7 +16,7 @@ docs_engine owns:
 | **Institutional memory** | `source/chronicles/`, `source/knowledge_continuity.md` — append-only narrative (Chronicles) and continuity index |
 | **Generated state** | `output/` — steering snapshots from `templates/` |
 | **Implementation context** | `templates/AGENTS.template.md` → `output/AGENTS.md` |
-| **Continuity** | `current_phase.md`, `next_task.md`, `known_issues.md`, changelog, Chronicles |
+| **Continuity** | `current_phase.md`, `next_task.md`, `known_issues.md`, `product_roadmap.md`, changelog, Chronicles |
 
 ## Hard Rules
 
@@ -45,7 +45,7 @@ docs_engine/
 MapSnap uses template-based generation. After source changes:
 
 1. Regenerate all applicable outputs: `MASTER.md`, `AGENTS.md`, `SNAPSHOT.md`, `CURRENT_TASK.md`, `CURRENT_BASELINE.md`, `KNOWN_ISSUES.md`
-2. Run docs validation when `scripts/validate_docs.py` exists
+2. Run `node scripts/validate_docs.mjs` for governance checks
 3. Run `node scripts/verify-baseline.mjs [url]` for behaviour/visual baseline against the live dev server
 
 ## PIE / Foundation Lesson

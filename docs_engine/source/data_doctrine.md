@@ -14,6 +14,12 @@ Every saved place must have:
 
 Everything else is optional metadata.
 
+Planned optional fields (roadmap): `favorite`, `tags`, Snaptiser — see `data_doctrine.md` and `product_roadmap.md`.
+
+## Image Principle
+
+A Snap image is a visual memory aid, not decoration. See `image_doctrine.md`.
+
 ## Map Providers Are Output Channels
 
 Google Maps and Waze URLs are generated at runtime from coordinates. They are never stored as primary data.
