@@ -15,6 +15,8 @@ import {
 } from "@/lib/geo";
 import { generateId } from "@/lib/id";
 import { loadSnaps, saveSnap } from "@/lib/storage";
+import { playSnapSound } from "@/lib/snapSound";
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 import { vibrateSuccess, withViewTransition } from "@/lib/viewTransition";
 import type { SnapPlace } from "@/types/place";
 import { DEFAULT_CATEGORY } from "@/types/place";
@@ -23,7 +25,9 @@ export default function HomePage() {
   const [places, setPlaces] = useState<SnapPlace[]>([]);
   const [capturing, setCapturing] = useState(false);
   const [feedback, setFeedback] = useState(false);
+  const [celebrating, setCelebrating] = useState(false);
   const [feedbackKey, setFeedbackKey] = useState(0);
+  const reducedMotion = usePrefersReducedMotion();
   const [newestId, setNewestId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [permissionDenied, setPermissionDenied] = useState(false);
@@ -47,13 +51,22 @@ export default function HomePage() {
     }
   }, [geoPermission]);
 
+  const FEEDBACK_MS = reducedMotion ? 480 : 650;
+
   const showFeedback = useCallback(() => {
     if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
     vibrateSuccess();
+    if (!reducedMotion) {
+      playSnapSound();
+      setCelebrating(true);
+    }
     setFeedback(true);
     setFeedbackKey((k) => k + 1);
-    feedbackTimerRef.current = setTimeout(() => setFeedback(false), 1000);
-  }, []);
+    feedbackTimerRef.current = setTimeout(() => {
+      setFeedback(false);
+      setCelebrating(false);
+    }, FEEDBACK_MS);
+  }, [FEEDBACK_MS, reducedMotion]);
 
   const createSnap = useCallback(
     async (photoDataUrl?: string) => {
@@ -173,9 +186,15 @@ export default function HomePage() {
             onCameraCancelled={handleCameraCancelled}
             onPhotoReadError={handlePhotoReadError}
             disabled={capturing}
+            celebrating={celebrating}
+            reducedMotion={reducedMotion}
           />
 
-          <div className="mt-10 flex h-5 items-center justify-center">
+          <p className="mt-3 max-w-[280px] text-center text-[13px] leading-snug text-secondary/75">
+            Tryck för position · Håll inne för position + bild
+          </p>
+
+          <div className="mt-8 flex h-5 items-center justify-center">
             {capturing && (
               <p className="animate-fade-in text-sm text-snap" role="status">
                 Hämtar plats…

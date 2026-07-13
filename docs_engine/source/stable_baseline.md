@@ -9,8 +9,8 @@ This document freezes the approved MapSnap MVP baseline. Do not change behaviour
 | Element | Requirement |
 |---------|-------------|
 | **SNAP button** | Circular, large (~70% width, max 320px), green radial 3D gradient, dark ring, glow/shadow, breathe idle animation |
-| **Hero zone** | Title "MapSnap", no permanent helper text below button |
-| **Toast** | "✓ Sparad" floats above button (~1s) |
+| **Hero zone** | Title "MapSnap"; permanent instruction *"Tryck för position · Håll inne för position + bild"* below button |
+| **Toast** | "Snap sparad" floats above button (~650ms) |
 | **List section** | Header "MINA SNAPPAR" (uppercase, tracked) |
 | **Cards** | `rounded-3xl`, `card-shadow`, elevated background, optional photo banner |
 | **Backup panel** | Dashed border, rounded-2xl, green copy button |
@@ -33,7 +33,7 @@ This document freezes the approved MapSnap MVP baseline. Do not change behaviour
 
 | Interaction | Requirement |
 |-------------|-------------|
-| **Short tap** | GPS capture → IndexedDB save → list update → "✓ Sparad" toast |
+| **Short tap** | GPS capture → IndexedDB save → list update → "Snap sparad" toast |
 | **Long press (~600ms)** | Hidden `<input type="file" accept="image/*" capture="environment">` inside `SnapButton`; `click()` in long-press handler path |
 | **Photo flow** | Read image as data URL → GPS → save with `photoDataUrl` → list update → toast |
 | **Duplicate guards** | No short tap after successful long press |

@@ -28,7 +28,7 @@ const config: Config = {
       animation: {
         breathe: "breathe 4s ease-in-out infinite",
         "card-in": "card-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both",
-        "toast-in-out": "toast-in-out 1s ease forwards",
+        "toast-in-out": "toast-in-out 0.65s ease forwards",
         "fade-in": "fade-in 0.35s ease forwards",
       },
       keyframes: {
@@ -42,9 +42,9 @@ const config: Config = {
         },
         "toast-in-out": {
           "0%": { opacity: "0", transform: "translateY(4px)" },
-          "18%": { opacity: "1", transform: "translateY(-8px)" },
-          "75%": { opacity: "1", transform: "translateY(-8px)" },
-          "100%": { opacity: "0", transform: "translateY(-14px)" },
+          "16%": { opacity: "1", transform: "translateY(-8px)" },
+          "72%": { opacity: "1", transform: "translateY(-8px)" },
+          "100%": { opacity: "0", transform: "translateY(-12px)" },
         },
         "fade-in": {
           "0%": { opacity: "0" },

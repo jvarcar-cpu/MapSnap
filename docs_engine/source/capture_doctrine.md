@@ -35,13 +35,13 @@ Capture must complete in one interaction. No forms before save.
 4. Browser/OS shows camera on mobile; file picker on desktop/remote-desktop (expected)
 5. User taps shutter — browsers do not allow automatic capture
 6. After image selection/capture: GPS is fetched, photo stored as data URL, snap saved
-7. Success toast "✓ Sparad" shown (roadmap: "Snap sparad" with expanded feedback — Wave 1)
+7. Success toast "Snap sparad" shown with coordinated feedback (ADR-018)
 8. If the user cancels the picker: do nothing — no snap, no error, tap capture still works
 9. If reading the image fails: save location-only snap with a Swedish error message
 
 ## Timing Budget
 
-Target: under 3 seconds from tap to "✓ Sparad" on a typical mobile connection with GPS available.
+Target: under 3 seconds from tap to "Snap sparad" on a typical mobile connection with GPS available.
 
 ## Anti-Patterns
 

@@ -47,6 +47,42 @@ body {
       inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
 
+  .snap-hero-glow-celebrate {
+    box-shadow:
+      0 0 56px -8px rgba(91, 234, 134, 0.32),
+      0 0 28px -4px rgba(47, 209, 108, 0.22),
+      0 24px 56px -16px rgba(17, 80, 42, 0.22),
+      0 10px 24px -8px rgba(0, 0, 0, 0.1);
+  }
+
+  .snap-celebrate-pulse {
+    background: radial-gradient(
+      circle,
+      rgba(91, 234, 134, 0.22) 0%,
+      rgba(47, 209, 108, 0.08) 55%,
+      transparent 72%
+    );
+    animation: snap-celebrate-pulse 0.55s ease-out forwards;
+  }
+
+  .snap-sonar-wave {
+    border: 1.5px solid rgba(47, 209, 108, 0.3);
+    animation: snap-sonar-wave 0.48s ease-out forwards;
+    opacity: 0;
+  }
+
+  .snap-sonar-wave-1 {
+    animation-delay: 0.18s;
+  }
+
+  .snap-sonar-wave-2 {
+    animation-delay: 0.28s;
+  }
+
+  .snap-sonar-wave-3 {
+    animation-delay: 0.38s;
+  }
+
   .snap-hero-gradient {
     background: radial-gradient(
       circle at 50% 30%,
@@ -90,5 +126,39 @@ body {
     box-shadow:
       0 6px 28px -6px rgba(0, 0, 0, 0.1),
       0 2px 10px -3px rgba(0, 0, 0, 0.05);
+  }
+}
+
+@keyframes snap-celebrate-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  45% {
+    transform: scale(1.1);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1.16);
+    opacity: 0;
+  }
+}
+
+@keyframes snap-sonar-wave {
+  0% {
+    transform: scale(1.08);
+    opacity: 0.32;
+  }
+  100% {
+    transform: scale(1.42);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snap-celebrate-pulse,
+  .snap-sonar-wave {
+    animation: none !important;
+    opacity: 0 !important;
   }
 }

@@ -4,13 +4,13 @@
 
 **Locked:** 2026-06-28  
 **Updated:** {{date}}  
-**Status:** MVP 0.1 stable
+**Status:** MVP 0.1 stable — Wave 1 Sprint 1 UX polish shipped
 
 ## Interaction Baseline
 
 | Interaction | Requirement |
 |-------------|-------------|
-| Short tap | GPS capture → IndexedDB save → list update → "✓ Sparad" toast |
+| Short tap | GPS capture → IndexedDB save → list update → "Snap sparad" toast |
 | Long press (~600ms) | Camera/file input → photo as `photoDataUrl` → GPS → save |
 | Maps | Google Maps and Waze open with saved coordinates |
 | Delete | Removes from list and IndexedDB |
@@ -22,7 +22,7 @@
 | Element | Requirement |
 |---------|-------------|
 | SNAP button | Circular, large (~70% width, max 320px), green radial 3D gradient |
-| Hero | Title "MapSnap", no permanent helper text below button |
+| Hero | Title "MapSnap"; instruction *"Tryck för position · Håll inne för position + bild"* |
 | List | Header "MINA SNAPPAR", styled cards |
 | Backup panel | Dashed border, rounded-2xl |
 | Permission card | Rounded-3xl, elevated, retry button |

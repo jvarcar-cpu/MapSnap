@@ -56,7 +56,11 @@ mustExist("implementation_readiness.md", "implementation_readiness.md exists");
 mustExist("baseline_reconciliation.md", "baseline_reconciliation.md exists");
 mustExist("snaptiser_doctrine.md", "snaptiser_doctrine.md exists");
 mustExist("image_doctrine.md", "image_doctrine.md exists");
+mustExist("field_validation_log.md", "field_validation_log.md exists");
 
+const fieldValidation = readSource("field_validation_log.md");
+mustContain(fieldValidation, "Field Validation 0001", "field validation 0001");
+mustContain(fieldValidation, "Field Validation 0004", "field validation 0004");
 const roadmap = readSource("product_roadmap.md");
 const decisions = readSource("decisions.md");
 const featureGate = readSource("feature_gate.md");

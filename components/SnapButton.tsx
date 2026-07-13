@@ -3,12 +3,15 @@
 import { useRef, useCallback, useEffect, useState } from "react";
 import { readFileAsDataUrl } from "@/lib/geo";
 import { vibrateLongPress } from "@/lib/viewTransition";
+import { SnapCelebrate } from "@/components/SnapCelebrate";
 
 type SnapButtonProps = {
   onSnap: (photoDataUrl?: string) => void;
   onCameraCancelled?: () => void;
   onPhotoReadError?: () => void;
   disabled?: boolean;
+  celebrating?: boolean;
+  reducedMotion?: boolean;
 };
 
 const LONG_PRESS_MS = 600;
@@ -24,6 +27,8 @@ export function SnapButton({
   onCameraCancelled,
   onPhotoReadError,
   disabled,
+  celebrating = false,
+  reducedMotion = false,
 }: SnapButtonProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -206,6 +211,8 @@ export function SnapButton({
         idle ? "animate-breathe" : "",
       ].join(" ")}
     >
+      <SnapCelebrate active={celebrating} reducedMotion={reducedMotion} />
+
       <div
         className={[
           "pointer-events-none absolute inset-0 rounded-full transition-opacity duration-300",
@@ -231,17 +238,21 @@ export function SnapButton({
         style={{
           width: "100%",
           aspectRatio: "1",
-          transform: pressed ? "scale(0.96)" : "scale(1)",
+          transform: pressed || celebrating ? "scale(0.96)" : "scale(1)",
           transition: pressed
-            ? "transform 0.14s ease-out, box-shadow 0.14s ease-out"
-            : "transform 0.52s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.42s ease-out",
+            ? "transform 0.1s ease-out, box-shadow 0.1s ease-out"
+            : celebrating
+              ? "transform 0.12s ease-out, box-shadow 0.2s ease-out"
+              : "transform 0.28s ease-out, box-shadow 0.28s ease-out",
         }}
         className={[
           "relative flex select-none items-center justify-center rounded-full touch-manipulation",
           "text-[clamp(1.875rem,7vw,2.5rem)] font-bold tracking-[0.28em] text-white",
           pressed
             ? "snap-hero-glow-pressed snap-hero-gradient-pressed"
-            : "snap-hero-glow snap-hero-gradient snap-hero-ring",
+            : celebrating
+              ? "snap-hero-glow-celebrate snap-hero-gradient snap-hero-ring"
+              : "snap-hero-glow snap-hero-gradient snap-hero-ring",
           disabled ? "cursor-not-allowed opacity-45" : "cursor-pointer",
         ].join(" ")}
         aria-label="SNAP – tryck för att snappa, håll inne för foto"

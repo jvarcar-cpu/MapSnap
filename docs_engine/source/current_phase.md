@@ -1,18 +1,19 @@
 # Current Phase
 
-**Phase:** Post-MVP 0.1 — Product Roadmap & Governance  
-**Status:** Roadmap ratified — implementation not started  
+**Phase:** Wave 1 — Core Value & UX Polish  
+**Status:** Sprint 1 (UX Polish) complete  
 **MVP 0.1 stabilized:** 2026-07-07  
 **Public presence:** 2026-07-11 — https://mapsnap.se  
-**Roadmap ratified:** 2026-07-12
+**Roadmap ratified:** 2026-07-12  
+**Wave 1 Sprint 1 shipped:** 2026-07-13
 
 ## Goal
 
-Establish authoritative product roadmap, feature gate, pillars, and implementation readiness inside docs_engine — without shipping product features in this pass.
+Ship Wave 1 UX polish — usage instruction and coordinated SNAP feedback — without altering the protected SNAP interaction contract.
 
-**Achieved.** See `product_roadmap.md`, `feature_gate.md`, `implementation_readiness.md`, ADR-012–018.
+**Sprint 1 achieved.** Usage microcopy and coordinated feedback sequence shipped. Field Validation Log introduced.
 
-## MVP 0.1 Baseline (locked — unchanged)
+## MVP 0.1 Baseline (locked — interaction unchanged)
 
 - SNAP button visible, large, circular, green, 3D
 - Short tap saves GPS snap to IndexedDB
@@ -27,6 +28,15 @@ Establish authoritative product roadmap, feature gate, pillars, and implementati
 
 See `stable_baseline.md` and `baseline_reconciliation.md`.
 
+## Wave 1 Sprint 1 — Shipped
+
+- [x] Hero microcopy: *"Tryck för position · Håll inne för position + bild"*
+- [x] Coordinated SNAP feedback (~650ms): compress, haptic, sound, glow, pulse, radial sonar waves, "Snap sparad"
+- [x] `prefers-reduced-motion` respected
+- [x] Persistence not blocked by animation
+- [x] Field Validation Log (`field_validation_log.md`) — MapSnap only
+- [x] Protected SNAP contract unchanged (ADR-012)
+
 ## Official Roadmap Summary
 
 | Wave | Focus | Backend |
@@ -40,29 +50,8 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 Full detail: `product_roadmap.md`.
 
-## In Scope This Phase (complete)
+## Next (when explicitly scoped)
 
-- [x] Repository and implementation inspection
-- [x] Baseline reconciliation documented
-- [x] Product positioning and four pillars formalized
-- [x] Feature Gate and Capture Golden Rule
-- [x] Protected SNAP interaction contract (ADR-012)
-- [x] Phased roadmap with prioritization model
-- [x] Snaptisers on roadmap (ADR-015)
-- [x] Image save in Wave 1 (ADR-014)
-- [x] Radial-wave feedback documented (ADR-018)
-- [x] Implementation readiness plan
-- [x] ADRs for major decisions
-- [x] Identity updates (product-approved this pass)
-
-## Out of Scope This Phase
-
-- Product feature implementation
-- Backend development
-- Changing SNAP gestures
-
-## Next Phase (when explicitly scoped)
-
-**Wave 1 — Core Value & UX Polish** — start with usage instruction, then feedback polish, then enrichment features per `implementation_readiness.md`.
+**Wave 1 Sprint 2+** — title, notes, share, save image, favorite per `implementation_readiness.md` orders 4–7.
 
 See `next_task.md`.

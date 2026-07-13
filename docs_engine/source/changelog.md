@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.2.0] — 2026-07-13
+
+### Added (Wave 1 Sprint 1 — UX Polish)
+
+- **SNAP usage instruction** — permanent hero microcopy: *"Tryck för position · Håll inne för position + bild"*
+- **Coordinated SNAP feedback** — compress, haptic, discreet sound, glow, pulse, radial sonar waves, "Snap sparad" toast (~650ms); persistence not blocked; `prefers-reduced-motion` respected (ADR-018)
+- **Field Validation Log** — `field_validation_log.md` as MapSnap product-level verified observation source (not PDE)
+- `lib/snapSound.ts`, `lib/usePrefersReducedMotion.ts`, `components/SnapCelebrate.tsx`
+
+### Changed
+
+- `SuccessFeedback` — "Snap sparad" replaces "✓ Sparad"
+- `SnapButton` — calmer release transition; celebrate glow state
+- `ux_doctrine.md`, `stable_baseline.md` — hero instruction and feedback baseline updated
+- `knowledge_continuity.md`, `docs_engine_overview.md`, `document_rules.md` — Field Validation Log indexed
+- Regenerated steering outputs in `docs_engine/output/`
+
+### Not changed
+
+- SNAP short tap / long press (~600ms) contract unchanged (ADR-012)
+- No title, notes, share, save image, favorite, or backend work
+
 ## [0.2.0-docs] — 2026-07-12
 
 ### Added (Product Roadmap & Governance Pass)

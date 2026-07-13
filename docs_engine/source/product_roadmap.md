@@ -74,8 +74,8 @@ Each item below includes: **user value**, **pillar**, **backend**, **complexity*
 | Topic | Doc said | Code / baseline says | Resolution |
 |-------|----------|----------------------|------------|
 | Long-press threshold | `capture_doctrine.md`: 500ms | `SnapButton.tsx`: 600ms; `stable_baseline.md`: ~600ms | **Code is truth.** Update capture doctrine to 600ms. |
-| Hero helper text | `ux_doctrine.md`: no permanent helper text | No visible instruction in UI | **Intentional gap.** Wave 1 adds approved microcopy (ADR-012 interaction unchanged). |
-| Success confirmation | Roadmap target: "Snap sparad" | `SuccessFeedback`: "✓ Sparad" | **Planned** Wave 1 feedback polish. |
+| Hero helper text | `ux_doctrine.md`: no permanent helper text | No visible instruction in UI | **Resolved** Wave 1 Sprint 1 — microcopy shipped (ADR-012 interaction unchanged). |
+| Success confirmation | Roadmap target: "Snap sparad" | `SuccessFeedback`: "✓ Sparad" | **Resolved** Wave 1 Sprint 1 — coordinated feedback shipped (ADR-018). |
 | Title / notes | Schema fields exist | No edit UI | **Planned** Wave 1 (MVP-002). |
 | Return / navigation | — | Google Maps + Waze only | Treat as **existing RETURN** — not a new feature. |
 
@@ -89,7 +89,7 @@ Each item below includes: **user value**, **pillar**, **backend**, **complexity*
 
 | Field | Value |
 |-------|-------|
-| Status | **Approved** |
+| Status | **Existing** |
 | User value | Users understand short vs long press without a manual |
 | Pillar | DELIGHT / CAPTURE (clarity only) |
 | Backend | No |
@@ -104,7 +104,7 @@ Each item below includes: **user value**, **pillar**, **backend**, **complexity*
 
 | Field | Value |
 |-------|-------|
-| Status | **Approved** |
+| Status | **Existing** |
 | User value | Confident, satisfying capture without delay |
 | Pillar | DELIGHT |
 | Backend | No |

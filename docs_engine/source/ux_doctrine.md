@@ -92,8 +92,8 @@ Do not redesign. Restore and preserve this baseline unless explicitly instructed
 - Title: "MapSnap" (2xl bold)
 - SNAP button: ~70% content width, max 320px, circular, green radial gradient, dark ring, layered glow/shadow, breathe idle animation
 - **MVP 0.1:** No permanent helper text below the button — `aria-label` carries tap/long-press hint for screen readers
-- **Wave 1 (approved):** Brief visible instruction — *"Tryck för position · Håll inne för position + bild"* — calm, unobtrusive, does not obstruct use
-- Success toast "✓ Sparad" floats above button (~1s, with haptic when supported); Wave 1 expands to coordinated feedback including "Snap sparad" (ADR-018)
+- **Wave 1 (shipped):** Brief visible instruction — *"Tryck för position · Håll inne för position + bild"* — calm, unobtrusive, does not obstruct use
+- Success toast "Snap sparad" floats above button (~650ms, with haptic when supported); coordinated feedback: compress, haptic, discreet sound, glow, pulse, radial sonar waves (ADR-018)
 - Status: "Hämtar plats…" while capturing
 
 **Snap list**
@@ -124,9 +124,9 @@ Do not redesign. Restore and preserve this baseline unless explicitly instructed
 - Wave 1: brief visible instruction below hero (see Hero zone)
 - Accessibility: `aria-label` carries tap/long-press hint for screen readers
 
-## Wave 1 Feedback (approved, not yet implemented)
+## Wave 1 Feedback (shipped — ADR-018)
 
-Coordinated capture feedback (~500–700ms): press state, haptic, discreet sound, glow, pulse, **radial waves at button boundary** (sonar-like, fade quickly), "Snap sparad" confirmation. Must not block persistence. Respect `prefers-reduced-motion`. Sound design allows future disable. ADR-018.
+Coordinated capture feedback (~500–700ms): press compress, haptic, discreet sound, glow, pulse, **radial waves at button boundary** (sonar-like, fade quickly), "Snap sparad" confirmation. Does not block persistence. Respects `prefers-reduced-motion`. Sound fails silently when unavailable. Sound design allows future disable.
 
 ## Camera Flow (Long Press)
 
@@ -139,13 +139,13 @@ Browsers do not allow automatic shutter capture. Optimise for the minimum user a
 5. Photo saved
 6. GPS captured
 7. Snap saved
-8. ✓ Sparad toast
+8. Snap sparad toast
 
 Do not attempt to auto-take a picture.
 
 ## Feedback
 
-- Success: "✓ Sparad" (brief, auto-dismiss, with haptic when supported)
+- Success: "Snap sparad" (brief ~650ms, auto-dismiss, with haptic when supported; coordinated visual pulse and sonar waves when motion allowed)
 - In progress: "Hämtar plats…"
 - Errors: short, actionable Swedish messages
 
