@@ -10,7 +10,7 @@ export function SnapCelebrate({ active, reducedMotion }: SnapCelebrateProps) {
 
   return (
     <div
-      className="pointer-events-none absolute inset-0 flex items-center justify-center"
+      className="pointer-events-none absolute inset-0 z-[5] flex items-center justify-center overflow-visible"
       aria-hidden
     >
       <span className="absolute inset-0 rounded-full snap-celebrate-pulse" />

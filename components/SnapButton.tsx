@@ -207,12 +207,10 @@ export function SnapButton({
   return (
     <div
       className={[
-        "relative flex w-[70%] max-w-[320px] items-center justify-center",
+        "relative flex w-[70%] max-w-[320px] items-center justify-center overflow-visible",
         idle ? "animate-breathe" : "",
       ].join(" ")}
     >
-      <SnapCelebrate active={celebrating} reducedMotion={reducedMotion} />
-
       <div
         className={[
           "pointer-events-none absolute inset-0 rounded-full transition-opacity duration-300",
@@ -246,7 +244,7 @@ export function SnapButton({
               : "transform 0.28s ease-out, box-shadow 0.28s ease-out",
         }}
         className={[
-          "relative flex select-none items-center justify-center rounded-full touch-manipulation",
+          "relative z-[1] flex select-none items-center justify-center rounded-full touch-manipulation",
           "text-[clamp(1.875rem,7vw,2.5rem)] font-bold tracking-[0.28em] text-white",
           pressed
             ? "snap-hero-glow-pressed snap-hero-gradient-pressed"
@@ -265,6 +263,8 @@ export function SnapButton({
           SNAP
         </span>
       </button>
+
+      <SnapCelebrate active={celebrating} reducedMotion={reducedMotion} />
 
       <input
         ref={inputRef}
