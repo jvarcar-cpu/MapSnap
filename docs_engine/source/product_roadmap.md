@@ -267,7 +267,7 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 | # | Item | Status | Pillar | Complexity | Affects SNAP | ADR |
 |---|------|--------|--------|------------|--------------|-----|
 | 1 | Search (title, notes) | **Shipped** | DISCOVER / ENRICH | Medium | No | — |
-| 2 | Sort (newest, oldest, nearest) | Planned | DISCOVER | Medium | No | — |
+| 2 | Sort (newest, oldest, nearest) | **Shipped** | DISCOVER | Medium | No | — |
 | 3 | Filter (all, favorites, with images) | Planned | DISCOVER | Low–Medium | No | — |
 | 4 | Tags | Planned | ENRICH / DISCOVER | Medium | No | — |
 | 5 | Nearby / collection views | Planned | DISCOVER | Medium | No | Feature gate |
@@ -275,6 +275,22 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 | 7 | Quick edit (title, note) | Planned | ENRICH | Low | No | — |
 
 **Discover guardrail:** Every Wave 2 item must help the user rediscover their own meaningful content — not introduce unrelated attention or noise.
+
+#### 2. Sort (Smart Sorting) — shipped
+
+| Field | Value |
+|-------|-------|
+| Status | **Shipped** — Wave 2 Sprint 3 (2026-07-14) |
+| User value | Reorder own Snaps by recency or proximity for faster rediscovery |
+| Pillar | DISCOVER |
+| Backend | No |
+| Complexity | Medium |
+| Dependencies | Search (list controls), favorite field (filter prep) |
+| Risk | Continuous GPS tracking — reject; pre-capture sort UI — reject |
+| Acceptance | Segmented control Nyast / Äldst / Närmast above list when snaps exist; applies after search filter; nearest uses one-time GPS read; failure reverts to Nyast with calm message; memoized `sortSnaps()` |
+| Feature Gate | Does not slow SNAP; strengthens DISCOVER; self-evident; local-first; lightweight UI; after capture; calm identity |
+| Affects SNAP interaction | No |
+| Shipped | `lib/snapSort.ts`, `components/SnapSortBar.tsx`, `app/page.tsx` |
 
 ---
 

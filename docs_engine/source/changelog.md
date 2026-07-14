@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.18] — 2026-07-14
+
+### Added (Wave 2 Sprint 3 — Smart Sorting)
+
+- **Smart Sorting** — segmented sort control above snap list when snaps exist; modes: Nyast (newest), Äldst (oldest), Närmast (nearest)
+- **Sort behaviour** — pure client-side reorder of loaded collection; applies after search filter; memoized via `sortSnaps()` in `lib/snapSort.ts`
+- **Nearest sort** — one-time GPS read when user selects Närmast; haversine distance; tie-break by newest; no continuous tracking
+- **Nearest failure** — calm Swedish message when location unavailable; reverts to Nyast
+- **Sort UI** — lightweight rounded segmented control below search bar; labels Nyast / Äldst / Närmast
+
+### Not changed
+
+- SNAP short/long-press contract unchanged (ADR-012)
+- No filter, tags, backend, or cloud
+- IndexedDB version remains `1`; no schema change
+- Search behaviour unchanged
+
+### Docs
+
+- Wave 2 Sprint 3 Smart Sorting declared in `current_phase.md`
+- Sort documented in `ux_doctrine.md`, `implementation_readiness.md`, `product_roadmap.md`
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.17] — 2026-07-14
 
 ### Added (Wave 2 Sprint 2 — Search)

@@ -16,9 +16,10 @@
 ```
 app/           — pages, layout, globals, manifest
 components/    — SnapButton, PlaceCard, PlaceList, MapOpenButtons, FavoriteToggle,
-               SnapEditForm, SnapActionIcons, SnapBackupPanel, LocationPermissionCard
+               SnapEditForm, SnapActionIcons, SnapBackupPanel, LocationPermissionCard,
+               SnapSearchBar, SnapSortBar
 lib/           — geo, storage, db, maps, id, snapModel, snapEdit, snapFavorite,
-               saveSnapImage, shareSnap, snapSound, usePrefersReducedMotion
+               saveSnapImage, shareSnap, snapSearch, snapSort, snapSound, usePrefersReducedMotion
 types/         — place.ts (Snap, SnapPlace, SnapCategory)
 docs_engine/   — product governance docs (product operating system)
   source/Identity/ — Product Identity (doctrine, quotes, voice, vocabulary, writing rules)

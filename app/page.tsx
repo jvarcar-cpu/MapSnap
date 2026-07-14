@@ -6,7 +6,9 @@ import { LocationPermissionCard } from "@/components/LocationPermissionCard";
 import { SnapButton } from "@/components/SnapButton";
 import { PlaceList } from "@/components/PlaceList";
 import { SnapSearchBar } from "@/components/SnapSearchBar";
+import { SnapSortBar } from "@/components/SnapSortBar";
 import { filterSnapsBySearch } from "@/lib/snapSearch";
+import { sortSnaps, type SnapSortMode } from "@/lib/snapSort";
 import { SnapBackupPanel } from "@/components/SnapBackupPanel";
 import { SuccessFeedback } from "@/components/SuccessFeedback";
 import {
@@ -38,6 +40,13 @@ export default function HomePage() {
   const [secureContext, setSecureContext] = useState(true);
   const [locationHost, setLocationHost] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [sortMode, setSortMode] = useState<SnapSortMode>("newest");
+  const [sortReference, setSortReference] = useState<{
+    latitude: number;
+    longitude: number;
+  } | null>(null);
+  const [resolvingNearestSort, setResolvingNearestSort] = useState(false);
+  const [sortError, setSortError] = useState<string | null>(null);
   const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pendingPhotoRef = useRef<string | undefined>(undefined);
 
@@ -171,9 +180,45 @@ export default function HomePage() {
     });
   }, []);
 
+  const handleSortChange = useCallback(
+    async (mode: SnapSortMode) => {
+      setSortError(null);
+      setSortMode(mode);
+
+      if (mode !== "nearest") return;
+
+      setResolvingNearestSort(true);
+      const geo = await getCurrentPosition();
+      setResolvingNearestSort(false);
+
+      if (!geo.ok) {
+        setSortMode("newest");
+        setSortReference(null);
+        setSortError("Kunde inte sortera efter avstånd. Aktivera platsåtkomst.");
+        return;
+      }
+
+      setSortReference({
+        latitude: geo.latitude,
+        longitude: geo.longitude,
+      });
+    },
+    []
+  );
+
   const filteredPlaces = useMemo(
     () => filterSnapsBySearch(places, searchQuery),
     [places, searchQuery]
+  );
+
+  const displayedPlaces = useMemo(
+    () =>
+      sortSnaps(
+        filteredPlaces,
+        sortMode,
+        sortMode === "nearest" ? sortReference : null
+      ),
+    [filteredPlaces, sortMode, sortReference]
   );
 
   const showPermissionCard =
@@ -258,10 +303,27 @@ export default function HomePage() {
           MINA SNAPPAR
         </h2>
         {places.length > 0 && (
-          <SnapSearchBar value={searchQuery} onChange={setSearchQuery} />
+          <>
+            <SnapSearchBar value={searchQuery} onChange={setSearchQuery} />
+            <SnapSortBar
+              value={sortMode}
+              onChange={(mode) => {
+                void handleSortChange(mode);
+              }}
+              resolvingNearest={resolvingNearestSort}
+            />
+            {sortError && (
+              <p
+                className="-mt-3 mb-5 px-1 text-sm text-secondary"
+                role="status"
+              >
+                {sortError}
+              </p>
+            )}
+          </>
         )}
         <PlaceList
-          places={filteredPlaces}
+          places={displayedPlaces}
           totalCount={places.length}
           searchQuery={searchQuery}
           onDelete={handleDelete}

@@ -4,7 +4,7 @@
 
 MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backend.
 
-**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Wave 2 Sprint 2 Search shipped. Public: https://mapsnap.se.
+**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Wave 2 Sprint 3 Smart Sorting shipped. Public: https://mapsnap.se.
 
 ## Current Product Status
 
@@ -15,15 +15,16 @@ MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backe
 | Wave 1 institutional | Closed — reconciliation verified 2026-07-14 |
 | Wave 2 Sprint 1 | Compact Cards Iteration 1 shipped — banner compression, action-group divider |
 | Wave 2 Sprint 2 | Search shipped — local title/notes filter, search bar, search empty state |
-| Next implementation | **Compact Cards Iteration 2** (thumbnail + detail view) |
+| Wave 2 Sprint 3 | Smart Sorting shipped — Nyast / Äldst / Närmast, memoized sort, nearest GPS |
+| Next implementation | **Filter** (all, favorites, with images) |
 | Backend / cloud | Deferred — Wave 6 (ADR-016) |
 | Production | Vercel · https://mapsnap.se · client-only data model |
 
 ## Current Phase
 
-**Wave 2 — Organization / Early Discover** — Sprint 2 complete. Search shipped.
+**Wave 2 — Organization / Early Discover** — Sprint 3 complete. Smart Sorting shipped.
 
-**Next sprint (when scoped):** Compact Cards Iteration 2 per `implementation_readiness.md` and `next_task.md`.
+**Next sprint (when scoped):** Filter per `implementation_readiness.md` and `next_task.md`.
 
 ## Architecture
 
@@ -54,6 +55,8 @@ lib/snapEdit.ts           — title/notes helpers
 lib/snapFavorite.ts       — favorite toggle
 lib/saveSnapImage.ts      — device image copy
 lib/shareSnap.ts          — Quick Share payload
+lib/snapSearch.ts         — search filter
+lib/snapSort.ts           — list sort modes
 types/place.ts            — Snap / SnapPlace schema
 docs_engine/source/       — authoritative product knowledge
 docs_engine/output/       — generated steering snapshots (must be current)

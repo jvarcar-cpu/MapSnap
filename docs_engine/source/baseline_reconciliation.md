@@ -163,6 +163,8 @@ Wave 1 Core Value track is institutionally closed. **Compact Cards Iteration 1**
 - [x] Snap card + action icon polish shipped
 - [x] Field Validation 0005, 0006 recorded
 - [x] Compact Cards Iteration 1 shipped — banner compression, action-group divider
+- [x] Search shipped — title/notes filter, search bar, search empty state
+- [x] Smart Sorting shipped — Nyast / Äldst / Närmast, memoized sort, nearest GPS
 - [ ] Compact Cards Iteration 2 — square thumbnail, detail view
 - [x] IndexedDB version `1` unchanged
 - [x] Protected SNAP interaction unchanged

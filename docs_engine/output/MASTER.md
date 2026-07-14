@@ -14,7 +14,7 @@ Open. SNAP. Close. **Capture first. Organize later.**
 
 ## Current Phase
 
-**Wave 2 — Organization / Early Discover** — Sprint 2 complete 2026-07-14. Search shipped. MVP 0.1 stable at https://mapsnap.se. Product lifecycle pillars ratified (ADR-020).
+**Wave 2 — Organization / Early Discover** — Sprint 3 complete 2026-07-14. Smart Sorting shipped. MVP 0.1 stable at https://mapsnap.se. Product lifecycle pillars ratified (ADR-020).
 
 ## Product Identity
 
@@ -49,7 +49,7 @@ Product Identity defines who MapSnap is — philosophy, voice, and language. See
 |------|-------|
 | 0 | Baseline reconciliation (complete) |
 | 1 | Core value: UX polish, title, notes, save image, Quick Share, favorite, signature, action icons — **institutionally closed** |
-| 2 | Organization / early Discover — **Sprint 1:** Compact Cards Iteration 1 shipped; **Sprint 2:** Search shipped |
+| 2 | Organization / early Discover — **Sprint 1:** Compact Cards Iteration 1 shipped; **Sprint 2:** Search shipped; **Sprint 3:** Smart Sorting shipped |
 | 3 | Snaptisers / contextual Discover |
 | 4 | Image + Professional Share |
 | 5 | Protect |
@@ -84,7 +84,7 @@ Feature gate: `source/feature_gate.md` · Readiness: `source/implementation_read
 
 Client-only data flow. Production: Vercel, https://mapsnap.se. docs_engine is the product operating system.
 
-Key libs: `snapModel`, `snapEdit`, `snapFavorite`, `saveSnapImage`, `shareSnap`, `snapSearch`. Key components: `PlaceCard`, `MapOpenButtons`, `FavoriteToggle`, `SnapSearchBar`, `SnapActionIcons`.
+Key libs: `snapModel`, `snapEdit`, `snapFavorite`, `saveSnapImage`, `shareSnap`, `snapSearch`, `snapSort`. Key components: `PlaceCard`, `MapOpenButtons`, `FavoriteToggle`, `SnapSearchBar`, `SnapSortBar`, `SnapActionIcons`.
 
 ## Current Baseline (MVP 0.1 + Wave 1)
 
@@ -95,8 +95,9 @@ Key libs: `snapModel`, `snapEdit`, `snapFavorite`, `saveSnapImage`, `shareSnap`,
 - MapSnap signature, SnapSpot label, two-column action grid, brand map icons, SVG card actions — **shipped**
 - Compact Cards Iteration 1 — reduced-height banner, action-group divider — **shipped**
 - Search — local title/notes filter, search bar, search empty state — **shipped**
+- Smart Sorting — Nyast / Äldst / Närmast, memoized sort, nearest one-time GPS — **shipped**
 - Delete, empty state, Google Maps, Waze, backup/import — **existing**
-- Wave 1 institutionally closed; Wave 2 Sprint 1–2 complete
+- Wave 1 institutionally closed; Wave 2 Sprint 1–3 complete
 
 ## Recent Decisions
 
@@ -112,4 +113,4 @@ Key libs: `snapModel`, `snapEdit`, `snapFavorite`, `saveSnapImage`, `shareSnap`,
 
 ## Last Updated
 
-2026-07-14 — Wave 2 Sprint 2 Search
+2026-07-14 — Wave 2 Sprint 3 Smart Sorting
