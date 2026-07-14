@@ -6,11 +6,11 @@
 
 ## Status
 
-Wave 1 Sprint 3 (Save Snap Image) **Completed**. No active implementation pass.
+Wave 1 Sprint 4 (Share Snap) **Completed**. No active implementation pass.
 
 ## Phase
 
-Wave 1 — Core Value & UX Polish. Sprint 3 closed 2026-07-14.
+Wave 1 — Core Value & UX Polish. Sprint 4 closed 2026-07-14.
 
 ## Pass Type
 
@@ -18,7 +18,7 @@ None active.
 
 ## Task
 
-**When scoped:** Wave 1 — Share Snap per `implementation_readiness.md` order 6.
+**When scoped:** Wave 1 — Favorite per `implementation_readiness.md` order 7.
 
 ## Prerequisites
 
@@ -32,16 +32,17 @@ None active.
 - [x] Snap model prepared (`snap_model.md`, ADR-019, `lib/snapModel.ts`)
 - [x] Title + notes UI shipped (Sprint 2B)
 - [x] Save image shipped (Sprint 3)
+- [x] Share snap shipped (Sprint 4)
 
-## Done When (Sprint 3 — complete)
+## Done When (Sprint 4 — complete)
 
-- [x] Image snap shows "Spara bild"; position-only snap does not
-- [x] Save creates device copy with readable filename
-- [x] Save does not mutate title, note, coordinates, photo, createdAt
-- [x] Success/failure feedback in Swedish
+- [x] Image snap shows "Dela"; position-only snap does not
+- [x] Share includes title, notes when present, coordinates, Google Maps URL, image when available
+- [x] Share does not mutate title, note, coordinates, photo, createdAt
+- [x] Unavailable share reported in Swedish — no silent failure
 - [x] SNAP short/long-press unchanged
 - [x] Build, docs validation, and tests pass
 
 ## Reference
 
-`implementation_readiness.md` order 6 · `product_roadmap.md` Wave 1 item 5 (share) · `image_doctrine.md`
+`implementation_readiness.md` order 7 · `product_roadmap.md` Wave 1 item 7 (favorite) · `ux_doctrine.md`

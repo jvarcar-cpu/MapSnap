@@ -154,6 +154,12 @@ try {
     fail("Spara bild hidden without image", "button visible on position-only snap");
   }
 
+  if ((await page.getByRole("button", { name: "Dela" }).count()) === 0) {
+    pass("Dela hidden without image");
+  } else {
+    fail("Dela hidden without image", "button visible on position-only snap");
+  }
+
   const tinyJpeg =
     "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////2wBDAf//////////////////////////////////////////////////////////////////////////////////////wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAGfAP/EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAQUCf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQMBAT8Bf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQIBAT8Bf//Z";
   await page.evaluate(
@@ -206,6 +212,30 @@ try {
     }
   } else {
     fail("Spara bild visible with image", "button not found");
+  }
+
+  const shareBtn = page.getByRole("button", { name: "Dela" });
+  if (await shareBtn.isVisible()) {
+    pass("Dela visible with image");
+    const snapsBeforeShare = await readSnapsFromIndexedDb(page);
+    const beforeShare = snapsBeforeShare[0];
+    await shareBtn.click();
+    const snapsAfterShareClick = await readSnapsFromIndexedDb(page);
+    const afterShareClick = snapsAfterShareClick[0];
+    if (
+      afterShareClick?.photoDataUrl === beforeShare?.photoDataUrl &&
+      afterShareClick?.latitude === beforeShare?.latitude &&
+      afterShareClick?.longitude === beforeShare?.longitude &&
+      afterShareClick?.createdAt === beforeShare?.createdAt &&
+      afterShareClick?.name === beforeShare?.name &&
+      afterShareClick?.note === beforeShare?.note
+    ) {
+      pass("Share does not mutate snap");
+    } else {
+      fail("Share does not mutate snap", JSON.stringify({ beforeShare, afterShareClick }));
+    }
+  } else {
+    fail("Dela visible with image", "button not found");
   }
 
   const editBtn = page.getByRole("button", { name: /Redigera/i });

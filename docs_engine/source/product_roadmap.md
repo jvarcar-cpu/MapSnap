@@ -149,14 +149,14 @@ Each item below includes: **user value**, **pillar**, **backend**, **complexity*
 
 | Field | Value |
 |-------|-------|
-| Status | **Approved** |
+| Status | **Existing** |
 | User value | Send place to others or other apps |
 | Pillar | RETURN |
 | Backend | No |
 | Complexity | Medium |
 | Dependencies | Title (optional but improves share text) |
 | Risk | `navigator.share` unavailable on some desktop browsers |
-| Acceptance | Native share where supported; includes title, note when present, coordinates, usable map link; clear fallback when share unavailable |
+| Acceptance | Native share where supported; includes title, note when present, coordinates, usable map link; clear message when share unavailable; image snaps only |
 | Affects SNAP interaction | No |
 | ADR | — |
 
@@ -255,6 +255,28 @@ Each item below includes: **user value**, **pillar**, **backend**, **complexity*
 | Metadata handling | Planned |
 | Stronger export / save | Planned |
 | Optional image caption | Planned |
+
+---
+
+## Future — Data Protection
+
+**Purpose:** Protect the user's memories without requiring an account.
+
+**Core philosophy:** Offline First. Cloud Optional.
+
+**Product principle:** *MapSnap should protect the user's memories without requiring an account.*
+
+**Status:** Approved direction — **not implemented**. Documented for future waves only.
+
+| Capability | Status | Notes |
+|------------|--------|-------|
+| Protect Snaps | Planned | Local safeguards for snap data integrity and loss prevention |
+| Backup recommendation | Planned | Prompt users to back up when collection grows or risk is detected |
+| Export backup through native Share Sheet | Planned | RETURN path — share JSON backup via platform share API |
+| Restore from backup | Planned | Complements existing import; guided restore UX |
+| Future cloud sync | Backend-dependent | Wave 5 phase — optional account; never required for core use |
+
+No backend, account system, or cloud sync in this direction until local protection and export paths are proven.
 
 ---
 

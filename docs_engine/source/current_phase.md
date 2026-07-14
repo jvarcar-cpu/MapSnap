@@ -4,7 +4,7 @@
 
 **Phase:** Wave 1 — Core Value & UX Polish  
 
-**Status:** Sprint 3 (Save Snap Image) **Completed**  
+**Status:** Sprint 4 (Share Snap) **Completed**  
 
 **MVP 0.1 stabilized:** 2026-07-07  
 
@@ -22,17 +22,19 @@
 
 **Wave 1 Sprint 3 completed:** 2026-07-14
 
+**Wave 1 Sprint 4 completed:** 2026-07-14
+
 
 
 ## Goal
 
 
 
-Ship post-capture save-image action so users can keep the Snap photo on their device without re-opening the camera.
+Ship native share for image Snaps so users can send title, notes, coordinates, map link, and photo in one action — without manual assembly.
 
 
 
-**Sprint 3 completed.** Snaps with `photoDataUrl` show "Spara bild" after maps actions. Save creates a device copy only — Snap data unchanged.
+**Sprint 4 completed.** Snaps with `photoDataUrl` show "Dela" after "Spara bild". Share uses Web Share API; unavailable browsers receive explicit Swedish feedback.
 
 
 
@@ -142,6 +144,24 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 
 
+## Wave 1 Sprint 4 — Completed
+
+
+
+- [x] "Dela" action on snap cards with `photoDataUrl`
+
+- [x] Hidden for position-only snaps
+
+- [x] Placement: after Google Maps / Waze and Spara bild, before Redigera / Ta bort
+
+- [x] Native share: title (fallback "Sparad plats"), notes when present, coordinates, Google Maps URL, image file when supported
+
+- [x] Unavailable: "Delning stöds inte i den här webbläsaren" — no silent failure
+
+- [x] Share is read-only — never mutates or deletes the Snap
+
+
+
 ## Official Roadmap Summary
 
 
@@ -162,6 +182,8 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 | 5 | Backend / cloud | Deferred |
 
+| — | Data Protection (future) | Documented — not implemented |
+
 
 
 Full detail: `product_roadmap.md`.
@@ -172,7 +194,7 @@ Full detail: `product_roadmap.md`.
 
 
 
-**Wave 1** — Share Snap, Favorite, or Compact Cards as separately scoped passes per `implementation_readiness.md`.
+**Wave 1** — Favorite or Compact Cards as separately scoped passes per `implementation_readiness.md`.
 
 
 

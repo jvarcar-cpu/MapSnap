@@ -166,7 +166,7 @@ Users never fill in fields before their first save. Optional enrichment (name, n
 
 ## RETURN Actions (existing)
 
-Google Maps and Waze deep links are the approved Return path. Share and save-image are planned Wave 1 additions. No proprietary navigation.
+Google Maps and Waze deep links are the approved Return path. Share Snap and save-image are shipped Wave 1 RETURN actions. No proprietary navigation.
 
 ## Compact Cards (experimental — Wave 1)
 

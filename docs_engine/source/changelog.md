@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.2.5] — 2026-07-14
+
+### Added (Wave 1 Sprint 4 — Share Snap)
+
+- **"Dela" action** — visible on snap cards with `photoDataUrl`; hidden for position-only snaps
+- **Share utility** — `lib/shareSnap.ts`: native Web Share API with title, notes, coordinates, Google Maps URL, and image file when supported
+- **Share text format** — clean plain-text body; title fallback "Sparad plats"; "Image attached." when photo included
+- **Unavailable feedback** — "Delning stöds inte i den här webbläsaren" when `navigator.share` absent or payload unsupported; no silent failure
+- **Tests** — `lib/shareSnap.test.ts`; baseline verification extended for share visibility and non-mutation
+
+### Changed
+
+- `PlaceCard.tsx` — share button after Spara bild, before Redigera / Ta bort
+- `product_roadmap.md` — Share Snap marked Existing; **Future — Data Protection** section added (documented only)
+- `current_phase.md`, `next_task.md`, `implementation_readiness.md` — Sprint 4 complete
+- `ux_doctrine.md` — share documented as shipped
+- Regenerated steering outputs in `docs_engine/output/`
+
+### Not changed
+
+- SNAP short/long-press contract unchanged (ADR-012)
+- No Data Protection implementation, favorite, tags, compact cards, clipboard, QR, or backend work
+- IndexedDB version remains `1`
+- No new Field Validation entries (pending real-device test)
+
 ## [0.2.4] — 2026-07-14
 
 ### Added (Wave 1 Sprint 3 — Save Snap Image)

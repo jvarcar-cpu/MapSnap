@@ -4,7 +4,7 @@
 
 **Updated:** 2026-07-14  
 
-**Pass type:** None active — Wave 1 Sprint 3 closed
+**Pass type:** None active — Wave 1 Sprint 4 closed
 
 
 
@@ -12,11 +12,11 @@
 
 
 
-**Wave 1 — Share Snap** — when explicitly scoped per `implementation_readiness.md` order 6.
+**Wave 1 — Favorite** — when explicitly scoped per `implementation_readiness.md` order 7.
 
 
 
-Sprint 3 (save image) is complete. Snaps with photos offer "Spara bild" for device copy. Next Wave 1 item: native share with fallback.
+Sprint 4 (share snap) is complete. Image snaps offer "Dela" for native share with title, notes, coordinates, map link, and photo. Next Wave 1 item: favorite toggle.
 
 
 
@@ -28,15 +28,17 @@ Sprint 3 (save image) is complete. Snaps with photos offer "Spara bild" for devi
 
 2. Generated steering docs current (`docs_engine/output/`)
 
-3. Feature Gate answers documented for share unit
+3. Feature Gate answers documented for favorite unit
 
-4. Sprint 3 complete (save image)
+4. Sprint 4 complete (share snap)
 
 
 
 ## Not Next
 
 
+
+- Data Protection implementation (documented in roadmap only)
 
 - Backend or cloud sync (Wave 5 — deferred)
 
@@ -46,7 +48,7 @@ Sprint 3 (save image) is complete. Snaps with photos offer "Spara bild" for devi
 
 - Mixed pass types in one change set
 
-- Favorite, tags, compact cards (later Wave 1 sprints unless explicitly scoped)
+- Tags, compact cards (later Wave 1 sprints unless explicitly scoped)
 
 - Search, sort, filter (Wave 2)
 
@@ -68,6 +70,6 @@ Sprint 3 (save image) is complete. Snaps with photos offer "Spara bild" for devi
 
 | `feature_gate.md` | Gate before any feature |
 
-| `ux_doctrine.md` | Share Snap requirements |
+| `ux_doctrine.md` | RETURN actions |
 
 | `field_validation_log.md` | Verified field observations |

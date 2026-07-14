@@ -12,6 +12,7 @@ import {
 } from "@/lib/snapEdit";
 import { normalizeSnap } from "@/lib/snapModel";
 import { saveSnapImage } from "@/lib/saveSnapImage";
+import { shareSnap } from "@/lib/shareSnap";
 
 type PlaceCardProps = {
   place: SnapPlace;
@@ -46,6 +47,11 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
     type: "success" | "error";
     text: string;
   } | null>(null);
+  const [sharing, setSharing] = useState(false);
+  const [shareMessage, setShareMessage] = useState<{
+    type: "error";
+    text: string;
+  } | null>(null);
 
   const handleDelete = () => {
     void deleteSnap(place.id).then((result) => {
@@ -69,6 +75,26 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
     setDraftTitle("");
     setDraftNote("");
   }, []);
+
+  const handleShare = useCallback(() => {
+    if (!place.photoDataUrl) return;
+
+    setSharing(true);
+    setShareMessage(null);
+
+    void shareSnap(place).then((result) => {
+      setSharing(false);
+      if (result.ok || result.reason === "cancelled") return;
+
+      setShareMessage({
+        type: "error",
+        text:
+          result.reason === "unavailable"
+            ? "Delning stöds inte i den här webbläsaren"
+            : "Kunde inte dela snap",
+      });
+    });
+  }, [place]);
 
   const handleSaveImage = useCallback(() => {
     if (!place.photoDataUrl) return;
@@ -196,6 +222,20 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                     role={saveImageMessage.type === "error" ? "alert" : "status"}
                   >
                     {saveImageMessage.text}
+                  </p>
+                )}
+                <button
+                  type="button"
+                  onClick={handleShare}
+                  disabled={sharing}
+                  className="min-h-[48px] shrink-0 rounded-full border border-black/[0.07] bg-surface px-6 py-3 text-sm font-medium text-primary transition-all duration-200 ease-out hover:border-snap/20 hover:bg-snap-muted/30 active:scale-[0.97] disabled:opacity-60"
+                  aria-label={`Dela ${displayName}`}
+                >
+                  {sharing ? "Delar…" : "Dela"}
+                </button>
+                {shareMessage && (
+                  <p className="text-sm text-secondary" role="alert">
+                    {shareMessage.text}
                   </p>
                 )}
               </div>
