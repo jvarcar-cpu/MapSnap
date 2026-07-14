@@ -57,6 +57,7 @@ mustExist("baseline_reconciliation.md", "baseline_reconciliation.md exists");
 mustExist("snaptiser_doctrine.md", "snaptiser_doctrine.md exists");
 mustExist("image_doctrine.md", "image_doctrine.md exists");
 mustExist("field_validation_log.md", "field_validation_log.md exists");
+mustExist("snap_model.md", "snap_model.md exists");
 
 const fieldValidation = readSource("field_validation_log.md");
 mustContain(fieldValidation, "Field Validation 0001", "field validation 0001");
@@ -90,6 +91,7 @@ mustContain(decisions, "ADR-012", "ADR-012 protected interaction");
 mustContain(decisions, "ADR-014", "ADR-014 save image");
 mustContain(decisions, "ADR-015", "ADR-015 Snaptisers");
 mustContain(decisions, "ADR-018", "ADR-018 feedback model");
+mustContain(decisions, "ADR-019", "ADR-019 snap model evolution");
 
 // Identity preserved + extended
 mustContain(identity, "Coordinates are Truth", "Identity: coordinates principle preserved");

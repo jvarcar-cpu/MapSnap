@@ -1,6 +1,7 @@
 # Data Doctrine
 
-> Product context: Coordinates are Truth, Offline First — see `Identity/product_doctrine.md`
+> Product context: Coordinates are Truth, Offline First — see `Identity/product_doctrine.md`  
+> Authoritative Snap shape: `snap_model.md`
 
 ## Source of Truth
 
@@ -14,7 +15,16 @@ Every saved place must have:
 
 Everything else is optional metadata.
 
-Planned optional fields (roadmap): `favorite`, `tags`, Snaptiser — see `data_doctrine.md` and `product_roadmap.md`.
+Planned optional fields (roadmap): `favorite`, `tags`, Snaptiser — see `snap_model.md` and `product_roadmap.md`.
+
+## Product vs Persisted Names
+
+| Product (Swedish UI) | Persisted key |
+|----------------------|---------------|
+| title / titel | `name` |
+| notes / anteckningar | `note` |
+
+Legacy aliases `title` and `notes` normalize to `name` / `note` on load and import (ADR-019).
 
 ## Image Principle
 
@@ -41,7 +51,13 @@ Photos are stored as base64 data URLs inline with the snap record. This is accep
 
 ## Schema Evolution
 
-If the schema changes, bump the IndexedDB version and provide a one-time migration or accept fresh start for dev MVP.
+Evolution policy (ADR-019):
+
+1. **Optional fields only** — new metadata is optional; existing Snaps remain valid without migration UI.
+2. **Normalization on load** — `lib/snapModel.ts` + `lib/storage.ts` run idempotent normalization (trim strings, legacy alias mapping, default category).
+3. **IndexedDB version bump** — only when object store structure must change; until then version `1` holds schemaless Snap documents.
+4. **Backup format** — JSON array of Snap objects (`mapsnap-snaps-array-v1`); unknown keys preserved; see `snap_model.md` compatibility matrix.
+5. **Required field changes** — forbidden without ADR, backup format version bump, and explicit migration.
 
 ## Categories
 

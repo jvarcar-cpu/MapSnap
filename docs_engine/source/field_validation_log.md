@@ -95,6 +95,33 @@ Documented image export direction.
 
 ---
 
+## Field Validation 0005 — Wave 1 Sprint 1 UX Polish Validation
+
+**Date:** 2026-07-14  
+**Devices:** Google Pixel 9a · Redmi Note 9
+
+### Verified
+
+- Instruction text visible.
+- Sound works.
+- Toast ("Snap sparad") works.
+- Pulse and radial waves are now visible after deployment.
+- Protected SNAP interaction unchanged.
+
+### Observation
+
+The pulse effect on the button surface itself is subtle and not clearly perceptible.
+
+### Decision
+
+**Accepted.** No further adjustment in Wave 1 Sprint 1.
+
+### Reason
+
+The surrounding pulse and sonar waves provide sufficient feedback. Further tuning would produce limited user value compared to continuing the roadmap.
+
+---
+
 ## Related Documents
 
 | Document | Relationship |

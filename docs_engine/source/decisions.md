@@ -158,3 +158,13 @@
 **Context:** Capture should feel confident and polished without delaying persistence.  
 **Decision:** Wave 1 feedback sequence ~500–700ms: press state, haptic, discreet sound, glow, pulse, radial waves at button boundary (sonar-like, quick fade), "Snap sparad" confirmation. Respect `prefers-reduced-motion`. Sound must be disableable later. Persistence must not wait on animation completion.  
 **Consequences:** UX pass scoped separately from gesture changes. Documented in `ux_doctrine.md`.
+
+---
+
+## ADR-019: Snap Model Evolution Policy
+
+**Status:** Accepted  
+**Context:** Wave 1 Sprint 2 adds title and notes UI; later waves add favorite, tags, Snaptisers, and image metadata. Existing IndexedDB records and JSON backups must keep working.  
+**Decision:** `Snap` in `types/place.ts` is the authoritative persisted record. Product "title" maps to `name`; "notes" to `note`. Legacy keys `title` / `notes` normalize on load/import. New fields are optional only. Validation and normalization live in `lib/snapModel.ts`. Backup remains a JSON array (`mapsnap-snaps-array-v1`); unknown keys round-trip. IndexedDB stays at version 1 (schemaless documents) until a structural store change is unavoidable.  
+**Consequences:** Sprint 2B edit UI writes `name` and `note`. No parallel title/notes keys in new code. Required-field or envelope changes require ADR + format version bump. Documented in `snap_model.md`.
+

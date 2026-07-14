@@ -1,4 +1,4 @@
-import type { SnapPlace } from "@/types/place";
+import type { Snap } from "@/types/place";
 
 export const DB_NAME = "mapsnap-db";
 export const DB_VERSION = 1;
@@ -61,17 +61,17 @@ function runTransaction<T>(
   );
 }
 
-export function getAllSnapsFromDb(): Promise<SnapPlace[]> {
+export function getAllSnapsFromDb(): Promise<Snap[]> {
   return runTransaction("readonly", (store) => {
     return new Promise((resolve, reject) => {
       const request = store.getAll();
       request.onerror = () => reject(request.error);
-      request.onsuccess = () => resolve(request.result as SnapPlace[]);
+      request.onsuccess = () => resolve(request.result as Snap[]);
     });
   });
 }
 
-export function putSnapInDb(snap: SnapPlace): Promise<void> {
+export function putSnapInDb(snap: Snap): Promise<void> {
   return runTransaction("readwrite", (store) => {
     return new Promise((resolve, reject) => {
       const request = store.put(snap);
@@ -81,7 +81,7 @@ export function putSnapInDb(snap: SnapPlace): Promise<void> {
   });
 }
 
-export function putSnapsInDb(snaps: SnapPlace[]): Promise<void> {
+export function putSnapsInDb(snaps: Snap[]): Promise<void> {
   if (snaps.length === 0) return Promise.resolve();
   return runTransaction("readwrite", (store) => {
     return new Promise((resolve, reject) => {

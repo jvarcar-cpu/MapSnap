@@ -6,7 +6,12 @@ import {
   putSnapInDb,
   putSnapsInDb,
 } from "@/lib/db";
-import type { SnapPlace } from "@/types/place";
+import {
+  isValidSnap,
+  normalizeSnap,
+  snapNeedsNormalization,
+} from "@/lib/snapModel";
+import type { Snap } from "@/types/place";
 
 const LEGACY_STORAGE_KEY = "mapsnap.snaps.v1";
 export const STORAGE_UNAVAILABLE_ERROR =
@@ -14,29 +19,20 @@ export const STORAGE_UNAVAILABLE_ERROR =
 
 let migrationPromise: Promise<void> | null = null;
 
-function parseSnaps(raw: string | null): SnapPlace[] {
+function parseSnaps(raw: string | null): Snap[] {
   if (!raw) return [];
   try {
     const parsed = JSON.parse(raw);
     if (!Array.isArray(parsed)) return [];
-    return parsed.filter(isValidSnap);
+    return parsed
+      .map(normalizeSnap)
+      .filter((snap): snap is Snap => snap !== null);
   } catch {
     return [];
   }
 }
 
-function isValidSnap(item: unknown): item is SnapPlace {
-  if (!item || typeof item !== "object") return false;
-  const snap = item as Record<string, unknown>;
-  return (
-    typeof snap.id === "string" &&
-    typeof snap.latitude === "number" &&
-    typeof snap.longitude === "number" &&
-    typeof snap.createdAt === "string"
-  );
-}
-
-function sortSnapsNewestFirst(snaps: SnapPlace[]): SnapPlace[] {
+function sortSnapsNewestFirst(snaps: Snap[]): Snap[] {
   return [...snaps].sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 }
 
@@ -62,35 +58,56 @@ async function migrateFromLocalStorage(): Promise<void> {
   await putSnapsInDb(toMigrate);
 }
 
+async function normalizeSnapsInDb(): Promise<void> {
+  const snaps = await getAllSnapsFromDb();
+  const toUpdate = snaps
+    .map((snap) => normalizeSnap(snap))
+    .filter((snap): snap is Snap => snap !== null)
+    .filter((normalized, index) => snapNeedsNormalization(snaps[index]));
+
+  if (toUpdate.length === 0) return;
+  await putSnapsInDb(toUpdate);
+}
+
 function ensureMigrated(): Promise<void> {
   if (!migrationPromise) {
-    migrationPromise = migrateFromLocalStorage().catch(() => {
-      migrationPromise = null;
-    });
+    migrationPromise = migrateFromLocalStorage()
+      .then(() => normalizeSnapsInDb())
+      .catch(() => {
+        migrationPromise = null;
+      });
   }
   return migrationPromise;
 }
 
-export async function loadSnaps(): Promise<SnapPlace[]> {
+export async function loadSnaps(): Promise<Snap[]> {
   if (typeof window === "undefined" || !isIndexedDbAvailable()) return [];
   try {
     await ensureMigrated();
     const snaps = await getAllSnapsFromDb();
-    return sortSnapsNewestFirst(snaps);
+    return sortSnapsNewestFirst(
+      snaps
+        .map(normalizeSnap)
+        .filter((snap): snap is Snap => snap !== null)
+    );
   } catch {
     return [];
   }
 }
 
 export async function saveSnap(
-  snap: SnapPlace
+  snap: Snap
 ): Promise<{ ok: boolean; error?: string }> {
   if (typeof window === "undefined" || !isIndexedDbAvailable()) {
     return { ok: false, error: STORAGE_UNAVAILABLE_ERROR };
   }
+  const normalized = normalizeSnap(snap);
+  if (!normalized) {
+    return { ok: false, error: STORAGE_UNAVAILABLE_ERROR };
+  }
   try {
     await ensureMigrated();
-    await putSnapInDb(snap);
+    await putSnapInDb(normalized);
     return { ok: true };
   } catch {
     return { ok: false, error: STORAGE_UNAVAILABLE_ERROR };
@@ -150,7 +167,9 @@ export async function importSnapsFromJson(
     return { ok: false, error: "Backup måste vara en JSON-array med snappar." };
   }
 
-  const incoming = parsed.filter(isValidSnap);
+  const incoming = parsed
+    .map(normalizeSnap)
+    .filter((snap): snap is Snap => snap !== null);
   if (incoming.length === 0) {
     return {
       ok: false,
@@ -175,3 +194,5 @@ export async function importSnapsFromJson(
     return { ok: false, error: STORAGE_UNAVAILABLE_ERROR };
   }
 }
+
+export { isValidSnap, normalizeSnap } from "@/lib/snapModel";

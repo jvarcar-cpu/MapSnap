@@ -16,7 +16,7 @@ docs_engine owns:
 | **Institutional memory** | `source/chronicles/`, `source/knowledge_continuity.md` — append-only narrative (Chronicles) and continuity index |
 | **Generated state** | `output/` — steering snapshots from `templates/` |
 | **Implementation context** | `templates/AGENTS.template.md` → `output/AGENTS.md` |
-| **Continuity** | `current_phase.md`, `next_task.md`, `known_issues.md`, `product_roadmap.md`, `field_validation_log.md`, changelog, Chronicles |
+| **Continuity** | `current_phase.md`, `next_task.md`, `known_issues.md`, `product_roadmap.md`, `field_validation_log.md`, `snap_model.md`, changelog, Chronicles |
 
 ## Hard Rules
 
