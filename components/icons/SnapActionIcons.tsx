@@ -4,6 +4,14 @@ type IconProps = {
 
 export const actionIconClass = "size-[18px] shrink-0";
 
+/** Subtle accent tones for card action icons — labels stay primary/secondary. */
+export const snapActionIconTone = {
+  edit: "text-[#C77B30]",
+  share: "text-[#4B7FD4]",
+  saveImage: "text-[#7C7088]",
+  delete: "text-[#C74444]",
+} as const;
+
 function mergeIconClass(className?: string) {
   return className ? `${actionIconClass} ${className}` : actionIconClass;
 }
@@ -89,7 +97,11 @@ export function ShareIcon({ className }: IconProps) {
       aria-hidden
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12M12 3v13.5" />
+      <circle cx="18" cy="5" r="3" />
+      <circle cx="6" cy="12" r="3" />
+      <circle cx="18" cy="19" r="3" />
+      <path d="m8.59 13.51 6.83 3.98" />
+      <path d="m15.42 6.51-6.83 3.98" />
     </svg>
   );
 }

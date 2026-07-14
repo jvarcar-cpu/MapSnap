@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.14] — 2026-07-14
+
+### Changed (Wave 1 — Action Icon Accent Polish)
+
+- **Share icon** — Dela uses Share2 (network share) instead of download arrow; communicates "send to someone"
+- **Save image icon** — Spara bild keeps Download icon; distinct from Dela
+- **Icon accent colors** — subtle tones on icons only: Redigera orange, Dela blue, Spara bild muted purple-gray, Ta bort red; Google Maps and Waze retain official brand colors
+- **Typography** — button labels unchanged (primary/secondary text); calm card appearance preserved
+
+### Not changed
+
+- Action layout, ordering, spacing, and touch targets unchanged
+- Share, favorite, edit, save image, maps, delete behaviour and persistence unchanged
+- SNAP short/long-press contract unchanged (ADR-012)
+- IndexedDB version remains `1`; no schema change
+- Compact Cards not started
+
+### Docs
+
+- `ux_doctrine.md` — Share vs Save Image icons; icon accent color palette
+- `current_phase.md`, `next_task.md` — accent polish pass complete
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.13] — 2026-07-14
 
 ### Changed (Wave 1 — Action Icon Polish)

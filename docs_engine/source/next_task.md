@@ -16,7 +16,7 @@
 
 
 
-Action icon polish is complete. Google Maps and Waze use brand icons; card actions use restrained SVG icons. Next Wave 1 item: compact card experiment.
+Action icon polish is complete. Google Maps and Waze use brand icons; card actions use restrained SVG icons with subtle accent colors. Dela (Share2) and Spara bild (Download) are visually distinct. Next Wave 1 item: compact card experiment.
 
 
 

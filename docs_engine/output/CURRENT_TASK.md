@@ -43,7 +43,8 @@ None active.
 
 - [x] Google Maps official brand icon visible beside label
 - [x] Waze official brand icon visible beside label
-- [x] SVG icons on Redigera, Dela, Spara bild, Ta bort (~18px)
+- [x] SVG icons on Redigera, Dela (Share2), Spara bild (Download), Ta bort (~18px)
+- [x] Subtle accent colors on action icons only; labels unchanged
 - [x] Layout, ordering, spacing, and 48px touch targets preserved
 - [x] aria-label, keyboard navigation, focus ring, minimum 44px touch target preserved
 - [x] Share, favorite, edit, save image, maps, delete unchanged

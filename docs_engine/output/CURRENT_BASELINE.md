@@ -28,7 +28,7 @@
 | SNAP button | Circular, large (~70% width, max 320px), green radial 3D gradient |
 | Hero | Title "MapSnap"; instruction *"Tryck för position · Håll inne för position + bild"* |
 | List | Header "MINA SNAPPAR", styled cards; user title left when present; **MapSnap signature** upper-right always; notes line-clamped |
-| Card actions | Favorite star (overlay) → Maps (brand icons) → two-column grid: Redigera / Dela, Spara bild / Ta bort (Spara bild if image); SVG icons ~18px |
+| Card actions | Favorite star (overlay) → Maps (brand icons) → two-column grid: Redigera / Dela, Spara bild / Ta bort (Spara bild if image); SVG icons ~18px; Dela Share2, Spara bild Download; subtle icon accent colors |
 | Card location | `📍 SnapSpot` — category not shown on card (metadata only) |
 | Backup panel | Dashed border, rounded-2xl |
 | Permission card | Rounded-3xl, elevated, retry button |
@@ -85,6 +85,8 @@
 
 - Two-column action grid with equal-width 48px buttons and recognizable SVG icons (~18px)
 - Google Maps and Waze use official brand-color icons beside labels
+- Dela uses Share2; Spara bild uses Download — distinct icons
+- Card action icons use subtle accent colors; labels remain primary/secondary text
 - Location line: `📍 SnapSpot` (canonical); category hidden on card
 - Code: `PlaceCard.tsx`, `MapOpenButtons.tsx`, `components/icons/SnapActionIcons.tsx`
 

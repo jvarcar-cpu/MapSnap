@@ -20,6 +20,7 @@ import {
   EditIcon,
   SaveImageIcon,
   ShareIcon,
+  snapActionIconTone,
 } from "./icons/SnapActionIcons";
 
 type PlaceCardProps = {
@@ -256,7 +257,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                 className={`${actionBtnClass} text-primary`}
                 aria-label={`Redigera ${snapLabel}`}
               >
-                <EditIcon className="opacity-80" />
+                <EditIcon className={snapActionIconTone.edit} />
                 Redigera
               </button>
               <button
@@ -266,7 +267,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                 className={`${actionBtnClass} text-primary`}
                 aria-label={`Dela ${snapLabel}`}
               >
-                <ShareIcon className="opacity-80" />
+                <ShareIcon className={snapActionIconTone.share} />
                 {sharing ? "Delar…" : "Dela"}
               </button>
               {place.photoDataUrl && (
@@ -277,7 +278,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                   className={`${actionBtnClass} text-primary`}
                   aria-label={`Spara bild för ${snapLabel}`}
                 >
-                  <SaveImageIcon className="opacity-80" />
+                  <SaveImageIcon className={snapActionIconTone.saveImage} />
                   {savingImage ? "Sparar bild…" : "Spara bild"}
                 </button>
               )}
@@ -287,7 +288,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                 className={`${actionBtnClass} text-secondary hover:bg-black/[0.03]`}
                 aria-label="Ta bort snap"
               >
-                <DeleteIcon className="opacity-75" />
+                <DeleteIcon className={snapActionIconTone.delete} />
                 Ta bort
               </button>
             </div>

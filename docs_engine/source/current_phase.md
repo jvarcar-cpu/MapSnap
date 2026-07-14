@@ -44,7 +44,7 @@ Introduce recognizable SVG action icons on snap cards — Google Maps and Waze b
 
 
 
-**Action Icon Polish completed.** Google Maps and Waze show official brand icons; card actions use calm SVG icons (~18px) instead of emoji. Layout, ordering, and touch targets unchanged.
+**Wave 1 Action Icon Polish completed.** Google Maps and Waze show official brand icons; card actions use calm SVG icons (~18px) with subtle accent colors. Dela uses Share2; Spara bild uses Download. Layout, ordering, and touch targets unchanged.
 
 
 
@@ -238,7 +238,7 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 - [x] Waze official brand icon beside label — link behaviour unchanged
 
-- [x] SVG icons on card actions — Redigera, Dela, Spara bild, Ta bort (~18px, restrained)
+- [x] SVG icons on card actions — Redigera, Dela (Share2), Spara bild (Download), Ta bort (~18px, subtle accent colors on icons only)
 
 - [x] Layout, ordering, spacing, and 48px touch targets preserved
 
