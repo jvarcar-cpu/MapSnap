@@ -12,7 +12,7 @@ export function trimSnapNote(value: string): string {
   return value.trim().slice(0, MAX_SNAP_NOTE_LENGTH);
 }
 
-export function snapDisplayTitle(snap: Pick<Snap, "name">): string {
+export function snapDisplayTitle(snap: { name?: string }): string {
   return snap.name?.trim() || "Sparad plats";
 }
 
