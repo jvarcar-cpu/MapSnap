@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.4] — 2026-07-14
+
+### Added (Wave 1 Sprint 3 — Save Snap Image)
+
+- **"Spara bild" action** — visible on snap cards with `photoDataUrl`; hidden for position-only snaps
+- **Save utility** — `lib/saveSnapImage.ts`: blob download (desktop/Android), Web Share with file (iOS); readable filename `MapSnap_YYYY-MM-DD_HH-mm-ss.jpg`
+- **User feedback** — "Bilden sparades" on success; "Kunde inte spara bilden" on failure
+- **Tests** — `lib/saveSnapImage.test.ts`; baseline verification extended for save-image visibility and non-mutation
+
+### Changed
+
+- `PlaceCard.tsx` — save-image button after maps links, before edit/delete
+- `current_phase.md`, `next_task.md`, `implementation_readiness.md` — Sprint 3 complete
+- `image_doctrine.md`, `known_issues.md` — platform save behavior documented
+- Regenerated steering outputs in `docs_engine/output/`
+
+### Not changed
+
+- SNAP short/long-press contract unchanged (ADR-012)
+- No share, favorite, tags, compact cards, or backend work
+- IndexedDB version remains `1`
+- No new Field Validation entries (pending real-device test)
+
 ## [0.2.3] — 2026-07-14
 
 ### Added (Wave 1 Sprint 2B — Title + Notes UI)

@@ -30,6 +30,16 @@
 - Long press is the only capture entry point (ADR-008, ADR-012)
 - Save/download creates a **copy** — never removes or alters the Snap-attached image
 
+### Save implementation (Sprint 3)
+
+| Platform | Mechanism |
+|----------|-----------|
+| Desktop browsers | `<a download>` via blob URL |
+| Android Chrome / PWA | `<a download>` via blob URL; share fallback if blocked |
+| iOS Safari / PWA | Web Share API with `File` when supported; no fake download success |
+
+Filename: `MapSnap_YYYY-MM-DD_HH-mm-ss.jpg` from snap `createdAt` (local time); fallback `MapSnap.jpg`. Code: `lib/saveSnapImage.ts`.
+
 ---
 
 ## Platform Honesty

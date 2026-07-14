@@ -11,6 +11,7 @@ import {
   snapEditDraftFromSnap,
 } from "@/lib/snapEdit";
 import { normalizeSnap } from "@/lib/snapModel";
+import { saveSnapImage } from "@/lib/saveSnapImage";
 
 type PlaceCardProps = {
   place: SnapPlace;
@@ -40,6 +41,11 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
   const [draftNote, setDraftNote] = useState("");
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
+  const [savingImage, setSavingImage] = useState(false);
+  const [saveImageMessage, setSaveImageMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
 
   const handleDelete = () => {
     void deleteSnap(place.id).then((result) => {
@@ -63,6 +69,25 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
     setDraftTitle("");
     setDraftNote("");
   }, []);
+
+  const handleSaveImage = useCallback(() => {
+    if (!place.photoDataUrl) return;
+
+    setSavingImage(true);
+    setSaveImageMessage(null);
+
+    void saveSnapImage({
+      photoDataUrl: place.photoDataUrl,
+      createdAt: place.createdAt,
+    }).then((result) => {
+      setSavingImage(false);
+      setSaveImageMessage(
+        result.ok
+          ? { type: "success", text: "Bilden sparades" }
+          : { type: "error", text: "Kunde inte spara bilden" }
+      );
+    });
+  }, [place.photoDataUrl, place.createdAt]);
 
   const handleSave = useCallback(() => {
     setSaving(true);
@@ -149,6 +174,32 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
         ) : (
           <div className="mt-5 flex flex-col gap-3">
             <MapOpenButtons latitude={place.latitude} longitude={place.longitude} />
+            {place.photoDataUrl && (
+              <div className="flex flex-col gap-2">
+                <button
+                  type="button"
+                  onClick={handleSaveImage}
+                  disabled={savingImage}
+                  className="min-h-[48px] shrink-0 rounded-full border border-black/[0.07] bg-surface px-6 py-3 text-sm font-medium text-primary transition-all duration-200 ease-out hover:border-snap/20 hover:bg-snap-muted/30 active:scale-[0.97] disabled:opacity-60"
+                  aria-label={`Spara bild för ${displayName}`}
+                >
+                  {savingImage ? "Sparar bild…" : "Spara bild"}
+                </button>
+                {saveImageMessage && (
+                  <p
+                    className={[
+                      "text-sm",
+                      saveImageMessage.type === "success"
+                        ? "text-primary"
+                        : "text-secondary",
+                    ].join(" ")}
+                    role={saveImageMessage.type === "error" ? "alert" : "status"}
+                  >
+                    {saveImageMessage.text}
+                  </p>
+                )}
+              </div>
+            )}
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <button
                 type="button"

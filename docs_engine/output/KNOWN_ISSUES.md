@@ -58,9 +58,9 @@ Name, note, and title cannot be edited after capture. List shows fallback title 
 ## FEAS-001: Image Save/Download Platform Variance
 
 **Severity:** Technical feasibility — document before Wave 1  
-**Status:** Active (investigation required)
+**Status:** Implemented (Sprint 3) — field verification pending
 
-Saving a Snap image varies by platform (desktop download, Android, iOS Safari/PWA). Do not claim parity without verification. Wave 1 must ship best practical behavior with honest failure messaging.
+Saving a Snap image varies by platform: blob download on desktop/Android (`lib/saveSnapImage.ts`); Web Share with file on iOS. Do not claim parity without field verification. Success messaging is honest on failure.
 
 ---
 

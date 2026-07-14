@@ -4,7 +4,7 @@
 
 **Phase:** Wave 1 — Core Value & UX Polish  
 
-**Status:** Sprint 2B (Title + Notes UI) **Completed**  
+**Status:** Sprint 3 (Save Snap Image) **Completed**  
 
 **MVP 0.1 stabilized:** 2026-07-07  
 
@@ -20,17 +20,19 @@
 
 **Wave 1 Sprint 2B completed:** 2026-07-14
 
+**Wave 1 Sprint 3 completed:** 2026-07-14
+
 
 
 ## Goal
 
 
 
-Ship post-capture title and notes edit UI without changing the protected SNAP interaction or requiring metadata before capture.
+Ship post-capture save-image action so users can keep the Snap photo on their device without re-opening the camera.
 
 
 
-**Sprint 2B completed.** Users can add, edit, and remove optional title and notes after capture via card-level "Redigera" action.
+**Sprint 3 completed.** Snaps with `photoDataUrl` show "Spara bild" after maps actions. Save creates a device copy only — Snap data unchanged.
 
 
 
@@ -120,6 +122,26 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 
 
+## Wave 1 Sprint 3 — Completed
+
+
+
+- [x] "Spara bild" action on snap cards with `photoDataUrl`
+
+- [x] Hidden for position-only snaps
+
+- [x] Placement: after Google Maps / Waze, before Redigera / Ta bort
+
+- [x] Download via blob URL on desktop and Android; Web Share with file on iOS
+
+- [x] Filename: `MapSnap_YYYY-MM-DD_HH-mm-ss.jpg` (fallback `MapSnap.jpg`)
+
+- [x] Success: "Bilden sparades"; failure: "Kunde inte spara bilden"
+
+- [x] Save is copy-only — never mutates or deletes the Snap
+
+
+
 ## Official Roadmap Summary
 
 
@@ -150,7 +172,7 @@ Full detail: `product_roadmap.md`.
 
 
 
-**Wave 1** — Save image ("Spara bild") per `implementation_readiness.md` order 5, or share/favorite as separately scoped passes.
+**Wave 1** — Share Snap, Favorite, or Compact Cards as separately scoped passes per `implementation_readiness.md`.
 
 
 

@@ -16,7 +16,7 @@
 | 3 | SNAP feedback polish | Haptic, sound, glow, pulse, radial waves, toast text | None | Low | Reduced-motion; persistence not blocked; ~500–700ms | Revert CSS/JS feedback | `ux_doctrine.md`, ADR-018 |
 | 4a | Snap model preparation (Sprint 2A) | Schema normalization, backup compat, migration | None | Low | Backup round-trip; existing snaps preserved | Revert `snapModel.ts` | `snap_model.md`, `data_doctrine.md`, ADR-019 |
 | 4b | Title + notes UI (Sprint 2B) | Post-capture edit UI for `name` / `note` | Sprint 2A | Low — optional fields | Regression checklist; backup import | Revert UI only | `data_doctrine.md`, `known_issues.md` | **Completed** |
-| 5 | Save image | "Spara bild" on snaps with photo | `photoDataUrl` | None — copy only | Per-platform manual test FEAS-001 | Remove action | `image_doctrine.md`, ADR-014 |
+| 5 | Save image | "Spara bild" on snaps with photo | `photoDataUrl` | None — copy only | Per-platform manual test FEAS-001 | Remove action | `image_doctrine.md`, ADR-014 | **Completed** |
 | 6 | Share Snap | Native share + fallback | Title optional | None | Share sheet + desktop fallback | Remove action | `ux_doctrine.md` |
 | 7 | Favorite | `favorite` field + toggle | Schema bump if needed | Low | Filter prep; backup round-trip | Remove field from UI | `data_doctrine.md` |
 | 8 | Compact card experiment | List layout only; detail view for full image | Title, favorite | Medium — UX | Measurable recognition test | Revert to banner layout | ADR-017, `ux_doctrine.md` |

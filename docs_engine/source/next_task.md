@@ -4,7 +4,7 @@
 
 **Updated:** 2026-07-14  
 
-**Pass type:** None active — Wave 1 Sprint 2B closed
+**Pass type:** None active — Wave 1 Sprint 3 closed
 
 
 
@@ -12,11 +12,11 @@
 
 
 
-**Wave 1 — Save image ("Spara bild")** — when explicitly scoped per `implementation_readiness.md` order 5.
+**Wave 1 — Share Snap** — when explicitly scoped per `implementation_readiness.md` order 6.
 
 
 
-Sprint 2B (title + notes edit UI) is complete. Post-capture enrichment for `name` and `note` ships on snap cards. Next Wave 1 item: save/download snap image for snaps with `photoDataUrl`.
+Sprint 3 (save image) is complete. Snaps with photos offer "Spara bild" for device copy. Next Wave 1 item: native share with fallback.
 
 
 
@@ -28,9 +28,9 @@ Sprint 2B (title + notes edit UI) is complete. Post-capture enrichment for `name
 
 2. Generated steering docs current (`docs_engine/output/`)
 
-3. Feature Gate answers documented for save-image unit
+3. Feature Gate answers documented for share unit
 
-4. Sprint 2B complete (title/notes UI)
+4. Sprint 3 complete (save image)
 
 
 
@@ -46,7 +46,7 @@ Sprint 2B (title + notes edit UI) is complete. Post-capture enrichment for `name
 
 - Mixed pass types in one change set
 
-- Favorite, tags, share, compact cards (later Wave 1 sprints unless explicitly scoped)
+- Favorite, tags, compact cards (later Wave 1 sprints unless explicitly scoped)
 
 - Search, sort, filter (Wave 2)
 
@@ -68,6 +68,6 @@ Sprint 2B (title + notes edit UI) is complete. Post-capture enrichment for `name
 
 | `feature_gate.md` | Gate before any feature |
 
-| `image_doctrine.md` | Save image requirements |
+| `ux_doctrine.md` | Share Snap requirements |
 
 | `field_validation_log.md` | Verified field observations |

@@ -56,15 +56,15 @@ Name, note, and title cannot be edited after capture. List shows fallback title 
 ## FEAS-001: Image Save/Download Platform Variance
 
 **Severity:** Technical feasibility — document before Wave 1  
-**Status:** Active (investigation required)
+**Status:** Implemented (Sprint 3) — field verification pending
 
 Saving a Snap image to the device photo roll or downloads folder varies by platform:
 
-- **Desktop:** `<a download>` with data URL or blob URL often works
-- **Android Chrome / PWA:** May support download or share-to-files; verify installed vs tab
-- **iOS Safari / PWA:** Often restricts direct save; may require Web Share API with file or long-press on image — full Photos integration may be limited
+- **Desktop:** `<a download>` with blob URL — implemented in `lib/saveSnapImage.ts`
+- **Android Chrome / PWA:** Blob download primary; Web Share with file as fallback if download blocked
+- **iOS Safari / PWA:** Web Share API with `File` when `navigator.canShare` supports files; direct download not claimed as success — user saves via share sheet (e.g. "Save Image")
 
-Do not claim parity without per-platform verification. Wave 1 must ship best practical behavior with honest failure messaging.
+Do not claim parity without per-platform field verification. Success messaging is honest: failure when share cancelled or all mechanisms fail.
 
 ---
 

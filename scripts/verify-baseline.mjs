@@ -148,6 +148,66 @@ try {
     fail("Waze link", wazeHref ?? "missing");
   }
 
+  if ((await page.getByRole("button", { name: "Spara bild" }).count()) === 0) {
+    pass("Spara bild hidden without image");
+  } else {
+    fail("Spara bild hidden without image", "button visible on position-only snap");
+  }
+
+  const tinyJpeg =
+    "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////2wBDAf//////////////////////////////////////////////////////////////////////////////////////wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAGfAP/EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAQUCf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQMBAT8Bf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQIBAT8Bf//Z";
+  await page.evaluate(
+    async ({ photoDataUrl }) => {
+      const db = await new Promise((resolve, reject) => {
+        const req = indexedDB.open("mapsnap-db", 1);
+        req.onerror = () => reject(req.error);
+        req.onsuccess = () => resolve(req.result);
+      });
+      const snaps = await new Promise((resolve, reject) => {
+        const tx = db.transaction("snaps", "readonly");
+        const req = tx.objectStore("snaps").getAll();
+        req.onerror = () => reject(req.error);
+        req.onsuccess = () => resolve(req.result);
+      });
+      const snap = snaps[0];
+      if (!snap) throw new Error("no snap to attach photo");
+      snap.photoDataUrl = photoDataUrl;
+      await new Promise((resolve, reject) => {
+        const tx = db.transaction("snaps", "readwrite");
+        tx.objectStore("snaps").put(snap);
+        tx.oncomplete = () => resolve(undefined);
+        tx.onerror = () => reject(tx.error);
+      });
+    },
+    { photoDataUrl: tinyJpeg }
+  );
+  await page.reload({ waitUntil: "networkidle" });
+  await page.waitForSelector("article", { timeout: 10000 });
+
+  const saveImageBtn = page.getByRole("button", { name: "Spara bild" });
+  if (await saveImageBtn.isVisible()) {
+    pass("Spara bild visible with image");
+    const snapsBeforeSave = await readSnapsFromIndexedDb(page);
+    const before = snapsBeforeSave[0];
+    await saveImageBtn.click();
+    const snapsAfterSave = await readSnapsFromIndexedDb(page);
+    const after = snapsAfterSave[0];
+    if (
+      after?.photoDataUrl === before?.photoDataUrl &&
+      after?.latitude === before?.latitude &&
+      after?.longitude === before?.longitude &&
+      after?.createdAt === before?.createdAt &&
+      after?.name === before?.name &&
+      after?.note === before?.note
+    ) {
+      pass("Save image does not mutate snap");
+    } else {
+      fail("Save image does not mutate snap", JSON.stringify({ before, after }));
+    }
+  } else {
+    fail("Spara bild visible with image", "button not found");
+  }
+
   const editBtn = page.getByRole("button", { name: /Redigera/i });
   if (await editBtn.isVisible()) {
     pass("Redigera action visible");
