@@ -12,8 +12,14 @@ export function trimSnapNote(value: string): string {
   return value.trim().slice(0, MAX_SNAP_NOTE_LENGTH);
 }
 
-export function snapDisplayTitle(snap: { name?: string }): string {
-  return snap.name?.trim() || "Sparad plats";
+/** User title for Snap card UI — empty when absent; no generic fallback. */
+export function snapCardTitle(snap: { name?: string }): string {
+  return snap.name?.trim() || "";
+}
+
+/** Title for Quick Share payloads — user title or product signature. */
+export function snapShareTitle(snap: { name?: string }): string {
+  return snap.name?.trim() || "MapSnap";
 }
 
 /**

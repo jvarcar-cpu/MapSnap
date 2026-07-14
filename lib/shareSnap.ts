@@ -4,7 +4,7 @@
  */
 
 import { googleMapsUrl } from "@/lib/maps";
-import { snapDisplayTitle } from "@/lib/snapEdit";
+import { snapShareTitle } from "@/lib/snapEdit";
 import type { Snap } from "@/types/place";
 import { dataUrlToBlob, snapImageFilename } from "@/lib/saveSnapImage";
 
@@ -14,7 +14,7 @@ export function formatShareCoordinates(latitude: number, longitude: number): str
 
 /** Plain-text body for native share (title line included per product format). */
 export function buildShareSnapText(snap: Pick<Snap, "name" | "note" | "latitude" | "longitude" | "photoDataUrl">): string {
-  const lines: string[] = [snapDisplayTitle(snap)];
+  const lines: string[] = [snapShareTitle(snap)];
 
   const note = snap.note?.trim();
   if (note) {
@@ -46,7 +46,7 @@ export async function shareSnap(snap: Snap): Promise<ShareSnapResult> {
     return { ok: false, reason: "unavailable" };
   }
 
-  const title = snapDisplayTitle(snap);
+  const title = snapShareTitle(snap);
   const text = buildShareSnapText(snap);
   const shareData: ShareData = { title, text };
 

@@ -3,7 +3,8 @@ import assert from "node:assert/strict";
 import { normalizeSnap } from "./snapModel.ts";
 import {
   applySnapEdit,
-  snapDisplayTitle,
+  snapCardTitle,
+  snapShareTitle,
   trimSnapNote,
   trimSnapTitle,
 } from "./snapEdit.ts";
@@ -19,17 +20,31 @@ const baseSnap = {
   customFutureField: "preserve-me",
 };
 
-describe("snapDisplayTitle", () => {
-  it("shows Sparad plats when name is absent", () => {
-    assert.equal(snapDisplayTitle({}), "Sparad plats");
+describe("snapCardTitle", () => {
+  it("shows nothing when name is absent", () => {
+    assert.equal(snapCardTitle({}), "");
   });
 
-  it("shows Sparad plats when name is blank", () => {
-    assert.equal(snapDisplayTitle({ name: "   " }), "Sparad plats");
+  it("shows nothing when name is blank", () => {
+    assert.equal(snapCardTitle({ name: "   " }), "");
   });
 
   it("shows trimmed title when present", () => {
-    assert.equal(snapDisplayTitle({ name: "  Favoritcafé  " }), "Favoritcafé");
+    assert.equal(snapCardTitle({ name: "  Favoritcafé  " }), "Favoritcafé");
+  });
+});
+
+describe("snapShareTitle", () => {
+  it("uses MapSnap when name is absent", () => {
+    assert.equal(snapShareTitle({}), "MapSnap");
+  });
+
+  it("uses MapSnap when name is blank", () => {
+    assert.equal(snapShareTitle({ name: "   " }), "MapSnap");
+  });
+
+  it("shows trimmed title when present", () => {
+    assert.equal(snapShareTitle({ name: "  Favoritcafé  " }), "Favoritcafé");
   });
 });
 
@@ -51,6 +66,8 @@ describe("applySnapEdit", () => {
     const cleared = applySnapEdit(withMeta, { name: "  ", note: "\n" });
     assert.equal(cleared.name, undefined);
     assert.equal(cleared.note, undefined);
+    assert.equal(snapCardTitle(cleared), "");
+    assert.equal(snapShareTitle(cleared), "MapSnap");
   });
 
   it("preserves coordinates, timestamp, image, accuracy, and unknown keys", () => {

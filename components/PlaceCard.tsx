@@ -7,7 +7,7 @@ import { SnapEditForm } from "./SnapEditForm";
 import { deleteSnap, saveSnap } from "@/lib/storage";
 import {
   applySnapEdit,
-  snapDisplayTitle,
+  snapCardTitle,
   snapEditDraftFromSnap,
 } from "@/lib/snapEdit";
 import { normalizeSnap } from "@/lib/snapModel";
@@ -160,7 +160,8 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
     });
   }, [place, draftTitle, draftNote, onUpdate, closeEdit]);
 
-  const displayName = snapDisplayTitle(place);
+  const userTitle = snapCardTitle(place);
+  const snapLabel = userTitle || "snap";
   const category = place.category ?? "Annat";
   const noteText = place.note?.trim();
 
@@ -193,10 +194,19 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
             {favoriteError}
           </p>
         )}
-        <div className="min-w-0 pr-10">
-          <h3 className="truncate text-lg font-semibold leading-snug text-primary">
-            {displayName}
-          </h3>
+        <header className="flex items-start gap-2 pr-12">
+          {userTitle ? (
+            <h3 className="min-w-0 flex-1 truncate text-lg font-semibold leading-snug text-primary">
+              {userTitle}
+            </h3>
+          ) : (
+            <div className="min-w-0 flex-1" aria-hidden="true" />
+          )}
+          <span className="shrink-0 pt-0.5 text-xs font-medium tracking-wide text-secondary/55">
+            MapSnap
+          </span>
+        </header>
+        <div className="min-w-0">
           {noteText && !editing && (
             <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-secondary line-clamp-3">
               {noteText}
@@ -238,7 +248,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                   onClick={handleSaveImage}
                   disabled={savingImage}
                   className="min-h-[48px] shrink-0 rounded-full border border-black/[0.07] bg-surface px-6 py-3 text-sm font-medium text-primary transition-all duration-200 ease-out hover:border-snap/20 hover:bg-snap-muted/30 active:scale-[0.97] disabled:opacity-60"
-                  aria-label={`Spara bild för ${displayName}`}
+                  aria-label={`Spara bild för ${snapLabel}`}
                 >
                   {savingImage ? "Sparar bild…" : "Spara bild"}
                 </button>
@@ -263,7 +273,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                 onClick={handleShare}
                 disabled={sharing}
                 className="min-h-[48px] shrink-0 rounded-full border border-black/[0.07] bg-surface px-6 py-3 text-sm font-medium text-primary transition-all duration-200 ease-out hover:border-snap/20 hover:bg-snap-muted/30 active:scale-[0.97] disabled:opacity-60"
-                aria-label={`Dela ${displayName}`}
+                aria-label={`Dela ${snapLabel}`}
               >
                 {sharing ? "Delar…" : "Dela"}
               </button>
@@ -278,7 +288,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                 type="button"
                 onClick={openEdit}
                 className="min-h-[48px] shrink-0 rounded-full border border-black/[0.07] bg-surface px-6 py-3 text-sm font-medium text-primary transition-all duration-200 ease-out hover:border-snap/20 hover:bg-snap-muted/30 active:scale-[0.97]"
-                aria-label={`Redigera ${displayName}`}
+                aria-label={`Redigera ${snapLabel}`}
               >
                 Redigera
               </button>

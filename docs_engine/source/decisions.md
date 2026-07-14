@@ -23,7 +23,7 @@
 **Status:** Accepted  
 **Context:** Users forget places when forced through forms.  
 **Decision:** Save immediately on tap with defaults; optional fields stay empty.  
-**Consequences:** List may show many "Sparad plats" entries until edit flow exists.
+**Consequences:** List shows untitled Snaps with an intentionally empty title area and permanent MapSnap signature (ADR-021); Quick Share uses "MapSnap" when no user title.
 
 ---
 
@@ -185,4 +185,21 @@
 7. **Positioning preserved:** MapSnap is not a map app; fastest way to save and return; captures the place before it is forgotten. Evolved vision complements positioning.
 
 **Consequences:** `product_vision.md`, `product_roadmap.md`, `Identity/product_doctrine.md`, `feature_gate.md`, and `Identity/vocabulary.md` updated. Roadmap renumbered: Wave 5 = Protect, Wave 6 = MapSnap-to-MapSnap Share / Cloud (formerly Wave 5). Feature Gate requires Core Pillar alignment and Discover guardrails. Protected SNAP interaction unchanged (ADR-012).
+
+---
+
+## ADR-021: MapSnap Signature on Snap Cards
+
+**Status:** Accepted  
+**Context:** Untitled Snaps showed generic fallback "Sparad plats" in the card header, competing with user content and diluting product identity. Share payloads needed a meaningful fallback for recipients without reusing generic place labels.  
+**Decision:**
+
+1. **Every Snap carries the MapSnap signature** — permanent text "MapSnap" in the card header upper-right; subtle, secondary visual weight.
+2. **User first. Product second.** — User-defined title occupies the primary left position when present; signature does not replace title.
+3. **No card fallback title** — When `name` is absent or blank, the left title area remains intentionally empty. Do not show "Sparad plats", "Namnlös Snap", "Min Snap", or similar.
+4. **Quick Share fallback** — When no user title, share title and first text line use "MapSnap" (not "Sparad plats").
+5. **Future extensions** — Signature may extend to Professional Share, PDF/export, MapSnap-to-MapSnap transfer, and Discover views; not implemented in this ADR.
+6. **Optional `name` field unchanged** — Title remains optional; edit flow unchanged.
+
+**Consequences:** `PlaceCard.tsx` header layout updated; `snapCardTitle()` and `snapShareTitle()` in `lib/snapEdit.ts`; `snapDisplayTitle()` removed; Identity and UX doctrine updated; favorite toggle placement preserved with header spacing.
 

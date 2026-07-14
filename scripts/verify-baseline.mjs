@@ -119,6 +119,17 @@ try {
   const snapBtnAfterReload = page.getByRole("button", { name: /SNAP/i });
   await snapBtnAfterReload.click({ force: true });
   await page.waitForSelector("article", { timeout: 20000 });
+  const card = page.locator("article").first();
+  if (await page.getByText("Sparad plats").count() === 0) {
+    pass("Untitled snap shows no fallback title");
+  } else {
+    fail("Untitled snap shows no fallback title", "Sparad plats still visible");
+  }
+  if ((await card.getByText("MapSnap", { exact: true }).count()) >= 1) {
+    pass("MapSnap signature visible on untitled card");
+  } else {
+    fail("MapSnap signature visible on untitled card", "signature not found in card");
+  }
   const snaps = await readSnapsFromIndexedDb(page);
   if (Array.isArray(snaps) && snaps.length === 1 && snaps[0].latitude) {
     pass("Short tap saves GPS snap");
@@ -319,9 +330,28 @@ try {
       fail("Title and notes edit persists", JSON.stringify(edited));
     }
     if (await page.getByText("Sparad plats").count() === 0) {
-      pass("Titled snap replaces fallback title");
+      pass("Titled snap shows user title without fallback");
     } else {
-      fail("Titled snap replaces fallback title", "fallback still visible");
+      fail("Titled snap shows user title without fallback", "fallback still visible");
+    }
+    if ((await card.getByText("MapSnap", { exact: true }).count()) >= 1) {
+      pass("MapSnap signature visible on titled card");
+    } else {
+      fail("MapSnap signature visible on titled card", "signature not found");
+    }
+    await editBtn.click();
+    await page.getByLabel("Titel").fill("");
+    await page.getByRole("button", { name: "Spara" }).click();
+    await page.waitForTimeout(300);
+    if (await page.getByText("Testplats Sprint 2B").count() === 0) {
+      pass("Clearing title removes user title from card");
+    } else {
+      fail("Clearing title removes user title from card", "title still visible");
+    }
+    if ((await card.getByText("MapSnap", { exact: true }).count()) >= 1) {
+      pass("MapSnap signature remains after clearing title");
+    } else {
+      fail("MapSnap signature remains after clearing title", "signature missing");
     }
   } else {
     fail("Redigera action visible", "button not found");

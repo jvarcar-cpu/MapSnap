@@ -135,7 +135,7 @@ Each item below includes: **user value**, **pillar**, **backend**, **complexity*
 | Local / offline storage | **Existing** | IndexedDB `mapsnap-db` / `snaps`; legacy localStorage migration |
 | Backup / export / import | **Existing** | `SnapBackupPanel` — JSON export, copy, file download, merge import |
 | Image handling | **Existing** | Long press → file input → `photoDataUrl` base64 inline |
-| Snap card layout | **Existing** | `rounded-3xl`, optional 2.4:1 photo banner, fallback "Sparad plats" |
+| Snap card layout | **Existing** | `rounded-3xl`, optional 2.4:1 photo banner; user title left when present; MapSnap signature upper-right (ADR-021) |
 | SNAP button interaction | **Existing** | Short tap = position; long press (~600ms) = position + image |
 
 ### Verified discrepancies (docs vs code)

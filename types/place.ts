@@ -20,7 +20,7 @@ export type Snap = {
   accuracy?: number;
   createdAt: string;
 
-  /** User-defined title (Swedish UI: titel). Empty → fallback "Sparad plats". */
+  /** User-defined title (Swedish UI: titel). Optional; card UI shows nothing when absent. */
   name?: string;
   /** User-defined notes (Swedish UI: anteckningar). */
   note?: string;

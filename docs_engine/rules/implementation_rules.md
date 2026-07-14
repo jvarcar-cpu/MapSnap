@@ -88,5 +88,5 @@ Reference: changelog v0.1.2 + Product Feel Pass styling.
 - SNAP button: 70% width (max 320px), radial green gradient, ring, glow, breathe animation
 - Success: "✓ Sparad" toast above button (~1s)
 - List section: "MINA SNAPPAR" uppercase header
-- Cards: photo banner when present, fallback title "Sparad plats"
+- Cards: photo banner when present; user title left when present; MapSnap signature upper-right (ADR-021)
 - No new features or layout redesign without explicit approval

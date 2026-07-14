@@ -95,6 +95,7 @@ mustContain(decisions, "ADR-015", "ADR-015 Snaptisers");
 mustContain(decisions, "ADR-018", "ADR-018 feedback model");
 mustContain(decisions, "ADR-019", "ADR-019 snap model evolution");
 mustContain(decisions, "ADR-020", "ADR-020 core lifecycle pillars");
+mustContain(decisions, "ADR-021", "ADR-021 MapSnap signature");
 
 // Identity preserved + extended
 mustContain(identity, "Coordinates are Truth", "Identity: coordinates principle preserved");

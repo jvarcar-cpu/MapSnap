@@ -4,7 +4,7 @@
 
 **Phase:** Wave 1 — Core Value & UX Polish  
 
-**Status:** Sprint 5 (Favorite) **Completed**  
+**Status:** MapSnap Signature **Completed** — no active implementation pass  
 
 **MVP 0.1 stabilized:** 2026-07-07  
 
@@ -28,17 +28,19 @@
 
 **Wave 1 Sprint 5 completed:** 2026-07-14
 
+**Wave 1 MapSnap Signature completed:** 2026-07-14
+
 
 
 ## Goal
 
 
 
-Mark important Snaps with a post-capture favorite toggle — metadata only, no filter or reorder yet.
+Introduce the permanent MapSnap signature on every Snap card — user title primary left, product signature subtle upper-right, no generic card fallback titles (ADR-021).
 
 
 
-**Sprint 5 completed.** Each snap card shows a star toggle in the upper-right corner. Favorite persists via `saveSnap()`; optimistic UI with honest error on failure.
+**MapSnap Signature completed.** Every card shows "MapSnap" in the header upper-right. User title appears left only when explicitly set. Quick Share uses "MapSnap" when untitled.
 
 
 
@@ -118,7 +120,7 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 - [x] Optional title (`name`) and notes (`note`) edit form — Swedish copy
 
-- [x] Display: title fallback "Sparad plats"; notes with line clamp in list
+- [x] Display: user title when present; MapSnap signature always; notes with line clamp in list
 
 - [x] Save via `saveSnap()` — preserves id, coordinates, timestamp, image, accuracy, unknown keys
 
@@ -156,7 +158,7 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 - [x] Placement: after Google Maps / Waze and Spara bild (when image), before Redigera / Ta bort
 
-- [x] Native share: title (fallback "Sparad plats"), notes when present, coordinates, Google Maps URL, image file when supported
+- [x] Native share: title (user title or "MapSnap" fallback), notes when present, coordinates, Google Maps URL, image file when supported
 
 - [x] Share text polish: `📍 Position`, `🌍 Öppna plats`; no "Image attached." or duplicate map labels (field-validated SMS)
 
@@ -184,12 +186,32 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 
 
+## Wave 1 — MapSnap Signature — Completed
+
+
+
+- [x] Permanent "MapSnap" text signature upper-right on every snap card
+
+- [x] User title left only when explicitly set; empty title area when absent
+
+- [x] No card fallback "Sparad plats" or similar generic titles
+
+- [x] Quick Share fallback "MapSnap" when no user title
+
+- [x] Favorite toggle unchanged; header spacing avoids collision with signature
+
+- [x] Title/notes edit flow unchanged; ADR-021 recorded
+
+- [x] Tests and baseline verification updated
+
+
+
 ## Official Roadmap Summary
 
 | Wave | Focus | Backend |
 |------|-------|---------|
 | 0 | Baseline reconciliation | No |
-| 1 | Core value (UX polish, title, notes, save image, Quick Share, favorite, compact cards) | No |
+| 1 | Core value (UX polish, title, notes, save image, Quick Share, favorite, signature, compact cards) | No |
 | 2 | Organization / early Discover (search, sort, filter, tags) | No |
 | 3 | Snaptisers / contextual Discover | No for MVP |
 | 4 | Image + Professional Share | No |

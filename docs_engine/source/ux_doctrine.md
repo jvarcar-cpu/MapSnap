@@ -100,8 +100,8 @@ Do not redesign. Restore and preserve this baseline unless explicitly instructed
 
 - Section header: "MINA SNAPPAR" (uppercase, tracked)
 - Empty state: pin illustration + "Inga snappar ännu."
-- Cards: rounded-3xl, soft shadow, optional photo banner (2.4:1), fallback title "Sparad plats"
-- Favorite toggle: small star upper-right on each card; ☆ inactive, ★ active with subtle gold
+- Cards: rounded-3xl, soft shadow, optional photo banner (2.4:1); user title left when present; **MapSnap signature** upper-right always (ADR-021)
+- Favorite toggle: small star upper-right overlay on card; ☆ inactive, ★ active with subtle gold — must not collide with signature
 
 **Design tokens**
 
@@ -154,7 +154,22 @@ Do not attempt to auto-take a picture.
 
 Show what matters for revisiting:
 
-- Name or fallback "Sparad plats"
+### MapSnap Signature (ADR-021)
+
+**User first. Product second.**
+
+Card header layout:
+
+```
+[USER TITLE]                              MapSnap
+```
+
+- **Left:** user-defined title only — show nothing when absent or blank
+- **Right:** permanent text signature "MapSnap" — subtle, secondary visual weight, always visible
+- **No card fallback title** — do not show "Sparad plats", "Namnlös Snap", "Min Snap", or similar
+- **Favorite:** separate overlay control; header reserves spacing so signature and star do not overlap
+- Long user titles truncate; signature and favorite remain accessible on mobile
+
 - Category
 - Date/time
 - Coordinates + accuracy if available

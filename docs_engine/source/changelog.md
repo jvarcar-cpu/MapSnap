@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.11] — 2026-07-14
+
+### Added (Wave 1 — MapSnap Signature)
+
+- **MapSnap signature** — permanent subtle "MapSnap" text in every Snap card header upper-right (ADR-021)
+- **Title helpers** — `snapCardTitle()` for card UI (no fallback); `snapShareTitle()` for Quick Share ("MapSnap" when untitled)
+- **Tests** — updated `snapEdit.test.ts`, `shareSnap.test.ts`; baseline verification extended for signature, no fallback title, title clear
+
+### Changed
+
+- `PlaceCard.tsx` — header row: user title left (when present), MapSnap signature right; favorite overlay unchanged with `pr-12` spacing
+- Quick Share — untitled snap fallback "MapSnap" instead of "Sparad plats"
+- Identity (`product_doctrine.md`, `identity_overview.md`, `vocabulary.md`), `ux_doctrine.md`, `snap_model.md` — MapSnap Signature formalized
+- `current_phase.md`, `next_task.md`, `implementation_readiness.md` — signature sprint complete
+- Regenerated steering outputs in `docs_engine/output/`
+
+### Not changed
+
+- SNAP short/long-press contract unchanged (ADR-012)
+- Title/notes edit flow, favorite persistence, capture, save image, maps, delete unchanged
+- IndexedDB version remains `1`; no schema change
+- Compact Cards, search, filter, tags not started
+
 ## [0.2.10] — 2026-07-14
 
 ### Changed (Quick Share polish)

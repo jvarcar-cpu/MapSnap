@@ -34,7 +34,7 @@ MVP 0.1 baseline matches documented core capabilities. No critical product-doc f
 | Empty state | ✅ Pass | `PlaceList` — pin + "Inga snappar ännu." + encouragement |
 | Google Maps | ✅ Pass | `MapOpenButtons` → `googleMapsUrl` |
 | Waze | ✅ Pass | `MapOpenButtons` → `wazeUrl` |
-| Fallback title | ✅ Pass | `place.name?.trim() \|\| "Sparad plats"` |
+| Fallback title | ✅ Pass | Card: no fallback; `snapCardTitle()` empty when absent; MapSnap signature always (ADR-021) |
 
 ---
 

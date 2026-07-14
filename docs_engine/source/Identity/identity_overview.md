@@ -116,3 +116,16 @@ A product adopting PDE Foundation inherits this pattern: Identity defines *who t
 See also: `Foundation/foundation_guardrails.md` — the mandatory baseline every PDE product inherits, including Identity guardrails and the bootstrap rule.
 
 Implementation must follow Identity. Identity must remain timeless.
+
+---
+
+## MapSnap Signature
+
+Approved product identity rule (ADR-021):
+
+- **Every Snap carries the MapSnap signature** — permanent, subtle "MapSnap" text in the card header upper-right.
+- **User first. Product second.** — User title is primary on the left; signature is secondary on the right.
+- **No generic card fallback titles** — Untitled Snaps leave the title area empty; the signature is not a replacement title.
+- **SnapSpot** remains the location/coordinate context in share text — not the Snap title.
+
+Identity governs the principle; `ux_doctrine.md` governs layout and visual hierarchy.

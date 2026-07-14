@@ -245,3 +245,19 @@ MapSnap must remain:
 
 Share is a major product capability with multiple modes — not a single button. Quick Share is implemented; Professional Share, MapSnap-to-MapSnap Share, and Smart Share are future directions. See `product_roadmap.md` Share Product Depth.
 
+---
+
+## MapSnap Signature
+
+**Every Snap carries the MapSnap signature.**
+
+Principle: **User first. Product second.**
+
+- User-created content (title) receives the primary visual position on the left when present.
+- MapSnap remains present as a subtle, permanent product signature in the card header upper-right.
+- The signature strengthens identity without competing with the user's content.
+- Generic fallback titles are not used in Snap card UI when no title exists.
+- Quick Share may use "MapSnap" as a meaningful fallback for recipients when no user title exists.
+
+The signature may later extend consistently to Professional Share, PDF/export, MapSnap-to-MapSnap transfer, and Discover views. See ADR-021.
+

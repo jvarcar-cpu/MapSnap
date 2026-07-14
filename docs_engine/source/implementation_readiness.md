@@ -19,6 +19,7 @@
 | 5 | Save image | "Spara bild" on snaps with photo | `photoDataUrl` | None — copy only | Per-platform manual test FEAS-001 | Remove action | `image_doctrine.md`, ADR-014 | **Completed** |
 | 6 | Share Snap | Native share + unavailable message | Title optional | None | Share sheet + desktop unavailable UX | Remove action | `ux_doctrine.md` | **Completed** |
 | 7 | Favorite | `favorite` field + toggle | Schema bump if needed | Low | Filter prep; backup round-trip | Remove field from UI | `data_doctrine.md` | **Completed** |
+| 7b | MapSnap signature | Card header signature + no fallback title | Favorite, title | Low | Card/share title helpers; baseline verification | Revert header layout | ADR-021, `ux_doctrine.md`, Identity | **Completed** |
 | 8 | Compact card experiment | List layout only; detail view for full image | Title, favorite | Medium — UX | Measurable recognition test | Revert to banner layout | ADR-017, `ux_doctrine.md` |
 | 9 | Search / sort / filter | List controls only | Title, notes, favorite | Low | Performance with many snaps | Hide controls | `product_roadmap.md` status |
 | 10 | Tags | Lightweight tag list on snap | Edit UI | Low | Backup import | Remove tags | `data_doctrine.md` |

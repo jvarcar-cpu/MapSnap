@@ -4,7 +4,7 @@
 
 **Updated:** 2026-07-14  
 
-**Pass type:** None active — Wave 1 Sprint 5 closed
+**Pass type:** None active — Wave 1 MapSnap Signature closed
 
 
 
@@ -16,7 +16,7 @@
 
 
 
-Sprint 5 (favorite) is complete. Each snap card has a star toggle; favorite persists via `saveSnap()`. Next Wave 1 item: compact card experiment.
+MapSnap signature is complete. Every snap card shows user title left (when present) and permanent MapSnap signature upper-right. Next Wave 1 item: compact card experiment.
 
 
 
@@ -30,7 +30,7 @@ Sprint 5 (favorite) is complete. Each snap card has a star toggle; favorite pers
 
 3. Feature Gate answers documented for compact cards unit
 
-4. Sprint 5 complete (favorite toggle)
+4. MapSnap signature complete (ADR-021)
 
 
 
@@ -70,6 +70,6 @@ Sprint 5 (favorite) is complete. Each snap card has a star toggle; favorite pers
 
 | `feature_gate.md` | Gate before any feature |
 
-| `ux_doctrine.md` | RETURN actions |
+| `ux_doctrine.md` | Card layout + RETURN actions |
 
 | `field_validation_log.md` | Verified field observations |

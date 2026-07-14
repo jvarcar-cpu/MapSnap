@@ -28,7 +28,7 @@ Single definition of what a Snap is on disk, in IndexedDB, and in JSON backup. S
 
 | Field | Product term | Type | Notes |
 |-------|--------------|------|-------|
-| `name` | **title** | string | Display fallback: "Sparad plats" when absent or blank |
+| `name` | **title** | string | Optional; card shows user title only when present — no generic fallback (ADR-021) |
 | `note` | **notes** | string | Multi-line allowed; never required |
 | `category` | kategori | enum | Default `Annat` on capture |
 | `rating` | — | number | Reserved; no UI |
@@ -126,7 +126,8 @@ Legacy `mapsnap.snaps.v1` localStorage migrates once on load (dedupe by `id`).
 
 - Edit UI should read/write `name` and `note` only — do not introduce parallel `title` / `notes` keys in new code.
 - After edit, call `saveSnap(normalizeSnap(updated))` or rely on `saveSnap` normalization.
-- Card display: `snapDisplayTitle(snap)` → `name?.trim() || "Sparad plats"` (`lib/snapEdit.ts`, `PlaceCard.tsx`).
+- Card display: `snapCardTitle(snap)` → `name?.trim() || ""` (`lib/snapEdit.ts`, `PlaceCard.tsx`); **MapSnap signature** always in header upper-right.
+- Quick Share: `snapShareTitle(snap)` → `name?.trim() || "MapSnap"` (`lib/shareSnap.ts`).
 - List notes: `line-clamp-3` with `whitespace-pre-line`; full text in edit form.
 
 ---

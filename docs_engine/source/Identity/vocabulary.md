@@ -38,6 +38,7 @@ Consistent words create a coherent product. MapSnap has its own language. Use it
 | **Received Snap** | Snap imported from another user | mottagen snap / Mottagen Snap | provisional |
 | **REMEMBER** | Experience quality — meaning over time | kom ihåg | permanent |
 | **DELIGHT** | Experience quality — restrained polish | — | permanent |
+| **MapSnap signature** | Permanent subtle product mark on every Snap card | — | approved |
 
 Use **Snap** as a verb and noun. It is the product's central word.
 
@@ -53,7 +54,9 @@ Use **Snap** as a verb and noun. It is the product's central word.
 
 **Capture** describes the action; **Return** describes revisiting.
 
-**Enrich**, **Share**, **Protect**, and **Discover** (pillar) are approved product lifecycle terms. Share mode names (Professional Share, Smart Share) are approved for roadmap and doctrine; promote to permanent UI vocabulary only when implemented.
+**SnapSpot** is the coordinate/location label in Quick Share text (`📍 SnapSpot`). Do not use SnapSpot as the Snap title or card fallback.
+
+**MapSnap signature** is the permanent upper-right product mark on Snap cards. Internal product/design term — approved. Not a user-editable title.
 
 ---
 

@@ -2,11 +2,11 @@
 
 ## Status
 
-Wave 1 Sprint 5 complete. MVP baseline stable at https://mapsnap.se.
+Wave 1 MapSnap Signature complete. MVP baseline stable at https://mapsnap.se.
 
 ## Phase
 
-Wave 1 — Core Value. Sprint 5 (Favorite) closed 2026-07-14. Next: Compact Cards when scoped.
+Wave 1 — Core Value. MapSnap Signature closed 2026-07-14. Next: Compact Cards when scoped.
 
 ## What Works
 
@@ -16,6 +16,7 @@ Wave 1 — Core Value. Sprint 5 (Favorite) closed 2026-07-14. Next: Compact Card
 - Save image — "Spara bild" (Sprint 3)
 - Quick Share — "Dela" on every snap card; text + Google Maps link; image file when snap has photo; SMS field validated (Field Validation 0006)
 - Favorite — star toggle on cards; optimistic save (Sprint 5)
+- MapSnap signature — permanent header mark on every card; user title primary left (ADR-021)
 - Large tactile SNAP button: circular, green, 3D gradient, ~70% width
 - IndexedDB primary storage (`mapsnap-db` / `snaps`)
 - Legacy localStorage migrates on load

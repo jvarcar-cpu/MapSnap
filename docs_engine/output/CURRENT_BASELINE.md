@@ -4,7 +4,7 @@
 
 **Locked:** 2026-06-28  
 **Updated:** 2026-07-14  
-**Status:** MVP 0.1 stable — Wave 1 Sprint 5 **Completed** (Favorite)
+**Status:** MVP 0.1 stable — Wave 1 MapSnap Signature **Completed** (ADR-021)
 
 ## Interaction Baseline
 
@@ -15,7 +15,7 @@
 | Maps | Google Maps and Waze open with saved coordinates |
 | Delete | Removes from list and IndexedDB |
 | Edit | "Redigera" on card → optional title (`name`) + notes (`note`) → `saveSnap()` |
-| Favorite | Star toggle upper-right on card → optimistic `saveSnap()`; `favorite: true` only |
+| Favorite | Star toggle upper-right overlay on card → optimistic `saveSnap()`; `favorite: true` only |
 | Save image | "Spara bild" on cards with `photoDataUrl` — device copy only; hidden without image |
 | Share | "Dela" on every snap card — native Web Share; text + Google Maps link always; image file when `photoDataUrl` present |
 | Storage | IndexedDB primary; legacy localStorage migrates on load; Snap normalization on load |
@@ -27,8 +27,8 @@
 |---------|-------------|
 | SNAP button | Circular, large (~70% width, max 320px), green radial 3D gradient |
 | Hero | Title "MapSnap"; instruction *"Tryck för position · Håll inne för position + bild"* |
-| List | Header "MINA SNAPPAR", styled cards; title fallback "Sparad plats"; notes line-clamped |
-| Card actions | Favorite star (upper-right) → Maps → Spara bild (if image) → Dela → Redigera → Ta bort |
+| List | Header "MINA SNAPPAR", styled cards; user title left when present; **MapSnap signature** upper-right always; notes line-clamped |
+| Card actions | Favorite star (overlay) → Maps → Spara bild (if image) → Dela → Redigera → Ta bort |
 | Backup panel | Dashed border, rounded-2xl |
 | Permission card | Rounded-3xl, elevated, retry button |
 
@@ -60,7 +60,7 @@
 
 - Post-capture only — derived payload from stored Snap; never mutates Snap
 - Visible on every snap card
-- Payload: title (fallback "Sparad plats"), notes if present, `📍 SnapSpot` + coordinates, `🌍 Öppna i Google Maps` + single Google Maps URL; image file when `photoDataUrl` present and `canShare` supports files
+- Payload: title (user title or "MapSnap" fallback), notes if present, `📍 SnapSpot` + coordinates, `🌍 Öppna i Google Maps` + single Google Maps URL; image file when `photoDataUrl` present and `canShare` supports files
 - Share text omits "Image attached." and duplicate map labels — image and SMS map preview supply visual/navigation context
 - Unavailable: "Delning stöds inte i den här webbläsaren"
 - Code: `lib/shareSnap.ts`
@@ -72,6 +72,13 @@
 - No reorder, filter, or search in this sprint
 - Error: restore previous state; "Kunde inte spara favorit."
 - Code: `lib/snapFavorite.ts`, `components/FavoriteToggle.tsx`
+
+## MapSnap Signature (ADR-021)
+
+- Permanent text "MapSnap" in card header upper-right — subtle, secondary weight
+- User title left only when explicitly set; no card fallback "Sparad plats"
+- Principle: User first. Product second.
+- Code: `snapCardTitle()` / `snapShareTitle()` in `lib/snapEdit.ts`; `PlaceCard.tsx` header
 
 ## Verification
 

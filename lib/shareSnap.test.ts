@@ -45,7 +45,7 @@ describe("buildShareSnapText", () => {
     assert.equal(
       text,
       [
-        "Sparad plats",
+        "MapSnap",
         "",
         "📍 SnapSpot",
         "57.86595, 19.05855",
@@ -75,15 +75,16 @@ describe("buildShareSnapText", () => {
     assert.ok(!text.includes("Google Maps:"));
   });
 
-  it("uses Sparad plats when title is absent", () => {
+  it("uses MapSnap when title is absent", () => {
     const text = buildShareSnapText({
       latitude: 59.3293,
       longitude: 18.0686,
       photoDataUrl: "data:image/jpeg;base64,abc",
     });
 
-    assert.ok(text.startsWith("Sparad plats"));
+    assert.ok(text.startsWith("MapSnap"));
     assert.ok(!text.includes("undefined"));
+    assert.ok(!text.includes("Sparad plats"));
   });
 
   it("omits note block when note is blank", () => {
