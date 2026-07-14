@@ -4,7 +4,7 @@
 
 **Locked:** 2026-06-28  
 **Updated:** 2026-07-14  
-**Status:** MVP 0.1 stable — Wave 1 institutionally closed
+**Status:** MVP 0.1 stable — Wave 2 Sprint 1 Compact Cards Iteration 1 shipped
 
 ## Wave Summary
 
@@ -25,9 +25,13 @@
 - ✓ Action Button Polish
 - ✓ Native Icons
 
+### Wave 2 Sprint 1 — Completed
+
+- ✓ Compact Cards Iteration 1 — reduced-height banner layout, action-group divider
+
 ### Current Status
 
-Wave 1 complete. Product ready for Compact Cards.
+Wave 2 in progress. Compact Cards Iteration 2 (square thumbnail + detail view) next.
 
 ## Interaction Baseline
 
@@ -50,8 +54,9 @@ Wave 1 complete. Product ready for Compact Cards.
 |---------|-------------|
 | SNAP button | Circular, large (~70% width, max 320px), green radial 3D gradient |
 | Hero | Title "MapSnap"; instruction *"Tryck för position · Håll inne för position + bild"* |
-| List | Header "MINA SNAPPAR", styled cards; user title left when present; **MapSnap signature** upper-right always; notes line-clamped |
-| Card actions | Favorite star (overlay) → Maps (brand icons) → two-column grid: Redigera / Dela, Spara bild / Ta bort (Spara bild if image); SVG icons ~18px; Dela Share2, Spara bild Download; subtle icon accent colors |
+| List | Header "MINA SNAPPAR", compact styled cards; user title left when present; **MapSnap signature** upper-right always; notes line-clamped; list gap `gap-3` |
+| Card photo | Banner aspect `3:1` (Iteration 1); `object-cover`; square thumbnail deferred |
+| Card actions | Favorite star (overlay) → Navigation: Maps (brand icons) → divider → Actions: two-column grid Redigera / Dela, Spara bild / Ta bort (Spara bild if image); SVG icons ~18px |
 | Card location | `📍 SnapSpot` — category not shown on card (metadata only) |
 | Backup panel | Dashed border, rounded-2xl |
 | Permission card | Rounded-3xl, elevated, retry button |
@@ -103,6 +108,13 @@ Wave 1 complete. Product ready for Compact Cards.
 - User title left only when explicitly set; no card fallback "Sparad plats"
 - Principle: User first. Product second.
 - Code: `snapCardTitle()` / `snapShareTitle()` in `lib/snapEdit.ts`; `PlaceCard.tsx` header
+
+## Compact Cards (Wave 2 Sprint 1 — Iteration 1)
+
+- Photo banner aspect `3:1` (was `2.4:1`); content padding `p-4`; compressed metadata spacing
+- Navigation group (Google Maps, Waze) separated from action group by subtle divider (`bg-black/[0.04]`)
+- Typography hierarchy and 48px touch targets preserved; existing SVG icons unchanged
+- Code: `PlaceCard.tsx`, `MapOpenButtons.tsx`, `PlaceList.tsx`
 
 ## Snap Card Polish
 

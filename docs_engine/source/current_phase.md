@@ -2,11 +2,13 @@
 
 
 
-**Phase:** Wave 1 — Core Value & UX Polish  
+**Phase:** Wave 2 — Organization / Early Discover  
 
-**Status:** **Institutionally closed** 2026-07-14 — no active implementation pass  
+**Status:** **Wave 2 Sprint 1 in progress** — Compact Cards Iteration 1 (UX Pass)  
 
-**Next sprint:** Compact Cards (experimental) — when explicitly scoped
+**Previous:** Wave 1 institutionally closed 2026-07-14  
+
+**Next sprint after Compact Cards:** Search / sort / filter (Wave 2 item 1) — not started
 
 **MVP 0.1 stabilized:** 2026-07-07  
 
@@ -40,9 +42,9 @@
 
 ## Goal
 
-Wave 1 Core Value track is institutionally closed. All shipped sprints verified in `baseline_reconciliation.md` (Wave 1 section, 2026-07-14).
+Wave 2 begins with Compact Cards — experimental list layout per `implementation_readiness.md` order 8. Iteration 1 ships reduced-height banner cards with action-group divider. Iteration 2 (square thumbnail + detail view) deferred.
 
-**Next (when explicitly scoped):** Compact Cards — experimental list layout per `implementation_readiness.md` order 8. See `next_task.md` and `CURRENT_TASK.md`.
+**Wave 1 (closed):** All shipped sprints verified in `baseline_reconciliation.md` (Wave 1 section, 2026-07-14).
 
 
 
@@ -262,8 +264,18 @@ Full detail: `product_roadmap.md`.
 
 
 
+## Wave 2 Sprint 1 — Compact Cards Iteration 1 — Completed
+
+- [x] Pass type: UX Pass declared
+- [x] Reduced card height — tighter padding, metadata spacing, list gap
+- [x] Photo banner aspect `3:1` (was `2.4:1`) — recognition preserved via `object-cover`
+- [x] Navigation / action groups separated by subtle divider — no labels
+- [x] All card actions preserved: favorite, maps, edit, share, save image, delete
+- [x] 48px touch targets and SVG icon system unchanged
+- [x] MapSnap signature, SnapSpot label, typography hierarchy preserved
+- [ ] Square thumbnail + detail view — Iteration 2 (ADR-017)
+- [ ] Measurable recognition test — Iteration 2 field validation
+
 ## Next (when explicitly scoped)
 
-**Compact Cards** — separately scoped pass per `implementation_readiness.md` order 8.
-
-See `next_task.md` and `docs_engine/output/CURRENT_TASK.md`.
+**Compact Cards Iteration 2** — square thumbnail (~80–100px), detail view for full image. See `next_task.md` and `CURRENT_TASK.md`.

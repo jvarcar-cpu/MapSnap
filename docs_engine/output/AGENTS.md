@@ -4,7 +4,7 @@
 
 MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backend.
 
-**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Public: https://mapsnap.se.
+**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Wave 2 Sprint 1 Compact Cards Iteration 1 shipped. Public: https://mapsnap.se.
 
 ## Current Product Status
 
@@ -13,15 +13,16 @@ MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backe
 | MVP 0.1 baseline | Locked — short/long-press SNAP contract unchanged (ADR-012) |
 | Wave 1 shipped | Capture polish, Snap model, title + notes, save image, Quick Share, favorite, MapSnap signature, snap card + action icon polish |
 | Wave 1 institutional | Closed — reconciliation verified 2026-07-14 |
-| Next implementation | **Compact Cards** — experimental; not started |
+| Wave 2 Sprint 1 | Compact Cards Iteration 1 shipped — banner compression, action-group divider |
+| Next implementation | **Compact Cards Iteration 2** (thumbnail + detail view) or Wave 2 Search |
 | Backend / cloud | Deferred — Wave 6 (ADR-016) |
 | Production | Vercel · https://mapsnap.se · client-only data model |
 
 ## Current Phase
 
-**Wave 1 — Core Value & UX Polish** — institutionally closed. No active implementation pass.
+**Wave 2 — Organization / Early Discover** — Sprint 1 complete. Compact Cards Iteration 1 shipped.
 
-**Next sprint (when scoped):** Compact Cards per `implementation_readiness.md` order 8 and `next_task.md`.
+**Next sprint (when scoped):** Compact Cards Iteration 2 or Wave 2 Search per `implementation_readiness.md` and `next_task.md`.
 
 ## Architecture
 

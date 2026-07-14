@@ -6,49 +6,56 @@
 
 ## Status
 
-Wave 1 institutionally closed. No active implementation pass. Awaiting Compact Cards scoping.
+Wave 2 Sprint 1 complete — Compact Cards Iteration 1 shipped. Awaiting Iteration 2 scoping or Wave 2 organization features.
 
 ## Phase
 
-Wave 1 — Core Value & UX Polish (closed). Next sprint: Compact Cards.
+Wave 2 — Organization / Early Discover. Sprint 1 (Compact Cards Iteration 1) complete.
 
 ## Pass Type
 
-None active. Declare Feature or UX Pass in `current_phase.md` before starting Compact Cards.
+None active. Declare Feature or UX Pass in `current_phase.md` before starting Iteration 2 or Search.
 
 ## Context
 
-Wave 1 shipped capabilities are verified in `baseline_reconciliation.md` (Wave 1 section) and `CURRENT_BASELINE.md`. Institutional reconciliation complete 2026-07-14.
+Compact Cards Iteration 1 shipped 2026-07-14: reduced-height banner layout, action-group divider, preserved touch targets and typography. Square thumbnail and detail view deferred to Iteration 2 per ADR-017.
 
-## Next Sprint — Compact Cards
+## Next Sprint — Compact Cards Iteration 2
 
-**Scope:** Wave 1 item 6 — experimental compact card layout. List layout only; detail view for full image. See `implementation_readiness.md` order 8, `product_roadmap.md` item 6, `ux_doctrine.md`, ADR-017.
+**Scope:** Square thumbnail (~80–100px hypothesis), detail view for full image, measurable recognition test. See `implementation_readiness.md` order 8, `product_roadmap.md` item 6, `ux_doctrine.md`, ADR-017.
 
-**Not in scope:** SNAP interaction changes, backend, filter/search/tags, Professional Share, Protect.
+**Alternative:** Wave 2 item 1 — Search (title, notes) when organization pass is prioritized.
+
+**Not in scope:** SNAP interaction changes, backend, Professional Share, Protect.
 
 ## Prerequisites
 
 - [x] Wave 1 institutionally closed — reconciliation verified 2026-07-14
-- [x] Snap model, title + notes, save image, Quick Share, favorite shipped
-- [x] MapSnap signature (ADR-021) and snap card + action icon polish shipped
-- [ ] Pass type declared in `current_phase.md` (Feature or UX Pass)
-- [ ] Generated steering docs current (`docs_engine/output/`)
-- [ ] Feature Gate answers documented for Compact Cards unit
+- [x] Compact Cards Iteration 1 shipped — banner compression, divider, spacing
+- [x] Pass type declared in `current_phase.md` (UX Pass)
+- [x] Generated steering docs current (`docs_engine/output/`)
+- [ ] Field validation on real device for Iteration 1 density (recommended)
+- [ ] Feature Gate answers documented for Iteration 2
 
-## Acceptance Criteria — Compact Cards
+## Acceptance Criteria — Compact Cards Iteration 1 (shipped)
 
-- [ ] Reduced card height — more Snaps visible on screen
+- [x] Reduced card height — more Snaps visible on screen
+- [x] Photo banner aspect `3:1` — recognition preserved via `object-cover`
+- [x] Navigation / action groups separated by subtle divider
+- [x] List layout only — no change to SNAP capture contract (ADR-012)
+- [x] All existing card actions preserved: favorite, maps, edit, share, save image, delete
+- [x] Touch targets remain minimum 44px; 48px action buttons preserved
+- [x] MapSnap signature, SnapSpot label, typography hierarchy preserved
+- [x] Build, docs validation, baseline verification, and unit tests pass
+
+## Acceptance Criteria — Compact Cards Iteration 2 (remaining)
+
 - [ ] ~Square thumbnail (~80–100px hypothesis) preserves recognizable image content (ADR-017, `image_doctrine.md`)
 - [ ] Detail view opens for full image when thumbnail tapped
-- [ ] List layout only — no change to SNAP capture contract (ADR-012)
-- [ ] All existing card actions preserved: favorite, maps, edit, share, save image, delete
-- [ ] Touch targets remain minimum 44px; 48px action buttons preserved
-- [ ] MapSnap signature, SnapSpot label, and two-column action grid behaviour unchanged
 - [ ] Measurable recognition test documented (implementation readiness order 8)
-- [ ] Rollback path: revert to current banner layout without data loss
+- [ ] Rollback path: revert to Iteration 1 banner layout without data loss
 - [ ] Behaviour + visual regression checklists pass
-- [ ] Build, docs validation, baseline verification, and unit tests pass
 
 ## Reference
 
-`implementation_readiness.md` order 8 · `product_roadmap.md` Wave 1 item 6 · `ux_doctrine.md` · ADR-017 · `next_task.md`
+`implementation_readiness.md` order 8 · `product_roadmap.md` Wave 1 item 6 / Wave 2 · `ux_doctrine.md` · ADR-017 · `next_task.md`

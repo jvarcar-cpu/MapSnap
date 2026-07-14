@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.16] — 2026-07-14
+
+### Changed (Wave 2 Sprint 1 — Compact Cards Iteration 1)
+
+- **Compact card layout** — reduced vertical card height via tighter content padding (`p-4`), compressed metadata spacing, and narrower list gap (`gap-3`)
+- **Photo banner** — aspect ratio `3:1` (was `2.4:1`) — ~20% shorter banner; `object-cover` preserved for recognition
+- **Action groups** — navigation (Google Maps, Waze) separated from actions (Redigera, Dela, Spara bild, Ta bort) by a subtle `bg-black/[0.04]` divider; no labels; order unchanged
+- **Touch targets** — 48px minimum preserved on map links and action buttons; existing SVG icon system unchanged
+
+### Not changed
+
+- SNAP short/long-press contract unchanged (ADR-012)
+- No square thumbnail or detail view — deferred to Iteration 2 (ADR-017)
+- Share, favorite, edit, save image, maps, delete behaviour and persistence unchanged
+- IndexedDB version remains `1`; no schema change
+- Search, filter, tags, Discover, Protect, backend not started
+
+### Docs
+
+- Wave 2 Sprint 1 declared in `current_phase.md`
+- Compact Cards Iteration 1 documented in `ux_doctrine.md`, `stable_baseline.md`, `implementation_readiness.md`
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.15-docs] — 2026-07-14
 
 ### Documented (Wave 1 documentation reconciliation)

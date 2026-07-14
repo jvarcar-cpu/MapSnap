@@ -2,11 +2,11 @@
 
 ## Status
 
-Wave 1 institutionally closed 2026-07-14. MVP baseline stable at https://mapsnap.se. Next sprint: Compact Cards (experimental, not started).
+Wave 2 Sprint 1 complete 2026-07-14. Compact Cards Iteration 1 shipped. MVP baseline stable at https://mapsnap.se.
 
 ## Phase
 
-Wave 1 — Core Value & UX Polish. Institutionally closed 2026-07-14. Next sprint: Compact Cards when scoped.
+Wave 2 — Organization / Early Discover. Sprint 1 (Compact Cards Iteration 1) complete.
 
 ## What Works
 
@@ -20,6 +20,7 @@ Wave 1 — Core Value & UX Polish. Institutionally closed 2026-07-14. Next sprin
 - MapSnap signature — permanent header mark; user title primary left; no fallback title (ADR-021)
 - Snap card polish — two-column action grid; SnapSpot location label; category hidden on card
 - Action icon polish — Google Maps / Waze brand SVG icons; card action SVGs (~18px); Dela Share2, Spara bild Download; subtle accent colors on icons only
+- **Compact Cards Iteration 1** — banner aspect `3:1`, tighter padding/spacing, navigation/action divider
 - Large tactile SNAP button: circular, green, 3D gradient, ~70% width
 - IndexedDB primary storage (`mapsnap-db` / `snaps`)
 - Legacy localStorage migrates on load
@@ -39,8 +40,8 @@ Single source: `docs_engine/source/product_roadmap.md`
 
 | Wave | Focus |
 |------|-------|
-| 1 | Core value — **institutionally closed**; Compact Cards next (experimental) |
-| 2 | Organization / early Discover |
+| 1 | Core value — **institutionally closed** |
+| 2 | Organization / early Discover — **Sprint 1:** Compact Cards Iteration 1 shipped |
 | 3 | Snaptisers / contextual Discover |
 | 4 | Image + Professional Share |
 | 5 | Protect |
@@ -48,8 +49,8 @@ Single source: `docs_engine/source/product_roadmap.md`
 
 ## Known Limitations
 
-- No filter, search, tags — Wave 2 roadmap
-- Compact Cards not started — Wave 1 experimental item
+- Compact Cards Iteration 2 not started — square thumbnail, detail view (ADR-017)
+- No filter, search, tags — Wave 2 roadmap items 1–4
 - Photo storage as inline base64 — quota limits (MVP-001)
 - Image save per-platform field verification incomplete (FEAS-001)
 - Snaptiser / geofencing — platform variance (FEAS-002)
@@ -69,8 +70,8 @@ Next.js 15 · TypeScript · Tailwind · Geolocation API · IndexedDB · PWA · V
 
 ## Next Step
 
-Wave 1 — Compact Cards when scoped. See `next_task.md` and `implementation_readiness.md` order 8.
+Compact Cards Iteration 2 (thumbnail + detail view) or Wave 2 Search. See `next_task.md` and `implementation_readiness.md` order 8.
 
 ## Institutional Memory
 
-CHRONICLE-MSN-0001 — *The First Public Presence* (2026-07-11). ADR-020 — Core lifecycle pillars (2026-07-14). ADR-021 — MapSnap Signature (2026-07-14). Wave 1 reconciliation (2026-07-14).
+CHRONICLE-MSN-0001 — *The First Public Presence* (2026-07-11). ADR-020 — Core lifecycle pillars (2026-07-14). ADR-021 — MapSnap Signature (2026-07-14). Wave 1 reconciliation (2026-07-14). Wave 2 Sprint 1 Compact Cards Iteration 1 (2026-07-14).

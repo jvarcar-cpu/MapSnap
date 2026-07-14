@@ -66,7 +66,7 @@ MVP 0.1 baseline matches documented core capabilities. No critical product-doc f
 |-------|--------|----------|
 | SNAP button hero | ✅ Pass | ~70% width, green gradient, breathe animation |
 | No visible usage instruction | ✅ Gap (planned W1) | `aria-label` only — Swedish hint in accessibility |
-| Card photo banner | ✅ Pass | 2.4:1 aspect, not compact thumbnail |
+| Card photo banner | ✅ Pass | 3:1 aspect compact banner (Iteration 1); square thumbnail deferred |
 | Success toast | ✅ Pass | "✓ Sparad" — roadmap targets "Snap sparad" in W1 |
 | Haptic | ✅ Partial | 20ms vibrate on success and long-press threshold only |
 | Sound / radial waves | ❌ Not implemented | Planned Wave 1 feedback |
@@ -112,7 +112,7 @@ MVP 0.1 baseline matches documented core capabilities. No critical product-doc f
 
 ### Summary
 
-Wave 1 Core Value track is institutionally closed. **Compact Cards** is the next sprint (experimental, not started). Documentation reconciled to match implementation. MVP 0.1 interaction baseline unchanged (ADR-012).
+Wave 1 Core Value track is institutionally closed. **Compact Cards Iteration 1** shipped (Wave 2 Sprint 1). Square thumbnail + detail view deferred to Iteration 2. Documentation reconciled to match implementation. MVP 0.1 interaction baseline unchanged (ADR-012).
 
 ### Capture & SNAP
 
@@ -162,6 +162,7 @@ Wave 1 Core Value track is institutionally closed. **Compact Cards** is the next
 - [x] MapSnap signature shipped (ADR-021)
 - [x] Snap card + action icon polish shipped
 - [x] Field Validation 0005, 0006 recorded
-- [x] Compact Cards not started — correctly marked experimental
+- [x] Compact Cards Iteration 1 shipped — banner compression, action-group divider
+- [ ] Compact Cards Iteration 2 — square thumbnail, detail view
 - [x] IndexedDB version `1` unchanged
 - [x] Protected SNAP interaction unchanged

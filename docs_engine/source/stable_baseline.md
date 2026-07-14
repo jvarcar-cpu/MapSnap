@@ -59,6 +59,18 @@ This document freezes the approved MapSnap MVP baseline. Do not change behaviour
 | **Action grid** | Two columns: Redigera / Dela, then Spara bild / Ta bort (Spara bild if image); 48px targets; SVG icons ~18px |
 | **Action icons** | Dela Share2 (blue accent); Spara bild Download (purple-gray); Redigera orange; Ta bort red — labels unchanged |
 
+### Wave 2 compact card baseline (Iteration 1 — shipped)
+
+| Element | Requirement |
+|---------|-------------|
+| **Photo banner** | Aspect `3:1` (was `2.4:1`); `object-cover`; no square thumbnail yet |
+| **Content padding** | `p-4` (was `p-5`) |
+| **List gap** | `gap-3` between cards (was `gap-4`) |
+| **Metadata spacing** | Title → note → SnapSpot → date → coords hierarchy preserved; tighter vertical rhythm |
+| **Action groups** | Navigation (Google Maps, Waze) then subtle divider (`bg-black/[0.04]`) then action grid — no group labels |
+| **Touch targets** | 48px minimum on map links and action buttons unchanged |
+| **Icons** | Existing SVG system authoritative — spacing only |
+
 ### Interaction owner
 
 `components/SnapButton.tsx` owns all pointer/touch/click handlers and the hidden camera input. Decorative layers use `pointer-events-none`. The main `<button>` receives events directly.

@@ -188,7 +188,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
         saving={savingFavorite}
       />
       {place.photoDataUrl && (
-        <div className="aspect-[2.4/1] w-full overflow-hidden bg-surface">
+        <div className="aspect-[3/1] w-full overflow-hidden bg-surface">
           <img
             src={place.photoDataUrl}
             alt=""
@@ -197,9 +197,9 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
         </div>
       )}
 
-      <div className="p-5">
+      <div className="p-4">
         {favoriteError && (
-          <p className="mb-3 text-sm text-secondary" role="alert">
+          <p className="mb-2 text-sm text-secondary" role="alert">
             {favoriteError}
           </p>
         )}
@@ -217,17 +217,17 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
         </header>
         <div className="min-w-0">
           {noteText && !editing && (
-            <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-secondary line-clamp-3">
+            <p className="mt-1.5 whitespace-pre-line text-sm leading-relaxed text-secondary line-clamp-3">
               {noteText}
             </p>
           )}
-          <p className="mt-1.5 text-sm font-medium text-snap">
+          <p className="mt-1 text-sm font-medium text-snap">
             📍 SnapSpot
           </p>
-          <p className="mt-1 text-sm text-secondary">{formatTime(place.createdAt)}</p>
+          <p className="mt-0.5 text-sm text-secondary">{formatTime(place.createdAt)}</p>
         </div>
 
-        <p className="mt-3 font-mono text-xs leading-relaxed text-secondary/70">
+        <p className="mt-2 font-mono text-xs leading-relaxed text-secondary/70">
           {formatCoords(place.latitude, place.longitude)}
           {place.accuracy != null && (
             <span className="ml-2 text-secondary/50">
@@ -248,8 +248,13 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
             onCancel={closeEdit}
           />
         ) : (
-          <div className="mt-5 flex flex-col gap-3">
+          <div className="mt-3 flex flex-col gap-2.5">
             <MapOpenButtons latitude={place.latitude} longitude={place.longitude} />
+            <div
+              className="mx-1 h-px shrink-0 bg-black/[0.04]"
+              role="presentation"
+              aria-hidden
+            />
             <div className="grid grid-cols-2 gap-2">
               <button
                 type="button"

@@ -29,6 +29,7 @@ Chronicles are append-only. They do not outrank doctrine or ADR authority.
 | 2026-07-14 | Core Product Lifecycle Pillars ratified | ADR-020 — Capture, Enrich, Share, Protect; Discover emerging; experience qualities preserved; Share product track; Wave 5 Protect, Wave 6 cloud |
 | 2026-07-14 | Field Validation 0006 — Quick Share SMS | Successful real-device share test; duplicate text polish decision |
 | 2026-07-14 | Wave 1 institutionally closed | All shipped sprints verified; reconciliation complete; product ready for Compact Cards |
+| 2026-07-14 | Wave 2 Sprint 1 — Compact Cards Iteration 1 | Reduced-height banner cards; action-group divider; Wave 2 organization track begins |
 | 2026-07-14 | Wave 1 Core Value shipped | Sprints 1–5, MapSnap signature (ADR-021), snap card + action icon polish |
 | 2026-07-14 | ADR-021 — MapSnap Signature | User first. Product second. No card fallback title |
 | 2026-07-14 | SnapSpot canonical label | Location line on cards and in Quick Share; category remains metadata |

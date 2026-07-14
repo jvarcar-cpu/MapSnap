@@ -52,7 +52,7 @@ export function PlaceList({ places, onDelete, onUpdate, newestId }: PlaceListPro
   }
 
   return (
-    <ul className="flex flex-col gap-4">
+    <ul className="flex flex-col gap-3">
       {places.map((place) => (
         <li key={place.id}>
           <PlaceCard

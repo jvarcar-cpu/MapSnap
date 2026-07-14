@@ -247,12 +247,12 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 
 | Field | Value |
 |-------|-------|
-| Status | **Experimental** |
+| Status | **Iteration 1 shipped** — Iteration 2 (thumbnail + detail view) planned |
 | User value | More Snaps on screen; faster visual recognition |
 | Pillar | DELIGHT / ENRICH |
 | Dependencies | Title, favorite UI |
 | Risk | Thumbnails too small; touch targets shrink |
-| Acceptance | Reduced height; ~square thumbnail (80–100px hypothesis); detail view for full image |
+| Acceptance | Iteration 1: reduced height; banner `3:1`; action-group divider; 48px targets. Iteration 2: ~square thumbnail (80–100px hypothesis); detail view for full image |
 | Affects SNAP interaction | No |
 | ADR | ADR-017 |
 

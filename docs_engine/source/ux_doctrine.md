@@ -205,9 +205,11 @@ Users never fill in fields before their first save. Optional enrichment (name, n
 
 Google Maps and Waze deep links are the approved Return path. Quick Share ("Dela") and save-image are shipped Wave 1 SHARE actions. **Quick Share is available on every snap card** — text and Google Maps link always; image file attached when `photoDataUrl` is present and `canShare` supports files. Save-image remains image-only. Favorite toggle is a shipped Wave 1 ENRICH action (metadata only — no filter yet). Professional Share is a future SHARE mode — see `product_roadmap.md`. No proprietary navigation.
 
-## Compact Cards (experimental — Wave 1)
+## Compact Cards (experimental — Wave 2 Sprint 1)
 
-Direction: square thumbnail ~80–100px hypothesis, reduced card height, detail view for full image. Must preserve recognizable thumbnails — see `image_doctrine.md`, ADR-017.
+**Iteration 1 (shipped):** Banner layout preserved with reduced height — photo aspect `3:1` (was `2.4:1`); content padding `p-4`; compressed metadata spacing; list gap `gap-3`. Navigation group (Google Maps, Waze) and action group (Redigera, Dela, Spara bild, Ta bort) separated by a low-contrast divider (`bg-black/[0.04]`). Typography hierarchy unchanged; 48px touch targets preserved. Icons authoritative — no redesign.
+
+**Iteration 2 (planned):** Square thumbnail ~80–100px hypothesis, detail view for full image — see `image_doctrine.md`, ADR-017.
 
 ## Outdoor Context
 
