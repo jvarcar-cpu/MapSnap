@@ -4,7 +4,7 @@
 
 **Phase:** Wave 1 — Core Value & UX Polish  
 
-**Status:** Snap Card Polish **Completed** — no active implementation pass  
+**Status:** Action Icon Polish **Completed** — no active implementation pass  
 
 **MVP 0.1 stabilized:** 2026-07-07  
 
@@ -32,17 +32,19 @@
 
 **Wave 1 Snap Card Polish completed:** 2026-07-14
 
+**Wave 1 Action Icon Polish completed:** 2026-07-14
+
 
 
 ## Goal
 
 
 
-Introduce compact two-column card actions with icons and SnapSpot as the canonical location label on snap cards — visual polish only, no behaviour changes.
+Introduce recognizable SVG action icons on snap cards — Google Maps and Waze brand icons plus restrained MapSnap icons for card actions. Visual polish only, no behaviour changes.
 
 
 
-**Snap Card Polish completed.** Card actions use a two-column grid (Redigera / Dela, Spara bild / Ta bort) with subtle emoji icons. Location line shows `📍 SnapSpot` instead of category. Category remains in data model for future Discover.
+**Action Icon Polish completed.** Google Maps and Waze show official brand icons; card actions use calm SVG icons (~18px) instead of emoji. Layout, ordering, and touch targets unchanged.
 
 
 
@@ -225,6 +227,24 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 - [x] Share, favorite, edit, save image, maps, delete behaviour unchanged
 
 - [x] Prepares foundation for Compact Cards — no compact layout started
+
+
+
+## Wave 1 — Action Icon Polish — Completed
+
+
+
+- [x] Google Maps official brand icon beside label — link behaviour unchanged
+
+- [x] Waze official brand icon beside label — link behaviour unchanged
+
+- [x] SVG icons on card actions — Redigera, Dela, Spara bild, Ta bort (~18px, restrained)
+
+- [x] Layout, ordering, spacing, and 48px touch targets preserved
+
+- [x] aria-label, keyboard navigation, focus ring, minimum 44px touch target preserved
+
+- [x] Share, favorite, edit, save image, maps, delete behaviour unchanged
 
 
 

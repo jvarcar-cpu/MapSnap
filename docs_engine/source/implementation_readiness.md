@@ -21,6 +21,7 @@
 | 7 | Favorite | `favorite` field + toggle | Schema bump if needed | Low | Filter prep; backup round-trip | Remove field from UI | `data_doctrine.md` | **Completed** |
 | 7b | MapSnap signature | Card header signature + no fallback title | Favorite, title | Low | Card/share title helpers; baseline verification | Revert header layout | ADR-021, `ux_doctrine.md`, Identity | **Completed** |
 | 7c | Snap card action polish | Two-column actions, icons, SnapSpot card label | Signature | Low | Button grid; touch targets; no behaviour change | Revert action layout | `ux_doctrine.md`, `vocabulary.md` | **Completed** |
+| 7d | Action icon polish | Google Maps + Waze brand icons; SVG card action icons | Snap card polish | Low | Icon visibility; touch targets; no behaviour change | Revert icon components | `ux_doctrine.md` | **Completed** |
 | 8 | Compact card experiment | List layout only; detail view for full image | Title, favorite, action polish | Medium — UX | Measurable recognition test | Revert to banner layout | ADR-017, `ux_doctrine.md` |
 | 9 | Search / sort / filter | List controls only | Title, notes, favorite | Low | Performance with many snaps | Hide controls | `product_roadmap.md` status |
 | 10 | Tags | Lightweight tag list on snap | Edit UI | Low | Backup import | Remove tags | `data_doctrine.md` |

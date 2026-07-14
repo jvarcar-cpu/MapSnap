@@ -103,7 +103,7 @@ Do not redesign. Restore and preserve this baseline unless explicitly instructed
 - Cards: rounded-3xl, soft shadow, optional photo banner (2.4:1); user title left when present; **MapSnap signature** upper-right always (ADR-021)
 - Favorite toggle: small star upper-right overlay on card; ☆ inactive, ★ active with subtle gold — must not collide with signature
 - **SnapSpot:** canonical visible label for the location line on every card (`📍 SnapSpot`) — not the user title; category remains metadata only (not shown on card) for future Discover
-- **Card actions:** two-column grid after Maps links — ✏️ Redigera / 📤 Dela, then 💾 Spara bild / 🗑 Ta bort (Spara bild hidden without image); equal-width 48px targets; subtle emoji icons
+- **Card actions:** two-column grid after Maps links — Redigera / Dela, then Spara bild / Ta bort (Spara bild hidden without image); equal-width 48px targets; recognizable SVG icons (~18px) beside labels; Google Maps and Waze use official brand icons
 
 **Design tokens**
 
@@ -178,6 +178,20 @@ Card header layout:
 - Coordinates + accuracy if available
 - Photo thumbnail if present
 - Google Maps, Waze, card actions (two-column grid with icons), Delete
+
+## Action Icon Principle
+
+Every action icon should be immediately recognizable without reading the text.
+
+The icon reinforces the action.
+
+The text confirms it.
+
+MapSnap should feel calm, professional and familiar rather than decorative.
+
+- Google Maps and Waze may use official brand colors
+- All other action icons remain visually restrained and consistent with MapSnap
+- Icons are ~18–20px, aligned with labels, with subtle hover and press feedback
 
 ## No Mandatory Forms
 

@@ -15,6 +15,12 @@ import { applySnapFavorite } from "@/lib/snapFavorite";
 import { saveSnapImage } from "@/lib/saveSnapImage";
 import { shareSnap } from "@/lib/shareSnap";
 import { FavoriteToggle } from "./FavoriteToggle";
+import {
+  DeleteIcon,
+  EditIcon,
+  SaveImageIcon,
+  ShareIcon,
+} from "./icons/SnapActionIcons";
 
 type PlaceCardProps = {
   place: SnapPlace;
@@ -39,7 +45,7 @@ function formatCoords(lat: number, lng: number): string {
 }
 
 const actionBtnClass =
-  "flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-full border border-black/[0.06] bg-surface/90 px-3 py-2.5 text-sm font-medium transition-all duration-200 ease-out hover:border-snap/15 hover:bg-snap-muted/25 active:scale-[0.97] disabled:opacity-60";
+  "flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-full border border-black/[0.06] bg-surface/90 px-3 py-2.5 text-sm font-medium transition-all duration-200 ease-out hover:border-snap/15 hover:bg-snap-muted/25 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-snap/40 disabled:opacity-60";
 
 export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps) {
   const [editing, setEditing] = useState(false);
@@ -250,9 +256,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                 className={`${actionBtnClass} text-primary`}
                 aria-label={`Redigera ${snapLabel}`}
               >
-                <span aria-hidden className="text-base leading-none opacity-75">
-                  ✏️
-                </span>
+                <EditIcon className="opacity-80" />
                 Redigera
               </button>
               <button
@@ -262,9 +266,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                 className={`${actionBtnClass} text-primary`}
                 aria-label={`Dela ${snapLabel}`}
               >
-                <span aria-hidden className="text-base leading-none opacity-75">
-                  📤
-                </span>
+                <ShareIcon className="opacity-80" />
                 {sharing ? "Delar…" : "Dela"}
               </button>
               {place.photoDataUrl && (
@@ -275,9 +277,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                   className={`${actionBtnClass} text-primary`}
                   aria-label={`Spara bild för ${snapLabel}`}
                 >
-                  <span aria-hidden className="text-base leading-none opacity-75">
-                    💾
-                  </span>
+                  <SaveImageIcon className="opacity-80" />
                   {savingImage ? "Sparar bild…" : "Spara bild"}
                 </button>
               )}
@@ -287,9 +287,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                 className={`${actionBtnClass} text-secondary hover:bg-black/[0.03]`}
                 aria-label="Ta bort snap"
               >
-                <span aria-hidden className="text-base leading-none opacity-75">
-                  🗑
-                </span>
+                <DeleteIcon className="opacity-75" />
                 Ta bort
               </button>
             </div>

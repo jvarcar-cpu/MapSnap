@@ -4,7 +4,7 @@
 
 **Locked:** 2026-06-28  
 **Updated:** 2026-07-14  
-**Status:** MVP 0.1 stable — Wave 1 Snap Card Polish **Completed**
+**Status:** MVP 0.1 stable — Wave 1 Action Icon Polish **Completed**
 
 ## Interaction Baseline
 
@@ -28,7 +28,7 @@
 | SNAP button | Circular, large (~70% width, max 320px), green radial 3D gradient |
 | Hero | Title "MapSnap"; instruction *"Tryck för position · Håll inne för position + bild"* |
 | List | Header "MINA SNAPPAR", styled cards; user title left when present; **MapSnap signature** upper-right always; notes line-clamped |
-| Card actions | Favorite star (overlay) → Maps → two-column grid: ✏️ Redigera / 📤 Dela, 💾 Spara bild / 🗑 Ta bort (Spara bild if image) |
+| Card actions | Favorite star (overlay) → Maps (brand icons) → two-column grid: Redigera / Dela, Spara bild / Ta bort (Spara bild if image); SVG icons ~18px |
 | Card location | `📍 SnapSpot` — category not shown on card (metadata only) |
 | Backup panel | Dashed border, rounded-2xl |
 | Permission card | Rounded-3xl, elevated, retry button |
@@ -83,9 +83,10 @@
 
 ## Snap Card Polish
 
-- Two-column action grid with equal-width 48px buttons and subtle emoji icons
+- Two-column action grid with equal-width 48px buttons and recognizable SVG icons (~18px)
+- Google Maps and Waze use official brand-color icons beside labels
 - Location line: `📍 SnapSpot` (canonical); category hidden on card
-- Code: `PlaceCard.tsx` action grid
+- Code: `PlaceCard.tsx`, `MapOpenButtons.tsx`, `components/icons/SnapActionIcons.tsx`
 
 ## Verification
 

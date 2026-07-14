@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.13] — 2026-07-14
+
+### Changed (Wave 1 — Action Icon Polish)
+
+- **Google Maps icon** — official multi-color pin SVG beside "Google Maps" label on every card
+- **Waze icon** — official brand-style SVG beside "Waze" label on every card
+- **Action icons** — emoji replaced with restrained SVG icons (~18px): Redigera, Dela, Spara bild, Ta bort
+- **Focus rings** — `focus-visible` outline added to map links and card action buttons
+
+### Not changed
+
+- Action layout, ordering, spacing, and touch targets unchanged
+- Share, favorite, edit, save image, maps, delete behaviour and persistence unchanged
+- SNAP short/long-press contract unchanged (ADR-012)
+- IndexedDB version remains `1`; no schema change
+- Compact Cards not started
+
+### Docs
+
+- `ux_doctrine.md` — Action Icon Principle; card action icon baseline updated
+- `current_phase.md`, `next_task.md`, `implementation_readiness.md` — icon polish pass complete
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.12] — 2026-07-14
 
 ### Changed (Wave 1 — Snap Card Polish)

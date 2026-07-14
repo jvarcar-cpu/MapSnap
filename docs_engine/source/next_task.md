@@ -4,7 +4,7 @@
 
 **Updated:** 2026-07-14  
 
-**Pass type:** None active — Wave 1 Snap Card Polish closed
+**Pass type:** None active — Wave 1 Action Icon Polish closed
 
 
 
@@ -16,7 +16,7 @@
 
 
 
-Snap card polish is complete. Actions use a two-column grid with icons; location line shows SnapSpot. Next Wave 1 item: compact card experiment.
+Action icon polish is complete. Google Maps and Waze use brand icons; card actions use restrained SVG icons. Next Wave 1 item: compact card experiment.
 
 
 
@@ -33,6 +33,8 @@ Snap card polish is complete. Actions use a two-column grid with icons; location
 4. MapSnap signature complete (ADR-021)
 
 5. Snap card action polish complete (two-column layout, icons, SnapSpot label)
+
+6. Action icon polish complete (Google Maps, Waze brand icons; SVG card actions)
 
 
 

@@ -6,11 +6,11 @@
 
 ## Status
 
-Wave 1 Snap Card Polish **Completed**. No active implementation pass.
+Wave 1 Action Icon Polish **Completed**. No active implementation pass.
 
 ## Phase
 
-Wave 1 — Core Value & UX Polish. Snap Card Polish closed 2026-07-14.
+Wave 1 — Core Value & UX Polish. Action Icon Polish closed 2026-07-14.
 
 ## Pass Type
 
@@ -37,14 +37,15 @@ None active.
 - [x] Favorite toggle shipped (Sprint 5)
 - [x] MapSnap signature shipped (ADR-021)
 - [x] Snap card action polish shipped (two-column grid, icons, SnapSpot label)
+- [x] Action icon polish shipped (Google Maps, Waze brand icons; SVG card actions)
 
-## Done When (Snap Card Polish — complete)
+## Done When (Action Icon Polish — complete)
 
-- [x] Two-column action grid — Redigera / Dela, Spara bild / Ta bort
-- [x] Equal-width buttons; 48px touch targets preserved
-- [x] Subtle emoji icons on every action
-- [x] SnapSpot shown on card instead of category
-- [x] Category unchanged in data model
+- [x] Google Maps official brand icon visible beside label
+- [x] Waze official brand icon visible beside label
+- [x] SVG icons on Redigera, Dela, Spara bild, Ta bort (~18px)
+- [x] Layout, ordering, spacing, and 48px touch targets preserved
+- [x] aria-label, keyboard navigation, focus ring, minimum 44px touch target preserved
 - [x] Share, favorite, edit, save image, maps, delete unchanged
 - [x] Build, docs validation, and tests pass
 
