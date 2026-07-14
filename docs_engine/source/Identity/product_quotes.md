@@ -92,6 +92,19 @@ A memory for years."
 "Capture the moment.
 Revisit the discovery."
 
+"MapSnap exists to help people capture places that matter, enrich them with context, share them when needed, and protect them for the future."
+
+"Offline First.
+Cloud Optional."
+
+"MapSnap should protect the user's memories without requiring an account."
+
+"Discover should help the user rediscover what they chose to save, not distract them with unrelated places."
+
+"The image provides visual context, the text provides useful context, and the map link provides navigation context."
+
+"Every pillar should feel fast, calm, trustworthy, and rewarding."
+
 ---
 
 ## Usage Rules

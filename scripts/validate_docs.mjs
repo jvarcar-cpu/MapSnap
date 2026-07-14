@@ -77,6 +77,8 @@ mustContain(roadmap, /Short press|short press/i, "protected short press document
 mustContain(roadmap, /Long press|long press/i, "protected long press documented");
 mustContain(roadmap, "Existing", "existing capabilities marked Existing");
 mustContain(roadmap, "Google Maps", "RETURN via Google Maps documented");
+mustContain(roadmap, "Protect", "roadmap includes Protect pillar");
+mustContain(roadmap, "DISCOVER", "roadmap includes Discover emerging pillar");
 mustContain(roadmap, "Deferred", "deferred/rejected decisions documented");
 
 // Feature gate
@@ -92,11 +94,13 @@ mustContain(decisions, "ADR-014", "ADR-014 save image");
 mustContain(decisions, "ADR-015", "ADR-015 Snaptisers");
 mustContain(decisions, "ADR-018", "ADR-018 feedback model");
 mustContain(decisions, "ADR-019", "ADR-019 snap model evolution");
+mustContain(decisions, "ADR-020", "ADR-020 core lifecycle pillars");
 
 // Identity preserved + extended
 mustContain(identity, "Coordinates are Truth", "Identity: coordinates principle preserved");
 mustContain(identity, "Offline First", "Identity: offline first preserved");
-mustContain(identity, "CAPTURE", "Identity: four pillars");
+mustContain(identity, "CAPTURE", "Identity: core pillars");
+mustContain(identity, "ENRICH", "Identity: enrich pillar");
 mustContain(identity, "feel lighter than it is", "Identity: product goal");
 
 // No duplicate roadmap files

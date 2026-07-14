@@ -168,6 +168,59 @@ MapSnap is the fastest way to save a place that matters and return to it when it
 
 The app captures the place before it is forgotten.
 
+**Evolved product vision:** MapSnap exists to help people capture places that matter, enrich them with context, share them when needed, and protect them for the future.
+
+These statements complement each other. Positioning is the one-sentence promise. The evolved vision describes the full product lifecycle. The core concept describes capture urgency.
+
+---
+
+## Core Product Pillars (lifecycle)
+
+Four approved Core Pillars organize product work. A fifth — Discover — is an emerging strategic direction.
+
+| Pillar | Purpose |
+|--------|---------|
+| **CAPTURE** | Capture a place immediately, reliably, with minimal friction |
+| **ENRICH** | Give a captured place meaning and context after capture — never required before capture |
+| **SHARE** | Communicate a place in the format appropriate to the situation |
+| **PROTECT** | Protect the user's Snap history without requiring an account |
+
+**Offline First. Cloud Optional.**
+
+**MapSnap should protect the user's memories without requiring an account.**
+
+### Discover (emerging strategic pillar)
+
+Help the user find, understand, and rediscover relevant Snap content as their collection grows. Strategically approved; scope emerging. Grounded first in the user's own Snap collection — not a social discovery feed, not public place discovery by default.
+
+*Discover should help the user rediscover what they chose to save, not distract them with unrelated places.*
+
+Roadmap detail: `product_roadmap.md`.
+
+---
+
+## Experience Qualities
+
+The model **Capture → Remember → Return → Delight** describes how the product should *feel* — not how work is organized. It is preserved alongside the lifecycle pillars; neither model is deleted.
+
+| Quality | Role |
+|---------|------|
+| **CAPTURE** | The moment of saving |
+| **REMEMBER** | Meaning and context over time |
+| **RETURN** | Revisiting and using a place when it matters |
+| **DELIGHT** | Cross-cutting — fast, calm, trustworthy, rewarding |
+
+**Lifecycle mapping:**
+
+- Capture supports **Capture**
+- Enrich strengthens **Remember**
+- Share and navigation strengthen **Return**
+- Protect preserves **Remember** and **Return** over time
+- Discover resurfaces remembered places
+- **Delight** is cross-cutting — every pillar should feel fast, calm, trustworthy, and rewarding
+
+ADR-020 documents this relationship.
+
 ---
 
 ## Product Character
@@ -188,13 +241,7 @@ MapSnap must remain:
 
 ---
 
-## Four Product Pillars
+## Share (product track)
 
-| Pillar | Role |
-|--------|------|
-| **CAPTURE** | Save the place immediately — position, optional image, offline, one-second interaction |
-| **REMEMBER** | Add meaning after capture — title, notes, favorite, tags, Snaptiser |
-| **RETURN** | Use the Snap when relevant — maps, share, export, save image |
-| **DELIGHT** | Polished feedback without slowing capture — haptic, sound, pulse, glow, confirmation |
+Share is a major product capability with multiple modes — not a single button. Quick Share is implemented; Professional Share, MapSnap-to-MapSnap Share, and Smart Share are future directions. See `product_roadmap.md` Share Product Depth.
 
-Roadmap detail: `product_roadmap.md`.

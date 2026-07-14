@@ -26,7 +26,8 @@ Chronicles are append-only. They do not outrank doctrine or ADR authority.
 | 2026-07-11 | Pre-PDE lineage preserved | MapSnap was not created by PDE; developed independently before PDE Foundation operational maturity |
 | 2026-07-11 | Product Onboarding reference case (discovery only) | MapSnap may later inform how externally created products enter the PDE ecosystem — not a ratified PDE decision |
 | 2026-07-12 | Official product roadmap ratified | `product_roadmap.md` — Waves 0–5, Feature Gate, ADRs 012–018; post-MVP 0.1 governance pass |
-| 2026-07-13 | Field Validation Log introduced | `field_validation_log.md` — MapSnap product-level verified observations; not PDE |
+| 2026-07-14 | Core Product Lifecycle Pillars ratified | ADR-020 — Capture, Enrich, Share, Protect; Discover emerging; experience qualities preserved; Share product track; Wave 5 Protect, Wave 6 cloud |
+| 2026-07-14 | Field Validation 0006 — Quick Share SMS | Successful real-device share test; duplicate text polish decision |
 
 ## Production Domain Record
 

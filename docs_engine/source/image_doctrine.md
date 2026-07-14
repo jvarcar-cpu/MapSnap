@@ -1,6 +1,6 @@
 # Image Doctrine
 
-> Product context: REMEMBER pillar, RETURN pillar — see `product_roadmap.md`
+> Product context: ENRICH pillar, SHARE pillar — see `product_roadmap.md`
 
 **Ratified:** 2026-07-12
 
@@ -18,7 +18,7 @@
 |------|-----------|
 | Thumbnails must remain recognizable | Users scan lists to find places |
 | Compression must not destroy recognition value | Mnemonic purpose over byte savings |
-| User must be able to save the image outside MapSnap | RETURN without re-shooting (Wave 1 — ADR-014) |
+| User must be able to save the image outside MapSnap | SHARE / RETURN path without re-shooting (Wave 1 — ADR-014) |
 | Image presence improves recognition without dominating UI | Compact cards experiment must preserve cognitive value |
 | Layout optimization preserves cognitive purpose | Smaller cards ≠ invisible images |
 

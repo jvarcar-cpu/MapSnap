@@ -19,10 +19,10 @@ MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backe
 
 ## Hard Rules
 
-- Never add backend, auth, database, or map SDK without explicit approval (Wave 5 deferred — ADR-016)
+- Never add backend, auth, database, or map SDK without explicit approval (Wave 6 deferred — ADR-016)
 - Never require forms before save
 - Never alter protected SNAP contract: short press = position; long press = position + image (ADR-012)
-- Run Feature Gate (`feature_gate.md`) before implementing any new feature
+- Run Feature Gate (`feature_gate.md`) before implementing any new feature — must strengthen Core Pillars
 - Never store Google/Waze URLs as primary data
 - Never use continuous geolocation tracking
 - Keep capture to one tap

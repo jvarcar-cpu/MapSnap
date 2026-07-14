@@ -74,9 +74,11 @@ docs_engine holds multiple layers. Each has a distinct purpose. Product Identity
 
 ### Vision vs Identity
 
-**Vision** describes the product direction — MVP scope, success criteria, long-term gates. It is strategic and may evolve as the product grows.
+**Vision** describes the product direction — MVP scope, success criteria, lifecycle pillars, long-term gates. It is strategic and may evolve as the product grows.
 
 **Identity** describes the product character — beliefs and language that should not shift with each release. Vision says where we go; Identity says who we are on the way.
+
+**Lifecycle pillars** (Capture, Enrich, Share, Protect, Discover) describe how product work is organized. **Experience qualities** (Capture, Remember, Return, Delight) describe how the product should feel. Both live in vision and doctrine; they answer different questions and must not contradict. See ADR-020.
 
 ### Doctrine vs Identity
 

@@ -2,7 +2,7 @@
 
 > Generated from `docs_engine/source/known_issues.md`. Do not hand-edit.
 
-**Updated:** 2026-07-12
+**Updated:** 2026-07-14
 
 ## OPS-001: Stale Dev Server / Wrong Port
 
@@ -42,23 +42,23 @@ Automated baseline verification (`scripts/verify-baseline.mjs`) covers desktop b
 **Severity:** Known constraint (by design for MVP)  
 **Status:** Accepted
 
-Photos are stored as inline base64 data URLs in IndexedDB. Large photo volume will hit quota limits. Backup/export is the approved recovery method. Cloud sync is Wave 5 deferred.
+Photos are stored as inline base64 data URLs in IndexedDB. Large photo volume will hit quota limits. Backup/export is the approved recovery method. Cloud sync is Wave 6 deferred (Protect pillar Wave 5 precedes cloud).
 
 ---
 
 ## MVP-002: No Post-Capture Edit UI
 
-**Severity:** Planned — Wave 1 roadmap  
-**Status:** Approved for implementation when scoped
+**Severity:** Resolved — Wave 1 Sprint 2B  
+**Status:** Closed (2026-07-14)
 
-Name, note, and title cannot be edited after capture. List shows fallback title "Sparad plats" until edit flow ships.
+Title and notes edit UI shipped. "Redigera" on snap cards; optional `name` and `note` after capture only.
 
 ---
 
 ## FEAS-001: Image Save/Download Platform Variance
 
-**Severity:** Technical feasibility — document before Wave 1  
-**Status:** Implemented (Sprint 3) — field verification pending
+**Severity:** Technical feasibility  
+**Status:** Implemented (Sprint 3) — partial field verification (Field Validation 0006 covers share; save-image field test still pending per platform)
 
 Saving a Snap image varies by platform: blob download on desktop/Android (`lib/saveSnapImage.ts`); Web Share with file on iOS. Do not claim parity without field verification. Success messaging is honest on failure.
 

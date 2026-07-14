@@ -111,7 +111,7 @@
 
 **Status:** Accepted  
 **Context:** MapSnap value is proven offline without backend. Feature creep toward cloud-first would delay user value.  
-**Decision:** Official roadmap prioritizes no-backend improvements first (Waves 1–4). Backend/cloud (Wave 5) deferred until local product value is mature and need is proven.  
+**Decision:** Official roadmap prioritizes no-backend improvements first (Waves 1–4). Backend/cloud (Wave 6 per ADR-020; formerly Wave 5) deferred until local product value is mature and need is proven.  
 **Consequences:** No backend becomes a prerequisite for core use. `product_roadmap.md` is authoritative ordering.
 
 ---
@@ -138,8 +138,8 @@
 
 **Status:** Accepted  
 **Context:** Account systems, sync, and hosted sharing add weight without proven need at current maturity.  
-**Decision:** Wave 5 backend scope is deferred. Core MapSnap must work fully without accounts or cloud.  
-**Consequences:** Reassess only after Waves 1–4 value is shipped and measured.
+**Decision:** Wave 6 backend scope is deferred (renumbered from Wave 5 per ADR-020; Protect is Wave 5). Core MapSnap must work fully without accounts or cloud.  
+**Consequences:** Reassess only after Waves 1–5 value is shipped and measured. Protect pillar (Wave 5) precedes cloud.
 
 ---
 
@@ -167,4 +167,22 @@
 **Context:** Wave 1 Sprint 2 adds title and notes UI; later waves add favorite, tags, Snaptisers, and image metadata. Existing IndexedDB records and JSON backups must keep working.  
 **Decision:** `Snap` in `types/place.ts` is the authoritative persisted record. Product "title" maps to `name`; "notes" to `note`. Legacy keys `title` / `notes` normalize on load/import. New fields are optional only. Validation and normalization live in `lib/snapModel.ts`. Backup remains a JSON array (`mapsnap-snaps-array-v1`); unknown keys round-trip. IndexedDB stays at version 1 (schemaless documents) until a structural store change is unavoidable.  
 **Consequences:** Sprint 2B edit UI writes `name` and `note`. No parallel title/notes keys in new code. Required-field or envelope changes require ADR + format version bump. Documented in `snap_model.md`.
+
+---
+
+## ADR-020: Core Product Lifecycle Pillars and Experience Model
+
+**Status:** Accepted  
+**Context:** Real-world use of Capture, enrichment, image saving, and Share Snap (including puncture/roadside and insurance documentation scenarios) showed that Share and data protection are major product areas — not side features. The earlier four-pillar model (Capture, Remember, Return, Delight) remains valuable but describes user experience, not product lifecycle. Competing truths must be avoided.  
+**Decision:**
+
+1. **Core Product Pillars (lifecycle):** CAPTURE, ENRICH, SHARE, PROTECT — approved. DISCOVER — emerging strategic pillar; scope not yet mature.
+2. **Experience qualities (preserved):** CAPTURE, REMEMBER, RETURN, DELIGHT — DELIGHT is cross-cutting, not a lifecycle stage.
+3. **Mapping:** Capture supports Capture; Enrich strengthens Remember; Share and navigation strengthen Return; Protect preserves Remember and Return; Discover resurfaces remembered places.
+4. **Share product track:** Quick Share (implemented), Professional Share, MapSnap-to-MapSnap Share, Smart Share (exploratory) — documented in `product_roadmap.md`.
+5. **Protect principles:** Offline First. Cloud Optional. MapSnap should protect the user's memories without requiring an account. Data protection (Wave 5) precedes backend/cloud maturity (Wave 6).
+6. **Discover guardrails:** User's own Snap collection first; not a social discovery feed; not public place discovery by default.
+7. **Positioning preserved:** MapSnap is not a map app; fastest way to save and return; captures the place before it is forgotten. Evolved vision complements positioning.
+
+**Consequences:** `product_vision.md`, `product_roadmap.md`, `Identity/product_doctrine.md`, `feature_gate.md`, and `Identity/vocabulary.md` updated. Roadmap renumbered: Wave 5 = Protect, Wave 6 = MapSnap-to-MapSnap Share / Cloud (formerly Wave 5). Feature Gate requires Core Pillar alignment and Discover guardrails. Protected SNAP interaction unchanged (ADR-012).
 

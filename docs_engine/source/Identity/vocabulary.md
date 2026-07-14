@@ -16,30 +16,44 @@ Consistent words create a coherent product. MapSnap has its own language. Use it
 
 ## Official Terms
 
-| Term | Meaning | Swedish (UI) |
-|------|---------|--------------|
-| **Snap** | The core action — one tap to capture a place | SNAP |
-| **Snappar** | Saved captures; the user's collection | snappar |
-| **Discovery** | A place worth remembering — not a generic pin | upptäckt |
-| **Moment** | The experience at capture time — what happened there | ögonblick |
-| **Capture** | The act of saving coordinates (via Snap) | fånga |
-| **Return** | Going back to a saved place | återvända |
-| **Snaptiser** | A reminder or intention attached to a Snap (provisional term) | snaptiser |
-| **CAPTURE** | Pillar — save the place immediately | fånga |
-| **REMEMBER** | Pillar — add meaning after capture | kom ihåg |
-| **DELIGHT** | Pillar — restrained polish without slowing capture | — |
+| Term | Meaning | Swedish (UI) | Status |
+|------|---------|--------------|--------|
+| **Snap** | The core action — one tap to capture a place | SNAP | permanent |
+| **Snappar** | Saved captures; the user's collection | snappar | permanent |
+| **Discovery** | A place worth remembering — not a generic pin | upptäckt | permanent |
+| **Moment** | The experience at capture time — what happened there | ögonblick | permanent |
+| **Capture** | The act of saving coordinates (via Snap) | fånga | permanent |
+| **Return** | Going back to a saved place | återvända | permanent |
+| **Snaptiser** | A reminder or intention attached to a Snap | snaptiser | provisional |
+| **CAPTURE** | Core Pillar — save the place immediately | fånga | permanent |
+| **ENRICH** | Core Pillar — add meaning after capture | berika | approved |
+| **SHARE** | Core Pillar — communicate a place appropriately | dela | approved |
+| **PROTECT** | Core Pillar — safeguard Snap history without account | skydda | approved |
+| **DISCOVER** | Emerging pillar — find and rediscover own Snap content | upptäck | emerging |
+| **Quick Share** | Fast native share (SMS, messaging, email) | snabbdelning / Dela | approved (UI: Dela) |
+| **Professional Share** | Structured documentation share format | professionell delning | future |
+| **MapSnap-to-MapSnap Share** | Transfer Snap itself to another MapSnap user | MapSnap-delning | future |
+| **Smart Share** | Context-guided share format selection | smart delning | exploratory |
+| **Protect Snaps** | Data protection capability area | skydda snappar | future |
+| **Received Snap** | Snap imported from another user | mottagen snap / Mottagen Snap | provisional |
+| **REMEMBER** | Experience quality — meaning over time | kom ihåg | permanent |
+| **DELIGHT** | Experience quality — restrained polish | — | permanent |
 
 Use **Snap** as a verb and noun. It is the product's central word.
 
 **Snaptiser** status: provisional working term — see `snaptiser_doctrine.md`. Requires explicit product approval before store/marketing use.
 
+**Received Snap / Mottagen Snap** status: provisional — not promoted to permanent brand vocabulary until MapSnap-to-MapSnap Share scope is mature.
+
 **Snappar** is the plural for saved items in user-facing Swedish copy.
 
-**Discovery** frames what the user saves — something found, not something filed.
+**Discovery** frames what the user saves — something found, not something filed. Do not confuse with the **DISCOVER** pillar, which describes rediscovering saved content.
 
 **Moment** refers to the lived experience, not metadata.
 
 **Capture** describes the action; **Return** describes revisiting.
+
+**Enrich**, **Share**, **Protect**, and **Discover** (pillar) are approved product lifecycle terms. Share mode names (Professional Share, Smart Share) are approved for roadmap and doctrine; promote to permanent UI vocabulary only when implemented.
 
 ---
 

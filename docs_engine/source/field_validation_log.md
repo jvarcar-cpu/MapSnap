@@ -122,6 +122,36 @@ The surrounding pulse and sonar waves provide sufficient feedback. Further tunin
 
 ---
 
+## Field Validation 0006 — Quick Share SMS (successful share test)
+
+**Date:** 2026-07-14  
+**Devices:** Google Pixel 9a (SMS share)  
+**Scenario:** Real-device Quick Share after Wave 1 Sprint 4 polish
+
+### Verified
+
+- Image arrived in SMS share
+- Title arrived
+- Note arrived (when present)
+- Coordinates and map link arrived
+- Android created an automatic map preview from the shared link
+- Waze link was absent (single Google Maps URL only — as designed)
+- Share text polish: `📍 Position`, `🌍 Öppna plats`; no redundant "Image attached." copy
+
+### Observation
+
+Duplicate text/link presentation was identified — Android SMS map preview already supplies navigation context alongside explicit coordinates and Google Maps URL in the message body.
+
+### Decision
+
+**Simplify Quick Share to one map link and remove redundant "Image attached." copy.** Shipped 2026-07-14 (changelog 0.2.6).
+
+### Outcome
+
+Validates Share as a major product capability (SHARE pillar). Supports future Professional Share direction (Field Validation 0003, 0004) without implying legal verification.
+
+---
+
 ## Related Documents
 
 | Document | Relationship |
