@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.6] — 2026-07-14
+
+### Changed (Share text polish)
+
+- **Share text format** — minimal SMS-friendly body: title, optional note, `📍 Position` + coordinates, `🌍 Öppna plats` + single Google Maps URL
+- Removed redundant "Image attached." line (image is already visible in share sheet)
+- Removed "Google Maps:" label duplication (Android SMS map preview supplies navigation context)
+- Field validated on real-device SMS share
+
+### Not changed
+
+- Share image file attachment, SNAP interaction, persistence, storage unchanged
+- No new doctrine or roadmap changes
+
 ## [0.2.5] — 2026-07-14
 
 ### Added (Wave 1 Sprint 4 — Share Snap)

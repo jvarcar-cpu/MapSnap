@@ -23,16 +23,12 @@ export function buildShareSnapText(snap: Pick<Snap, "name" | "note" | "latitude"
 
   lines.push(
     "",
-    "Position:",
+    "📍 Position",
     formatShareCoordinates(snap.latitude, snap.longitude),
     "",
-    "Google Maps:",
+    "🌍 Öppna plats",
     googleMapsUrl(snap.latitude, snap.longitude)
   );
-
-  if (snap.photoDataUrl) {
-    lines.push("", "Image attached.");
-  }
 
   return lines.join("\n");
 }

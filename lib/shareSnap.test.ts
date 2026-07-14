@@ -12,7 +12,51 @@ describe("formatShareCoordinates", () => {
 });
 
 describe("buildShareSnapText", () => {
-  it("includes title, note, position, map link, and image marker", () => {
+  it("formats full message with note", () => {
+    const text = buildShareSnapText({
+      name: "Fiskeläge",
+      note: "Bra vindskydd",
+      latitude: 57.86595,
+      longitude: 19.05855,
+    });
+
+    assert.equal(
+      text,
+      [
+        "Fiskeläge",
+        "",
+        "Bra vindskydd",
+        "",
+        "📍 Position",
+        "57.86595, 19.05855",
+        "",
+        "🌍 Öppna plats",
+        "https://www.google.com/maps/search/?api=1&query=57.86595,19.05855",
+      ].join("\n")
+    );
+  });
+
+  it("formats message without note", () => {
+    const text = buildShareSnapText({
+      latitude: 57.86595,
+      longitude: 19.05855,
+    });
+
+    assert.equal(
+      text,
+      [
+        "Sparad plats",
+        "",
+        "📍 Position",
+        "57.86595, 19.05855",
+        "",
+        "🌍 Öppna plats",
+        "https://www.google.com/maps/search/?api=1&query=57.86595,19.05855",
+      ].join("\n")
+    );
+  });
+
+  it("includes title, note, position, and map link in minimal format", () => {
     const text = buildShareSnapText({
       name: "SPRINT 2",
       note: "Test anteckning",
@@ -23,11 +67,12 @@ describe("buildShareSnapText", () => {
 
     assert.ok(text.startsWith("SPRINT 2"));
     assert.ok(text.includes("Test anteckning"));
-    assert.ok(text.includes("Position:"));
+    assert.ok(text.includes("📍 Position"));
     assert.ok(text.includes("57.12345, 18.54321"));
-    assert.ok(text.includes("Google Maps:"));
+    assert.ok(text.includes("🌍 Öppna plats"));
     assert.ok(text.includes("https://www.google.com/maps/search/?api=1&query=57.12345,18.54321"));
-    assert.ok(text.includes("Image attached."));
+    assert.ok(!text.includes("Image attached."));
+    assert.ok(!text.includes("Google Maps:"));
   });
 
   it("uses Sparad plats when title is absent", () => {
@@ -50,17 +95,24 @@ describe("buildShareSnapText", () => {
       photoDataUrl: "data:image/jpeg;base64,abc",
     });
 
-    assert.ok(text.startsWith("Plats\n\nPosition:"));
+    assert.ok(text.startsWith("Plats\n\n📍 Position"));
     assert.ok(!text.includes("   "));
   });
 
-  it("omits image marker without photoDataUrl", () => {
-    const text = buildShareSnapText({
+  it("never includes image marker regardless of photoDataUrl", () => {
+    const withPhoto = buildShareSnapText({
+      name: "Plats",
+      latitude: 59.3293,
+      longitude: 18.0686,
+      photoDataUrl: "data:image/jpeg;base64,abc",
+    });
+    const withoutPhoto = buildShareSnapText({
       name: "Plats",
       latitude: 59.3293,
       longitude: 18.0686,
     });
 
-    assert.ok(!text.includes("Image attached."));
+    assert.ok(!withPhoto.includes("Image attached."));
+    assert.ok(!withoutPhoto.includes("Image attached."));
   });
 });

@@ -24,6 +24,8 @@
 
 **Wave 1 Sprint 4 completed:** 2026-07-14
 
+**Wave 1 Sprint 4 share text polish:** 2026-07-14
+
 
 
 ## Goal
@@ -155,6 +157,8 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 - [x] Placement: after Google Maps / Waze and Spara bild, before Redigera / Ta bort
 
 - [x] Native share: title (fallback "Sparad plats"), notes when present, coordinates, Google Maps URL, image file when supported
+
+- [x] Share text polish: `📍 Position`, `🌍 Öppna plats`; no "Image attached." or duplicate map labels (field-validated SMS)
 
 - [x] Unavailable: "Delning stöds inte i den här webbläsaren" — no silent failure
 
