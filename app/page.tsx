@@ -5,8 +5,10 @@ import { GeoDiagnosticsPanel } from "@/components/GeoDiagnosticsPanel";
 import { LocationPermissionCard } from "@/components/LocationPermissionCard";
 import { SnapButton } from "@/components/SnapButton";
 import { PlaceList } from "@/components/PlaceList";
+import { SnapFilterBar } from "@/components/SnapFilterBar";
 import { SnapSearchBar } from "@/components/SnapSearchBar";
 import { SnapSortBar } from "@/components/SnapSortBar";
+import { filterSnapsByMode, type SnapFilterMode } from "@/lib/snapFilter";
 import { filterSnapsBySearch } from "@/lib/snapSearch";
 import { sortSnaps, type SnapSortMode } from "@/lib/snapSort";
 import { SnapBackupPanel } from "@/components/SnapBackupPanel";
@@ -40,6 +42,7 @@ export default function HomePage() {
   const [secureContext, setSecureContext] = useState(true);
   const [locationHost, setLocationHost] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [filterMode, setFilterMode] = useState<SnapFilterMode>("all");
   const [sortMode, setSortMode] = useState<SnapSortMode>("newest");
   const [sortReference, setSortReference] = useState<{
     latitude: number;
@@ -206,9 +209,14 @@ export default function HomePage() {
     []
   );
 
-  const filteredPlaces = useMemo(
+  const searchedPlaces = useMemo(
     () => filterSnapsBySearch(places, searchQuery),
     [places, searchQuery]
+  );
+
+  const filteredPlaces = useMemo(
+    () => filterSnapsByMode(searchedPlaces, filterMode),
+    [searchedPlaces, filterMode]
   );
 
   const displayedPlaces = useMemo(
@@ -305,6 +313,7 @@ export default function HomePage() {
         {places.length > 0 && (
           <>
             <SnapSearchBar value={searchQuery} onChange={setSearchQuery} />
+            <SnapFilterBar value={filterMode} onChange={setFilterMode} />
             <SnapSortBar
               value={sortMode}
               onChange={(mode) => {
@@ -326,6 +335,7 @@ export default function HomePage() {
           places={displayedPlaces}
           totalCount={places.length}
           searchQuery={searchQuery}
+          filterMode={filterMode}
           onDelete={handleDelete}
           onUpdate={handleUpdate}
           newestId={newestId}

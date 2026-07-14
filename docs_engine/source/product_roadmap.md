@@ -268,7 +268,7 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 |---|------|--------|--------|------------|--------------|-----|
 | 1 | Search (title, notes) | **Shipped** | DISCOVER / ENRICH | Medium | No | — |
 | 2 | Sort (newest, oldest, nearest) | **Shipped** | DISCOVER | Medium | No | — |
-| 3 | Filter (all, favorites, with images) | Planned | DISCOVER | Low–Medium | No | — |
+| 3 | Filter (all, favorites, with images) | **Shipped** | DISCOVER | Low–Medium | No | — |
 | 4 | Tags | Planned | ENRICH / DISCOVER | Medium | No | — |
 | 5 | Nearby / collection views | Planned | DISCOVER | Medium | No | Feature gate |
 | 6 | Color / category markers | Experimental | ENRICH | Medium | No | Feature gate |
@@ -291,6 +291,22 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 | Feature Gate | Does not slow SNAP; strengthens DISCOVER; self-evident; local-first; lightweight UI; after capture; calm identity |
 | Affects SNAP interaction | No |
 | Shipped | `lib/snapSort.ts`, `components/SnapSortBar.tsx`, `app/page.tsx` |
+
+#### 3. Filter — shipped
+
+| Field | Value |
+|-------|-------|
+| Status | **Shipped** — Wave 2 Sprint 4 (2026-07-14) |
+| User value | Narrow own Snaps by favorites or images for faster rediscovery |
+| Pillar | DISCOVER |
+| Backend | No |
+| Complexity | Low–Medium |
+| Dependencies | Search (list controls), favorite field, `photoDataUrl` |
+| Risk | Pre-capture filter UI — reject; pipeline order drift — reject |
+| Acceptance | Segmented control Alla / Favoriter / Med bild below search when snaps exist; applies after search, before sort; memoized `filterSnapsByMode()`; calm empty states |
+| Feature Gate | Does not slow SNAP; strengthens DISCOVER; self-evident; local-first; lightweight UI; after capture; calm identity; rediscovers own content |
+| Affects SNAP interaction | No |
+| Shipped | `lib/snapFilter.ts`, `components/SnapFilterBar.tsx`, `app/page.tsx` |
 
 ---
 

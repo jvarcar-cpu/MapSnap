@@ -4,7 +4,7 @@
 
 **Locked:** 2026-06-28  
 **Updated:** 2026-07-14  
-**Status:** MVP 0.1 stable — Wave 2 Sprint 3 Smart Sorting shipped
+**Status:** MVP 0.1 stable — Wave 2 Sprint 4 Filter shipped
 
 ## Wave Summary
 
@@ -37,9 +37,13 @@
 
 - ✓ Smart Sorting — Nyast / Äldst / Närmast, memoized sort, nearest one-time GPS
 
+### Wave 2 Sprint 4 — Completed
+
+- ✓ Filter — Alla / Favoriter / Med bild, memoized filter, search → filter → sort pipeline
+
 ### Current Status
 
-Wave 2 in progress. Filter (all, favorites, with images) next.
+Wave 2 in progress. Tags next.
 
 ## Interaction Baseline
 
@@ -54,7 +58,8 @@ Wave 2 in progress. Filter (all, favorites, with images) next.
 | Save image | "Spara bild" on cards with `photoDataUrl` — device copy only; hidden without image |
 | Share | "Dela" on every snap card — native Web Share; text + Google Maps link always; image file when `photoDataUrl` present |
 | Search | Search field above list when snaps exist — filters loaded collection by title and notes in real time; clear button; search empty state when no matches |
-| Sort | Segmented control below search when snaps exist — Nyast / Äldst / Närmast; reorder after search filter; nearest uses one-time GPS; failure reverts to Nyast |
+| Filter | Segmented control below search when snaps exist — Alla / Favoriter / Med bild; applies after search, before sort |
+| Sort | Segmented control below filter when snaps exist — Nyast / Äldst / Närmast; reorder after search and filter; nearest uses one-time GPS; failure reverts to Nyast |
 | Storage | IndexedDB primary; legacy localStorage migrates on load; Snap normalization on load |
 | Backup | JSON array export/import/merge by id (`mapsnap-snaps-array-v1`) |
 
@@ -64,8 +69,9 @@ Wave 2 in progress. Filter (all, favorites, with images) next.
 |---------|-------------|
 | SNAP button | Circular, large (~70% width, max 320px), green radial 3D gradient |
 | Hero | Title "MapSnap"; instruction *"Tryck för position · Håll inne för position + bild"* |
-| List | Header "MINA SNAPPAR"; search field above cards when snaps exist; sort control below search; compact styled cards; user title left when present; **MapSnap signature** upper-right always; notes line-clamped; list gap `gap-3` |
+| List | Header "MINA SNAPPAR"; search field above cards when snaps exist; filter control below search; sort control below filter; compact styled cards; user title left when present; **MapSnap signature** upper-right always; notes line-clamped; list gap `gap-3` |
 | Search bar | Rounded-full, lightweight; search icon; placeholder "Sök bland dina Snappar"; clear (X) when text present |
+| Filter bar | Rounded-full segmented control; label "Filtrera"; options Alla / Favoriter / Med bild; active segment elevated white pill |
 | Sort bar | Rounded-full segmented control; label "Sortera"; options Nyast / Äldst / Närmast; active segment elevated white pill |
 | Card photo | Banner aspect `3:1` (Iteration 1); `object-cover`; square thumbnail deferred |
 | Card actions | Favorite star (overlay) → Navigation: Maps (brand icons) → divider → Actions: two-column grid Redigera / Dela, Spara bild / Ta bort (Spara bild if image); SVG icons ~18px |
@@ -110,7 +116,7 @@ Wave 2 in progress. Filter (all, favorites, with images) next.
 
 - Post-capture only — star toggle on every card; not on SNAP button
 - Optimistic UI; `saveSnap()` persists `favorite: true` or removes field
-- No reorder or filter in this sprint; search and sort are separate (Wave 2 Sprint 2–3)
+- Filter (Wave 2 Sprint 4) narrows list by favorites; search and sort are separate pipeline stages
 - Error: restore previous state; "Kunde inte spara favorit."
 - Code: `lib/snapFavorite.ts`, `components/FavoriteToggle.tsx`
 
@@ -138,10 +144,19 @@ Wave 2 in progress. Filter (all, favorites, with images) next.
 - Memoized filtering via `filterSnapsBySearch()` — no backend, no cloud, no AI
 - Code: `lib/snapSearch.ts`, `components/SnapSearchBar.tsx`, `app/page.tsx`
 
+## Filter (Wave 2 Sprint 4)
+
+- Segmented filter control below search when snaps exist — Alla / Favoriter / Med bild
+- Client-side filter of loaded collection — applies after search, before sort
+- Favorites: `favorite === true` only; with images: `photoDataUrl` present
+- Empty states: "Inga Snappar matchar filtret."; combined with search "Inga Snappar matchar dina val."
+- Memoized filtering via `filterSnapsByMode()` — no backend, no cloud
+- Code: `lib/snapFilter.ts`, `components/SnapFilterBar.tsx`, `app/page.tsx`
+
 ## Smart Sorting (Wave 2 Sprint 3)
 
-- Segmented sort control below search when snaps exist — Nyast / Äldst / Närmast
-- Client-side reorder of loaded collection — applies after search filter
+- Segmented sort control below filter when snaps exist — Nyast / Äldst / Närmast
+- Client-side reorder of loaded collection — applies after search and filter
 - Nearest: one-time GPS read when selected; haversine distance; tie-break newest; no continuous tracking
 - Failure: reverts to Nyast; "Kunde inte sortera efter avstånd. Aktivera platsåtkomst."
 - Memoized sorting via `sortSnaps()` — no backend, no cloud
@@ -159,7 +174,7 @@ Wave 2 in progress. Filter (all, favorites, with images) next.
 ## Verification
 
 - Automated: `node scripts/verify-baseline.mjs [url]` — use URL printed by `npm run dev`
-- Unit: `npm test` — `lib/snapEdit.test.ts`, `lib/snapFavorite.test.ts`, `lib/saveSnapImage.test.ts`, `lib/shareSnap.test.ts`, `lib/snapSearch.test.ts`, `lib/snapSort.test.ts`
+- Unit: `npm test` — `lib/snapEdit.test.ts`, `lib/snapFavorite.test.ts`, `lib/saveSnapImage.test.ts`, `lib/shareSnap.test.ts`, `lib/snapSearch.test.ts`, `lib/snapFilter.test.ts`, `lib/snapSort.test.ts`
 - Docs: `node scripts/validate_docs.mjs`
 - Reconciliation: `baseline_reconciliation.md` — Wave 0 + Wave 1 (2026-07-14)
 - Manual mobile: long-press camera, denied-permission card (OPS-002)

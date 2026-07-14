@@ -1,5 +1,6 @@
 "use client";
 
+import type { SnapFilterMode } from "@/lib/snapFilter";
 import type { SnapPlace } from "@/types/place";
 import { PlaceCard } from "./PlaceCard";
 
@@ -10,6 +11,8 @@ type PlaceListProps = {
   newestId?: string | null;
   /** Active search query — used for search empty state when `totalCount` > 0. */
   searchQuery?: string;
+  /** Active list filter — used for filter empty state when `totalCount` > 0. */
+  filterMode?: SnapFilterMode;
   /** Total snaps before search filter — distinguishes empty collection from no matches. */
   totalCount?: number;
 };
@@ -48,10 +51,12 @@ export function PlaceList({
   onUpdate,
   newestId,
   searchQuery = "",
+  filterMode = "all",
   totalCount,
 }: PlaceListProps) {
   const collectionEmpty = (totalCount ?? places.length) === 0;
   const searchActive = searchQuery.trim().length > 0;
+  const filterActive = filterMode !== "all";
 
   if (collectionEmpty) {
     return (
@@ -65,12 +70,17 @@ export function PlaceList({
     );
   }
 
-  if (places.length === 0 && searchActive) {
+  if (places.length === 0 && (searchActive || filterActive)) {
+    const emptyMessage =
+      searchActive && filterActive
+        ? "Inga Snappar matchar dina val."
+        : searchActive
+          ? "Inga Snappar matchar din sökning."
+          : "Inga Snappar matchar filtret.";
+
     return (
       <div className="animate-fade-in px-2 py-10 text-center">
-        <p className="text-base font-medium text-primary">
-          Inga Snappar matchar din sökning.
-        </p>
+        <p className="text-base font-medium text-primary">{emptyMessage}</p>
       </div>
     );
   }

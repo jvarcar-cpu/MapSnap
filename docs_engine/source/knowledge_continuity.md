@@ -32,6 +32,7 @@ Chronicles are append-only. They do not outrank doctrine or ADR authority.
 | 2026-07-14 | Wave 2 Sprint 1 — Compact Cards Iteration 1 | Reduced-height banner cards; action-group divider; Wave 2 organization track begins |
 | 2026-07-14 | Wave 2 Sprint 2 — Search | Local title/notes filter; search bar; search empty state |
 | 2026-07-14 | Wave 2 Sprint 3 — Smart Sorting | Nyast / Äldst / Närmast list reorder; nearest one-time GPS |
+| 2026-07-14 | Wave 2 Sprint 4 — Filter | Alla / Favoriter / Med bild; search → filter → sort pipeline |
 | 2026-07-14 | Wave 1 Core Value shipped | Sprints 1–5, MapSnap signature (ADR-021), snap card + action icon polish |
 | 2026-07-14 | ADR-021 — MapSnap Signature | User first. Product second. No card fallback title |
 | 2026-07-14 | SnapSpot canonical label | Location line on cards and in Quick Share; category remains metadata |

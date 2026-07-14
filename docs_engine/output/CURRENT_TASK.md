@@ -6,25 +6,25 @@
 
 ## Status
 
-Wave 2 Sprint 3 complete — Smart Sorting shipped. Awaiting Filter scoping.
+Wave 2 Sprint 4 complete — Filter shipped. Awaiting Tags scoping.
 
 ## Phase
 
-Wave 2 — Organization / Early Discover. Sprint 3 (Smart Sorting) complete.
+Wave 2 — Organization / Early Discover. Sprint 4 (Filter) complete.
 
 ## Pass Type
 
-None active. Declare Feature Pass in `current_phase.md` before starting Filter.
+None active. Declare Feature Pass in `current_phase.md` before starting Tags.
 
 ## Context
 
-Smart Sorting shipped 2026-07-14: Nyast / Äldst / Närmast segmented control, memoized `sortSnaps()`, nearest with one-time GPS read, failure reverts to Nyast. Search unchanged. No filter, tags, backend, or cloud.
+Filter shipped 2026-07-14: Alla / Favoriter / Med bild segmented control, memoized `filterSnapsByMode()`, pipeline search → filter → sort → render. Search and Smart Sorting unchanged in behaviour. No tags, backend, or cloud.
 
-## Next Sprint — Filter
+## Next Sprint — Tags
 
-**Scope:** All, favorites, with images. See `implementation_readiness.md` order 9b (filter portion), `product_roadmap.md` item 3.
+**Scope:** Lightweight tag list on snap. See `implementation_readiness.md` order 10, `product_roadmap.md` item 4.
 
-**Not in scope:** SNAP interaction changes, backend, Professional Share, Protect, tags.
+**Not in scope:** SNAP interaction changes, backend, Professional Share, Protect, collections.
 
 ## Prerequisites
 
@@ -32,9 +32,10 @@ Smart Sorting shipped 2026-07-14: Nyast / Äldst / Närmast segmented control, m
 - [x] Compact Cards Iteration 1 shipped — banner compression, divider, spacing
 - [x] Search shipped — title/notes filter, search empty state, clear button
 - [x] Smart Sorting shipped — Nyast / Äldst / Närmast, memoized sort, nearest GPS
+- [x] Filter shipped — Alla / Favoriter / Med bild, memoized filter, pipeline order preserved
 - [x] Generated steering docs current (`docs_engine/output/`)
-- [ ] Field validation on real device for Smart Sorting (recommended)
-- [ ] Feature Gate answers documented for Filter
+- [ ] Field validation on real device for Filter (recommended)
+- [ ] Feature Gate answers documented for Tags
 
 ## Acceptance Criteria — Search (shipped)
 
@@ -43,25 +44,25 @@ Smart Sorting shipped 2026-07-14: Nyast / Äldst / Närmast segmented control, m
 - [x] Case-insensitive, partial match, whitespace trimmed
 - [x] Search empty state "Inga Snappar matchar din sökning." — no errors
 - [x] Search icon, clear button, placeholder "Sök bland dina Snappar"
-- [x] Memoized filtering; no filter, tags, backend, or cloud
+- [x] Memoized filtering; no backend or cloud
 - [x] Build, docs validation, baseline verification, and unit tests pass
 
 ## Acceptance Criteria — Smart Sorting (shipped)
 
-- [x] Sort control above snap list when snaps exist — below search bar
+- [x] Sort control below filter when snaps exist
 - [x] Three modes: Nyast (newest), Äldst (oldest), Närmast (nearest)
-- [x] Client-side reorder of loaded collection — applies after search filter
+- [x] Client-side reorder of loaded collection — applies after search and filter
 - [x] Memoized sorting via `sortSnaps()` — no backend, no cloud
 - [x] Nearest uses one-time GPS read when selected — no continuous tracking
 - [x] Location failure reverts to Nyast with calm Swedish message
 - [x] Behaviour + visual regression checklists pass
 
-## Acceptance Criteria — Filter (remaining)
+## Acceptance Criteria — Filter (shipped)
 
-- [ ] Filter control for all, favorites, with images
-- [ ] Works with search and sort — filter then sort pipeline
-- [ ] Rollback path: hide filter control without data loss
-- [ ] Behaviour + visual regression checklists pass
+- [x] Filter control for all, favorites, with images — Alla / Favoriter / Med bild
+- [x] Works with search and sort — search → filter → sort pipeline
+- [x] Rollback path: hide filter control without data loss
+- [x] Behaviour + visual regression checklists pass
 
 ## Reference
 

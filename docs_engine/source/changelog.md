@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.19] — 2026-07-14
+
+### Added (Wave 2 Sprint 4 — Filter)
+
+- **Filter** — segmented filter control below search when snaps exist; modes: Alla (all), Favoriter (favorites), Med bild (with images)
+- **Filter behaviour** — pure client-side filter of loaded collection; applies after search, before sort; memoized via `filterSnapsByMode()` in `lib/snapFilter.ts`
+- **Pipeline** — search → filter → sort → render; search and sort behaviour preserved
+- **Filter empty states** — "Inga Snappar matchar filtret." when filter alone yields no matches; "Inga Snappar matchar dina val." when search and filter combine with no matches
+- **Filter UI** — lightweight rounded segmented control between search and sort bars; label Filtrera
+
+### Not changed
+
+- SNAP short/long-press contract unchanged (ADR-012)
+- No tags, backend, or cloud
+- IndexedDB version remains `1`; no schema change
+- Sort and search behaviour unchanged except pipeline order (filter inserted between search and sort)
+
+### Docs
+
+- Wave 2 Sprint 4 Filter declared in `current_phase.md`
+- Filter documented in `ux_doctrine.md`, `implementation_readiness.md`, `product_roadmap.md`
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.18] — 2026-07-14
 
 ### Added (Wave 2 Sprint 3 — Smart Sorting)

@@ -100,7 +100,8 @@ Do not redesign. Restore and preserve this baseline unless explicitly instructed
 
 - Section header: "MINA SNAPPAR" (uppercase, tracked)
 - **Search (Wave 2 Sprint 2 — shipped):** rounded search field above list when snaps exist; placeholder "Sök bland dina Snappar"; search icon; clear (X) when text present; filters loaded collection by title (`name`) and notes (`note`) — case-insensitive, partial match; search empty state "Inga Snappar matchar din sökning."
-- **Smart Sorting (Wave 2 Sprint 3 — shipped):** segmented control below search when snaps exist — Nyast / Äldst / Närmast; client-side reorder after search filter; nearest uses one-time GPS read (no continuous tracking); failure reverts to Nyast with calm message; no filter or tags yet
+- **Filter (Wave 2 Sprint 4 — shipped):** segmented control below search when snaps exist — Alla / Favoriter / Med bild; client-side filter after search, before sort; favorites match `favorite: true` only; with-images match snaps with `photoDataUrl`; filter empty state "Inga Snappar matchar filtret."; combined search+filter empty state "Inga Snappar matchar dina val."
+- **Smart Sorting (Wave 2 Sprint 3 — shipped):** segmented control below filter when snaps exist — Nyast / Äldst / Närmast; client-side reorder after search and filter; nearest uses one-time GPS read (no continuous tracking); failure reverts to Nyast with calm message; no tags yet
 - Empty state: pin illustration + "Inga snappar ännu."
 - Cards: rounded-3xl, soft shadow, optional photo banner (2.4:1); user title left when present; **MapSnap signature** upper-right always (ADR-021)
 - Favorite toggle: small star upper-right overlay on card; ☆ inactive, ★ active with subtle gold — must not collide with signature
@@ -205,7 +206,7 @@ Users never fill in fields before their first save. Optional enrichment (name, n
 
 ## RETURN / SHARE Actions (existing)
 
-Google Maps and Waze deep links are the approved Return path. Quick Share ("Dela") and save-image are shipped Wave 1 SHARE actions. **Quick Share is available on every snap card** — text and Google Maps link always; image file attached when `photoDataUrl` is present and `canShare` supports files. Save-image remains image-only. Favorite toggle is a shipped Wave 1 ENRICH action (metadata only — no filter yet). Professional Share is a future SHARE mode — see `product_roadmap.md`. No proprietary navigation.
+Google Maps and Waze deep links are the approved Return path. Quick Share ("Dela") and save-image are shipped Wave 1 SHARE actions. **Quick Share is available on every snap card** — text and Google Maps link always; image file attached when `photoDataUrl` is present and `canShare` supports files. Save-image remains image-only. Favorite toggle is a shipped Wave 1 ENRICH action (metadata only). Filter (Wave 2 Sprint 4) narrows list by favorites. Professional Share is a future SHARE mode — see `product_roadmap.md`. No proprietary navigation.
 
 ## Compact Cards (experimental — Wave 2 Sprint 1)
 

@@ -4,11 +4,13 @@
 
 **Phase:** Wave 2 — Organization / Early Discover  
 
-**Status:** **Wave 2 Sprint 3 complete** — Smart Sorting (Feature Pass) shipped 2026-07-14  
+**Pass type:** None active — Wave 2 Sprint 4 Filter complete
 
-**Previous:** Wave 2 Sprint 2 Search shipped 2026-07-14  
+**Status:** **Wave 2 Sprint 4 complete** — Filter (Feature Pass) shipped 2026-07-14  
 
-**Next sprint after Smart Sorting:** Filter (all, favorites, with images) — not started
+**Previous:** Wave 2 Sprint 3 Smart Sorting shipped 2026-07-14  
+
+**Next sprint after Filter:** Tags — not started
 
 **MVP 0.1 stabilized:** 2026-07-07  
 
@@ -42,7 +44,7 @@
 
 ## Goal
 
-Wave 2 Sprint 3 ships Smart Sorting — reorder loaded Snaps by newest, oldest, or nearest. Filter deferred to next sprint. Compact Cards Iteration 2 (square thumbnail + detail view) remains planned.
+Wave 2 Sprint 4 ships Filter — narrow loaded Snaps by all, favorites, or with images. Pipeline: search → filter → sort → render. Compact Cards Iteration 2 (square thumbnail + detail view) remains planned.
 
 **Wave 1 (closed):** All shipped sprints verified in `baseline_reconciliation.md` (Wave 1 section, 2026-07-14).
 
@@ -288,12 +290,22 @@ Full detail: `product_roadmap.md`.
 ## Wave 2 Sprint 3 — Smart Sorting — Completed
 
 - [x] Pass type: Feature Pass declared
-- [x] Sort control above list when snaps exist — Nyast, Äldst, Närmast
-- [x] Client-side reorder only — applies after search filter; memoized `sortSnaps()`
+- [x] Sort control below filter when snaps exist — Nyast, Äldst, Närmast
+- [x] Client-side reorder only — applies after search and filter; memoized `sortSnaps()`
 - [x] Nearest uses one-time GPS read — no continuous tracking
 - [x] Location failure reverts to Nyast with calm Swedish message
-- [x] No filter, tags, backend, or cloud
+- [x] No tags, backend, or cloud
+
+## Wave 2 Sprint 4 — Filter — Completed
+
+- [x] Pass type: Feature Pass declared
+- [x] Filter control below search when snaps exist — Alla, Favoriter, Med bild
+- [x] Client-side filter only — applies after search, before sort; memoized `filterSnapsByMode()`
+- [x] Works with search and sort — pipeline search → filter → sort → render
+- [x] Filter empty states — calm Swedish messages; no errors
+- [x] Rollback path: hide filter control without data loss
+- [x] No tags, backend, or cloud
 
 ## Next (when explicitly scoped)
 
-**Filter** — all, favorites, with images. See `next_task.md` and `CURRENT_TASK.md`.
+**Tags** — lightweight tag list on snap. See `next_task.md` and `CURRENT_TASK.md`.

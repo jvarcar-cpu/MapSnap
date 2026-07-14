@@ -4,7 +4,7 @@
 
 MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backend.
 
-**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Wave 2 Sprint 3 Smart Sorting shipped. Public: https://mapsnap.se.
+**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Wave 2 Sprint 4 Filter shipped. Public: https://mapsnap.se.
 
 ## Current Product Status
 
@@ -16,15 +16,16 @@ MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backe
 | Wave 2 Sprint 1 | Compact Cards Iteration 1 shipped — banner compression, action-group divider |
 | Wave 2 Sprint 2 | Search shipped — local title/notes filter, search bar, search empty state |
 | Wave 2 Sprint 3 | Smart Sorting shipped — Nyast / Äldst / Närmast, memoized sort, nearest GPS |
-| Next implementation | **Filter** (all, favorites, with images) |
+| Wave 2 Sprint 4 | Filter shipped — Alla / Favoriter / Med bild, memoized filter, search → filter → sort |
+| Next implementation | **Tags** (lightweight tag list on snap) |
 | Backend / cloud | Deferred — Wave 6 (ADR-016) |
 | Production | Vercel · https://mapsnap.se · client-only data model |
 
 ## Current Phase
 
-**Wave 2 — Organization / Early Discover** — Sprint 3 complete. Smart Sorting shipped.
+**Wave 2 — Organization / Early Discover** — Sprint 4 complete. Filter shipped.
 
-**Next sprint (when scoped):** Filter per `implementation_readiness.md` and `next_task.md`.
+**Next sprint (when scoped):** Tags per `implementation_readiness.md` and `next_task.md`.
 
 ## Architecture
 
@@ -46,6 +47,7 @@ app/page.tsx              — main capture screen
 components/SnapButton.tsx — tap / long-press
 components/PlaceCard.tsx  — snap card, actions, signature
 components/PlaceList.tsx  — snap list
+components/SnapFilterBar.tsx — list filter control
 lib/storage.ts            — IndexedDB CRUD (async)
 lib/db.ts                 — IndexedDB open + transactions
 lib/geo.ts                — Geolocation API
@@ -56,6 +58,7 @@ lib/snapFavorite.ts       — favorite toggle
 lib/saveSnapImage.ts      — device image copy
 lib/shareSnap.ts          — Quick Share payload
 lib/snapSearch.ts         — search filter
+lib/snapFilter.ts         — list filter modes
 lib/snapSort.ts           — list sort modes
 types/place.ts            — Snap / SnapPlace schema
 docs_engine/source/       — authoritative product knowledge
