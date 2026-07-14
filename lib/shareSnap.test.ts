@@ -27,10 +27,10 @@ describe("buildShareSnapText", () => {
         "",
         "Bra vindskydd",
         "",
-        "📍 Position",
+        "📍 SnapSpot",
         "57.86595, 19.05855",
         "",
-        "🌍 Öppna plats",
+        "🌍 Öppna i Google Maps",
         "https://www.google.com/maps/search/?api=1&query=57.86595,19.05855",
       ].join("\n")
     );
@@ -47,10 +47,10 @@ describe("buildShareSnapText", () => {
       [
         "Sparad plats",
         "",
-        "📍 Position",
+        "📍 SnapSpot",
         "57.86595, 19.05855",
         "",
-        "🌍 Öppna plats",
+        "🌍 Öppna i Google Maps",
         "https://www.google.com/maps/search/?api=1&query=57.86595,19.05855",
       ].join("\n")
     );
@@ -67,9 +67,9 @@ describe("buildShareSnapText", () => {
 
     assert.ok(text.startsWith("SPRINT 2"));
     assert.ok(text.includes("Test anteckning"));
-    assert.ok(text.includes("📍 Position"));
+    assert.ok(text.includes("📍 SnapSpot"));
     assert.ok(text.includes("57.12345, 18.54321"));
-    assert.ok(text.includes("🌍 Öppna plats"));
+    assert.ok(text.includes("🌍 Öppna i Google Maps"));
     assert.ok(text.includes("https://www.google.com/maps/search/?api=1&query=57.12345,18.54321"));
     assert.ok(!text.includes("Image attached."));
     assert.ok(!text.includes("Google Maps:"));
@@ -95,7 +95,7 @@ describe("buildShareSnapText", () => {
       photoDataUrl: "data:image/jpeg;base64,abc",
     });
 
-    assert.ok(text.startsWith("Plats\n\n📍 Position"));
+    assert.ok(text.startsWith("Plats\n\n📍 SnapSpot"));
     assert.ok(!text.includes("   "));
   });
 

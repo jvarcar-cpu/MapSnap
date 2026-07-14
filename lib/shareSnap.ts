@@ -23,10 +23,10 @@ export function buildShareSnapText(snap: Pick<Snap, "name" | "note" | "latitude"
 
   lines.push(
     "",
-    "📍 Position",
+    "📍 SnapSpot",
     formatShareCoordinates(snap.latitude, snap.longitude),
     "",
-    "🌍 Öppna plats",
+    "🌍 Öppna i Google Maps",
     googleMapsUrl(snap.latitude, snap.longitude)
   );
 

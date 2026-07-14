@@ -1,5 +1,37 @@
 # Changelog
 
+## [0.2.8] — 2026-07-14
+
+### Changed (Quick Share message polish)
+
+- **Share text labels** — `📍 Position` → `📍 SnapSpot`; `🌍 Öppna plats` → `🌍 Öppna i Google Maps`
+- Message remains minimal: title, optional note, coordinates, single Google Maps URL — no image marker, duplicate map labels, Waze, or extra metadata
+
+### Not changed
+
+- Share image file attachment, SNAP interaction, persistence, storage unchanged
+- No new doctrine or roadmap changes
+
+## [0.2.7] — 2026-07-14
+
+### Changed (Product vision and roadmap refinement — docs only)
+
+- **Core Product Pillars** — formalized lifecycle model: Capture, Enrich, Share, Protect; Discover as emerging strategic pillar (ADR-020)
+- **Experience qualities preserved** — Capture, Remember, Return, Delight; Delight cross-cutting
+- **Evolved product vision** — "capture, enrich, share, protect" complements existing positioning
+- **Share product depth** — Quick Share (implemented), Professional Share, MapSnap-to-MapSnap Share, Smart Share (exploratory) documented
+- **Roadmap waves renumbered** — Wave 5 Protect; Wave 6 MapSnap-to-MapSnap Share / cloud (formerly Wave 5)
+- **Feature Gate extended** — Core Pillar alignment required; Discover guardrails added
+- **Field Validation 0006** — successful Quick Share SMS test documented
+- **Identity updated** — `product_doctrine.md`, `vocabulary.md`, `product_quotes.md`, `identity_overview.md`
+- Regenerated steering outputs in `docs_engine/output/`
+
+### Not changed
+
+- No product code changes
+- Protected SNAP interaction unchanged (ADR-012)
+- No new features implemented
+
 ## [0.2.6] — 2026-07-14
 
 ### Changed (Share text polish)
