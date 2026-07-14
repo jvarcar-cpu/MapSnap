@@ -54,7 +54,7 @@ Use **Snap** as a verb and noun. It is the product's central word.
 
 **Capture** describes the action; **Return** describes revisiting.
 
-**SnapSpot** is the coordinate/location label in Quick Share text (`📍 SnapSpot`). Do not use SnapSpot as the Snap title or card fallback.
+**SnapSpot** is the coordinate/location label on Snap cards and in Quick Share text (`📍 SnapSpot`). Do not use SnapSpot as the Snap title or card fallback. Category (`Annat`, etc.) remains stored metadata for future Discover — not shown on the card.
 
 **MapSnap signature** is the permanent upper-right product mark on Snap cards. Internal product/design term — approved. Not a user-editable title.
 

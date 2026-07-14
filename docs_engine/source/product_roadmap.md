@@ -161,6 +161,7 @@ Each item below includes: **user value**, **pillar**, **backend**, **complexity*
 | 3 | Save Image | **Existing** | ENRICH / RETURN | Sprint 3; ADR-014 |
 | 4 | Quick Share | **Existing** | SHARE | Sprint 4; field validated — Field Validation 0006 |
 | 5 | Favorite | **Existing** | ENRICH | Sprint 5 |
+| 5b | Snap card action polish | **Existing** | DELIGHT / ENRICH | Two-column actions, icons, SnapSpot label |
 | 6 | Compact Snap cards with visible thumbnails | **Experimental** | DELIGHT / ENRICH | ADR-017 |
 
 ### Wave 1 item detail (reference)
@@ -194,6 +195,21 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 | Acceptance | Mark/unmark favorite after capture; visible on card; not on SNAP button |
 | Affects SNAP interaction | No |
 | Shipped | Sprint 5 — star toggle on card; optimistic `saveSnap()` |
+
+#### 5b. Snap card action polish
+
+| Field | Value |
+|-------|-------|
+| Status | **Existing** |
+| User value | Faster scanning of card actions; consistent location identity |
+| Pillar | DELIGHT / ENRICH |
+| Backend | No |
+| Complexity | Low |
+| Dependencies | MapSnap signature, existing card actions |
+| Risk | Touch target shrink — reject |
+| Acceptance | Two-column equal-width actions; subtle icons; SnapSpot on card; category hidden on card only |
+| Affects SNAP interaction | No |
+| Shipped | Snap Card Polish pass — prepares foundation for Compact Cards |
 
 #### 6. Compact Snap cards
 

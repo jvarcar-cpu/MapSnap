@@ -38,6 +38,9 @@ function formatCoords(lat: number, lng: number): string {
   return `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
 }
 
+const actionBtnClass =
+  "flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-full border border-black/[0.06] bg-surface/90 px-3 py-2.5 text-sm font-medium transition-all duration-200 ease-out hover:border-snap/15 hover:bg-snap-muted/25 active:scale-[0.97] disabled:opacity-60";
+
 export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps) {
   const [editing, setEditing] = useState(false);
   const [draftTitle, setDraftTitle] = useState("");
@@ -162,7 +165,6 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
 
   const userTitle = snapCardTitle(place);
   const snapLabel = userTitle || "snap";
-  const category = place.category ?? "Annat";
   const noteText = place.note?.trim();
 
   return (
@@ -213,7 +215,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
             </p>
           )}
           <p className="mt-1.5 text-sm font-medium text-snap">
-            📍 {category}
+            📍 SnapSpot
           </p>
           <p className="mt-1 text-sm text-secondary">{formatTime(place.createdAt)}</p>
         </div>
@@ -241,17 +243,58 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
         ) : (
           <div className="mt-5 flex flex-col gap-3">
             <MapOpenButtons latitude={place.latitude} longitude={place.longitude} />
-            {place.photoDataUrl && (
-              <div className="flex flex-col gap-2">
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={openEdit}
+                className={`${actionBtnClass} text-primary`}
+                aria-label={`Redigera ${snapLabel}`}
+              >
+                <span aria-hidden className="text-base leading-none opacity-75">
+                  ✏️
+                </span>
+                Redigera
+              </button>
+              <button
+                type="button"
+                onClick={handleShare}
+                disabled={sharing}
+                className={`${actionBtnClass} text-primary`}
+                aria-label={`Dela ${snapLabel}`}
+              >
+                <span aria-hidden className="text-base leading-none opacity-75">
+                  📤
+                </span>
+                {sharing ? "Delar…" : "Dela"}
+              </button>
+              {place.photoDataUrl && (
                 <button
                   type="button"
                   onClick={handleSaveImage}
                   disabled={savingImage}
-                  className="min-h-[48px] shrink-0 rounded-full border border-black/[0.07] bg-surface px-6 py-3 text-sm font-medium text-primary transition-all duration-200 ease-out hover:border-snap/20 hover:bg-snap-muted/30 active:scale-[0.97] disabled:opacity-60"
+                  className={`${actionBtnClass} text-primary`}
                   aria-label={`Spara bild för ${snapLabel}`}
                 >
+                  <span aria-hidden className="text-base leading-none opacity-75">
+                    💾
+                  </span>
                   {savingImage ? "Sparar bild…" : "Spara bild"}
                 </button>
+              )}
+              <button
+                type="button"
+                onClick={handleDelete}
+                className={`${actionBtnClass} text-secondary hover:bg-black/[0.03]`}
+                aria-label="Ta bort snap"
+              >
+                <span aria-hidden className="text-base leading-none opacity-75">
+                  🗑
+                </span>
+                Ta bort
+              </button>
+            </div>
+            {(saveImageMessage || shareMessage) && (
+              <div className="flex flex-col gap-1">
                 {saveImageMessage && (
                   <p
                     className={[
@@ -265,42 +308,13 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                     {saveImageMessage.text}
                   </p>
                 )}
+                {shareMessage && (
+                  <p className="text-sm text-secondary" role="alert">
+                    {shareMessage.text}
+                  </p>
+                )}
               </div>
             )}
-            <div className="flex flex-col gap-2">
-              <button
-                type="button"
-                onClick={handleShare}
-                disabled={sharing}
-                className="min-h-[48px] shrink-0 rounded-full border border-black/[0.07] bg-surface px-6 py-3 text-sm font-medium text-primary transition-all duration-200 ease-out hover:border-snap/20 hover:bg-snap-muted/30 active:scale-[0.97] disabled:opacity-60"
-                aria-label={`Dela ${snapLabel}`}
-              >
-                {sharing ? "Delar…" : "Dela"}
-              </button>
-              {shareMessage && (
-                <p className="text-sm text-secondary" role="alert">
-                  {shareMessage.text}
-                </p>
-              )}
-            </div>
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <button
-                type="button"
-                onClick={openEdit}
-                className="min-h-[48px] shrink-0 rounded-full border border-black/[0.07] bg-surface px-6 py-3 text-sm font-medium text-primary transition-all duration-200 ease-out hover:border-snap/20 hover:bg-snap-muted/30 active:scale-[0.97]"
-                aria-label={`Redigera ${snapLabel}`}
-              >
-                Redigera
-              </button>
-              <button
-                type="button"
-                onClick={handleDelete}
-                className="min-h-[48px] shrink-0 rounded-full border border-black/[0.07] bg-surface px-6 py-3 text-sm font-medium text-secondary transition-all duration-200 ease-out hover:bg-black/[0.03] active:scale-[0.97]"
-                aria-label="Ta bort snap"
-              >
-                Ta bort
-              </button>
-            </div>
           </div>
         )}
       </div>

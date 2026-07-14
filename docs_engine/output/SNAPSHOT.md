@@ -2,11 +2,11 @@
 
 ## Status
 
-Wave 1 MapSnap Signature complete. MVP baseline stable at https://mapsnap.se.
+Wave 1 Snap Card Polish complete. MVP baseline stable at https://mapsnap.se.
 
 ## Phase
 
-Wave 1 — Core Value. MapSnap Signature closed 2026-07-14. Next: Compact Cards when scoped.
+Wave 1 — Core Value. Snap Card Polish closed 2026-07-14. Next: Compact Cards when scoped.
 
 ## What Works
 
@@ -17,6 +17,7 @@ Wave 1 — Core Value. MapSnap Signature closed 2026-07-14. Next: Compact Cards 
 - Quick Share — "Dela" on every snap card; text + Google Maps link; image file when snap has photo; SMS field validated (Field Validation 0006)
 - Favorite — star toggle on cards; optimistic save (Sprint 5)
 - MapSnap signature — permanent header mark on every card; user title primary left (ADR-021)
+- Snap card polish — two-column action grid with icons; SnapSpot location label on cards
 - Large tactile SNAP button: circular, green, 3D gradient, ~70% width
 - IndexedDB primary storage (`mapsnap-db` / `snaps`)
 - Legacy localStorage migrates on load

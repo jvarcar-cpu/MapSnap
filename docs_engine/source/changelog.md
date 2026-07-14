@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.12] — 2026-07-14
+
+### Changed (Wave 1 — Snap Card Polish)
+
+- **Two-column action grid** — Redigera / Dela on row 1; Spara bild / Ta bort on row 2 (image snaps); equal-width buttons; 48px touch targets preserved
+- **Action icons** — subtle emoji icons on every card action: ✏️ Redigera, 📤 Dela, 💾 Spara bild, 🗑 Ta bort
+- **Visually lighter buttons** — reduced border weight, tighter `gap-2` grid spacing, lighter surface fill
+- **SnapSpot label** — card location line shows `📍 SnapSpot` instead of category (`Annat`, etc.)
+
+### Not changed
+
+- Category field remains in data model (`DEFAULT_CATEGORY`, `SNAP_CATEGORIES`) for future Discover
+- SNAP short/long-press contract unchanged (ADR-012)
+- Share, favorite, edit, save image, maps, delete behaviour and persistence unchanged
+- IndexedDB version remains `1`; no schema change
+- Compact Cards, search, filter, tags not started
+
+### Docs
+
+- `ux_doctrine.md`, `Identity/vocabulary.md` — SnapSpot canonical on cards; category as metadata
+- `current_phase.md`, `next_task.md`, `implementation_readiness.md` — polish pass complete
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.11] — 2026-07-14
 
 ### Added (Wave 1 — MapSnap Signature)

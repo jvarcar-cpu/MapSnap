@@ -6,11 +6,11 @@
 
 ## Status
 
-Wave 1 MapSnap Signature **Completed**. No active implementation pass.
+Wave 1 Snap Card Polish **Completed**. No active implementation pass.
 
 ## Phase
 
-Wave 1 — Core Value & UX Polish. MapSnap Signature closed 2026-07-14.
+Wave 1 — Core Value & UX Polish. Snap Card Polish closed 2026-07-14.
 
 ## Pass Type
 
@@ -36,15 +36,16 @@ None active.
 - [x] Quick Share SMS field validated (Field Validation 0006)
 - [x] Favorite toggle shipped (Sprint 5)
 - [x] MapSnap signature shipped (ADR-021)
+- [x] Snap card action polish shipped (two-column grid, icons, SnapSpot label)
 
-## Done When (MapSnap Signature — complete)
+## Done When (Snap Card Polish — complete)
 
-- [x] MapSnap signature upper-right on every snap card
-- [x] User title left only when present; empty when absent — no "Sparad plats"
-- [x] Quick Share uses "MapSnap" fallback when untitled
-- [x] Favorite toggle accessible; no layout collision with signature
-- [x] Title/notes edit flow unchanged
-- [x] Capture, share, save image, maps, delete unchanged
+- [x] Two-column action grid — Redigera / Dela, Spara bild / Ta bort
+- [x] Equal-width buttons; 48px touch targets preserved
+- [x] Subtle emoji icons on every action
+- [x] SnapSpot shown on card instead of category
+- [x] Category unchanged in data model
+- [x] Share, favorite, edit, save image, maps, delete unchanged
 - [x] Build, docs validation, and tests pass
 
 ## Reference

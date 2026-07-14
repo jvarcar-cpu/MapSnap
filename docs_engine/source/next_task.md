@@ -4,7 +4,7 @@
 
 **Updated:** 2026-07-14  
 
-**Pass type:** None active — Wave 1 MapSnap Signature closed
+**Pass type:** None active — Wave 1 Snap Card Polish closed
 
 
 
@@ -16,7 +16,7 @@
 
 
 
-MapSnap signature is complete. Every snap card shows user title left (when present) and permanent MapSnap signature upper-right. Next Wave 1 item: compact card experiment.
+Snap card polish is complete. Actions use a two-column grid with icons; location line shows SnapSpot. Next Wave 1 item: compact card experiment.
 
 
 
@@ -31,6 +31,8 @@ MapSnap signature is complete. Every snap card shows user title left (when prese
 3. Feature Gate answers documented for compact cards unit
 
 4. MapSnap signature complete (ADR-021)
+
+5. Snap card action polish complete (two-column layout, icons, SnapSpot label)
 
 
 

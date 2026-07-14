@@ -4,7 +4,7 @@
 
 **Phase:** Wave 1 — Core Value & UX Polish  
 
-**Status:** MapSnap Signature **Completed** — no active implementation pass  
+**Status:** Snap Card Polish **Completed** — no active implementation pass  
 
 **MVP 0.1 stabilized:** 2026-07-07  
 
@@ -30,17 +30,19 @@
 
 **Wave 1 MapSnap Signature completed:** 2026-07-14
 
+**Wave 1 Snap Card Polish completed:** 2026-07-14
+
 
 
 ## Goal
 
 
 
-Introduce the permanent MapSnap signature on every Snap card — user title primary left, product signature subtle upper-right, no generic card fallback titles (ADR-021).
+Introduce compact two-column card actions with icons and SnapSpot as the canonical location label on snap cards — visual polish only, no behaviour changes.
 
 
 
-**MapSnap Signature completed.** Every card shows "MapSnap" in the header upper-right. User title appears left only when explicitly set. Quick Share uses "MapSnap" when untitled.
+**Snap Card Polish completed.** Card actions use a two-column grid (Redigera / Dela, Spara bild / Ta bort) with subtle emoji icons. Location line shows `📍 SnapSpot` instead of category. Category remains in data model for future Discover.
 
 
 
@@ -203,6 +205,26 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 - [x] Title/notes edit flow unchanged; ADR-021 recorded
 
 - [x] Tests and baseline verification updated
+
+
+
+## Wave 1 — Snap Card Polish — Completed
+
+
+
+- [x] Two-column action grid — Redigera / Dela, Spara bild / Ta bort; equal-width buttons; 48px touch targets preserved
+
+- [x] Subtle emoji icons on every card action (✏️ 📤 💾 🗑)
+
+- [x] Visually lighter action buttons — reduced border weight, tighter grid spacing
+
+- [x] SnapSpot canonical location label on card (`📍 SnapSpot`) — category not shown on card
+
+- [x] Category field unchanged in data model and capture defaults
+
+- [x] Share, favorite, edit, save image, maps, delete behaviour unchanged
+
+- [x] Prepares foundation for Compact Cards — no compact layout started
 
 
 

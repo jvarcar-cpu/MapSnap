@@ -102,6 +102,8 @@ Do not redesign. Restore and preserve this baseline unless explicitly instructed
 - Empty state: pin illustration + "Inga snappar ännu."
 - Cards: rounded-3xl, soft shadow, optional photo banner (2.4:1); user title left when present; **MapSnap signature** upper-right always (ADR-021)
 - Favorite toggle: small star upper-right overlay on card; ☆ inactive, ★ active with subtle gold — must not collide with signature
+- **SnapSpot:** canonical visible label for the location line on every card (`📍 SnapSpot`) — not the user title; category remains metadata only (not shown on card) for future Discover
+- **Card actions:** two-column grid after Maps links — ✏️ Redigera / 📤 Dela, then 💾 Spara bild / 🗑 Ta bort (Spara bild hidden without image); equal-width 48px targets; subtle emoji icons
 
 **Design tokens**
 
@@ -170,11 +172,12 @@ Card header layout:
 - **Favorite:** separate overlay control; header reserves spacing so signature and star do not overlap
 - Long user titles truncate; signature and favorite remain accessible on mobile
 
-- Category
+- **SnapSpot** — `📍 SnapSpot` on the location line (canonical visible label); coordinates and accuracy below
+- Category is metadata for future Discover — do not show category on the card
 - Date/time
 - Coordinates + accuracy if available
 - Photo thumbnail if present
-- Google Maps, Waze, Delete actions
+- Google Maps, Waze, card actions (two-column grid with icons), Delete
 
 ## No Mandatory Forms
 

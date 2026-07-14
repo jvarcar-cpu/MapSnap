@@ -126,6 +126,6 @@ Approved product identity rule (ADR-021):
 - **Every Snap carries the MapSnap signature** — permanent, subtle "MapSnap" text in the card header upper-right.
 - **User first. Product second.** — User title is primary on the left; signature is secondary on the right.
 - **No generic card fallback titles** — Untitled Snaps leave the title area empty; the signature is not a replacement title.
-- **SnapSpot** remains the location/coordinate context in share text — not the Snap title.
+- **SnapSpot** is the canonical location label on snap cards and in share text — not the Snap title. Category remains metadata for future Discover.
 
 Identity governs the principle; `ux_doctrine.md` governs layout and visual hierarchy.

@@ -4,7 +4,7 @@
 
 **Locked:** 2026-06-28  
 **Updated:** 2026-07-14  
-**Status:** MVP 0.1 stable — Wave 1 MapSnap Signature **Completed** (ADR-021)
+**Status:** MVP 0.1 stable — Wave 1 Snap Card Polish **Completed**
 
 ## Interaction Baseline
 
@@ -28,7 +28,8 @@
 | SNAP button | Circular, large (~70% width, max 320px), green radial 3D gradient |
 | Hero | Title "MapSnap"; instruction *"Tryck för position · Håll inne för position + bild"* |
 | List | Header "MINA SNAPPAR", styled cards; user title left when present; **MapSnap signature** upper-right always; notes line-clamped |
-| Card actions | Favorite star (overlay) → Maps → Spara bild (if image) → Dela → Redigera → Ta bort |
+| Card actions | Favorite star (overlay) → Maps → two-column grid: ✏️ Redigera / 📤 Dela, 💾 Spara bild / 🗑 Ta bort (Spara bild if image) |
+| Card location | `📍 SnapSpot` — category not shown on card (metadata only) |
 | Backup panel | Dashed border, rounded-2xl |
 | Permission card | Rounded-3xl, elevated, retry button |
 
@@ -79,6 +80,12 @@
 - User title left only when explicitly set; no card fallback "Sparad plats"
 - Principle: User first. Product second.
 - Code: `snapCardTitle()` / `snapShareTitle()` in `lib/snapEdit.ts`; `PlaceCard.tsx` header
+
+## Snap Card Polish
+
+- Two-column action grid with equal-width 48px buttons and subtle emoji icons
+- Location line: `📍 SnapSpot` (canonical); category hidden on card
+- Code: `PlaceCard.tsx` action grid
 
 ## Verification
 
