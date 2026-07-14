@@ -40,7 +40,24 @@ This document freezes the approved MapSnap MVP baseline. Do not change behaviour
 | **Camera cancel** | Mild Swedish message ("Inget foto valdes."); no broken snap |
 | **Maps** | Google Maps and Waze open with saved coordinates |
 | **Delete** | Removes from list and IndexedDB |
+| **Edit** | "Redigera" on card → optional title (`name`) + notes (`note`) → `saveSnap()` |
+| **Favorite** | Star toggle upper-right → optimistic `saveSnap()`; `favorite: true` only |
+| **Save image** | "Spara bild" on cards with `photoDataUrl` — copy only; hidden without image |
+| **Share** | "Dela" on every card — native Web Share; text + Google Maps link; image file when supported |
 | **Storage** | IndexedDB `mapsnap-db` / `snaps` (legacy `mapsnap.snaps.v1` localStorage migrated on load) |
+| **Backup** | JSON export/import/merge by id (`mapsnap-snaps-array-v1`) |
+
+### Wave 1 card baseline (shipped)
+
+| Element | Requirement |
+|---------|-------------|
+| **Card header** | User title left when present; **MapSnap signature** upper-right always (ADR-021); no "Sparad plats" fallback |
+| **Favorite** | Star overlay upper-right; header spacing avoids signature collision |
+| **Location line** | `📍 SnapSpot` — category not shown on card |
+| **Notes** | Line-clamped in list; full text in edit form |
+| **Map links** | Google Maps + Waze — official brand-color SVG icons beside labels |
+| **Action grid** | Two columns: Redigera / Dela, then Spara bild / Ta bort (Spara bild if image); 48px targets; SVG icons ~18px |
+| **Action icons** | Dela Share2 (blue accent); Spara bild Download (purple-gray); Redigera orange; Ta bort red — labels unchanged |
 
 ### Interaction owner
 

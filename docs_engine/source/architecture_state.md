@@ -15,9 +15,11 @@
 
 ```
 app/           — pages, layout, globals, manifest
-components/    — SnapButton, PlaceCard, PlaceList, MapOpenButtons
-lib/           — geo, storage, db, maps, id
-types/         — place.ts (SnapPlace, SnapCategory)
+components/    — SnapButton, PlaceCard, PlaceList, MapOpenButtons, FavoriteToggle,
+               SnapEditForm, SnapActionIcons, SnapBackupPanel, LocationPermissionCard
+lib/           — geo, storage, db, maps, id, snapModel, snapEdit, snapFavorite,
+               saveSnapImage, shareSnap, snapSound, usePrefersReducedMotion
+types/         — place.ts (Snap, SnapPlace, SnapCategory)
 docs_engine/   — product governance docs (product operating system)
   source/Identity/ — Product Identity (doctrine, quotes, voice, vocabulary, writing rules)
   source/Foundation/ — PDE Foundation guardrails inherited from PIE

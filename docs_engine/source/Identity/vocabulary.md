@@ -39,6 +39,7 @@ Consistent words create a coherent product. MapSnap has its own language. Use it
 | **REMEMBER** | Experience quality — meaning over time | kom ihåg | permanent |
 | **DELIGHT** | Experience quality — restrained polish | — | permanent |
 | **MapSnap signature** | Permanent subtle product mark on every Snap card | — | approved |
+| **SnapSpot** | Canonical location label on cards and in Quick Share (`📍 SnapSpot`) | — | approved |
 
 Use **Snap** as a verb and noun. It is the product's central word.
 

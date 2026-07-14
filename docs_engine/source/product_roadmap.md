@@ -161,7 +161,9 @@ Each item below includes: **user value**, **pillar**, **backend**, **complexity*
 | 3 | Save Image | **Existing** | ENRICH / RETURN | Sprint 3; ADR-014 |
 | 4 | Quick Share | **Existing** | SHARE | Sprint 4; field validated — Field Validation 0006 |
 | 5 | Favorite | **Existing** | ENRICH | Sprint 5 |
-| 5b | Snap card action polish | **Existing** | DELIGHT / ENRICH | Two-column actions, icons, SnapSpot label |
+| 5b | Snap card action polish | **Existing** | DELIGHT / ENRICH | Two-column actions, SnapSpot label |
+| 5c | MapSnap signature | **Existing** | ENRICH / DELIGHT | ADR-021 — header signature, no fallback title |
+| 5d | Action icon polish | **Existing** | DELIGHT / RETURN | Google Maps + Waze brand icons; SVG card actions; Share2 / Download |
 | 6 | Compact Snap cards with visible thumbnails | **Experimental** | DELIGHT / ENRICH | ADR-017 |
 
 ### Wave 1 item detail (reference)
@@ -207,9 +209,39 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 | Complexity | Low |
 | Dependencies | MapSnap signature, existing card actions |
 | Risk | Touch target shrink — reject |
-| Acceptance | Two-column equal-width actions; subtle icons; SnapSpot on card; category hidden on card only |
+| Acceptance | Two-column equal-width actions; SnapSpot on card; category hidden on card only |
 | Affects SNAP interaction | No |
 | Shipped | Snap Card Polish pass — prepares foundation for Compact Cards |
+
+#### 5c. MapSnap signature
+
+| Field | Value |
+|-------|-------|
+| Status | **Existing** |
+| User value | Clear product identity without competing with user content |
+| Pillar | ENRICH / DELIGHT |
+| Backend | No |
+| Complexity | Low |
+| Dependencies | Title helpers (`snapCardTitle`, `snapShareTitle`) |
+| Risk | Header clutter — reject |
+| Acceptance | Permanent "MapSnap" upper-right; user title left only when set; no "Sparad plats" fallback |
+| Affects SNAP interaction | No |
+| ADR | ADR-021 |
+
+#### 5d. Action icon polish
+
+| Field | Value |
+|-------|-------|
+| Status | **Existing** |
+| User value | Recognizable actions at a glance; familiar map brand icons |
+| Pillar | DELIGHT / RETURN |
+| Backend | No |
+| Complexity | Low |
+| Dependencies | Snap card action polish |
+| Risk | Decorative clutter — reject |
+| Acceptance | Google Maps + Waze brand SVGs; card action SVGs ~18px; Dela Share2, Spara bild Download; subtle accent colors on icons only; 48px touch targets preserved |
+| Affects SNAP interaction | No |
+| Shipped | Action Icon Polish + accent polish (0.2.13–0.2.14) |
 
 #### 6. Compact Snap cards
 
@@ -351,12 +383,17 @@ Smart Share (contextual format guidance) remains **Experimental** — long-term,
 
 - Delete Snap
 - Empty-state first-Snap prompt
-- Open in Google Maps / Waze (= Return)
+- Open in Google Maps / Waze (= Return) — official brand icons on links
 - Offline local-first storage
 - JSON backup / export / import
+- Hero usage instruction + coordinated SNAP feedback (Wave 1 Sprint 1)
+- Snap model normalization (`lib/snapModel.ts`, ADR-019)
 - Title + notes edit (Enrich)
 - Save image (Enrich / Return)
-- Quick Share (Share)
+- Quick Share on every card (Share)
+- Favorite toggle (Enrich)
+- MapSnap signature on every card (ADR-021)
+- Snap card two-column action grid with SVG icons and SnapSpot label
 
 ---
 

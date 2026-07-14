@@ -86,6 +86,20 @@ The earlier four-pillar model — **Capture → Remember → Return → Delight*
 - JSON backup / export / import
 - All data stored locally in the browser (IndexedDB)
 
+## Wave 1 — Shipped (2026-07-13 — 2026-07-14)
+
+All Wave 1 items below are **Existing** in `product_roadmap.md`. Only Compact Cards remains experimental/planned.
+
+- Hero instruction + coordinated SNAP feedback (ADR-018; Field Validation 0005)
+- Snap model preparation — normalization, legacy aliases (ADR-019; Sprint 2A)
+- Title + notes post-capture edit (Sprint 2B)
+- Save image — "Spara bild" on photo snaps (Sprint 3; ADR-014)
+- Quick Share — "Dela" on every card; SMS field validated (Sprint 4; Field Validation 0006)
+- Favorite — star toggle; optimistic save (Sprint 5)
+- MapSnap signature — permanent header mark; no fallback title (ADR-021)
+- Snap card polish — two-column action grid; SnapSpot label; category hidden on card
+- Action icon polish — Google Maps / Waze brand icons; SVG card actions; Share2 / Download distinct icons
+
 ## Success Criteria
 
 A place is captured when coordinates are saved. Everything else — name, category, photo — is optional enrichment added after capture or never.

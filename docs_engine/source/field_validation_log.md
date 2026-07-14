@@ -136,7 +136,8 @@ The surrounding pulse and sonar waves provide sufficient feedback. Further tunin
 - Coordinates and map link arrived
 - Android created an automatic map preview from the shared link
 - Waze link was absent (single Google Maps URL only — as designed)
-- Share text polish: `📍 Position`, `🌍 Öppna plats`; no redundant "Image attached." copy
+- Share text polish at validation time: `📍 Position`, `🌍 Öppna plats`; no redundant "Image attached." copy
+- **Label update (0.2.8):** canonical share labels are now `📍 SnapSpot` and `🌍 Öppna i Google Maps` — same minimal format, SnapSpot terminology aligned with cards
 
 ### Observation
 

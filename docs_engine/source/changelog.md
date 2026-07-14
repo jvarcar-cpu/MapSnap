@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.2.15-docs] — 2026-07-14
+
+### Documented (Wave 1 documentation reconciliation)
+
+- **Baseline alignment** — `stable_baseline.md`, `baseline_reconciliation.md` Wave 1 section, `CURRENT_BASELINE.md`, `SNAPSHOT.md`, `MASTER.md` reflect full Wave 1 shipped state
+- **Phase corrections** — `current_phase.md` Sprint 4 share labels (`📍 SnapSpot`, `🌍 Öppna i Google Maps`); Snap Card Polish notes SVG icons supersede emoji; action grid layout accurate
+- **Roadmap** — Wave 1 table includes MapSnap signature (5c) and Action Icon Polish (5d); Existing Capabilities list complete
+- **Product vision** — Wave 1 shipped capabilities documented alongside MVP 0.1 scope
+- **Field Validation 0006** — historical label note; canonical labels post-0.2.8 clarified
+- **Architecture** — `architecture_state.md` lib/component inventory updated
+- **Vocabulary** — SnapSpot added to official terms table
+- **Knowledge continuity** — Wave 1 closure, ADR-021, action icon polish recorded
+
+### Not changed
+
+- No product code, UI, or SNAP behaviour changes in this pass
+
 ## [0.2.14] — 2026-07-14
 
 ### Changed (Wave 1 — Action Icon Accent Polish)
