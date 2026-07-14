@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.17] — 2026-07-14
+
+### Added (Wave 2 Sprint 2 — Search)
+
+- **Local search** — search field above snap list filters loaded Snaps by title (`name`) and notes (`note`) in real time
+- **Search behaviour** — case-insensitive, partial match, leading/trailing whitespace ignored; coordinates, timestamps, category, favorite, and image metadata excluded
+- **Search UI** — rounded mobile-first field with search icon, placeholder "Sök bland dina Snappar", clear button when text present
+- **Search empty state** — calm message "Inga Snappar matchar din sökning." when no matches; no errors
+- **Performance** — memoized filtering via `filterSnapsBySearch()` in `lib/snapSearch.ts`
+
+### Not changed
+
+- SNAP short/long-press contract unchanged (ADR-012)
+- No sort, filter, tags, Discover suggestions, AI, backend, or cloud
+- IndexedDB version remains `1`; no schema change
+- Compact Cards Iteration 2 (square thumbnail + detail view) not started
+
+### Docs
+
+- Wave 2 Sprint 2 Search declared in `current_phase.md`
+- Search documented in `ux_doctrine.md`, `implementation_readiness.md`, `product_roadmap.md`
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.16] — 2026-07-14
 
 ### Changed (Wave 2 Sprint 1 — Compact Cards Iteration 1)

@@ -8,6 +8,10 @@ type PlaceListProps = {
   onDelete: (id: string) => void;
   onUpdate: (snap: SnapPlace) => void;
   newestId?: string | null;
+  /** Active search query — used for search empty state when `totalCount` > 0. */
+  searchQuery?: string;
+  /** Total snaps before search filter — distinguishes empty collection from no matches. */
+  totalCount?: number;
 };
 
 function LocationPinIllustration() {
@@ -38,14 +42,34 @@ function LocationPinIllustration() {
   );
 }
 
-export function PlaceList({ places, onDelete, onUpdate, newestId }: PlaceListProps) {
-  if (places.length === 0) {
+export function PlaceList({
+  places,
+  onDelete,
+  onUpdate,
+  newestId,
+  searchQuery = "",
+  totalCount,
+}: PlaceListProps) {
+  const collectionEmpty = (totalCount ?? places.length) === 0;
+  const searchActive = searchQuery.trim().length > 0;
+
+  if (collectionEmpty) {
     return (
       <div className="animate-fade-in px-2 py-10 text-center">
         <LocationPinIllustration />
         <p className="text-base font-medium text-primary">Inga snappar ännu.</p>
         <p className="mx-auto mt-2 max-w-[260px] text-sm leading-relaxed text-secondary">
           Din första upptäckt är bara ett tryck bort.
+        </p>
+      </div>
+    );
+  }
+
+  if (places.length === 0 && searchActive) {
+    return (
+      <div className="animate-fade-in px-2 py-10 text-center">
+        <p className="text-base font-medium text-primary">
+          Inga Snappar matchar din sökning.
         </p>
       </div>
     );

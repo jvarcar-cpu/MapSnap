@@ -1,10 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { GeoDiagnosticsPanel } from "@/components/GeoDiagnosticsPanel";
 import { LocationPermissionCard } from "@/components/LocationPermissionCard";
 import { SnapButton } from "@/components/SnapButton";
 import { PlaceList } from "@/components/PlaceList";
+import { SnapSearchBar } from "@/components/SnapSearchBar";
+import { filterSnapsBySearch } from "@/lib/snapSearch";
 import { SnapBackupPanel } from "@/components/SnapBackupPanel";
 import { SuccessFeedback } from "@/components/SuccessFeedback";
 import {
@@ -35,6 +37,7 @@ export default function HomePage() {
     useState<GeolocationPermissionState>("unsupported");
   const [secureContext, setSecureContext] = useState(true);
   const [locationHost, setLocationHost] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pendingPhotoRef = useRef<string | undefined>(undefined);
 
@@ -168,6 +171,11 @@ export default function HomePage() {
     });
   }, []);
 
+  const filteredPlaces = useMemo(
+    () => filterSnapsBySearch(places, searchQuery),
+    [places, searchQuery]
+  );
+
   const showPermissionCard =
     permissionDenied || geoPermission === "denied";
   const showPromptHint =
@@ -249,8 +257,13 @@ export default function HomePage() {
         <h2 className="mb-6 px-1 text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
           MINA SNAPPAR
         </h2>
+        {places.length > 0 && (
+          <SnapSearchBar value={searchQuery} onChange={setSearchQuery} />
+        )}
         <PlaceList
-          places={places}
+          places={filteredPlaces}
+          totalCount={places.length}
+          searchQuery={searchQuery}
           onDelete={handleDelete}
           onUpdate={handleUpdate}
           newestId={newestId}

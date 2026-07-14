@@ -6,46 +6,43 @@
 
 ## Status
 
-Wave 2 Sprint 1 complete — Compact Cards Iteration 1 shipped. Awaiting Iteration 2 scoping or Wave 2 organization features.
+Wave 2 Sprint 2 complete — Search shipped. Awaiting Compact Cards Iteration 2 scoping.
 
 ## Phase
 
-Wave 2 — Organization / Early Discover. Sprint 1 (Compact Cards Iteration 1) complete.
+Wave 2 — Organization / Early Discover. Sprint 2 (Search) complete.
 
 ## Pass Type
 
-None active. Declare Feature or UX Pass in `current_phase.md` before starting Iteration 2 or Search.
+None active. Declare Feature or UX Pass in `current_phase.md` before starting Compact Cards Iteration 2.
 
 ## Context
 
-Compact Cards Iteration 1 shipped 2026-07-14: reduced-height banner layout, action-group divider, preserved touch targets and typography. Square thumbnail and detail view deferred to Iteration 2 per ADR-017.
+Search shipped 2026-07-14: local title/notes filter, search bar with clear button, search empty state, memoized filtering. No sort, filter, tags, backend, or cloud.
 
 ## Next Sprint — Compact Cards Iteration 2
 
 **Scope:** Square thumbnail (~80–100px hypothesis), detail view for full image, measurable recognition test. See `implementation_readiness.md` order 8, `product_roadmap.md` item 6, `ux_doctrine.md`, ADR-017.
 
-**Alternative:** Wave 2 item 1 — Search (title, notes) when organization pass is prioritized.
-
-**Not in scope:** SNAP interaction changes, backend, Professional Share, Protect.
+**Not in scope:** SNAP interaction changes, backend, Professional Share, Protect, sort/filter/tags.
 
 ## Prerequisites
 
 - [x] Wave 1 institutionally closed — reconciliation verified 2026-07-14
 - [x] Compact Cards Iteration 1 shipped — banner compression, divider, spacing
-- [x] Pass type declared in `current_phase.md` (UX Pass)
+- [x] Search shipped — title/notes filter, search empty state, clear button
 - [x] Generated steering docs current (`docs_engine/output/`)
-- [ ] Field validation on real device for Iteration 1 density (recommended)
+- [ ] Field validation on real device for Search (recommended)
 - [ ] Feature Gate answers documented for Iteration 2
 
-## Acceptance Criteria — Compact Cards Iteration 1 (shipped)
+## Acceptance Criteria — Search (shipped)
 
-- [x] Reduced card height — more Snaps visible on screen
-- [x] Photo banner aspect `3:1` — recognition preserved via `object-cover`
-- [x] Navigation / action groups separated by subtle divider
-- [x] List layout only — no change to SNAP capture contract (ADR-012)
-- [x] All existing card actions preserved: favorite, maps, edit, share, save image, delete
-- [x] Touch targets remain minimum 44px; 48px action buttons preserved
-- [x] MapSnap signature, SnapSpot label, typography hierarchy preserved
+- [x] Search field above snap list when snaps exist
+- [x] Real-time filter on loaded collection — title and notes only
+- [x] Case-insensitive, partial match, whitespace trimmed
+- [x] Search empty state "Inga Snappar matchar din sökning." — no errors
+- [x] Search icon, clear button, placeholder "Sök bland dina Snappar"
+- [x] Memoized filtering; no sort, filter, tags, backend, or cloud
 - [x] Build, docs validation, baseline verification, and unit tests pass
 
 ## Acceptance Criteria — Compact Cards Iteration 2 (remaining)
@@ -58,4 +55,4 @@ Compact Cards Iteration 1 shipped 2026-07-14: reduced-height banner layout, acti
 
 ## Reference
 
-`implementation_readiness.md` order 8 · `product_roadmap.md` Wave 1 item 6 / Wave 2 · `ux_doctrine.md` · ADR-017 · `next_task.md`
+`implementation_readiness.md` order 8 · `product_roadmap.md` Wave 2 · `ux_doctrine.md` · ADR-017 · `next_task.md`

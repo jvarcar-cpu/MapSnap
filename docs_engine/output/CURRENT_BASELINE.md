@@ -4,7 +4,7 @@
 
 **Locked:** 2026-06-28  
 **Updated:** 2026-07-14  
-**Status:** MVP 0.1 stable — Wave 2 Sprint 1 Compact Cards Iteration 1 shipped
+**Status:** MVP 0.1 stable — Wave 2 Sprint 2 Search shipped
 
 ## Wave Summary
 
@@ -29,6 +29,10 @@
 
 - ✓ Compact Cards Iteration 1 — reduced-height banner layout, action-group divider
 
+### Wave 2 Sprint 2 — Completed
+
+- ✓ Search — local title/notes filter, search bar, search empty state
+
 ### Current Status
 
 Wave 2 in progress. Compact Cards Iteration 2 (square thumbnail + detail view) next.
@@ -45,6 +49,7 @@ Wave 2 in progress. Compact Cards Iteration 2 (square thumbnail + detail view) n
 | Favorite | Star toggle upper-right overlay on card → optimistic `saveSnap()`; `favorite: true` only |
 | Save image | "Spara bild" on cards with `photoDataUrl` — device copy only; hidden without image |
 | Share | "Dela" on every snap card — native Web Share; text + Google Maps link always; image file when `photoDataUrl` present |
+| Search | Search field above list when snaps exist — filters loaded collection by title and notes in real time; clear button; search empty state when no matches |
 | Storage | IndexedDB primary; legacy localStorage migrates on load; Snap normalization on load |
 | Backup | JSON array export/import/merge by id (`mapsnap-snaps-array-v1`) |
 
@@ -54,7 +59,8 @@ Wave 2 in progress. Compact Cards Iteration 2 (square thumbnail + detail view) n
 |---------|-------------|
 | SNAP button | Circular, large (~70% width, max 320px), green radial 3D gradient |
 | Hero | Title "MapSnap"; instruction *"Tryck för position · Håll inne för position + bild"* |
-| List | Header "MINA SNAPPAR", compact styled cards; user title left when present; **MapSnap signature** upper-right always; notes line-clamped; list gap `gap-3` |
+| List | Header "MINA SNAPPAR"; search field above cards when snaps exist; compact styled cards; user title left when present; **MapSnap signature** upper-right always; notes line-clamped; list gap `gap-3` |
+| Search bar | Rounded-full, lightweight; search icon; placeholder "Sök bland dina Snappar"; clear (X) when text present |
 | Card photo | Banner aspect `3:1` (Iteration 1); `object-cover`; square thumbnail deferred |
 | Card actions | Favorite star (overlay) → Navigation: Maps (brand icons) → divider → Actions: two-column grid Redigera / Dela, Spara bild / Ta bort (Spara bild if image); SVG icons ~18px |
 | Card location | `📍 SnapSpot` — category not shown on card (metadata only) |
@@ -98,7 +104,7 @@ Wave 2 in progress. Compact Cards Iteration 2 (square thumbnail + detail view) n
 
 - Post-capture only — star toggle on every card; not on SNAP button
 - Optimistic UI; `saveSnap()` persists `favorite: true` or removes field
-- No reorder, filter, or search in this sprint
+- No reorder or filter in this sprint; search is separate (Wave 2 Sprint 2)
 - Error: restore previous state; "Kunde inte spara favorit."
 - Code: `lib/snapFavorite.ts`, `components/FavoriteToggle.tsx`
 
@@ -116,6 +122,16 @@ Wave 2 in progress. Compact Cards Iteration 2 (square thumbnail + detail view) n
 - Typography hierarchy and 48px touch targets preserved; existing SVG icons unchanged
 - Code: `PlaceCard.tsx`, `MapOpenButtons.tsx`, `PlaceList.tsx`
 
+## Search (Wave 2 Sprint 2)
+
+- Search field above snap list when snaps exist — filters loaded collection in real time
+- Fields: title (`name`) and notes (`note`) only — case-insensitive, partial match, whitespace trimmed
+- Excludes: coordinates, timestamps, category, favorite, image metadata
+- Empty state: "Inga Snappar matchar din sökning." — no errors
+- UI: rounded-full search bar, search icon, clear button, placeholder "Sök bland dina Snappar"
+- Memoized filtering via `filterSnapsBySearch()` — no backend, no cloud, no AI
+- Code: `lib/snapSearch.ts`, `components/SnapSearchBar.tsx`, `app/page.tsx`
+
 ## Snap Card Polish
 
 - Two-column action grid with equal-width 48px buttons and recognizable SVG icons (~18px)
@@ -128,7 +144,7 @@ Wave 2 in progress. Compact Cards Iteration 2 (square thumbnail + detail view) n
 ## Verification
 
 - Automated: `node scripts/verify-baseline.mjs [url]` — use URL printed by `npm run dev`
-- Unit: `npm test` — `lib/snapEdit.test.ts`, `lib/snapFavorite.test.ts`, `lib/saveSnapImage.test.ts`, `lib/shareSnap.test.ts`
+- Unit: `npm test` — `lib/snapEdit.test.ts`, `lib/snapFavorite.test.ts`, `lib/saveSnapImage.test.ts`, `lib/shareSnap.test.ts`, `lib/snapSearch.test.ts`
 - Docs: `node scripts/validate_docs.mjs`
 - Reconciliation: `baseline_reconciliation.md` — Wave 0 + Wave 1 (2026-07-14)
 - Manual mobile: long-press camera, denied-permission card (OPS-002)

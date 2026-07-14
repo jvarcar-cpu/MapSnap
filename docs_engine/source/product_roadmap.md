@@ -266,7 +266,7 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 
 | # | Item | Status | Pillar | Complexity | Affects SNAP | ADR |
 |---|------|--------|--------|------------|--------------|-----|
-| 1 | Search (title, notes) | Planned | DISCOVER / ENRICH | Medium | No | — |
+| 1 | Search (title, notes) | **Shipped** | DISCOVER / ENRICH | Medium | No | — |
 | 2 | Sort (newest, oldest, nearest) | Planned | DISCOVER | Medium | No | — |
 | 3 | Filter (all, favorites, with images) | Planned | DISCOVER | Low–Medium | No | — |
 | 4 | Tags | Planned | ENRICH / DISCOVER | Medium | No | — |

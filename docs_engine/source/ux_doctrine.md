@@ -99,6 +99,7 @@ Do not redesign. Restore and preserve this baseline unless explicitly instructed
 **Snap list**
 
 - Section header: "MINA SNAPPAR" (uppercase, tracked)
+- **Search (Wave 2 Sprint 2 — shipped):** rounded search field above list when snaps exist; placeholder "Sök bland dina Snappar"; search icon; clear (X) when text present; filters loaded collection by title (`name`) and notes (`note`) — case-insensitive, partial match; search empty state "Inga Snappar matchar din sökning." — no sort, filter, or tags yet
 - Empty state: pin illustration + "Inga snappar ännu."
 - Cards: rounded-3xl, soft shadow, optional photo banner (2.4:1); user title left when present; **MapSnap signature** upper-right always (ADR-021)
 - Favorite toggle: small star upper-right overlay on card; ☆ inactive, ★ active with subtle gold — must not collide with signature

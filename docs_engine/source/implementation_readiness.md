@@ -23,7 +23,8 @@
 | 7c | Snap card action polish | Two-column actions, icons, SnapSpot card label | Signature | Low | Button grid; touch targets; no behaviour change | Revert action layout | `ux_doctrine.md`, `vocabulary.md` | **Completed** |
 | 7d | Action icon polish | Google Maps + Waze brand icons; SVG card action icons | Snap card polish | Low | Icon visibility; touch targets; no behaviour change | Revert icon components | `ux_doctrine.md` | **Completed** |
 | 8 | Compact card experiment | List layout only; detail view for full image | Title, favorite, action polish | Medium — UX | Measurable recognition test | Revert to banner layout | ADR-017, `ux_doctrine.md` | **Iteration 1 shipped** |
-| 9 | Search / sort / filter | List controls only | Title, notes, favorite | Low | Performance with many snaps | Hide controls | `product_roadmap.md` status |
+| 9a | Search (title, notes) | Search field above list; local filter only | Title, notes | Low | Performance with many snaps; partial match | Hide search bar | `product_roadmap.md`, `ux_doctrine.md` | **Completed** |
+| 9b | Sort / filter | List controls only | Search, favorite | Low | Performance with many snaps | Hide controls | `product_roadmap.md` status |
 | 10 | Tags | Lightweight tag list on snap | Edit UI | Low | Backup import | Remove tags | `data_doctrine.md` |
 | 11 | Snaptiser feasibility spike | Research only — notifications, geofencing | None | None | Document FEAS-002 findings | N/A | `snaptiser_doctrine.md`, `known_issues.md` |
 | 12 | Time-based Snaptiser MVP | Local scheduled notification | Spike approval | Medium | Permission denied; app closed behavior | Disable feature flag | ADR-015 |

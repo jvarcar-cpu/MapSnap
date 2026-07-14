@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "node --import tsx --test lib/snapEdit.test.ts lib/snapFavorite.test.ts lib/saveSnapImage.test.ts lib/shareSnap.test.ts"
+    "test": "node --import tsx --test lib/snapEdit.test.ts lib/snapFavorite.test.ts lib/saveSnapImage.test.ts lib/shareSnap.test.ts lib/snapSearch.test.ts"
   },
   "dependencies": {
     "next": "^15.1.0",

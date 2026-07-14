@@ -4,11 +4,11 @@
 
 **Phase:** Wave 2 — Organization / Early Discover  
 
-**Status:** **Wave 2 Sprint 1 in progress** — Compact Cards Iteration 1 (UX Pass)  
+**Status:** **Wave 2 Sprint 2 in progress** — Search (Feature Pass)  
 
-**Previous:** Wave 1 institutionally closed 2026-07-14  
+**Previous:** Wave 2 Sprint 1 Compact Cards Iteration 1 shipped 2026-07-14  
 
-**Next sprint after Compact Cards:** Search / sort / filter (Wave 2 item 1) — not started
+**Next sprint after Search:** Compact Cards Iteration 2 (square thumbnail + detail view) — not started
 
 **MVP 0.1 stabilized:** 2026-07-07  
 
@@ -42,7 +42,7 @@
 
 ## Goal
 
-Wave 2 begins with Compact Cards — experimental list layout per `implementation_readiness.md` order 8. Iteration 1 ships reduced-height banner cards with action-group divider. Iteration 2 (square thumbnail + detail view) deferred.
+Wave 2 Sprint 2 ships local Search — filter loaded Snaps by title and notes in real time. Compact Cards Iteration 2 (square thumbnail + detail view) deferred to next sprint.
 
 **Wave 1 (closed):** All shipped sprints verified in `baseline_reconciliation.md` (Wave 1 section, 2026-07-14).
 
@@ -275,6 +275,15 @@ Full detail: `product_roadmap.md`.
 - [x] MapSnap signature, SnapSpot label, typography hierarchy preserved
 - [ ] Square thumbnail + detail view — Iteration 2 (ADR-017)
 - [ ] Measurable recognition test — Iteration 2 field validation
+
+## Wave 2 Sprint 2 — Search — Completed
+
+- [x] Pass type: Feature Pass declared
+- [x] Search field above snap list — title and notes only; case-insensitive partial match
+- [x] Real-time filter on loaded collection — local only; no backend
+- [x] Search empty state: "Inga Snappar matchar din sökning."
+- [x] Clear button, search icon, Swedish placeholder
+- [x] Memoized filtering; no sort, filter, or tags
 
 ## Next (when explicitly scoped)
 
