@@ -1,6 +1,6 @@
 # Data Doctrine
 
-> Product context: Coordinates are Truth, Offline First — see `Identity/product_doctrine.md`  
+> Product context: Coordinates are Truth, Offline First, Protect pillar — see `Identity/product_doctrine.md`  
 > Authoritative Snap shape: `snap_model.md`
 
 ## Source of Truth
@@ -15,7 +15,7 @@ Every saved place must have:
 
 Everything else is optional metadata.
 
-Planned optional fields (roadmap): `favorite`, `tags`, Snaptiser — see `snap_model.md` and `product_roadmap.md`.
+Planned optional fields (roadmap): `tags`, Snaptiser — see `snap_model.md` and `product_roadmap.md`. `favorite` shipped Sprint 5.
 
 ## Product vs Persisted Names
 
@@ -62,6 +62,12 @@ Evolution policy (ADR-019):
 ## Categories
 
 Predefined Swedish categories. Default is `Annat`. Categories classify for revisiting, not for capture gating.
+
+## Protect Principles
+
+**Offline First. Cloud Optional.**
+
+MapSnap should protect the user's memories without requiring an account. Local-first storage, backup/export/import, and future Protect Snaps capabilities belong to the PROTECT pillar (Wave 5). Cloud sync is optional and backend-dependent (Wave 6) — never required for core use.
 
 ## Deletion
 

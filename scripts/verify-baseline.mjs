@@ -133,6 +133,46 @@ try {
     fail("Snap list updates", "card not visible");
   }
 
+  const favoriteBtn = page.getByRole("button", { name: "Markera som favorit" });
+  if (await favoriteBtn.isVisible()) {
+    pass("Favorite toggle visible on card");
+    const snapsBeforeFavorite = await readSnapsFromIndexedDb(page);
+    const beforeFavorite = snapsBeforeFavorite[0];
+    await favoriteBtn.click();
+    const snapsAfterFavorite = await readSnapsFromIndexedDb(page);
+    const afterFavorite = snapsAfterFavorite[0];
+    if (afterFavorite?.favorite === true) {
+      pass("Favorite persists to IndexedDB");
+    } else {
+      fail("Favorite persists to IndexedDB", JSON.stringify(afterFavorite));
+    }
+    if (
+      afterFavorite?.latitude === beforeFavorite?.latitude &&
+      afterFavorite?.longitude === beforeFavorite?.longitude &&
+      afterFavorite?.createdAt === beforeFavorite?.createdAt &&
+      afterFavorite?.name === beforeFavorite?.name &&
+      afterFavorite?.note === beforeFavorite?.note &&
+      afterFavorite?.photoDataUrl === beforeFavorite?.photoDataUrl
+    ) {
+      pass("Favorite toggle does not mutate other fields");
+    } else {
+      fail(
+        "Favorite toggle does not mutate other fields",
+        JSON.stringify({ beforeFavorite, afterFavorite })
+      );
+    }
+    await page.reload({ waitUntil: "networkidle" });
+    await page.waitForSelector("article", { timeout: 10000 });
+    const favoriteActiveBtn = page.getByRole("button", { name: "Ta bort favorit" });
+    if (await favoriteActiveBtn.isVisible()) {
+      pass("Favorite survives reload");
+    } else {
+      fail("Favorite survives reload", "active favorite not shown after reload");
+    }
+  } else {
+    fail("Favorite toggle visible on card", "button not found");
+  }
+
   const mapsLink = page.getByRole("link", { name: "Google Maps" });
   const wazeLink = page.getByRole("link", { name: "Waze" });
   const mapsHref = await mapsLink.getAttribute("href");
@@ -267,7 +307,7 @@ try {
   }
 
   page.once("dialog", (d) => d.accept());
-  await page.getByRole("button", { name: "Ta bort" }).click();
+  await page.getByRole("button", { name: "Ta bort snap" }).click();
   await page.waitForSelector("text=Inga snappar", { timeout: 5000 });
   const snapsAfterDelete = await readSnapsFromIndexedDb(page);
   if (Array.isArray(snapsAfterDelete) && snapsAfterDelete.length === 0) {

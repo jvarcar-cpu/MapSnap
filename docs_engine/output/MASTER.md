@@ -6,11 +6,15 @@
 
 ## Vision
 
-**MapSnap is not a map app. It is the fastest way to save a place that matters and return to it when it matters.** The app captures the place before it is forgotten. Open. SNAP. Close. **Capture first. Organize later.**
+**MapSnap is not a map app. It is the fastest way to save a place that matters and return to it when it matters.** The app captures the place before it is forgotten.
+
+**Evolved vision:** MapSnap exists to help people capture places that matter, enrich them with context, share them when needed, and protect them for the future.
+
+Open. SNAP. Close. **Capture first. Organize later.**
 
 ## Current Phase
 
-**Post-MVP 0.1 — Product Roadmap & Governance** — Roadmap ratified 2026-07-12; implementation not started. MVP 0.1 stable at https://mapsnap.se.
+**Wave 1 — Core Value & UX Polish** — Sprint 5 (Favorite) completed 2026-07-14. MVP 0.1 stable at https://mapsnap.se. Product lifecycle pillars ratified (ADR-020).
 
 ## Product Identity
 
@@ -20,16 +24,17 @@ Product Identity defines who MapSnap is — philosophy, voice, and language. See
 |----------|---------|
 | `Identity/product_doctrine.md` | Governing philosophy, pillars, golden rules |
 | `Identity/product_quotes.md` | Canonical brand phrases |
-| `Identity/voice.md` | Tone and character |
 | `Identity/vocabulary.md` | Official terminology |
+| `Identity/voice.md` | Tone and character |
 | `Identity/writing_rules.md` | Rules for user-facing copy |
 
 **Doctrine summary:**
 
 - MapSnap is a tool — open, SNAP, close
-- Four pillars: CAPTURE, REMEMBER, RETURN, DELIGHT
+- **Core Pillars (lifecycle):** CAPTURE, ENRICH, SHARE, PROTECT; DISCOVER emerging
+- **Experience qualities:** CAPTURE, REMEMBER, RETURN, DELIGHT (cross-cutting)
 - Coordinates are truth; everything else is metadata
-- Offline first; thumb first; reality first; feel lighter than it is
+- Offline First. Cloud Optional. Protect without account requirement
 - Golden Rule (Experience): app must never become more interesting than the place
 - Golden Rule (Capture): every feature must make a Snap more valuable, never harder to create
 
@@ -42,11 +47,12 @@ Product Identity defines who MapSnap is — philosophy, voice, and language. See
 | Wave | Focus |
 |------|-------|
 | 0 | Baseline reconciliation (complete) |
-| 1 | Instruction, feedback, title, notes, share, save image, favorite, compact cards |
-| 2 | Search, sort, filter, tags |
-| 3 | Snaptisers (time MVP; proximity experimental) |
-| 4 | Image experience |
-| 5 | Backend/cloud (deferred) |
+| 1 | Core value: UX polish, title, notes, save image, Quick Share, favorite, compact cards |
+| 2 | Organization / early Discover |
+| 3 | Snaptisers / contextual Discover |
+| 4 | Image + Professional Share |
+| 5 | Protect |
+| 6 | MapSnap-to-MapSnap Share / cloud (deferred) |
 
 Feature gate: `source/feature_gate.md` · Readiness: `source/implementation_readiness.md`
 
@@ -55,14 +61,14 @@ Feature gate: `source/feature_gate.md` · Readiness: `source/implementation_read
 1. MapSnap is a tool, not a map app, note app, or travel planner
 2. Everything begins with SNAP — capture first, organize later
 3. Coordinates are the source of truth; map providers are output channels only
-4. Offline first — IndexedDB primary; backup/export approved; cloud sync deferred
+4. Offline First. Cloud Optional. IndexedDB primary; Protect before cloud maturity
 5. Thumb first — one-thumb usability outdoors
 6. Protected SNAP contract: short press = position; long press = position + image (ADR-012)
 7. No silent or continuous location tracking
 8. Behaviour and visual regressions are bugs — both checklists required every task
 9. One pass type at a time: Bug Fix, Feature, UX, Docs, Storage, Stabilization
 10. No implementation before generated steering docs are current
-11. Feature Gate mandatory before any new feature
+11. Feature Gate mandatory — strengthen Core Pillars without weakening others
 
 ## Architecture Summary
 
@@ -77,22 +83,23 @@ Feature gate: `source/feature_gate.md` · Readiness: `source/implementation_read
 
 Client-only data flow. Production: Vercel, https://mapsnap.se. docs_engine is the product operating system.
 
-## Current Baseline (MVP 0.1 — locked)
+## Current Baseline (MVP 0.1 + Wave 1 sprints 1–5)
 
 - Short tap → GPS → IndexedDB; long press (~600ms) → image + GPS
+- Title + notes edit, save image, Quick Share, favorite — **shipped**
 - Delete, empty state, Google Maps, Waze, backup/import — **existing**
-- No post-capture edit UI yet — Wave 1
+- Next Wave 1: Compact Cards
 
 ## Recent Decisions
 
 - **ADR-012:** Protected SNAP interaction contract
-- **ADR-013:** Local-first roadmap priority
-- **ADR-014:** Save/download Snap image — Wave 1 required
+- **ADR-014:** Save/download Snap image
 - **ADR-015:** Snaptisers strategic capability
-- **ADR-016:** Backend deferral
-- **ADR-017:** Compact card experiment
+- **ADR-016:** Backend deferral (now Wave 6)
 - **ADR-018:** Coordinated feedback with radial waves
+- **ADR-019:** Snap model evolution policy
+- **ADR-020:** Core lifecycle pillars + experience model; Share product track; Protect before cloud
 
 ## Last Updated
 
-2026-07-12
+2026-07-14

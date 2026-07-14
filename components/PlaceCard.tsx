@@ -11,8 +11,10 @@ import {
   snapEditDraftFromSnap,
 } from "@/lib/snapEdit";
 import { normalizeSnap } from "@/lib/snapModel";
+import { applySnapFavorite } from "@/lib/snapFavorite";
 import { saveSnapImage } from "@/lib/saveSnapImage";
 import { shareSnap } from "@/lib/shareSnap";
+import { FavoriteToggle } from "./FavoriteToggle";
 
 type PlaceCardProps = {
   place: SnapPlace;
@@ -52,6 +54,8 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
     type: "error";
     text: string;
   } | null>(null);
+  const [savingFavorite, setSavingFavorite] = useState(false);
+  const [favoriteError, setFavoriteError] = useState<string | null>(null);
 
   const handleDelete = () => {
     void deleteSnap(place.id).then((result) => {
@@ -115,6 +119,25 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
     });
   }, [place.photoDataUrl, place.createdAt]);
 
+  const handleToggleFavorite = useCallback(() => {
+    const previous = place;
+    const nextFavorite = !place.favorite;
+    const updated = normalizeSnap(applySnapFavorite(place, nextFavorite));
+    if (!updated) return;
+
+    setFavoriteError(null);
+    setSavingFavorite(true);
+    onUpdate(updated);
+
+    void saveSnap(updated).then((result) => {
+      setSavingFavorite(false);
+      if (result.ok) return;
+
+      onUpdate(previous);
+      setFavoriteError(result.error ?? "Kunde inte spara favorit.");
+    });
+  }, [place, onUpdate]);
+
   const handleSave = useCallback(() => {
     setSaving(true);
     setSaveError(null);
@@ -146,11 +169,16 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
   return (
     <article
       className={[
-        "overflow-hidden rounded-3xl border border-black/[0.05] bg-elevated card-shadow transition-shadow duration-300",
+        "relative overflow-hidden rounded-3xl border border-black/[0.05] bg-elevated card-shadow transition-shadow duration-300",
         animate ? "animate-card-in" : "",
       ].join(" ")}
       style={{ viewTransitionName: `snap-${place.id}` }}
     >
+      <FavoriteToggle
+        favorite={Boolean(place.favorite)}
+        onToggle={handleToggleFavorite}
+        saving={savingFavorite}
+      />
       {place.photoDataUrl && (
         <div className="aspect-[2.4/1] w-full overflow-hidden bg-surface">
           <img
@@ -162,7 +190,12 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
       )}
 
       <div className="p-5">
-        <div className="min-w-0">
+        {favoriteError && (
+          <p className="mb-3 text-sm text-secondary" role="alert">
+            {favoriteError}
+          </p>
+        )}
+        <div className="min-w-0 pr-10">
           <h3 className="truncate text-lg font-semibold leading-snug text-primary">
             {displayName}
           </h3>

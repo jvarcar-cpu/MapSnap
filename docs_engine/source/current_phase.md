@@ -4,7 +4,7 @@
 
 **Phase:** Wave 1 — Core Value & UX Polish  
 
-**Status:** Sprint 4 (Share Snap) **Completed**  
+**Status:** Sprint 5 (Favorite) **Completed**  
 
 **MVP 0.1 stabilized:** 2026-07-07  
 
@@ -26,17 +26,19 @@
 
 **Wave 1 Sprint 4 share text polish:** 2026-07-14
 
+**Wave 1 Sprint 5 completed:** 2026-07-14
+
 
 
 ## Goal
 
 
 
-Ship native share for image Snaps so users can send title, notes, coordinates, map link, and photo in one action — without manual assembly.
+Mark important Snaps with a post-capture favorite toggle — metadata only, no filter or reorder yet.
 
 
 
-**Sprint 4 completed.** Snaps with `photoDataUrl` show "Dela" after "Spara bild". Share uses Web Share API; unavailable browsers receive explicit Swedish feedback.
+**Sprint 5 completed.** Each snap card shows a star toggle in the upper-right corner. Favorite persists via `saveSnap()`; optimistic UI with honest error on failure.
 
 
 
@@ -166,29 +168,37 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 
 
+## Wave 1 Sprint 5 — Completed
+
+
+
+- [x] Favorite star toggle on every snap card (upper-right)
+
+- [x] Optimistic toggle via `saveSnap()` — `favorite: true` only; field removed when false
+
+- [x] Works with or without photo; capture and share unchanged
+
+- [x] No reorder, filter, or search
+
+- [x] Accessibility: 44px target; Swedish aria-labels; keyboard accessible
+
+- [x] Error recovery: restore previous state on save failure
+
+
+
 ## Official Roadmap Summary
 
-
-
 | Wave | Focus | Backend |
-
 |------|-------|---------|
-
 | 0 | Baseline reconciliation | No |
+| 1 | Core value (UX polish, title, notes, save image, Quick Share, favorite, compact cards) | No |
+| 2 | Organization / early Discover (search, sort, filter, tags) | No |
+| 3 | Snaptisers / contextual Discover | No for MVP |
+| 4 | Image + Professional Share | No |
+| 5 | Protect (backup, restore, data-loss education) | No |
+| 6 | MapSnap-to-MapSnap Share / cloud | Deferred |
 
-| 1 | Core value + UX polish (instruction, feedback, title, notes, share, save image, favorite, compact cards) | No |
-
-| 2 | Organization (search, sort, filter, tags) | No |
-
-| 3 | Snaptisers (time MVP; proximity experimental) | No for MVP |
-
-| 4 | Image experience | No |
-
-| 5 | Backend / cloud | Deferred |
-
-| — | Data Protection (future) | Documented — not implemented |
-
-
+**Core Pillars:** Capture, Enrich, Share, Protect (+ Discover emerging). ADR-020.
 
 Full detail: `product_roadmap.md`.
 
@@ -198,7 +208,7 @@ Full detail: `product_roadmap.md`.
 
 
 
-**Wave 1** — Favorite or Compact Cards as separately scoped passes per `implementation_readiness.md`.
+**Wave 1** — Compact Cards as separately scoped pass per `implementation_readiness.md` order 8.
 
 
 

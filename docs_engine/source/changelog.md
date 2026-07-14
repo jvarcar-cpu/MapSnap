@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.2.9] — 2026-07-14
+
+### Added (Wave 1 Sprint 5 — Favorite)
+
+- **Favorite toggle** — small outlined star in upper-right of each snap card; ☆ / ★ with subtle gold when active
+- **Favorite utility** — `lib/snapFavorite.ts`: `applySnapFavorite()` / `toggleSnapFavorite()`; persists `favorite: true` only, removes field when false
+- **Optimistic save** — immediate UI update via `saveSnap()`; restores previous state and shows error on failure
+- **Accessibility** — 44px touch target; `aria-label` "Markera som favorit" / "Ta bort favorit"; keyboard accessible
+- **Tests** — `lib/snapFavorite.test.ts`; baseline verification extended for favorite visibility, persistence, reload, and non-mutation
+
+### Changed
+
+- `PlaceCard.tsx` — `FavoriteToggle` in card corner; works with or without photo
+- `product_roadmap.md` — Favorite marked Existing
+- `current_phase.md`, `next_task.md`, `implementation_readiness.md` — Sprint 5 complete
+- `snap_model.md`, `data_doctrine.md`, `ux_doctrine.md` — favorite UI documented as shipped
+- Regenerated steering outputs in `docs_engine/output/`
+
+### Not changed
+
+- SNAP short/long-press contract unchanged (ADR-012)
+- No reorder, filter, search, or Discover behaviour
+- Share, save image, title/notes edit, capture flow unchanged
+- IndexedDB version remains `1`
+- No new Field Validation entries (pending real-device test)
+
 ## [0.2.8] — 2026-07-14
 
 ### Changed (Quick Share message polish)

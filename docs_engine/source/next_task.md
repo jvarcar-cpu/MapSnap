@@ -4,7 +4,7 @@
 
 **Updated:** 2026-07-14  
 
-**Pass type:** None active — Wave 1 Sprint 4 closed
+**Pass type:** None active — Wave 1 Sprint 5 closed
 
 
 
@@ -12,11 +12,11 @@
 
 
 
-**Wave 1 — Favorite** — when explicitly scoped per `implementation_readiness.md` order 7.
+**Wave 1 — Compact Cards** — when explicitly scoped per `implementation_readiness.md` order 8.
 
 
 
-Sprint 4 (share snap) is complete. Image snaps offer "Dela" for native share with title, notes, coordinates, map link, and photo. Next Wave 1 item: favorite toggle.
+Sprint 5 (favorite) is complete. Each snap card has a star toggle; favorite persists via `saveSnap()`. Next Wave 1 item: compact card experiment.
 
 
 
@@ -24,13 +24,13 @@ Sprint 4 (share snap) is complete. Image snaps offer "Dela" for native share wit
 
 
 
-1. Pass type declared in `current_phase.md` (Feature Pass)
+1. Pass type declared in `current_phase.md` (Feature or UX Pass)
 
 2. Generated steering docs current (`docs_engine/output/`)
 
-3. Feature Gate answers documented for favorite unit
+3. Feature Gate answers documented for compact cards unit
 
-4. Sprint 4 complete (share snap)
+4. Sprint 5 complete (favorite toggle)
 
 
 
@@ -48,9 +48,9 @@ Sprint 4 (share snap) is complete. Image snaps offer "Dela" for native share wit
 
 - Mixed pass types in one change set
 
-- Tags, compact cards (later Wave 1 sprints unless explicitly scoped)
+- Filter, search, sort (Wave 2)
 
-- Search, sort, filter (Wave 2)
+- Tags (Wave 2)
 
 
 

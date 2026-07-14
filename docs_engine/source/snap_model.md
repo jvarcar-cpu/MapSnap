@@ -34,7 +34,7 @@ Single definition of what a Snap is on disk, in IndexedDB, and in JSON backup. S
 | `rating` | — | number | Reserved; no UI |
 | `accuracy` | — | number | GPS accuracy in metres |
 | `photoDataUrl` | bild | string | Base64 data URL (ADR-004) |
-| `favorite` | favorit | boolean | Schema-ready; UI in later sprint |
+| `favorite` | favorit | boolean | Toggle on card (Sprint 5); persists `true` only |
 | `tags` | taggar | string[] | Schema-ready; UI in Wave 2 |
 
 **Naming rule:** User-facing copy says *titel* / *anteckningar*. Persisted keys remain `name` and `note` for backward compatibility with all existing backups and IndexedDB records.

@@ -29,7 +29,7 @@ export type Snap = {
 
   photoDataUrl?: string;
 
-  /** Wave 1+ — optional; no UI until scoped. */
+  /** Wave 1 — optional; toggled on card. */
   favorite?: boolean;
   /** Wave 2+ — optional tag labels; no UI until scoped. */
   tags?: string[];

@@ -18,15 +18,16 @@
 | 4b | Title + notes UI (Sprint 2B) | Post-capture edit UI for `name` / `note` | Sprint 2A | Low — optional fields | Regression checklist; backup import | Revert UI only | `data_doctrine.md`, `known_issues.md` | **Completed** |
 | 5 | Save image | "Spara bild" on snaps with photo | `photoDataUrl` | None — copy only | Per-platform manual test FEAS-001 | Remove action | `image_doctrine.md`, ADR-014 | **Completed** |
 | 6 | Share Snap | Native share + unavailable message | Title optional | None | Share sheet + desktop unavailable UX | Remove action | `ux_doctrine.md` | **Completed** |
-| 7 | Favorite | `favorite` field + toggle | Schema bump if needed | Low | Filter prep; backup round-trip | Remove field from UI | `data_doctrine.md` |
+| 7 | Favorite | `favorite` field + toggle | Schema bump if needed | Low | Filter prep; backup round-trip | Remove field from UI | `data_doctrine.md` | **Completed** |
 | 8 | Compact card experiment | List layout only; detail view for full image | Title, favorite | Medium — UX | Measurable recognition test | Revert to banner layout | ADR-017, `ux_doctrine.md` |
 | 9 | Search / sort / filter | List controls only | Title, notes, favorite | Low | Performance with many snaps | Hide controls | `product_roadmap.md` status |
 | 10 | Tags | Lightweight tag list on snap | Edit UI | Low | Backup import | Remove tags | `data_doctrine.md` |
 | 11 | Snaptiser feasibility spike | Research only — notifications, geofencing | None | None | Document FEAS-002 findings | N/A | `snaptiser_doctrine.md`, `known_issues.md` |
 | 12 | Time-based Snaptiser MVP | Local scheduled notification | Spike approval | Medium | Permission denied; app closed behavior | Disable feature flag | ADR-015 |
 | 13 | Proximity Snaptiser experiment | Opt-in geolocation watch or periodic check | Time MVP | High | Battery; honesty about limits | Disable experiment | `snaptiser_doctrine.md` |
-| 14 | Image experience expansion | Full-screen, zoom, compression | Save image | Medium | Quota limits MVP-001 | Revert viewers | `image_doctrine.md` |
-| 15 | Backend reassessment | Decision only — no build | Waves 1–4 usage data | N/A | Product need evidence | N/A | ADR-016 review |
+| 14 | Image experience + Professional Share | Full-screen, zoom, compression, documented export, professional format | Save image, Quick Share | Medium | Quota limits MVP-001 | Revert viewers | `image_doctrine.md`, `product_roadmap.md` Wave 4 |
+| 15 | Protect Snaps | Backup/restore UX, reminders, data-loss education, native backup export | Waves 1–4 usage | Medium | User trust; honest limits | Revert UX | `product_roadmap.md` Wave 5, `data_doctrine.md` |
+| 16 | MapSnap-to-MapSnap Share / cloud reassessment | Decision only — no build until Protect proven | Waves 1–5 usage data | N/A | Product need evidence | N/A | ADR-016 review, `product_roadmap.md` Wave 6 |
 
 ---
 
@@ -35,7 +36,7 @@
 1. Generated steering docs current (`docs_engine/output/`)
 2. Pass type declared in `current_phase.md` (Feature, UX, Storage, etc.)
 3. Identity documents loaded for any Swedish user-facing copy
-4. Feature Gate passed — documented in roadmap item
+4. Feature Gate passed — documented in roadmap item (Core Pillar mapping required)
 5. Behaviour + visual regression checklists pass after unit ships
 
 ---

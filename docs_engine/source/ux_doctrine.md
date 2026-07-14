@@ -101,6 +101,7 @@ Do not redesign. Restore and preserve this baseline unless explicitly instructed
 - Section header: "MINA SNAPPAR" (uppercase, tracked)
 - Empty state: pin illustration + "Inga snappar ännu."
 - Cards: rounded-3xl, soft shadow, optional photo banner (2.4:1), fallback title "Sparad plats"
+- Favorite toggle: small star upper-right on each card; ☆ inactive, ★ active with subtle gold
 
 **Design tokens**
 
@@ -164,9 +165,9 @@ Show what matters for revisiting:
 
 Users never fill in fields before their first save. Optional enrichment (name, note, title, favorite, tags) happens after capture — see `product_roadmap.md` Wave 1–2.
 
-## RETURN Actions (existing)
+## RETURN / SHARE Actions (existing)
 
-Google Maps and Waze deep links are the approved Return path. Share Snap and save-image are shipped Wave 1 RETURN actions. No proprietary navigation.
+Google Maps and Waze deep links are the approved Return path. Quick Share and save-image are shipped Wave 1 SHARE actions. Favorite toggle is a shipped Wave 1 ENRICH action (metadata only — no filter yet). Professional Share is a future SHARE mode — see `product_roadmap.md`. No proprietary navigation.
 
 ## Compact Cards (experimental — Wave 1)
 
