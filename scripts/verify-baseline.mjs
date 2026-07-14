@@ -148,6 +148,34 @@ try {
     fail("Waze link", wazeHref ?? "missing");
   }
 
+  const editBtn = page.getByRole("button", { name: /Redigera/i });
+  if (await editBtn.isVisible()) {
+    pass("Redigera action visible");
+    await editBtn.click();
+    await page.getByLabel("Titel").fill("Testplats Sprint 2B");
+    await page.getByLabel("Anteckning").fill("Rad ett\nRad två");
+    await page.getByRole("button", { name: "Spara" }).click();
+    await page.waitForSelector("text=Testplats Sprint 2B", { timeout: 5000 });
+    const snapsAfterEdit = await readSnapsFromIndexedDb(page);
+    const edited = snapsAfterEdit[0];
+    if (
+      edited?.name === "Testplats Sprint 2B" &&
+      edited?.note === "Rad ett\nRad två" &&
+      edited?.latitude === 59.3293
+    ) {
+      pass("Title and notes edit persists");
+    } else {
+      fail("Title and notes edit persists", JSON.stringify(edited));
+    }
+    if (await page.getByText("Sparad plats").count() === 0) {
+      pass("Titled snap replaces fallback title");
+    } else {
+      fail("Titled snap replaces fallback title", "fallback still visible");
+    }
+  } else {
+    fail("Redigera action visible", "button not found");
+  }
+
   page.once("dialog", (d) => d.accept());
   await page.getByRole("button", { name: "Ta bort" }).click();
   await page.waitForSelector("text=Inga snappar", { timeout: 5000 });

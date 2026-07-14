@@ -6,6 +6,7 @@ import { PlaceCard } from "./PlaceCard";
 type PlaceListProps = {
   places: SnapPlace[];
   onDelete: (id: string) => void;
+  onUpdate: (snap: SnapPlace) => void;
   newestId?: string | null;
 };
 
@@ -37,7 +38,7 @@ function LocationPinIllustration() {
   );
 }
 
-export function PlaceList({ places, onDelete, newestId }: PlaceListProps) {
+export function PlaceList({ places, onDelete, onUpdate, newestId }: PlaceListProps) {
   if (places.length === 0) {
     return (
       <div className="animate-fade-in px-2 py-10 text-center">
@@ -57,6 +58,7 @@ export function PlaceList({ places, onDelete, newestId }: PlaceListProps) {
           <PlaceCard
             place={place}
             onDelete={onDelete}
+            onUpdate={onUpdate}
             animate={place.id === newestId}
           />
         </li>

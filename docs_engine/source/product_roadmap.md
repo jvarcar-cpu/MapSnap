@@ -76,7 +76,7 @@ Each item below includes: **user value**, **pillar**, **backend**, **complexity*
 | Long-press threshold | `capture_doctrine.md`: 500ms | `SnapButton.tsx`: 600ms; `stable_baseline.md`: ~600ms | **Code is truth.** Update capture doctrine to 600ms. |
 | Hero helper text | `ux_doctrine.md`: no permanent helper text | No visible instruction in UI | **Resolved** Wave 1 Sprint 1 — microcopy shipped (ADR-012 interaction unchanged). |
 | Success confirmation | Roadmap target: "Snap sparad" | `SuccessFeedback`: "✓ Sparad" | **Resolved** Wave 1 Sprint 1 — coordinated feedback shipped (ADR-018). |
-| Title / notes | Schema fields exist | No edit UI | **Planned** Wave 1 (MVP-002). |
+| Title / notes | Schema fields exist | Edit UI shipped Sprint 2B | **Resolved** Wave 1 Sprint 2B. |
 | Return / navigation | — | Google Maps + Waze only | Treat as **existing RETURN** — not a new feature. |
 
 ---
@@ -119,7 +119,7 @@ Each item below includes: **user value**, **pillar**, **backend**, **complexity*
 
 | Field | Value |
 |-------|-------|
-| Status | **Approved** |
+| Status | **Existing** |
 | User value | Recognize places in the list |
 | Pillar | REMEMBER |
 | Backend | No |
@@ -134,7 +134,7 @@ Each item below includes: **user value**, **pillar**, **backend**, **complexity*
 
 | Field | Value |
 |-------|-------|
-| Status | **Approved** |
+| Status | **Existing** |
 | User value | Preserve context and intention |
 | Pillar | REMEMBER |
 | Backend | No |

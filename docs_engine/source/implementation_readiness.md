@@ -14,7 +14,8 @@
 | 1 | Baseline verification | Confirm W0 checklist; no code unless doc fixes | None | None | `verify-baseline.mjs` + manual mobile OPS-002 | N/A | `baseline_reconciliation.md` |
 | 2 | Usage instruction | Hero microcopy only | None | None | Visual + a11y; capture time unchanged | Remove copy | `ux_doctrine.md` |
 | 3 | SNAP feedback polish | Haptic, sound, glow, pulse, radial waves, toast text | None | Low | Reduced-motion; persistence not blocked; ~500–700ms | Revert CSS/JS feedback | `ux_doctrine.md`, ADR-018 |
-| 4 | Title + notes data model | Schema + post-capture edit UI | W1 edit pattern | Low — optional fields | Regression checklist; backup import | Revert UI; schema backward compatible | `data_doctrine.md`, `known_issues.md` |
+| 4a | Snap model preparation (Sprint 2A) | Schema normalization, backup compat, migration | None | Low | Backup round-trip; existing snaps preserved | Revert `snapModel.ts` | `snap_model.md`, `data_doctrine.md`, ADR-019 |
+| 4b | Title + notes UI (Sprint 2B) | Post-capture edit UI for `name` / `note` | Sprint 2A | Low — optional fields | Regression checklist; backup import | Revert UI only | `data_doctrine.md`, `known_issues.md` | **Completed** |
 | 5 | Save image | "Spara bild" on snaps with photo | `photoDataUrl` | None — copy only | Per-platform manual test FEAS-001 | Remove action | `image_doctrine.md`, ADR-014 |
 | 6 | Share Snap | Native share + fallback | Title optional | None | Share sheet + desktop fallback | Remove action | `ux_doctrine.md` |
 | 7 | Favorite | `favorite` field + toggle | Schema bump if needed | Low | Filter prep; backup round-trip | Remove field from UI | `data_doctrine.md` |

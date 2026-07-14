@@ -154,6 +154,14 @@ export default function HomePage() {
     if (newestId === id) setNewestId(null);
   }, [newestId]);
 
+  const handleUpdate = useCallback((updated: SnapPlace) => {
+    withViewTransition(() => {
+      setPlaces((prev) =>
+        prev.map((p) => (p.id === updated.id ? updated : p))
+      );
+    });
+  }, []);
+
   const handleImportSuccess = useCallback(() => {
     withViewTransition(() => {
       void loadSnaps().then(setPlaces);
@@ -241,7 +249,12 @@ export default function HomePage() {
         <h2 className="mb-6 px-1 text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
           MINA SNAPPAR
         </h2>
-        <PlaceList places={places} onDelete={handleDelete} newestId={newestId} />
+        <PlaceList
+          places={places}
+          onDelete={handleDelete}
+          onUpdate={handleUpdate}
+          newestId={newestId}
+        />
         <SnapBackupPanel onImportSuccess={handleImportSuccess} />
       </section>
     </main>

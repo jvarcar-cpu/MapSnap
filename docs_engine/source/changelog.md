@@ -1,5 +1,66 @@
 # Changelog
 
+## [0.2.3] — 2026-07-14
+
+### Added (Wave 1 Sprint 2B — Title + Notes UI)
+
+- **Post-capture edit** — "Redigera" on snap cards opens inline form for optional title (`name`) and notes (`note`)
+- **Display** — custom title replaces fallback "Sparad plats"; notes shown with line clamp in list view (full text editable)
+- **Edit helpers** — `lib/snapEdit.ts` (trim, max lengths, field preservation)
+- **SnapEditForm** — mobile-friendly inputs, Escape to cancel, scroll-into-view on focus
+- **Tests** — `lib/snapEdit.test.ts`; baseline verification extended for edit persistence
+
+### Changed
+
+- `PlaceCard.tsx`, `PlaceList.tsx`, `page.tsx` — edit/save/cancel flow via `saveSnap()`
+- `current_phase.md`, `next_task.md`, `implementation_readiness.md` — Sprint 2B complete
+- Regenerated steering outputs in `docs_engine/output/`
+
+### Not changed
+
+- SNAP short/long-press contract unchanged (ADR-012)
+- No favorite, tags, share, save image, compact cards, or backend work
+- IndexedDB version remains `1`
+- No new Field Validation entries
+
+## [0.2.2] — 2026-07-14
+
+### Added (Wave 1 Sprint 2A — Snap Model Preparation)
+
+- **Authoritative Snap type** — `Snap` in `types/place.ts`; `SnapPlace` alias retained
+- **Snap model layer** — `lib/snapModel.ts`: validation, idempotent normalization, legacy alias mapping (`title`→`name`, `notes`→`note`)
+- **Automatic migration** — normalize on load, save, import; persist corrected records once
+- **Schema-ready optional fields** — `favorite`, `tags` (no UI)
+- **Snap model doctrine** — `snap_model.md` (backup compatibility matrix, field mapping)
+- **ADR-019** — Snap model evolution policy
+
+### Changed
+
+- `lib/storage.ts` — uses `snapModel`; import/export round-trip through normalization
+- `data_doctrine.md` — product vs persisted names, schema evolution policy
+- `implementation_readiness.md` — split order 4 into Sprint 2A (model) and 2B (UI)
+- `current_phase.md`, `next_task.md` — Sprint 2A complete; 2B next
+- Regenerated steering outputs in `docs_engine/output/`
+
+### Not changed
+
+- No title/notes edit UI, favorite, tags, share, save image, or SNAP behaviour changes
+- IndexedDB version remains `1`
+- No new Field Validation entries
+
+## [0.2.1-docs] — 2026-07-14
+
+### Documented (Wave 1 Sprint 1 closure)
+
+- **Field Validation 0005** — Wave 1 Sprint 1 UX Polish Validation (Google Pixel 9a, Redmi Note 9); pulse-on-button accepted as sufficient with sonar waves
+- **Wave 1 Sprint 1** — marked **Completed** after real-device field validation
+- **Next recommended** — Wave 1 Sprint 2: Snap title, Notes
+- Regenerated steering outputs in `docs_engine/output/`
+
+### Not changed
+
+- No product code, UI, or SNAP behaviour changes in this pass
+
 ## [0.2.0] — 2026-07-13
 
 ### Added (Wave 1 Sprint 1 — UX Polish)
