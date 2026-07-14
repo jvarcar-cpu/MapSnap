@@ -67,7 +67,7 @@ Share is a product track with multiple modes. Only Quick Share is implemented.
 
 **Purpose:** Fast communication through SMS, WhatsApp, Messenger, Signal, email, and similar native destinations.
 
-**Typical content:** title, note, image, coordinates, one map link.
+**Typical content:** title, note, coordinates, one map link; image file when the snap has `photoDataUrl`.
 
 **Principle:** *The image provides visual context, the text provides useful context, and the map link provides navigation context.* Avoid duplication.
 

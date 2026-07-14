@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.2.10] — 2026-07-14
+
+### Changed (Quick Share polish)
+
+- **"Dela" always visible** — share action on every snap card; position-only snaps share text + Google Maps link; image snaps also attach image file when supported
+- **Placement** — Dela after Spara bild (when image) or directly after Maps links; Save Image unchanged (image-only)
+
+### Not changed
+
+- Share message format, Share API behavior, persistence, storage, SNAP interaction unchanged
+- Save Image behavior unchanged
+
+### Docs
+
+- `ux_doctrine.md`, `current_phase.md`, `product_roadmap.md` — Quick Share visibility on all snaps
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.9] — 2026-07-14
 
 ### Added (Wave 1 Sprint 5 — Favorite)

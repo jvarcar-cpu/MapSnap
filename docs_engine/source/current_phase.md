@@ -152,11 +152,9 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 
 
-- [x] "Dela" action on snap cards with `photoDataUrl`
+- [x] "Dela" action on every snap card (position-only and image snaps)
 
-- [x] Hidden for position-only snaps
-
-- [x] Placement: after Google Maps / Waze and Spara bild, before Redigera / Ta bort
+- [x] Placement: after Google Maps / Waze and Spara bild (when image), before Redigera / Ta bort
 
 - [x] Native share: title (fallback "Sparad plats"), notes when present, coordinates, Google Maps URL, image file when supported
 

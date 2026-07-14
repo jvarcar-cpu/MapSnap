@@ -167,7 +167,7 @@ Users never fill in fields before their first save. Optional enrichment (name, n
 
 ## RETURN / SHARE Actions (existing)
 
-Google Maps and Waze deep links are the approved Return path. Quick Share and save-image are shipped Wave 1 SHARE actions. Favorite toggle is a shipped Wave 1 ENRICH action (metadata only — no filter yet). Professional Share is a future SHARE mode — see `product_roadmap.md`. No proprietary navigation.
+Google Maps and Waze deep links are the approved Return path. Quick Share ("Dela") and save-image are shipped Wave 1 SHARE actions. **Quick Share is available on every snap card** — text and Google Maps link always; image file attached when `photoDataUrl` is present and `canShare` supports files. Save-image remains image-only. Favorite toggle is a shipped Wave 1 ENRICH action (metadata only — no filter yet). Professional Share is a future SHARE mode — see `product_roadmap.md`. No proprietary navigation.
 
 ## Compact Cards (experimental — Wave 1)
 

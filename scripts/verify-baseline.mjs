@@ -194,10 +194,31 @@ try {
     fail("Spara bild hidden without image", "button visible on position-only snap");
   }
 
-  if ((await page.getByRole("button", { name: "Dela" }).count()) === 0) {
-    pass("Dela hidden without image");
+  const shareBtnNoImage = page.getByRole("button", { name: "Dela" });
+  if (await shareBtnNoImage.isVisible()) {
+    pass("Dela visible without image");
+    const snapsBeforeShareNoImage = await readSnapsFromIndexedDb(page);
+    const beforeShareNoImage = snapsBeforeShareNoImage[0];
+    await shareBtnNoImage.click();
+    const snapsAfterShareNoImage = await readSnapsFromIndexedDb(page);
+    const afterShareNoImage = snapsAfterShareNoImage[0];
+    if (
+      afterShareNoImage?.photoDataUrl === beforeShareNoImage?.photoDataUrl &&
+      afterShareNoImage?.latitude === beforeShareNoImage?.latitude &&
+      afterShareNoImage?.longitude === beforeShareNoImage?.longitude &&
+      afterShareNoImage?.createdAt === beforeShareNoImage?.createdAt &&
+      afterShareNoImage?.name === beforeShareNoImage?.name &&
+      afterShareNoImage?.note === beforeShareNoImage?.note
+    ) {
+      pass("Share without image does not mutate snap");
+    } else {
+      fail(
+        "Share without image does not mutate snap",
+        JSON.stringify({ beforeShareNoImage, afterShareNoImage })
+      );
+    }
   } else {
-    fail("Dela hidden without image", "button visible on position-only snap");
+    fail("Dela visible without image", "button not found on position-only snap");
   }
 
   const tinyJpeg =

@@ -81,8 +81,6 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
   }, []);
 
   const handleShare = useCallback(() => {
-    if (!place.photoDataUrl) return;
-
     setSharing(true);
     setShareMessage(null);
 
@@ -257,22 +255,24 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
                     {saveImageMessage.text}
                   </p>
                 )}
-                <button
-                  type="button"
-                  onClick={handleShare}
-                  disabled={sharing}
-                  className="min-h-[48px] shrink-0 rounded-full border border-black/[0.07] bg-surface px-6 py-3 text-sm font-medium text-primary transition-all duration-200 ease-out hover:border-snap/20 hover:bg-snap-muted/30 active:scale-[0.97] disabled:opacity-60"
-                  aria-label={`Dela ${displayName}`}
-                >
-                  {sharing ? "Delar…" : "Dela"}
-                </button>
-                {shareMessage && (
-                  <p className="text-sm text-secondary" role="alert">
-                    {shareMessage.text}
-                  </p>
-                )}
               </div>
             )}
+            <div className="flex flex-col gap-2">
+              <button
+                type="button"
+                onClick={handleShare}
+                disabled={sharing}
+                className="min-h-[48px] shrink-0 rounded-full border border-black/[0.07] bg-surface px-6 py-3 text-sm font-medium text-primary transition-all duration-200 ease-out hover:border-snap/20 hover:bg-snap-muted/30 active:scale-[0.97] disabled:opacity-60"
+                aria-label={`Dela ${displayName}`}
+              >
+                {sharing ? "Delar…" : "Dela"}
+              </button>
+              {shareMessage && (
+                <p className="text-sm text-secondary" role="alert">
+                  {shareMessage.text}
+                </p>
+              )}
+            </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <button
                 type="button"
