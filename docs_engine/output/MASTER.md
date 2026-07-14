@@ -14,7 +14,7 @@ Open. SNAP. Close. **Capture first. Organize later.**
 
 ## Current Phase
 
-**Wave 1 — Core Value & UX Polish** — Sprint 5 (Favorite) completed 2026-07-14. MVP 0.1 stable at https://mapsnap.se. Product lifecycle pillars ratified (ADR-020).
+**Wave 1 — Core Value & UX Polish** — institutionally closed 2026-07-14. MVP 0.1 stable at https://mapsnap.se. Product lifecycle pillars ratified (ADR-020). Product ready for Compact Cards.
 
 ## Product Identity
 
@@ -37,6 +37,7 @@ Product Identity defines who MapSnap is — philosophy, voice, and language. See
 - Offline First. Cloud Optional. Protect without account requirement
 - Golden Rule (Experience): app must never become more interesting than the place
 - Golden Rule (Capture): every feature must make a Snap more valuable, never harder to create
+- **MapSnap Signature:** User first. Product second. (ADR-021)
 
 **Protected:** Identity documents must be loaded before any user-facing copy. Changes require explicit product approval.
 
@@ -47,7 +48,7 @@ Product Identity defines who MapSnap is — philosophy, voice, and language. See
 | Wave | Focus |
 |------|-------|
 | 0 | Baseline reconciliation (complete) |
-| 1 | Core value: UX polish, title, notes, save image, Quick Share, favorite, compact cards |
+| 1 | Core value: UX polish, title, notes, save image, Quick Share, favorite, signature, action icons — **institutionally closed** |
 | 2 | Organization / early Discover |
 | 3 | Snaptisers / contextual Discover |
 | 4 | Image + Professional Share |
@@ -83,12 +84,17 @@ Feature gate: `source/feature_gate.md` · Readiness: `source/implementation_read
 
 Client-only data flow. Production: Vercel, https://mapsnap.se. docs_engine is the product operating system.
 
-## Current Baseline (MVP 0.1 + Wave 1 sprints 1–5)
+Key libs: `snapModel`, `snapEdit`, `snapFavorite`, `saveSnapImage`, `shareSnap`. Key components: `PlaceCard`, `MapOpenButtons`, `FavoriteToggle`, `SnapActionIcons`.
+
+## Current Baseline (MVP 0.1 + Wave 1)
 
 - Short tap → GPS → IndexedDB; long press (~600ms) → image + GPS
-- Title + notes edit, save image, Quick Share, favorite — **shipped**
+- Hero instruction + coordinated SNAP feedback — **shipped**
+- Snap model normalization — **shipped**
+- Title + notes edit, save image, Quick Share (every card), favorite — **shipped**
+- MapSnap signature, SnapSpot label, two-column action grid, brand map icons, SVG card actions — **shipped**
 - Delete, empty state, Google Maps, Waze, backup/import — **existing**
-- Next Wave 1: Compact Cards
+- Wave 1 institutionally closed — product ready for Compact Cards
 
 ## Recent Decisions
 
@@ -99,6 +105,7 @@ Client-only data flow. Production: Vercel, https://mapsnap.se. docs_engine is th
 - **ADR-018:** Coordinated feedback with radial waves
 - **ADR-019:** Snap model evolution policy
 - **ADR-020:** Core lifecycle pillars + experience model; Share product track; Protect before cloud
+- **ADR-021:** MapSnap Signature — User first. Product second.
 
 ## Last Updated
 

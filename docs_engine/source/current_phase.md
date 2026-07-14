@@ -4,7 +4,9 @@
 
 **Phase:** Wave 1 — Core Value & UX Polish  
 
-**Status:** Action Icon Polish **Completed** — no active implementation pass  
+**Status:** **Institutionally closed** 2026-07-14 — no active implementation pass  
+
+**Next sprint:** Compact Cards (experimental) — when explicitly scoped
 
 **MVP 0.1 stabilized:** 2026-07-07  
 
@@ -38,13 +40,9 @@
 
 ## Goal
 
+Wave 1 Core Value track is institutionally closed. All shipped sprints verified in `baseline_reconciliation.md` (Wave 1 section, 2026-07-14).
 
-
-Introduce recognizable SVG action icons on snap cards — Google Maps and Waze brand icons plus restrained MapSnap icons for card actions. Visual polish only, no behaviour changes.
-
-
-
-**Wave 1 Action Icon Polish completed.** Google Maps and Waze show official brand icons; card actions use calm SVG icons (~18px) with subtle accent colors. Dela uses Share2; Spara bild uses Download. Layout, ordering, and touch targets unchanged.
+**Next (when explicitly scoped):** Compact Cards — experimental list layout per `implementation_readiness.md` order 8. See `next_task.md` and `CURRENT_TASK.md`.
 
 
 
@@ -142,7 +140,7 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 - [x] Hidden for position-only snaps
 
-- [x] Placement: after Google Maps / Waze, before Redigera / Ta bort
+- [x] Two-column action grid row 2 (with image): Spara bild beside Ta bort; hidden without `photoDataUrl`
 
 - [x] Download via blob URL on desktop and Android; Web Share with file on iOS
 
@@ -160,11 +158,9 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 - [x] "Dela" action on every snap card (position-only and image snaps)
 
-- [x] Placement: after Google Maps / Waze and Spara bild (when image), before Redigera / Ta bort
-
 - [x] Native share: title (user title or "MapSnap" fallback), notes when present, coordinates, Google Maps URL, image file when supported
 
-- [x] Share text polish: `📍 Position`, `🌍 Öppna plats`; no "Image attached." or duplicate map labels (field-validated SMS)
+- [x] Share text: `📍 SnapSpot`, `🌍 Öppna i Google Maps`; no "Image attached." or duplicate map labels (field-validated SMS — Field Validation 0006)
 
 - [x] Unavailable: "Delning stöds inte i den här webbläsaren" — no silent failure
 
@@ -216,9 +212,9 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 - [x] Two-column action grid — Redigera / Dela, Spara bild / Ta bort; equal-width buttons; 48px touch targets preserved
 
-- [x] Subtle emoji icons on every card action (✏️ 📤 💾 🗑)
+- [x] Two-column action layout and visually lighter buttons — reduced border weight, tighter grid spacing
 
-- [x] Visually lighter action buttons — reduced border weight, tighter grid spacing
+- [x] Card action icons — emoji in this pass; superseded by SVG in Action Icon Polish (0.2.13–0.2.14)
 
 - [x] SnapSpot canonical location label on card (`📍 SnapSpot`) — category not shown on card
 
@@ -268,10 +264,6 @@ Full detail: `product_roadmap.md`.
 
 ## Next (when explicitly scoped)
 
+**Compact Cards** — separately scoped pass per `implementation_readiness.md` order 8.
 
-
-**Wave 1** — Compact Cards as separately scoped pass per `implementation_readiness.md` order 8.
-
-
-
-See `next_task.md`.
+See `next_task.md` and `docs_engine/output/CURRENT_TASK.md`.

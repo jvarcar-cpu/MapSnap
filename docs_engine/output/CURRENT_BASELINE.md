@@ -4,7 +4,30 @@
 
 **Locked:** 2026-06-28  
 **Updated:** 2026-07-14  
-**Status:** MVP 0.1 stable — Wave 1 Action Icon Polish **Completed**
+**Status:** MVP 0.1 stable — Wave 1 institutionally closed
+
+## Wave Summary
+
+### Wave 1 — Completed
+
+- ✓ Capture
+- ✓ Camera
+- ✓ Photo Snap
+- ✓ Title
+- ✓ Notes
+- ✓ Favorite
+- ✓ Save Image
+- ✓ Quick Share
+- ✓ Google Maps
+- ✓ Waze
+- ✓ MapSnap Signature
+- ✓ SnapSpot
+- ✓ Action Button Polish
+- ✓ Native Icons
+
+### Current Status
+
+Wave 1 complete. Product ready for Compact Cards.
 
 ## Interaction Baseline
 
@@ -94,6 +117,8 @@
 
 - Automated: `node scripts/verify-baseline.mjs [url]` — use URL printed by `npm run dev`
 - Unit: `npm test` — `lib/snapEdit.test.ts`, `lib/snapFavorite.test.ts`, `lib/saveSnapImage.test.ts`, `lib/shareSnap.test.ts`
+- Docs: `node scripts/validate_docs.mjs`
+- Reconciliation: `baseline_reconciliation.md` — Wave 0 + Wave 1 (2026-07-14)
 - Manual mobile: long-press camera, denied-permission card (OPS-002)
 - Field: `field_validation_log.md` — Field Validation 0005, 0006
 

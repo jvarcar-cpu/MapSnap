@@ -2,31 +2,33 @@
 
 ## Status
 
-Wave 1 Snap Card Polish complete. MVP baseline stable at https://mapsnap.se.
+Wave 1 institutionally closed 2026-07-14. MVP baseline stable at https://mapsnap.se. Next sprint: Compact Cards (experimental, not started).
 
 ## Phase
 
-Wave 1 — Core Value. Snap Card Polish closed 2026-07-14. Next: Compact Cards when scoped.
+Wave 1 — Core Value & UX Polish. Institutionally closed 2026-07-14. Next sprint: Compact Cards when scoped.
 
 ## What Works
 
 - SNAP core flow: short tap saves GPS; long press (~600ms) opens camera + GPS snap
 - Coordinated SNAP feedback, hero microcopy, field validated (Field Validation 0005)
+- Snap model — normalization, legacy aliases, backup round-trip (Sprint 2A; ADR-019)
 - Title + notes post-capture edit (Sprint 2B)
-- Save image — "Spara bild" (Sprint 3)
-- Quick Share — "Dela" on every snap card; text + Google Maps link; image file when snap has photo; SMS field validated (Field Validation 0006)
+- Save image — "Spara bild" on photo snaps only (Sprint 3)
+- Quick Share — "Dela" on every snap card; `📍 SnapSpot` + Google Maps link; image file when supported; SMS field validated (Field Validation 0006)
 - Favorite — star toggle on cards; optimistic save (Sprint 5)
-- MapSnap signature — permanent header mark on every card; user title primary left (ADR-021)
-- Snap card polish — two-column action grid with icons; SnapSpot location label on cards
+- MapSnap signature — permanent header mark; user title primary left; no fallback title (ADR-021)
+- Snap card polish — two-column action grid; SnapSpot location label; category hidden on card
+- Action icon polish — Google Maps / Waze brand SVG icons; card action SVGs (~18px); Dela Share2, Spara bild Download; subtle accent colors on icons only
 - Large tactile SNAP button: circular, green, 3D gradient, ~70% width
 - IndexedDB primary storage (`mapsnap-db` / `snaps`)
 - Legacy localStorage migrates on load
 - JSON backup/import/export (merge by id)
-- Google Maps and Waze deep links (Return)
+- Google Maps and Waze deep links with brand icons (Return)
 - Delete removes snap from list and storage
 - Empty state with first-Snap encouragement
 - PWA manifest, Swedish UI, HTTPS dev workflow
-- Baseline verification script passes
+- Baseline verification script and unit tests pass
 - Public production: https://mapsnap.se
 
 ## Official Roadmap (ratified, updated ADR-020)
@@ -37,7 +39,7 @@ Single source: `docs_engine/source/product_roadmap.md`
 
 | Wave | Focus |
 |------|-------|
-| 1 | Core value — compact cards remaining |
+| 1 | Core value — **institutionally closed**; Compact Cards next (experimental) |
 | 2 | Organization / early Discover |
 | 3 | Snaptisers / contextual Discover |
 | 4 | Image + Professional Share |
@@ -46,9 +48,10 @@ Single source: `docs_engine/source/product_roadmap.md`
 
 ## Known Limitations
 
-- No filter, search, tags — roadmap approved
+- No filter, search, tags — Wave 2 roadmap
+- Compact Cards not started — Wave 1 experimental item
 - Photo storage as inline base64 — quota limits (MVP-001)
-- Image save per-platform verification incomplete (FEAS-001)
+- Image save per-platform field verification incomplete (FEAS-001)
 - Snaptiser / geofencing — platform variance (FEAS-002)
 - Protect Snaps not yet implemented — Wave 5
 - Manual mobile verification still required (OPS-002)
@@ -66,8 +69,8 @@ Next.js 15 · TypeScript · Tailwind · Geolocation API · IndexedDB · PWA · V
 
 ## Next Step
 
-Wave 1 — Compact Cards when scoped. See `next_task.md` and `implementation_readiness.md`.
+Wave 1 — Compact Cards when scoped. See `next_task.md` and `implementation_readiness.md` order 8.
 
 ## Institutional Memory
 
-CHRONICLE-MSN-0001 — *The First Public Presence* (2026-07-11). ADR-020 — Core lifecycle pillars (2026-07-14).
+CHRONICLE-MSN-0001 — *The First Public Presence* (2026-07-11). ADR-020 — Core lifecycle pillars (2026-07-14). ADR-021 — MapSnap Signature (2026-07-14). Wave 1 reconciliation (2026-07-14).

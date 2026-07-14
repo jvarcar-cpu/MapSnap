@@ -6,50 +6,49 @@
 
 ## Status
 
-Wave 1 Action Icon Polish **Completed**. No active implementation pass.
+Wave 1 institutionally closed. No active implementation pass. Awaiting Compact Cards scoping.
 
 ## Phase
 
-Wave 1 — Core Value & UX Polish. Action Icon Polish closed 2026-07-14.
+Wave 1 — Core Value & UX Polish (closed). Next sprint: Compact Cards.
 
 ## Pass Type
 
-None active.
+None active. Declare Feature or UX Pass in `current_phase.md` before starting Compact Cards.
 
-## Task
+## Context
 
-**When scoped:** Wave 1 — Compact Cards per `implementation_readiness.md` order 8.
+Wave 1 shipped capabilities are verified in `baseline_reconciliation.md` (Wave 1 section) and `CURRENT_BASELINE.md`. Institutional reconciliation complete 2026-07-14.
+
+## Next Sprint — Compact Cards
+
+**Scope:** Wave 1 item 6 — experimental compact card layout. List layout only; detail view for full image. See `implementation_readiness.md` order 8, `product_roadmap.md` item 6, `ux_doctrine.md`, ADR-017.
+
+**Not in scope:** SNAP interaction changes, backend, filter/search/tags, Professional Share, Protect.
 
 ## Prerequisites
 
-- [x] Official roadmap in `product_roadmap.md` (ADR-020 lifecycle pillars)
-- [x] Feature gate in `feature_gate.md` (Core Pillar alignment)
-- [x] Wave 0 baseline reconciliation complete
-- [x] ADRs 012–021 recorded
-- [x] Wave 1 Sprint 1 UX polish shipped
-- [x] Field Validation Log introduced
-- [x] Wave 1 Sprint 1 field validation complete (Field Validation 0005)
-- [x] Snap model prepared (`snap_model.md`, ADR-019, `lib/snapModel.ts`)
-- [x] Title + notes UI shipped (Sprint 2B)
-- [x] Save image shipped (Sprint 3)
-- [x] Quick Share shipped (Sprint 4)
-- [x] Quick Share SMS field validated (Field Validation 0006)
-- [x] Favorite toggle shipped (Sprint 5)
-- [x] MapSnap signature shipped (ADR-021)
-- [x] Snap card action polish shipped (two-column grid, icons, SnapSpot label)
-- [x] Action icon polish shipped (Google Maps, Waze brand icons; SVG card actions)
+- [x] Wave 1 institutionally closed — reconciliation verified 2026-07-14
+- [x] Snap model, title + notes, save image, Quick Share, favorite shipped
+- [x] MapSnap signature (ADR-021) and snap card + action icon polish shipped
+- [ ] Pass type declared in `current_phase.md` (Feature or UX Pass)
+- [ ] Generated steering docs current (`docs_engine/output/`)
+- [ ] Feature Gate answers documented for Compact Cards unit
 
-## Done When (Action Icon Polish — complete)
+## Acceptance Criteria — Compact Cards
 
-- [x] Google Maps official brand icon visible beside label
-- [x] Waze official brand icon visible beside label
-- [x] SVG icons on Redigera, Dela (Share2), Spara bild (Download), Ta bort (~18px)
-- [x] Subtle accent colors on action icons only; labels unchanged
-- [x] Layout, ordering, spacing, and 48px touch targets preserved
-- [x] aria-label, keyboard navigation, focus ring, minimum 44px touch target preserved
-- [x] Share, favorite, edit, save image, maps, delete unchanged
-- [x] Build, docs validation, and tests pass
+- [ ] Reduced card height — more Snaps visible on screen
+- [ ] ~Square thumbnail (~80–100px hypothesis) preserves recognizable image content (ADR-017, `image_doctrine.md`)
+- [ ] Detail view opens for full image when thumbnail tapped
+- [ ] List layout only — no change to SNAP capture contract (ADR-012)
+- [ ] All existing card actions preserved: favorite, maps, edit, share, save image, delete
+- [ ] Touch targets remain minimum 44px; 48px action buttons preserved
+- [ ] MapSnap signature, SnapSpot label, and two-column action grid behaviour unchanged
+- [ ] Measurable recognition test documented (implementation readiness order 8)
+- [ ] Rollback path: revert to current banner layout without data loss
+- [ ] Behaviour + visual regression checklists pass
+- [ ] Build, docs validation, baseline verification, and unit tests pass
 
 ## Reference
 
-`implementation_readiness.md` order 8 · `product_roadmap.md` Wave 1 item 6 (compact cards) · `ux_doctrine.md` · ADR-021
+`implementation_readiness.md` order 8 · `product_roadmap.md` Wave 1 item 6 · `ux_doctrine.md` · ADR-017 · `next_task.md`
