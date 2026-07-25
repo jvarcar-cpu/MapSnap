@@ -71,7 +71,7 @@ Product Identity documents are **protected**.
 | `chronicles/MAPSNAP_CHRONICLES.md` | Significant historical milestones only (append-only; never rewrite entries) |
 | `chronicles/chronicle_registry.md` | New Chronicle areas or entry registration |
 | `chronicles/chronicles_scope_doctrine.md` | Chronicle scope or discipline changes |
-| `knowledge_continuity.md` | Institutional memory index updates when Chronicles or production milestones are ratified |
+| `knowledge_continuity.md` | Institutional memory index updates when Chronicles, production milestones, Shared Discovery provenance, or Product Integration methodology are ratified |
 | `field_validation_log.md` | Verified real-world field observations (MapSnap only; append new entries) |
 
 ## Guardrails (Always True)

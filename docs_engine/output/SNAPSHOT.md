@@ -1,12 +1,12 @@
-# MapSnap Snapshot — 2026-07-14
+# MapSnap Snapshot — 2026-07-25
 
 ## Status
 
-Wave 2 Sprint 4 complete 2026-07-14. Filter shipped. MVP baseline stable at https://mapsnap.se.
+Wave 2 Sprint 4 complete 2026-07-14. Filter shipped. WP-AGSE-MSP-0001 Product Integration complete 2026-07-25 (methodology only). MVP baseline stable at https://mapsnap.se.
 
 ## Phase
 
-Wave 2 — Organization / Early Discover. Sprint 4 (Filter) complete.
+Wave 2 — Organization / Early Discover. Sprint 4 (Filter) complete. Product Integration methodology integrated.
 
 ## What Works
 
@@ -73,8 +73,8 @@ Next.js 15 · TypeScript · Tailwind · Geolocation API · IndexedDB · PWA · V
 
 ## Next Step
 
-Tags (lightweight tag list on snap). See `next_task.md` and `implementation_readiness.md` order 10.
+Tags (lightweight tag list on snap). See `next_task.md` and `implementation_readiness.md` order 10. Do not start Tags until Feature Pass is declared.
 
 ## Institutional Memory
 
-CHRONICLE-MSN-0001 — *The First Public Presence* (2026-07-11). ADR-020 — Core lifecycle pillars (2026-07-14). ADR-021 — MapSnap Signature (2026-07-14). Wave 1 reconciliation (2026-07-14). Wave 2 Sprint 1 Compact Cards Iteration 1 (2026-07-14). Wave 2 Sprint 2 Search (2026-07-14). Wave 2 Sprint 3 Smart Sorting (2026-07-14). Wave 2 Sprint 4 Filter (2026-07-14).
+CHRONICLE-MSN-0001 — *The First Public Presence* (2026-07-11). ADR-020 — Core lifecycle pillars (2026-07-14). ADR-021 — MapSnap Signature (2026-07-14). ADR-022 — Shared Discovery Separation and Product Integration (2026-07-25). Wave 1 reconciliation (2026-07-14). Wave 2 Sprint 1 Compact Cards Iteration 1 (2026-07-14). Wave 2 Sprint 2 Search (2026-07-14). Wave 2 Sprint 3 Smart Sorting (2026-07-14). Wave 2 Sprint 4 Filter (2026-07-14). WP-AGSE-MSP-0001 Product Integration complete (2026-07-25).

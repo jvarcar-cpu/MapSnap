@@ -51,6 +51,34 @@ Mixed passes are forbidden. If a task reveals a second concern, finish the curre
 
 No product implementation pass may begin until generated steering docs in `docs_engine/output/` reflect current source state. docs_engine is the product operating system — see `source/docs_engine_overview.md`.
 
+## 3b. Shared Discovery Awareness
+
+A MapSnap session may produce discoveries owned by MapSnap, PDE Foundation, or another institution. Chat location does not determine ownership. Separate multi-owner discoveries before institutionalizing them in MapSnap docs.
+
+## 3c. Architecture Versus Implementation
+
+Architecture or discovery work is separated from scoped Feature Pass implementation:
+
+- No Feature Pass begins from unratified architectural assumptions
+- Product discoveries that change working method are integrated via Product Integration Pass (Docs Pass) before roadmap continuation when required
+- Rapid scoped Feature Pass workflow remains the default for product delivery — methodology must not overshadow product simplicity
+
+## 3d. Product Integration Boundary
+
+Foundation Institutional Integration does not mutate MapSnap. MapSnap changes only through its own Product Integration Pass. Do not import Foundation constitutional architecture into MapSnap product architecture, Identity, UX, schemas, or roadmap priorities.
+
+## 3e. Repository Completion Discipline
+
+A Docs Pass or Feature Pass is not complete when files are merely edited. Required close-out:
+
+1. Validate docs (`node scripts/validate_docs.mjs`)
+2. Update Docs Engine source; regenerate `docs_engine/output/`
+3. Run product unit tests and production build when code changed; for docs-only passes, run docs validation (and baseline verification if behaviour may be affected)
+4. Commit intended files only
+5. Push to the correct remote branch
+6. Verify branch synchronization
+7. End with `git status` showing a clean working tree
+
 ## 4. Regression Checklist (Required Every Task)
 
 **Hard rule: no task is complete unless BOTH checklists pass.** Behaviour-only or visual-only success is a failed task.

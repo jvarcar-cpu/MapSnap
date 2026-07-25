@@ -4,7 +4,7 @@
 
 MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backend.
 
-**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Wave 2 Sprint 1 Compact Cards Iteration 1 shipped. Public: https://mapsnap.se.
+**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Wave 2 Sprint 4 Filter shipped. WP-AGSE-MSP-0001 Product Integration complete (methodology only). Public: https://mapsnap.se.
 
 ## Current Product Status
 
@@ -14,15 +14,19 @@ MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backe
 | Wave 1 shipped | Capture polish, Snap model, title + notes, save image, Quick Share, favorite, MapSnap signature, snap card + action icon polish |
 | Wave 1 institutional | Closed — reconciliation verified 2026-07-14 |
 | Wave 2 Sprint 1 | Compact Cards Iteration 1 shipped — banner compression, action-group divider |
-| Next implementation | **Compact Cards Iteration 2** (thumbnail + detail view) or Wave 2 Search |
+| Wave 2 Sprint 2 | Search shipped — local title/notes filter, search bar, search empty state |
+| Wave 2 Sprint 3 | Smart Sorting shipped — Nyast / Äldst / Närmast, memoized sort, nearest GPS |
+| Wave 2 Sprint 4 | Filter shipped — Alla / Favoriter / Med bild, memoized filter, search → filter → sort |
+| Product Integration | WP-AGSE-MSP-0001 complete — Shared Discovery / Discovery Separation methodology (ADR-022); product architecture unchanged |
+| Next implementation | **Tags** (lightweight tag list on snap) |
 | Backend / cloud | Deferred — Wave 6 (ADR-016) |
 | Production | Vercel · https://mapsnap.se · client-only data model |
 
 ## Current Phase
 
-**Wave 2 — Organization / Early Discover** — Sprint 1 complete. Compact Cards Iteration 1 shipped.
+**Wave 2 — Organization / Early Discover** — Sprint 4 complete. Filter shipped. Product Integration methodology integrated.
 
-**Next sprint (when scoped):** Compact Cards Iteration 2 or Wave 2 Search per `implementation_readiness.md` and `next_task.md`.
+**Next sprint (when scoped):** Tags per `implementation_readiness.md` and `next_task.md`.
 
 ## Architecture
 
@@ -44,6 +48,7 @@ app/page.tsx              — main capture screen
 components/SnapButton.tsx — tap / long-press
 components/PlaceCard.tsx  — snap card, actions, signature
 components/PlaceList.tsx  — snap list
+components/SnapFilterBar.tsx — list filter control
 lib/storage.ts            — IndexedDB CRUD (async)
 lib/db.ts                 — IndexedDB open + transactions
 lib/geo.ts                — Geolocation API
@@ -53,6 +58,9 @@ lib/snapEdit.ts           — title/notes helpers
 lib/snapFavorite.ts       — favorite toggle
 lib/saveSnapImage.ts      — device image copy
 lib/shareSnap.ts          — Quick Share payload
+lib/snapSearch.ts         — search filter
+lib/snapFilter.ts         — list filter modes
+lib/snapSort.ts           — list sort modes
 types/place.ts            — Snap / SnapPlace schema
 docs_engine/source/       — authoritative product knowledge
 docs_engine/output/       — generated steering snapshots (must be current)
@@ -149,7 +157,11 @@ Pass types (one at a time): Bug Fix, Feature, UX, Docs, Storage, Stabilization. 
 - One pass type at a time — Bug Fix, Feature, UX, Docs, Storage, Stabilization (see `implementation_rules.md`)
 - Behaviour and visual regressions are bugs — complete the regression checklist every task
 - No implementation before generated steering docs are current
+- Shared Discovery: session location does not determine ownership; separate multi-owner discoveries before Product Integration (ADR-022)
+- Do not import Foundation constitutional architecture into MapSnap product architecture
+- Repository completion: validate, sync outputs, commit, push, clean working tree
 - MapSnap was not created by PDE — preserve pre-PDE lineage in institutional memory
+- Governance methodology must not overshadow product simplicity
 
 ## After Changes
 
@@ -160,6 +172,7 @@ Pass types (one at a time): Bug Fix, Feature, UX, Docs, Storage, Stabilization. 
 - Complete regression checklist from `implementation_rules.md`
 - Run `node scripts/validate_docs.mjs`
 - Regenerate `docs_engine/output/` from templates and source
+- Commit, push, verify remote sync, end with clean working tree
 
 ## User-Facing Copy
 

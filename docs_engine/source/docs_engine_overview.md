@@ -25,6 +25,8 @@ docs_engine owns:
 3. **One pass type at a time:** Bug Fix, Feature, UX, Docs, Storage, Stabilization — see `implementation_rules.md`.
 4. **Product Identity is first-class and protected.** Load Identity documents before any user-facing copy. Do not auto-modify Identity without product approval.
 5. **Source is authoritative; output is generated.** Edit `source/` and `templates/`, then regenerate `output/`. Do not hand-edit generated files.
+6. **Shared Discovery separation.** Session location does not determine ownership; multi-owner discoveries are separated before Product Integration — see `knowledge_continuity.md` and ADR-022.
+7. **Repository completion.** Validate, sync outputs, commit, push, and end with a clean working tree — see `implementation_rules.md` §3e.
 
 ## Layers
 

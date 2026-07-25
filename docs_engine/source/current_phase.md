@@ -4,13 +4,15 @@
 
 **Phase:** Wave 2 — Organization / Early Discover  
 
-**Pass type:** None active — Wave 2 Sprint 4 Filter complete
+**Pass type:** None active — WP-AGSE-MSP-0001 Product Integration (Docs Pass) complete 2026-07-25
 
-**Status:** **Wave 2 Sprint 4 complete** — Filter (Feature Pass) shipped 2026-07-14  
+**Status:** **Wave 2 Sprint 4 complete** — Filter (Feature Pass) shipped 2026-07-14; Product Integration methodology integrated 2026-07-25  
 
 **Previous:** Wave 2 Sprint 3 Smart Sorting shipped 2026-07-14  
 
 **Next sprint after Filter:** Tags — not started
+
+**Product Integration:** WP-AGSE-MSP-0001 complete — Shared Discovery / Discovery Separation / Product Integration methodology only; product architecture unchanged; Foundation capability ownership remains outside MapSnap
 
 **MVP 0.1 stabilized:** 2026-07-07  
 

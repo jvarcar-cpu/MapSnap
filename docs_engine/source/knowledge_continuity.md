@@ -15,8 +15,46 @@ MapSnap docs_engine composes several artifact types. Each answers a different qu
 | **Phase & Baseline** | Operational state — **what** is current and locked | `source/current_phase.md`, `source/stable_baseline.md` |
 | **Roadmap** | Planned product work — **what** ships next | `source/product_roadmap.md`, `source/feature_gate.md`, `source/implementation_readiness.md` |
 | **Field Validation Log** | Verified real-world observations — **what** was seen in the field | `source/field_validation_log.md` (MapSnap only; not PDE) |
+| **Working method** | How MapSnap develops — Feature Pass discipline, Shared Discovery separation, Product Integration | `rules/implementation_rules.md`, this document |
 
 Chronicles are append-only. They do not outrank doctrine or ADR authority.
+
+## Shared Discovery and Ownership Separation
+
+A MapSnap working session may produce discoveries that belong to MapSnap, PDE Foundation, or another institution.
+
+| Rule | Meaning |
+|------|---------|
+| **Session may be shared** | Chat or Cursor location does not determine ownership |
+| **Ownership is not shared** | Every separated discovery receives exactly one institutional owner |
+| **Discovery Separation** | Multi-owner discoveries are separated before Institutional Integration or Product Integration |
+| **MapSnap retains** | Product findings, roadmap decisions, UX doctrine, Feature Pass outcomes |
+| **Foundation receives** | Foundation-owned governance discoveries (routed to PDE — not absorbed into MapSnap architecture) |
+
+Discovery Separation assigns ownership and work packages. It performs **no** product implementation.
+
+## Product Integration Pass
+
+When an external or Foundation discovery changes MapSnap's **working method** but not its product architecture, MapSnap executes its own **Product Integration Pass** (Docs Pass).
+
+| Allowed | Forbidden |
+|---------|-----------|
+| Update MapSnap methodology, continuity, and completion discipline | Import Foundation constitutional architecture into MapSnap product architecture |
+| Record historical provenance of shared sessions | Copy Foundation capability internals, contracts, or lifecycle phases into MapSnap |
+| Resume roadmap from last completed sprint | Mutate product identity, UX, schemas, or behaviour without product authority |
+
+PDE Foundation Institutional Integration does **not** directly mutate MapSnap. MapSnap changes only through its own Product Integration Pass.
+
+## Historical Provenance — WP-AGSE-MSP-0001
+
+| Field | Value |
+|-------|-------|
+| **Context** | During active MapSnap Wave 2 development, a Foundation discovery (Architectural Governance Session Establishment) emerged in a shared working session |
+| **Owner** | PDE Foundation — not MapSnap |
+| **MapSnap receipt** | Product Integration Pass WP-AGSE-MSP-0001 — development methodology only |
+| **Product architecture** | **Unchanged** — that Foundation capability is not MapSnap architecture, subsystem, or product constitutional surface |
+| **Status** | **Complete** (2026-07-25) |
+| **Resume point** | Wave 2 after Sprint 4 Filter — next authorized product task remains Tags |
 
 ## Institutional Memory Entries
 
@@ -36,6 +74,7 @@ Chronicles are append-only. They do not outrank doctrine or ADR authority.
 | 2026-07-14 | Wave 1 Core Value shipped | Sprints 1–5, MapSnap signature (ADR-021), snap card + action icon polish |
 | 2026-07-14 | ADR-021 — MapSnap Signature | User first. Product second. No card fallback title |
 | 2026-07-14 | SnapSpot canonical label | Location line on cards and in Quick Share; category remains metadata |
+| 2026-07-25 | WP-AGSE-MSP-0001 Product Integration | Shared Discovery / Discovery Separation / Product Integration methodology integrated; product architecture unchanged; Wave 2 resumes at Tags |
 
 ## Production Domain Record
 
@@ -52,5 +91,7 @@ Chronicles are append-only. They do not outrank doctrine or ADR authority.
 - Capture significant milestones in Chronicles; record operational detail in phase, architecture, and changelog documents.
 - Do not describe MapSnap as a PDE-generated product.
 - Do not promote architectural discoveries mentioned in Chronicles into binding MapSnap governance without explicit ADR or doctrine review.
+- Do not import Foundation constitutional architecture into MapSnap product architecture.
+- Governance methodology must not overshadow product simplicity.
 
 See `docs_engine/source/chronicles/chronicles_scope_doctrine.md` and `docs_engine/source/chronicles/chronicle_registry.md`.

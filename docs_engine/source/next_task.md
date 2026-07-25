@@ -1,8 +1,8 @@
 # Next Task
 
-**Updated:** 2026-07-14  
+**Updated:** 2026-07-25  
 
-**Pass type:** None active — Wave 2 Sprint 4 Filter complete
+**Pass type:** None active — WP-AGSE-MSP-0001 Product Integration complete; Wave 2 Sprint 4 Filter complete
 
 ## Recommended Next Task
 
@@ -28,6 +28,7 @@ See `CURRENT_TASK.md` — Tags criteria when scoped. Filter shipped: Alla / Favo
 - Mixed pass types in one change set
 - Compact Cards Iteration 2 unless explicitly re-prioritized
 - Collections or Discover feed features
+- Foundation constitutional architecture work (belongs in PDE — not MapSnap)
 
 ## Reference
 
@@ -39,3 +40,4 @@ See `CURRENT_TASK.md` — Tags criteria when scoped. Filter shipped: Alla / Favo
 | `feature_gate.md` | Gate before any feature |
 | `ux_doctrine.md` | Card layout + RETURN actions |
 | `field_validation_log.md` | Verified field observations |
+| `knowledge_continuity.md` | Shared Discovery / Product Integration methodology |

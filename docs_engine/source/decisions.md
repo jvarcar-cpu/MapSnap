@@ -203,3 +203,20 @@
 
 **Consequences:** `PlaceCard.tsx` header layout updated; `snapCardTitle()` and `snapShareTitle()` in `lib/snapEdit.ts`; `snapDisplayTitle()` removed; Identity and UX doctrine updated; favorite toggle placement preserved with header spacing.
 
+---
+
+## ADR-022: Shared Discovery Separation and Product Integration Methodology
+
+**Status:** Accepted  
+**Context:** During Wave 2 development, a shared working session produced a Foundation-owned governance discovery alongside MapSnap product work. MapSnap needed a durable working-method rule so session location never becomes ownership, and so Foundation capabilities are not absorbed into MapSnap product architecture.  
+**Decision:**
+
+1. **Shared Discovery awareness** — a MapSnap session may produce multi-owner discoveries; ownership is not shared.
+2. **Discovery Separation** — separate multi-owner discoveries before Product Integration or roadmap continuation when required.
+3. **Product Integration Pass** — MapSnap integrates external methodology changes only through its own Docs Pass; Foundation Institutional Integration does not mutate MapSnap.
+4. **Architecture exclusion** — Foundation constitutional capabilities discovered during MapSnap work remain Foundation-owned; they must not become MapSnap product architecture, Identity, UX, schemas, or roadmap priorities.
+5. **Provenance for WP-AGSE-MSP-0001** — record historical provenance and methodology receipt only; do not copy Foundation capability internals into MapSnap.
+6. **Repository completion** — validate, sync docs outputs, commit, push, and end with a clean working tree.
+
+**Consequences:** `knowledge_continuity.md` and `implementation_rules.md` updated. Product identity, roadmap next task (Tags), and application behaviour unchanged. Wave 2 resumes independently after Sprint 4 Filter.
+

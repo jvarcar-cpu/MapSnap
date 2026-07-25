@@ -14,7 +14,7 @@ Open. SNAP. Close. **Capture first. Organize later.**
 
 ## Current Phase
 
-**Wave 2 — Organization / Early Discover** — Sprint 4 complete 2026-07-14. Filter shipped. MVP 0.1 stable at https://mapsnap.se. Product lifecycle pillars ratified (ADR-020).
+**Wave 2 — Organization / Early Discover** — Sprint 4 complete 2026-07-14. Filter shipped. WP-AGSE-MSP-0001 Product Integration complete 2026-07-25 (methodology only). MVP 0.1 stable at https://mapsnap.se. Product lifecycle pillars ratified (ADR-020).
 
 ## Product Identity
 

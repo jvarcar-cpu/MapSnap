@@ -2,15 +2,15 @@
 
 > Generated from docs_engine source. Do not hand-edit.
 
-**Updated:** 2026-07-14
+**Updated:** 2026-07-25
 
 ## Status
 
-Wave 2 Sprint 4 complete — Filter shipped. Awaiting Tags scoping.
+Wave 2 Sprint 4 complete — Filter shipped. WP-AGSE-MSP-0001 Product Integration complete. Awaiting Tags scoping.
 
 ## Phase
 
-Wave 2 — Organization / Early Discover. Sprint 4 (Filter) complete.
+Wave 2 — Organization / Early Discover. Sprint 4 (Filter) complete. Product Integration methodology integrated.
 
 ## Pass Type
 
@@ -18,13 +18,13 @@ None active. Declare Feature Pass in `current_phase.md` before starting Tags.
 
 ## Context
 
-Filter shipped 2026-07-14: Alla / Favoriter / Med bild segmented control, memoized `filterSnapsByMode()`, pipeline search → filter → sort → render. Search and Smart Sorting unchanged in behaviour. No tags, backend, or cloud.
+Filter shipped 2026-07-14: Alla / Favoriter / Med bild segmented control, memoized `filterSnapsByMode()`, pipeline search → filter → sort → render. Search and Smart Sorting unchanged in behaviour. Product Integration (2026-07-25): Shared Discovery / Discovery Separation / Product Integration methodology only — product architecture and behaviour unchanged. No tags, backend, or cloud.
 
 ## Next Sprint — Tags
 
 **Scope:** Lightweight tag list on snap. See `implementation_readiness.md` order 10, `product_roadmap.md` item 4.
 
-**Not in scope:** SNAP interaction changes, backend, Professional Share, Protect, collections.
+**Not in scope:** SNAP interaction changes, backend, Professional Share, Protect, collections, Foundation constitutional architecture.
 
 ## Prerequisites
 
@@ -33,6 +33,7 @@ Filter shipped 2026-07-14: Alla / Favoriter / Med bild segmented control, memoiz
 - [x] Search shipped — title/notes filter, search empty state, clear button
 - [x] Smart Sorting shipped — Nyast / Äldst / Närmast, memoized sort, nearest GPS
 - [x] Filter shipped — Alla / Favoriter / Med bild, memoized filter, pipeline order preserved
+- [x] WP-AGSE-MSP-0001 Product Integration complete — methodology only (ADR-022)
 - [x] Generated steering docs current (`docs_engine/output/`)
 - [ ] Field validation on real device for Filter (recommended)
 - [ ] Feature Gate answers documented for Tags
@@ -66,4 +67,4 @@ Filter shipped 2026-07-14: Alla / Favoriter / Med bild segmented control, memoiz
 
 ## Reference
 
-`implementation_readiness.md` order 9b · `product_roadmap.md` Wave 2 · `ux_doctrine.md` · `next_task.md`
+`implementation_readiness.md` order 9b · `product_roadmap.md` Wave 2 · `ux_doctrine.md` · `next_task.md` · `knowledge_continuity.md`

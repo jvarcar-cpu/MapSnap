@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.2.20-docs] — 2026-07-25
+
+### Documented (WP-AGSE-MSP-0001 — Product Integration Pass)
+
+- **Shared Discovery awareness** — MapSnap sessions may produce multi-owner discoveries; chat location does not determine ownership
+- **Discovery Separation** — multi-owner discoveries are separated before Product Integration; no implementation in the separation step
+- **Product Integration Pass** — MapSnap-owned Docs Pass for methodology changes that do not alter product architecture
+- **Historical provenance** — Foundation discovery emerged during Wave 2; ownership remains PDE Foundation; MapSnap receives methodology only
+- **ADR-022** — Shared Discovery Separation and Product Integration Methodology
+- **Repository completion discipline** — validate, sync outputs, commit, push, clean working tree
+
+### Not changed
+
+- Product identity, UX doctrine, vocabulary, SNAP contract unchanged
+- Application code, schemas, storage, and feature behaviour unchanged
+- Wave 2 roadmap next task remains **Tags** (not started)
+- Compact Cards Iteration 2 remains optional
+- No Foundation constitutional architecture imported into MapSnap
+
+### Docs
+
+- Updated `knowledge_continuity.md`, `implementation_rules.md`, `current_phase.md`, `next_task.md`, `decisions.md`
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.19] — 2026-07-14
 
 ### Added (Wave 2 Sprint 4 — Filter)

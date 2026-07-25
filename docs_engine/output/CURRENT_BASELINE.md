@@ -3,8 +3,8 @@
 > Generated reference to locked MVP baseline. Full detail: `docs_engine/source/stable_baseline.md`
 
 **Locked:** 2026-06-28  
-**Updated:** 2026-07-14  
-**Status:** MVP 0.1 stable — Wave 2 Sprint 4 Filter shipped
+**Updated:** 2026-07-25  
+**Status:** MVP 0.1 stable — Wave 2 Sprint 4 Filter shipped; WP-AGSE-MSP-0001 Product Integration complete (methodology only)
 
 ## Wave Summary
 
@@ -40,6 +40,10 @@
 ### Wave 2 Sprint 4 — Completed
 
 - ✓ Filter — Alla / Favoriter / Med bild, memoized filter, search → filter → sort pipeline
+
+### Product Integration — Completed (2026-07-25)
+
+- ✓ WP-AGSE-MSP-0001 — Shared Discovery / Discovery Separation / Product Integration methodology (ADR-022); product architecture unchanged
 
 ### Current Status
 
