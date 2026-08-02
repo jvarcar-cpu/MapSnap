@@ -117,6 +117,10 @@ body {
     outline-offset: -1px;
   }
 
+  .snap-longpress-ring {
+    animation: snap-longpress-progress 600ms linear forwards;
+  }
+
   .card-shadow {
     box-shadow:
       0 1px 2px rgba(0, 0, 0, 0.03),
@@ -156,10 +160,24 @@ body {
   }
 }
 
+@keyframes snap-longpress-progress {
+  from {
+    stroke-dashoffset: 289;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .snap-celebrate-pulse,
   .snap-sonar-wave {
     animation: none !important;
     opacity: 0 !important;
+  }
+
+  .snap-longpress-ring {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
   }
 }

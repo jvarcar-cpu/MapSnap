@@ -153,6 +153,57 @@ Validates Share as a major product capability (SHARE pillar). Supports future Pr
 
 ---
 
+## Field Validation 0007 — Capture Reliability and PWA Installation Guidance
+
+**Date:** 2026-08-02  
+**Devices / sessions:** Redmi Note 9 · Google Pixel 9a · iPhone browser (probably Safari)  
+**Pass:** Wave 2 Compatibility Feature Pass — Capture Reliability and PWA Installation Guidance  
+**Physical iPhone retest:** Not available in this pass
+
+### Verified observations
+
+- **Redmi Note 9:** PWA installation opportunity observed; MapSnap installed successfully (also Field Validation 0001).
+- **Pixel 9a:** Equivalent automatic installation opportunity not observed (also Field Validation 0001).
+- **iPhone browser:** Long-press produced no visible response; camera did not open.
+- **iPhone:** Automatic PWA installation prompt not observed.
+
+### Hypotheses only (not confirmed causes)
+
+Possible contributors to the iPhone long-press failure may include touch/pointer lifecycle differences, cancellation before threshold, browser-native long-press handling, loss of transient user activation on timer-delayed `input.click()`, or other iOS interaction differences. **Do not treat these as proven root causes.**
+
+### Implementation status (this pass)
+
+Implemented compatibility behaviour:
+
+- Long-press progress feedback (cancellable; reduced-motion aware)
+- User-gesture-safe camera activation on release after arming (not timer-only `.click()`)
+- Compact **"Öppna kamera"** direct-action fallback when activation does not occur
+- Progressive PWA install guidance: standalone detection; `beforeinstallprompt` when available; iOS/Android manual guidance otherwise; dismissible; engagement-gated; local dismissal persistence
+
+### Pending physical validation
+
+Explicitly **pending** — do not record as passed:
+
+- [ ] iPhone Safari long-press visual feedback
+- [ ] iPhone Safari camera activation
+- [ ] iPhone direct-action fallback ("Öppna kamera")
+- [ ] iPhone installed-PWA behaviour
+- [ ] iPhone manual installation guidance
+- [ ] Pixel installation fallback guidance
+- [ ] Regression testing on Redmi (capture + install guidance)
+
+### Status summary
+
+| Layer | Status |
+|-------|--------|
+| Verified field observations | Recorded above |
+| Implementation | Complete (ADR-023) |
+| Automated validation | Required by pass close-out |
+| iPhone Field Validation | **Pending** — capability not marked field-validated on iPhone |
+| Android automatic install parity | Not assumed; guidance is progressive |
+
+---
+
 ## Related Documents
 
 | Document | Relationship |

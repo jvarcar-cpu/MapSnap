@@ -4,7 +4,7 @@
 > Product philosophy: `Identity/product_doctrine.md` · Feature gate: `feature_gate.md` · Readiness: `implementation_readiness.md`
 
 **Ratified:** 2026-07-12  
-**Updated:** 2026-07-14 (product lifecycle pillars — ADR-020)  
+**Updated:** 2026-08-02 (Capture Reliability / PWA install guidance — ADR-023)  
 **Status:** Active  
 **Supersedes:** informal Phase 0.2 preview in `current_phase.md` (2026-07-11)
 
@@ -269,12 +269,32 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 | 1 | Search (title, notes) | **Shipped** | DISCOVER / ENRICH | Medium | No | — |
 | 2 | Sort (newest, oldest, nearest) | **Shipped** | DISCOVER | Medium | No | — |
 | 3 | Filter (all, favorites, with images) | **Shipped** | DISCOVER | Low–Medium | No | — |
+| 3b | Capture Reliability + PWA install guidance | **Shipped** (implementation; iPhone field validation pending) | CAPTURE | Medium | Yes — reliability only; contract meaning unchanged (ADR-012) | ADR-023 |
 | 4 | Tags | Planned | ENRICH / DISCOVER | Medium | No | — |
 | 5 | Nearby / collection views | Planned | DISCOVER | Medium | No | Feature gate |
 | 6 | Color / category markers | Experimental | ENRICH | Medium | No | Feature gate |
 | 7 | Quick edit (title, note) | Planned | ENRICH | Low | No | — |
 
+**Compatibility ordering:** Item 3b ships before Tags because it protects primary Capture reliability. It does not replace Tags as the next organization feature.
+
 **Discover guardrail:** Every Wave 2 item must help the user rediscover their own meaningful content — not introduce unrelated attention or noise.
+
+#### 3b. Capture Reliability and PWA Installation Guidance — shipped (implementation)
+
+| Field | Value |
+|-------|-------|
+| Status | **Shipped** — Wave 2 Compatibility Feature Pass (2026-08-02); iPhone Field Validation **pending** |
+| User value | Reliable long-press photo capture across browsers; clear install path without assuming `beforeinstallprompt` |
+| Pillar | CAPTURE |
+| Backend | No |
+| Complexity | Medium |
+| Dependencies | Existing SNAP button, Web App Manifest |
+| Risk | Modal-heavy camera flow — reject; install prompt on every visit — reject; schema change — reject |
+| Acceptance | Short press position-only; long-press progress feedback; user-gesture-safe camera activation; Öppna kamera fallback; progressive install guidance; unit tests; docs; baseline verification |
+| Feature Gate | Does not slow short SNAP; strengthens CAPTURE; self-evident; local-first; lightweight; calm; install optional |
+| Affects SNAP interaction | Reliability/activation timing only — contract meaning unchanged (ADR-012) |
+| Shipped | `lib/longPressGesture.ts`, `lib/pwaInstall.ts`, `components/SnapButton.tsx`, `components/InstallGuidance.tsx` |
+| Field Validation | See Field Validation 0007 — verified Android install variance + iPhone long-press observation; iPhone pass **not** claimed |
 
 #### 2. Sort (Smart Sorting) — shipped
 

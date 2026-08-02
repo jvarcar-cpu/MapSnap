@@ -220,9 +220,27 @@ Google Maps and Waze deep links are the approved Return path. Quick Share ("Dela
 - Large touch targets (minimum 44px)
 - Minimal chrome, no clutter
 
+## Long-press gesture feedback (Wave 2 Capture Reliability)
+
+- Progress ring begins promptly on SNAP press and completes at the long-press threshold (~600ms)
+- Cancels immediately if the gesture cancels or moves beyond tolerance
+- Armed state keeps pressed visual language; short press must not be slowed
+- `prefers-reduced-motion`: show completed/static progress without timed animation
+- If camera activation fails after a completed long press: compact **"Öppna kamera"** direct action — not a modal-heavy flow
+
 ## PWA
 
-Installable as standalone app. Works offline for viewing saved snaps; GPS and camera require device capabilities.
+Installable as standalone app via Web App Manifest. Works offline for viewing saved snaps; GPS and camera require device capabilities. No service worker until offline strategy is defined (`architecture_rules.md`).
+
+### Installation guidance (progressive enhancement)
+
+- Hidden when already running as installed standalone (`display-mode: standalone` / iOS `navigator.standalone`)
+- Where `beforeinstallprompt` is available: capture event; show user-initiated **Installera**; call `prompt()` only from a direct gesture
+- iOS/iPadOS without programmatic prompt: concise Swedish Share → Lägg till på hemskärmen guidance — do not claim MapSnap can open the install dialog
+- Android without `beforeinstallprompt`: neutral menu guidance — do not promise a native prompt
+- Placement: engagement-based (after at least one Snap exists), below list/backup — dismissible, non-blocking, subordinate to Capture
+- Dismissal persisted in `localStorage` (`mapsnap.installGuidance.dismissed.v1`)
+- Never show install prompt on page load without user interaction; installation remains optional
 
 ## Optional Onboarding Hint (planned, complements Wave 1 instruction)
 

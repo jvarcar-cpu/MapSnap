@@ -23,6 +23,7 @@ This document freezes the approved MapSnap MVP baseline. Do not change behaviour
 - `snap-hero-gradient` / `snap-hero-gradient-pressed`
 - `snap-hero-highlight` (decorative, `pointer-events-none`)
 - `snap-hero-ring`
+- `snap-longpress-ring` (long-press progress; reduced-motion static)
 
 ### Layout tokens
 
@@ -34,10 +35,10 @@ This document freezes the approved MapSnap MVP baseline. Do not change behaviour
 | Interaction | Requirement |
 |-------------|-------------|
 | **Short tap** | GPS capture → IndexedDB save → list update → "Snap sparad" toast |
-| **Long press (~600ms)** | Hidden `<input type="file" accept="image/*" capture="environment">` inside `SnapButton`; `click()` in long-press handler path |
+| **Long press (~600ms)** | Progress feedback on press; arms at threshold; hidden `<input type="file" accept="image/*" capture="environment">` activated on release (user-gesture-safe); Öppna kamera fallback if activation fails |
 | **Photo flow** | Read image as data URL → GPS → save with `photoDataUrl` → list update → toast |
-| **Duplicate guards** | No short tap after successful long press |
-| **Camera cancel** | Mild Swedish message ("Inget foto valdes."); no broken snap |
+| **Duplicate guards** | No short tap after successful long press; duplicate camera activation prevented |
+| **Camera cancel / failure** | Mild Swedish message when picker cancelled; compact Öppna kamera when activation blocked; no broken snap |
 | **Maps** | Google Maps and Waze open with saved coordinates |
 | **Delete** | Removes from list and IndexedDB |
 | **Edit** | "Redigera" on card → optional title (`name`) + notes (`note`) → `saveSnap()` |

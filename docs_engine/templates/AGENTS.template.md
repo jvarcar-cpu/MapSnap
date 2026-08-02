@@ -4,19 +4,20 @@
 
 MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backend.
 
-**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Wave 2 Sprint 4 Filter shipped. WP-AGSE-MSP-0001 Product Integration complete (methodology only). Public: https://mapsnap.se.
+**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Wave 2 Sprint 4 Filter shipped. Capture Reliability + PWA install guidance shipped 2026-08-02 (ADR-023; iPhone Field Validation pending). WP-AGSE-MSP-0001 Product Integration complete (methodology only). Public: https://mapsnap.se.
 
 ## Current Product Status
 
 | Area | State |
 |------|-------|
-| MVP 0.1 baseline | Locked — short/long-press SNAP contract unchanged (ADR-012) |
+| MVP 0.1 baseline | Locked — short/long-press SNAP contract meaning unchanged (ADR-012) |
 | Wave 1 shipped | Capture polish, Snap model, title + notes, save image, Quick Share, favorite, MapSnap signature, snap card + action icon polish |
 | Wave 1 institutional | Closed — reconciliation verified 2026-07-14 |
 | Wave 2 Sprint 1 | Compact Cards Iteration 1 shipped — banner compression, action-group divider |
 | Wave 2 Sprint 2 | Search shipped — local title/notes filter, search bar, search empty state |
 | Wave 2 Sprint 3 | Smart Sorting shipped — Nyast / Äldst / Närmast, memoized sort, nearest GPS |
 | Wave 2 Sprint 4 | Filter shipped — Alla / Favoriter / Med bild, memoized filter, search → filter → sort |
+| Capture Reliability | Shipped 2026-08-02 — long-press progress, user-gesture-safe camera, Öppna kamera fallback, progressive install guidance (ADR-023); iPhone FV pending |
 | Product Integration | WP-AGSE-MSP-0001 complete — Shared Discovery / Discovery Separation methodology (ADR-022); product architecture unchanged |
 | Next implementation | **Tags** (lightweight tag list on snap) |
 | Backend / cloud | Deferred — Wave 6 (ADR-016) |
@@ -24,7 +25,7 @@ MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backe
 
 ## Current Phase
 
-**Wave 2 — Organization / Early Discover** — Sprint 4 complete. Filter shipped. Product Integration methodology integrated.
+**Wave 2 — Organization / Early Discover** — Sprint 4 complete. Capture Reliability + PWA install guidance complete (implementation). Product Integration methodology integrated.
 
 **Next sprint (when scoped):** Tags per `implementation_readiness.md` and `next_task.md`.
 
@@ -37,7 +38,7 @@ MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backe
 | Styling | Tailwind CSS |
 | Geolocation | Browser Geolocation API |
 | Persistence | IndexedDB (`mapsnap-db` / `snaps`) |
-| PWA | Web App Manifest |
+| PWA | Web App Manifest (+ progressive install guidance; no service worker yet) |
 
 Client-only data flow. No API routes. `app/page.tsx` orchestrates capture + list. Full detail: `docs_engine/source/architecture_state.md`.
 
@@ -45,7 +46,8 @@ Client-only data flow. No API routes. `app/page.tsx` orchestrates capture + list
 
 ```
 app/page.tsx              — main capture screen
-components/SnapButton.tsx — tap / long-press
+components/SnapButton.tsx — tap / long-press + camera fallback
+components/InstallGuidance.tsx — progressive PWA install UX
 components/PlaceCard.tsx  — snap card, actions, signature
 components/PlaceList.tsx  — snap list
 components/SnapFilterBar.tsx — list filter control
@@ -61,6 +63,8 @@ lib/shareSnap.ts          — Quick Share payload
 lib/snapSearch.ts         — search filter
 lib/snapFilter.ts         — list filter modes
 lib/snapSort.ts           — list sort modes
+lib/longPressGesture.ts   — long-press gesture helpers
+lib/pwaInstall.ts         — install guidance helpers
 types/place.ts            — Snap / SnapPlace schema
 docs_engine/source/       — authoritative product knowledge
 docs_engine/output/       — generated steering snapshots (must be current)
@@ -85,12 +89,12 @@ Legacy aliases `title` → `name`, `notes` → `note` normalize on load. Indexed
 
 ## Capture Flow
 
-Protected SNAP contract (ADR-012):
+Protected SNAP contract (ADR-012) — meaning unchanged; reliability improved (ADR-023):
 
 | Gesture | Behaviour |
 |---------|-----------|
 | Short tap | GPS capture → `saveSnap()` → IndexedDB → list update → "Snap sparad" toast |
-| Long press (~600ms) | Camera/file input (`capture="environment"`) → `photoDataUrl` + GPS → save |
+| Long press (~600ms) | Progress feedback → arm → on release activate camera/file input → `photoDataUrl` + GPS → save; Öppna kamera fallback if activation fails |
 
 No forms or menus before save. Coordinated feedback: compress, haptic, sound, glow, pulse, radial waves (ADR-018). Hero instruction: *"Tryck för position · Håll inne för position + bild"*.
 
@@ -143,7 +147,7 @@ Pass types (one at a time): Bug Fix, Feature, UX, Docs, Storage, Stabilization. 
 6. Read `docs_engine/source/ux_doctrine.md` (Approved UI Baseline)
 7. Check `docs_engine/source/current_phase.md` for scope
 8. Read `docs_engine/source/product_roadmap.md` and `feature_gate.md` before any feature work
-9. Review `docs_engine/source/baseline_reconciliation.md` — Wave 1 section is authoritative current state
+9. Review `docs_engine/source/baseline_reconciliation.md` — Wave 1 + Wave 2 Compatibility sections
 
 ## Hard Rules
 

@@ -3,8 +3,8 @@
 > Generated reference to locked MVP baseline. Full detail: `docs_engine/source/stable_baseline.md`
 
 **Locked:** 2026-06-28  
-**Updated:** 2026-07-25  
-**Status:** MVP 0.1 stable — Wave 2 Sprint 4 Filter shipped; WP-AGSE-MSP-0001 Product Integration complete (methodology only)
+**Updated:** 2026-08-02  
+**Status:** MVP 0.1 stable — Wave 2 Capture Reliability + PWA install guidance shipped (ADR-023); iPhone Field Validation pending
 
 ## Wave Summary
 
@@ -41,6 +41,12 @@
 
 - ✓ Filter — Alla / Favoriter / Med bild, memoized filter, search → filter → sort pipeline
 
+### Wave 2 Compatibility — Completed (implementation)
+
+- ✓ Capture Reliability — long-press progress, user-gesture-safe camera activation, Öppna kamera fallback
+- ✓ Progressive PWA install guidance — prompt / iOS manual / Android manual / standalone hidden
+- ⏳ iPhone Field Validation pending (Field Validation 0007)
+
 ### Product Integration — Completed (2026-07-25)
 
 - ✓ WP-AGSE-MSP-0001 — Shared Discovery / Discovery Separation / Product Integration methodology (ADR-022); product architecture unchanged
@@ -54,7 +60,7 @@ Wave 2 in progress. Tags next.
 | Interaction | Requirement |
 |-------------|-------------|
 | Short tap | GPS capture → IndexedDB save → list update → "Snap sparad" toast |
-| Long press (~600ms) | Camera/file input → photo as `photoDataUrl` → GPS → save |
+| Long press (~600ms) | Progress feedback → arm → camera/file input on release → photo as `photoDataUrl` → GPS → save; Öppna kamera fallback if needed |
 | Maps | Google Maps and Waze open with saved coordinates |
 | Delete | Removes from list and IndexedDB |
 | Edit | "Redigera" on card → optional title (`name`) + notes (`note`) → `saveSnap()` |
@@ -64,6 +70,7 @@ Wave 2 in progress. Tags next.
 | Search | Search field above list when snaps exist — filters loaded collection by title and notes in real time; clear button; search empty state when no matches |
 | Filter | Segmented control below search when snaps exist — Alla / Favoriter / Med bild; applies after search, before sort |
 | Sort | Segmented control below filter when snaps exist — Nyast / Äldst / Närmast; reorder after search and filter; nearest uses one-time GPS; failure reverts to Nyast |
+| Install guidance | Engagement-gated progressive PWA install UX; hidden when standalone; dismissible |
 | Storage | IndexedDB primary; legacy localStorage migrates on load; Snap normalization on load |
 | Backup | JSON array export/import/merge by id (`mapsnap-snaps-array-v1`) |
 
@@ -71,7 +78,7 @@ Wave 2 in progress. Tags next.
 
 | Element | Requirement |
 |---------|-------------|
-| SNAP button | Circular, large (~70% width, max 320px), green radial 3D gradient |
+| SNAP button | Circular, large (~70% width, max 320px), green radial 3D gradient; long-press progress ring |
 | Hero | Title "MapSnap"; instruction *"Tryck för position · Håll inne för position + bild"* |
 | List | Header "MINA SNAPPAR"; search field above cards when snaps exist; filter control below search; sort control below filter; compact styled cards; user title left when present; **MapSnap signature** upper-right always; notes line-clamped; list gap `gap-3` |
 | Search bar | Rounded-full, lightweight; search icon; placeholder "Sök bland dina Snappar"; clear (X) when text present |
@@ -81,12 +88,14 @@ Wave 2 in progress. Tags next.
 | Card actions | Favorite star (overlay) → Navigation: Maps (brand icons) → divider → Actions: two-column grid Redigera / Dela, Spara bild / Ta bort (Spara bild if image); SVG icons ~18px |
 | Card location | `📍 SnapSpot` — category not shown on card (metadata only) |
 | Backup panel | Dashed border, rounded-2xl |
+| Install guidance | Dashed border, rounded-2xl; below backup when engaged; dismissible |
 | Permission card | Rounded-3xl, elevated, retry button |
 
 ## Field Validation
 
 - Field Validation 0005 — UX polish on Pixel 9a and Redmi Note 9 (2026-07-14)
 - Field Validation 0006 — Quick Share SMS on Pixel 9a (2026-07-14)
+- Field Validation 0007 — Capture Reliability / PWA install observations recorded; iPhone physical validation pending (2026-08-02)
 
 ## Snap Model (Sprint 2A)
 
@@ -166,6 +175,13 @@ Wave 2 in progress. Tags next.
 - Memoized sorting via `sortSnaps()` — no backend, no cloud
 - Code: `lib/snapSort.ts`, `components/SnapSortBar.tsx`, `app/page.tsx`
 
+## Capture Reliability + PWA Install (Wave 2 Compatibility)
+
+- Long-press progress ring; arm at ~600ms; camera on release; Öppna kamera fallback
+- Install guidance: engagement-gated; standalone hidden; prompt / iOS / Android modes
+- Code: `lib/longPressGesture.ts`, `lib/pwaInstall.ts`, `SnapButton.tsx`, `InstallGuidance.tsx`
+- ADR-023; Field Validation 0007
+
 ## Snap Card Polish
 
 - Two-column action grid with equal-width 48px buttons and recognizable SVG icons (~18px)
@@ -178,11 +194,11 @@ Wave 2 in progress. Tags next.
 ## Verification
 
 - Automated: `node scripts/verify-baseline.mjs [url]` — use URL printed by `npm run dev`
-- Unit: `npm test` — `lib/snapEdit.test.ts`, `lib/snapFavorite.test.ts`, `lib/saveSnapImage.test.ts`, `lib/shareSnap.test.ts`, `lib/snapSearch.test.ts`, `lib/snapFilter.test.ts`, `lib/snapSort.test.ts`
+- Unit: `npm test` — includes `lib/longPressGesture.test.ts`, `lib/pwaInstall.test.ts`, plus prior lib tests
 - Docs: `node scripts/validate_docs.mjs`
-- Reconciliation: `baseline_reconciliation.md` — Wave 0 + Wave 1 (2026-07-14)
-- Manual mobile: long-press camera, denied-permission card (OPS-002)
-- Field: `field_validation_log.md` — Field Validation 0005, 0006
+- Reconciliation: `baseline_reconciliation.md` — Wave 0 + Wave 1 + Wave 2 Compatibility
+- Manual mobile: long-press camera, Öppna kamera fallback, install guidance, denied-permission card (OPS-002)
+- Field: `field_validation_log.md` — Field Validation 0005, 0006, 0007
 
 ## Completion Rule
 

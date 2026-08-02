@@ -1,8 +1,8 @@
 # Next Task
 
-**Updated:** 2026-07-25  
+**Updated:** 2026-08-02  
 
-**Pass type:** None active — WP-AGSE-MSP-0001 Product Integration complete; Wave 2 Sprint 4 Filter complete
+**Pass type:** None active — Capture Reliability and PWA Installation Guidance complete (implementation); iPhone Field Validation pending
 
 ## Recommended Next Task
 
@@ -13,17 +13,18 @@
 1. Pass type declared in `current_phase.md` (Feature Pass)
 2. Generated steering docs current (`docs_engine/output/`)
 3. Feature Gate answers documented for tags
-4. Wave 2 Sprint 4 field validation on real device (recommended)
+4. Capture Reliability / PWA install guidance shipped (2026-08-02) — iPhone Field Validation still recommended when a device is available
 
 ## Acceptance Criteria
 
-See `CURRENT_TASK.md` — Tags criteria when scoped. Filter shipped: Alla / Favoriter / Med bild segmented control, memoized `filterSnapsByMode()`, pipeline search → filter → sort → render.
+See `CURRENT_TASK.md` — Tags criteria when scoped.
 
 ## Not Next
 
+- Re-opening Capture Reliability as Tags scope
 - Data Protection implementation (documented in roadmap only)
 - Backend or cloud sync (Wave 6 — deferred)
-- Changing SNAP short/long-press contract
+- Changing SNAP short/long-press contract meaning
 - Pre-capture forms or menus
 - Mixed pass types in one change set
 - Compact Cards Iteration 2 unless explicitly re-prioritized
@@ -39,5 +40,6 @@ See `CURRENT_TASK.md` — Tags criteria when scoped. Filter shipped: Alla / Favo
 | `implementation_readiness.md` | Build sequence and rollback |
 | `feature_gate.md` | Gate before any feature |
 | `ux_doctrine.md` | Card layout + RETURN actions |
-| `field_validation_log.md` | Verified field observations |
-| `knowledge_continuity.md` | Shared Discovery / Product Integration methodology |
+| `capture_doctrine.md` | Capture + long-press reliability |
+| `field_validation_log.md` | Verified field observations (0007 pending iPhone) |
+| `knowledge_continuity.md` | Continuity index |

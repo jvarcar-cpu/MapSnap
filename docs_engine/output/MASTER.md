@@ -14,7 +14,7 @@ Open. SNAP. Close. **Capture first. Organize later.**
 
 ## Current Phase
 
-**Wave 2 — Organization / Early Discover** — Sprint 4 complete 2026-07-14. Filter shipped. WP-AGSE-MSP-0001 Product Integration complete 2026-07-25 (methodology only). MVP 0.1 stable at https://mapsnap.se. Product lifecycle pillars ratified (ADR-020).
+**Wave 2 — Organization / Early Discover** — Capture Reliability + PWA Installation Guidance complete 2026-08-02 (ADR-023; iPhone Field Validation pending). Sprint 4 Filter shipped 2026-07-14. WP-AGSE-MSP-0001 Product Integration complete 2026-07-25 (methodology only). MVP 0.1 stable at https://mapsnap.se. Product lifecycle pillars ratified (ADR-020).
 
 ## Product Identity
 
@@ -49,7 +49,7 @@ Product Identity defines who MapSnap is — philosophy, voice, and language. See
 |------|-------|
 | 0 | Baseline reconciliation (complete) |
 | 1 | Core value: UX polish, title, notes, save image, Quick Share, favorite, signature, action icons — **institutionally closed** |
-| 2 | Organization / early Discover — **Sprint 1:** Compact Cards Iteration 1 shipped; **Sprint 2:** Search shipped; **Sprint 3:** Smart Sorting shipped; **Sprint 4:** Filter shipped |
+| 2 | Organization / early Discover — Sprint 1–4 shipped; **Capture Reliability + PWA install guidance shipped** (iPhone FV pending); Tags next |
 | 3 | Snaptisers / contextual Discover |
 | 4 | Image + Professional Share |
 | 5 | Protect |
@@ -80,15 +80,16 @@ Feature gate: `source/feature_gate.md` · Readiness: `source/implementation_read
 | Styling | Tailwind CSS |
 | Geolocation | Browser Geolocation API |
 | Persistence | IndexedDB (`mapsnap-db` / `snaps`) |
-| PWA | Web App Manifest |
+| PWA | Web App Manifest (+ progressive install guidance; no service worker yet) |
 
 Client-only data flow. Production: Vercel, https://mapsnap.se. docs_engine is the product operating system.
 
-Key libs: `snapModel`, `snapEdit`, `snapFavorite`, `saveSnapImage`, `shareSnap`, `snapSearch`, `snapFilter`, `snapSort`. Key components: `PlaceCard`, `MapOpenButtons`, `FavoriteToggle`, `SnapSearchBar`, `SnapFilterBar`, `SnapSortBar`, `SnapActionIcons`.
+Key libs: `snapModel`, `snapEdit`, `snapFavorite`, `saveSnapImage`, `shareSnap`, `snapSearch`, `snapFilter`, `snapSort`, `longPressGesture`, `pwaInstall`. Key components: `PlaceCard`, `MapOpenButtons`, `FavoriteToggle`, `SnapSearchBar`, `SnapFilterBar`, `SnapSortBar`, `SnapButton`, `InstallGuidance`, `SnapActionIcons`.
 
-## Current Baseline (MVP 0.1 + Wave 1)
+## Current Baseline (MVP 0.1 + Wave 1 + Wave 2)
 
-- Short tap → GPS → IndexedDB; long press (~600ms) → image + GPS
+- Short tap → GPS → IndexedDB; long press (~600ms) → arm → image + GPS on release; Öppna kamera fallback
+- Progressive PWA install guidance — **shipped** (ADR-023)
 - Hero instruction + coordinated SNAP feedback — **shipped**
 - Snap model normalization — **shipped**
 - Title + notes edit, save image, Quick Share (every card), favorite — **shipped**
@@ -98,7 +99,7 @@ Key libs: `snapModel`, `snapEdit`, `snapFavorite`, `saveSnapImage`, `shareSnap`,
 - Filter — Alla / Favoriter / Med bild, memoized filter, search → filter → sort — **shipped**
 - Smart Sorting — Nyast / Äldst / Närmast, memoized sort, nearest one-time GPS — **shipped**
 - Delete, empty state, Google Maps, Waze, backup/import — **existing**
-- Wave 1 institutionally closed; Wave 2 Sprint 1–4 complete
+- Wave 1 institutionally closed; Wave 2 Sprint 1–4 complete; Capture Reliability complete (iPhone FV pending)
 
 ## Recent Decisions
 
@@ -111,7 +112,9 @@ Key libs: `snapModel`, `snapEdit`, `snapFavorite`, `saveSnapImage`, `shareSnap`,
 - **ADR-020:** Core lifecycle pillars + experience model; Share product track; Protect before cloud
 - **ADR-017:** Compact Card Experiment — Iteration 1 shipped; Iteration 2 (thumbnail + detail view) planned
 - **ADR-021:** MapSnap Signature — User first. Product second.
+- **ADR-022:** Shared Discovery Separation and Product Integration
+- **ADR-023:** Capture Reliability and Progressive PWA Install Guidance
 
 ## Last Updated
 
-2026-07-14 — Wave 2 Sprint 4 Filter
+2026-08-02 — Wave 2 Capture Reliability and PWA Installation Guidance

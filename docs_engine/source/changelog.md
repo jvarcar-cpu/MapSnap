@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.21] — 2026-08-02
+
+### Added (Wave 2 Compatibility Feature Pass — Capture Reliability and PWA Installation Guidance)
+
+- **Long-press progress feedback** — subtle ring begins on SNAP press, completes at ~600ms threshold, cancels on release/move/cancel; respects `prefers-reduced-motion`
+- **User-gesture-safe camera activation** — long press arms on threshold; file input activates on release (not timer-only synthetic click)
+- **Öppna kamera fallback** — compact direct action when camera activation does not occur; Swedish copy; no silent no-op; no broken/duplicate Snap
+- **PWA installation guidance** — progressive enhancement: `beforeinstallprompt` install action when available; iOS Share → Home Screen guidance; Android menu fallback when prompt absent; hidden in standalone; dismissible; shown after engagement (Snaps exist); local dismissal persistence
+- **Helpers + tests** — `lib/longPressGesture.ts`, `lib/pwaInstall.ts` with focused unit tests
+
+### Not changed
+
+- SNAP contract meaning unchanged (ADR-012): short press = position; long press = position + image
+- No Tags, backend, cloud, auth, schema migration, or continuous GPS
+- No service worker; installed PWA remains optional; Capture usable in browser
+- Product Identity unchanged
+- iPhone Field Validation remains pending (Field Validation 0007)
+
+### Docs
+
+- ADR-023; `capture_doctrine.md`, `ux_doctrine.md`, `field_validation_log.md`, `product_roadmap.md`, `implementation_readiness.md`, `architecture_state.md`, `known_issues.md`, `baseline_reconciliation.md`, `knowledge_continuity.md`, `current_phase.md`, `next_task.md`
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.20-docs] — 2026-07-25
 
 ### Documented (WP-AGSE-MSP-0001 — Product Integration Pass)

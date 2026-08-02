@@ -4,13 +4,13 @@
 
 **Phase:** Wave 2 — Organization / Early Discover  
 
-**Pass type:** None active — WP-AGSE-MSP-0001 Product Integration (Docs Pass) complete 2026-07-25
+**Pass type:** None active — Capture Reliability and PWA Installation Guidance (Feature Pass) complete 2026-08-02
 
-**Status:** **Wave 2 Sprint 4 complete** — Filter (Feature Pass) shipped 2026-07-14; Product Integration methodology integrated 2026-07-25  
+**Status:** **Wave 2 Compatibility Feature Pass complete** — Capture Reliability and PWA Installation Guidance shipped 2026-08-02 (implementation + automated validation); iPhone Field Validation pending (Field Validation 0007). Wave 2 Sprint 4 Filter shipped 2026-07-14; Product Integration methodology integrated 2026-07-25  
 
-**Previous:** Wave 2 Sprint 3 Smart Sorting shipped 2026-07-14  
+**Previous:** Wave 2 Sprint 4 Filter shipped 2026-07-14; WP-AGSE-MSP-0001 Product Integration (Docs Pass) complete 2026-07-25  
 
-**Next sprint after Filter:** Tags — not started
+**Next product feature:** Tags — not started
 
 **Product Integration:** WP-AGSE-MSP-0001 complete — Shared Discovery / Discovery Separation / Product Integration methodology only; product architecture unchanged; Foundation capability ownership remains outside MapSnap
 
@@ -46,13 +46,11 @@
 
 ## Goal
 
-Wave 2 Sprint 4 ships Filter — narrow loaded Snaps by all, favorites, or with images. Pipeline: search → filter → sort → render. Compact Cards Iteration 2 (square thumbnail + detail view) remains planned.
-
-**Wave 1 (closed):** All shipped sprints verified in `baseline_reconciliation.md` (Wave 1 section, 2026-07-14).
+Protect Capture reliability across browsers before Tags. Long-press feedback, user-gesture-safe camera activation, Öppna kamera fallback, and progressive PWA install guidance (ADR-023). Tags remains the next unstarted organization feature.
 
 
 
-## MVP 0.1 Baseline (locked — interaction unchanged)
+## MVP 0.1 Baseline (locked — interaction contract meaning unchanged)
 
 
 
@@ -60,7 +58,7 @@ Wave 2 Sprint 4 ships Filter — narrow loaded Snaps by all, favorites, or with 
 
 - Short tap saves GPS snap to IndexedDB
 
-- Long press (~600ms) opens camera/file capture + GPS snap with `photoDataUrl`
+- Long press (~600ms) opens camera/file capture + GPS snap with `photoDataUrl` (activation on release after arming; Öppna kamera fallback when needed)
 
 - Snaps persist in IndexedDB (`mapsnap-db` / `snaps`)
 
@@ -79,6 +77,23 @@ Wave 2 Sprint 4 ships Filter — narrow loaded Snaps by all, favorites, or with 
 
 
 See `stable_baseline.md` and `baseline_reconciliation.md`.
+
+
+
+## Wave 2 Compatibility — Capture Reliability and PWA Installation Guidance — Completed (implementation)
+
+- [x] Pass type: Feature Pass declared
+- [x] Long-press progress feedback — prompt, cancellable, reduced-motion aware
+- [x] User-gesture-safe camera activation on release after threshold
+- [x] Compact Öppna kamera direct-action fallback
+- [x] Progressive PWA install guidance — prompt / iOS manual / Android manual / hidden standalone
+- [x] Dismissal persistence; engagement-gated placement
+- [x] Unit tests for gesture + install helpers
+- [x] Docs Engine source + outputs synchronized; ADR-023
+- [x] Field Validation 0007 recorded (verified / implemented / pending)
+- [ ] iPhone Safari Field Validation — pending (no device this pass)
+- [ ] Pixel install fallback + Redmi regression — pending physical retest
+- [x] Tags not started
 
 
 
@@ -256,7 +271,7 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 |------|-------|---------|
 | 0 | Baseline reconciliation | No |
 | 1 | Core value (UX polish, title, notes, save image, Quick Share, favorite, signature, compact cards) | No |
-| 2 | Organization / early Discover (search, sort, filter, tags) | No |
+| 2 | Organization / early Discover (search, sort, filter, tags) + Capture Reliability compatibility pass | No |
 | 3 | Snaptisers / contextual Discover | No for MVP |
 | 4 | Image + Professional Share | No |
 | 5 | Protect (backup, restore, data-loss education) | No |

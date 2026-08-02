@@ -9,7 +9,7 @@
 | Styling | Tailwind CSS |
 | Geolocation | Browser Geolocation API |
 | Persistence | IndexedDB (`mapsnap-db`) |
-| PWA | Web App Manifest |
+| PWA | Web App Manifest (+ progressive install guidance; no service worker yet) |
 
 ## Directory Layout
 
@@ -17,9 +17,10 @@
 app/           — pages, layout, globals, manifest
 components/    — SnapButton, PlaceCard, PlaceList, MapOpenButtons, FavoriteToggle,
                SnapEditForm, SnapActionIcons, SnapBackupPanel, LocationPermissionCard,
-               SnapSearchBar, SnapFilterBar, SnapSortBar
+               SnapSearchBar, SnapFilterBar, SnapSortBar, InstallGuidance
 lib/           — geo, storage, db, maps, id, snapModel, snapEdit, snapFavorite,
-               saveSnapImage, shareSnap, snapSearch, snapFilter, snapSort, snapSound, usePrefersReducedMotion
+               saveSnapImage, shareSnap, snapSearch, snapFilter, snapSort, snapSound,
+               longPressGesture, pwaInstall, usePrefersReducedMotion
 types/         — place.ts (Snap, SnapPlace, SnapCategory)
 docs_engine/   — product governance docs (product operating system)
   source/Identity/ — Product Identity (doctrine, quotes, voice, vocabulary, writing rules)
@@ -47,7 +48,7 @@ None beyond Next.js ecosystem. No map SDK, no analytics SDK, no auth library.
 | IndexedDB | Cloud sync |
 | URL generation for maps | Embedded map SDK |
 | File capture for photos | Cloud photo storage |
-| PWA manifest | Push notifications (Snaptisers — Wave 3; feasibility FEAS-002) |
+| PWA manifest + progressive install guidance | Service worker / push notifications (Snaptisers — Wave 3; feasibility FEAS-002) |
 
 ## Production Deployment
 
@@ -68,5 +69,7 @@ Institutional record: CHRONICLE-MSN-0001 — `docs_engine/source/chronicles/MAPS
 - IndexedDB quota still limits large photo volume (base64 inline)
 - Legacy `mapsnap.snaps.v1` in localStorage is migrated once on load; not deleted automatically
 - GPS accuracy varies by device and environment
-- Camera capture behavior differs across browsers
+- Camera capture behavior differs across browsers; long-press uses user-gesture-safe activation with Öppna kamera fallback (ADR-023)
+- `beforeinstallprompt` is not guaranteed — install guidance is progressive (Field Validation 0001 / 0007)
 - Geolocation requires a secure context (`https://`); dev runs HTTPS via `next dev --experimental-https` (see `local_https_development.md`)
+- iPhone long-press + install guidance Field Validation pending (Field Validation 0007)

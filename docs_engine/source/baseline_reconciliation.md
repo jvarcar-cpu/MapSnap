@@ -169,3 +169,30 @@ Wave 1 Core Value track is institutionally closed. **Compact Cards Iteration 1**
 - [ ] Compact Cards Iteration 2 — square thumbnail, detail view
 - [x] IndexedDB version `1` unchanged
 - [x] Protected SNAP interaction unchanged
+
+---
+
+# Baseline Reconciliation — Wave 2 Compatibility (Capture Reliability + PWA Install)
+
+**Verified:** 2026-08-02  
+**Method:** Repository implementation + unit tests + docs validation + production build + baseline script  
+**ADR:** ADR-023  
+**Field Validation:** 0007 (iPhone physical validation pending)
+
+| Check | Result | Evidence |
+|-------|--------|----------|
+| Short tap still position-only | ✅ Pass | `resolvePressEnd({ phase: "pressing" })` → `short-snap`; `SnapButton` |
+| Long-press threshold arms gesture | ✅ Pass | `resolveThresholdReached`; 600ms timer arms only |
+| Camera activates on release (user gesture) | ✅ Pass | `openCameraFromGesture` from pointerup path — not timer-only click |
+| Progress feedback starts on press | ✅ Pass | `snap-longpress-ring` while pressing/armed |
+| Movement / cancel clears timer | ✅ Pass | `shouldCancelForMovement`; pointercancel / move handlers |
+| Cancelled gesture does not open camera | ✅ Pass | `resolvePressEnd` idle/cancel → `noop` |
+| Long press does not also short-press | ✅ Pass | `suppressTapRef` + resolvePressEnd suppress |
+| Öppna kamera fallback when required | ✅ Pass | `shouldShowCameraFallback`; fallback UI in `SnapButton` |
+| Duplicate activation prevented | ✅ Pass | `duplicateGuardRef` |
+| Install guidance hidden when standalone | ✅ Pass | `isRunningStandalone` + `selectInstallGuidanceMode` |
+| `beforeinstallprompt` enables Installera | ✅ Pass | `InstallGuidance` + mode `prompt` |
+| Absence of install event does not break UI | ✅ Pass | Falls back to ios/android-manual or hidden |
+| Dismissal persistence | ✅ Pass | `INSTALL_DISMISS_KEY` localStorage |
+| Tags not started | ✅ Pass | Roadmap item 4 remains Planned |
+| Schema / continuous GPS unchanged | ✅ Pass | IndexedDB v1; one-shot GPS only |

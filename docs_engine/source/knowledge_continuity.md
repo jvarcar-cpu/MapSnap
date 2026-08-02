@@ -54,7 +54,7 @@ PDE Foundation Institutional Integration does **not** directly mutate MapSnap. M
 | **MapSnap receipt** | Product Integration Pass WP-AGSE-MSP-0001 — development methodology only |
 | **Product architecture** | **Unchanged** — that Foundation capability is not MapSnap architecture, subsystem, or product constitutional surface |
 | **Status** | **Complete** (2026-07-25) |
-| **Resume point** | Wave 2 after Sprint 4 Filter — next authorized product task remains Tags |
+| **Resume point** | Wave 2 after Capture Reliability / PWA install guidance (ADR-023) — next authorized product task remains Tags |
 
 ## Institutional Memory Entries
 
@@ -75,6 +75,7 @@ PDE Foundation Institutional Integration does **not** directly mutate MapSnap. M
 | 2026-07-14 | ADR-021 — MapSnap Signature | User first. Product second. No card fallback title |
 | 2026-07-14 | SnapSpot canonical label | Location line on cards and in Quick Share; category remains metadata |
 | 2026-07-25 | WP-AGSE-MSP-0001 Product Integration | Shared Discovery / Discovery Separation / Product Integration methodology integrated; product architecture unchanged; Wave 2 resumes at Tags |
+| 2026-08-02 | ADR-023 — Capture Reliability + PWA install guidance | Long-press user-gesture-safe activation, progress feedback, Öppna kamera fallback; progressive install guidance; Field Validation 0007 (iPhone pending); Tags remains next |
 
 ## Production Domain Record
 

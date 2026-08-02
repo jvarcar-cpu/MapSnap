@@ -30,6 +30,8 @@ See also: `stable_baseline.md` (Dev server note), `local_https_development.md` (
 Automated baseline verification (`scripts/verify-baseline.mjs`) covers desktop browser checks. These flows still require manual verification on a real mobile device or mobile browser:
 
 - Long-press camera capture (device picker, shutter, photo snap)
+- Long-press progress feedback and Öppna kamera fallback (especially iPhone Safari — Field Validation 0007 pending)
+- PWA install guidance surfaces (Pixel fallback, iPhone Home Screen guidance, Redmi regression)
 - Location permission denied card and retry when geolocation is blocked
 - HTTPS over Tailscale/LAN IP with certificate warnings
 

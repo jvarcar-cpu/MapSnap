@@ -12,6 +12,7 @@ import { filterSnapsByMode, type SnapFilterMode } from "@/lib/snapFilter";
 import { filterSnapsBySearch } from "@/lib/snapSearch";
 import { sortSnaps, type SnapSortMode } from "@/lib/snapSort";
 import { SnapBackupPanel } from "@/components/SnapBackupPanel";
+import { InstallGuidance } from "@/components/InstallGuidance";
 import { SuccessFeedback } from "@/components/SuccessFeedback";
 import {
   getCurrentPosition,
@@ -341,6 +342,7 @@ export default function HomePage() {
           newestId={newestId}
         />
         <SnapBackupPanel onImportSuccess={handleImportSuccess} />
+        <InstallGuidance engaged={places.length > 0} />
       </section>
     </main>
   );

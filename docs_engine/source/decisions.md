@@ -220,3 +220,24 @@
 
 **Consequences:** `knowledge_continuity.md` and `implementation_rules.md` updated. Product identity, roadmap next task (Tags), and application behaviour unchanged. Wave 2 resumes independently after Sprint 4 Filter.
 
+---
+
+## ADR-023: Capture Reliability and Progressive PWA Install Guidance
+
+**Status:** Accepted  
+**Date:** 2026-08-02  
+**Context:** Field observations showed (1) iPhone browser long-press produced no visible response and did not open the camera; (2) PWA install opportunity appeared on Redmi Note 9 but not on Pixel 9a or iPhone. Root causes for iPhone are not proven; timer-delayed synthetic file-input activation is a known compatibility risk for transient user activation. `beforeinstallprompt` must not be assumed.
+
+**Decision:**
+
+1. Preserve ADR-012 contract meaning: short press = position; long press = position + image.
+2. Arm long press on threshold; activate the camera input on release (user-gesture-safe path), not from the timer callback alone.
+3. Provide immediate cancellable long-press progress feedback; respect reduced motion.
+4. If activation does not occur, show compact **"Öppna kamera"** direct-action fallback — never silent no-op; no broken/duplicate Snap.
+5. Progressive install guidance: standalone detection, `beforeinstallprompt` when available, iOS/Android manual guidance otherwise; dismissible; engagement-gated; local persistence only.
+6. No service worker, schema change, continuous GPS, Tags, backend, or cloud in this pass.
+
+**Feature Gate:** Strengthens CAPTURE reliability without slowing short press; install UI is post-engagement and optional; offline/local-first preserved; calm identity preserved.
+
+**Consequences:** `lib/longPressGesture.ts`, `lib/pwaInstall.ts`, `SnapButton.tsx`, `InstallGuidance.tsx`. Tags remains next unstarted product feature. iPhone field validation remains pending.
+
