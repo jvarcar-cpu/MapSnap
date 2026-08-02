@@ -14,7 +14,7 @@ Open. SNAP. Close. **Capture first. Organize later.**
 
 ## Current Phase
 
-**Wave 2 — Organization / Early Discover** — Feature Pass — Tags shipped 2026-08-02. Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) complete; iPhone Field Validation pending. Sprint 4 Filter shipped 2026-07-14. WP-AGSE-MSP-0001 Product Integration complete 2026-07-25 (methodology only). MVP 0.1 stable at https://mapsnap.se. Product lifecycle pillars ratified (ADR-020).
+**Wave 3 Discovery** — Wave 2 Institutionally Complete 2026-08-02. Organization / Early Discover closed (CHRONICLE-MSN-0002). Desktop ✓ verified; Android / Pixel ✓ physically validated; iPhone Field Validation 0007 pending only. No Wave 3 implementation. MVP 0.1 stable at https://mapsnap.se. Product lifecycle pillars ratified (ADR-020).
 
 ## Product Identity
 
@@ -49,8 +49,8 @@ Product Identity defines who MapSnap is — philosophy, voice, and language. See
 |------|-------|
 | 0 | Baseline reconciliation (complete) |
 | 1 | Core value: UX polish, title, notes, save image, Quick Share, favorite, signature, action icons — **institutionally closed** |
-| 2 | Organization / early Discover — Sprint 1–4 + Capture Reliability + install placement + Tags shipped (iPhone FV pending) |
-| 3 | Snaptisers / contextual Discover |
+| 2 | Organization / early Discover — Compact Cards, Search, Sort, Filter, Capture Reliability, install placement, Tags — **Institutionally Complete** (iPhone FV pending only) |
+| 3 | Snaptisers / contextual Discover — **Discovery active** (no implementation) |
 | 4 | Image + Professional Share |
 | 5 | Protect |
 | 6 | MapSnap-to-MapSnap Share / cloud (deferred) |
@@ -100,7 +100,7 @@ Key libs: `snapModel`, `snapEdit`, `snapTags`, `snapFavorite`, `saveSnapImage`, 
 - Smart Sorting — Nyast / Äldst / Närmast, memoized sort, nearest one-time GPS — **shipped**
 - Tags — create/edit/remove/display + search — **shipped**
 - Delete, empty state, Google Maps, Waze, backup/import — **existing**
-- Wave 1 institutionally closed; Wave 2 Sprint 1–4 + Tags complete; Capture Reliability + install placement complete (iPhone FV pending)
+- Wave 1 institutionally closed; Wave 2 Institutionally Complete; Desktop ✓; Pixel ✓; iPhone FV pending only
 
 ## Recent Decisions
 
@@ -116,9 +116,9 @@ Key libs: `snapModel`, `snapEdit`, `snapTags`, `snapFavorite`, `saveSnapImage`, 
 - **ADR-022:** Shared Discovery Separation and Product Integration
 - **ADR-023:** Capture Reliability and Progressive PWA Install Guidance
 - **ADR-024:** Contextual Guidance Placement
-- **Tags Docs Pass (2026-08-02):** No new ADR — feature definition only
 - **Tags Feature Pass (2026-08-02):** Shipped — create/edit/remove/display + search; ADR-019 covers schema
+- **Wave 2 Institutional Close-Out (2026-08-02):** Institutionally Complete; CHRONICLE-MSN-0002; Wave 3 Discovery active
 
 ## Last Updated
 
-2026-08-02 — Wave 2 Feature Pass — Tags shipped
+2026-08-02 — Wave 2 Institutionally Complete; Wave 3 Discovery active

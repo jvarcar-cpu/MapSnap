@@ -264,3 +264,63 @@ Wave 1 Core Value track is institutionally closed. **Compact Cards Iteration 1**
 | Memoized search preserved | ✅ Pass | `page.tsx` `useMemo` + `filterSnapsBySearch` |
 | Exclusions respected | ✅ Pass | No hierarchy/colors/AI/Discover/backend |
 | Docs Engine synchronized | ✅ Pass | Sources + regenerated outputs; `validate_docs.mjs` |
+
+---
+
+# Baseline Reconciliation — Wave 2 Institutional Close-Out
+
+**Verified:** 2026-08-02  
+**Method:** Docs Engine reconciliation — roadmap, implementation evidence, documentation, generated outputs, baselines, validation, chronicles  
+**Pass type:** Reconciliation & Ratification Pass — no feature implementation  
+**Outcome:** **Wave 2 Institutionally Complete**
+
+### Summary
+
+Wave 2 Organization / Early Discover describes one consistent product state across roadmap, source docs, baselines, outputs, verification, and chronicles. Organization is a complete product layer for early Discover retrieval. Active planning phase advances to **Wave 3 Discovery** only. Wave 3 implementation is not begun. iPhone Field Validation 0007 remains the sole open Wave 2 validation note.
+
+### Delivered scope consistency
+
+| Delivery | Documented | Baseline | Roadmap / history | Verification |
+|----------|------------|----------|-------------------|--------------|
+| Compact Cards Iteration 1 | ✅ | ✅ | ✅ | ✅ |
+| Search | ✅ | ✅ | ✅ | ✅ |
+| Smart Sorting | ✅ | ✅ | ✅ | ✅ |
+| Filter | ✅ | ✅ | ✅ | ✅ |
+| Capture Reliability | ✅ | ✅ | ✅ | ✅ (desktop + Pixel) |
+| Progressive Install Guidance | ✅ | ✅ | ✅ | ✅ (desktop + Pixel) |
+| Contextual Guidance Principle | ✅ | ✅ | ✅ | ✅ |
+| Tags | ✅ | ✅ | ✅ | ✅ |
+
+### Field validation institutional status
+
+| Surface | Status |
+|---------|--------|
+| Desktop | ✓ verified |
+| Android / Pixel | ✓ physically validated |
+| iPhone | Field Validation 0007 remains **pending** — not claimed |
+
+### Institutional close-out criteria
+
+| Criterion | Result |
+|-----------|--------|
+| Implementation complete | ✅ |
+| Documentation synchronized | ✅ |
+| Baseline synchronized | ✅ |
+| Verification complete | ✅ |
+| Pixel field validation complete | ✅ |
+| iPhone validation pending only | ✅ |
+| Wave 2 marked Institutionally Complete | ✅ |
+| Chronicle recorded | ✅ CHRONICLE-MSN-0002 |
+| Active phase → Wave 3 Discovery | ✅ |
+| Wave 3 not advanced to implementation | ✅ |
+
+### Generated outputs synchronized
+
+| Output | Wave 2 state |
+|--------|--------------|
+| `CURRENT_BASELINE.md` | Institutionally Complete; Pixel ✓; iPhone pending |
+| `CURRENT_TASK.md` | Wave 3 Discovery; no active Feature Pass |
+| `MASTER.md` | Wave 2 closed; Wave 3 Discovery |
+| `SNAPSHOT.md` | Same product state |
+| `AGENTS.md` | Same product state |
+| `KNOWN_ISSUES.md` | iPhone pending; Pixel install fallback closed |

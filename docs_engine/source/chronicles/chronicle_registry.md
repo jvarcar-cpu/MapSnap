@@ -10,7 +10,7 @@ Chronicles are append-only institutional memory. This registry is the index — 
 
 | Chronicle | Scope | Location | Status | First entry |
 |-----------|-------|----------|--------|-------------|
-| MapSnap Chronicles | MapSnap product lineage — origin, identity, validation, public presence, and future milestones | `docs_engine/source/chronicles/MAPSNAP_CHRONICLES.md` | Active | CHRONICLE-MSN-0001 (2026-07-11) — *The First Public Presence* |
+| MapSnap Chronicles | MapSnap product lineage — origin, identity, validation, public presence, and future milestones | `docs_engine/source/chronicles/MAPSNAP_CHRONICLES.md` | Active | CHRONICLE-MSN-0001 (2026-07-11) — *The First Public Presence*; latest CHRONICLE-MSN-0002 (2026-08-02) — *Organization Becomes a Product Layer* |
 
 ## Entry Identification
 

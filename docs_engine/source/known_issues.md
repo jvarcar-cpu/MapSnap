@@ -27,13 +27,15 @@ See also: `stable_baseline.md` (Dev server note), `local_https_development.md` (
 **Severity:** Verification gap  
 **Status:** Active
 
-Automated baseline verification (`scripts/verify-baseline.mjs`) covers desktop browser checks. These flows still require manual verification on a real mobile device or mobile browser:
+Automated baseline verification (`scripts/verify-baseline.mjs`) covers desktop browser checks. Desktop is ✓ verified for Wave 2 close-out. Android / Pixel is ✓ physically validated for Capture Reliability / install guidance (Field Validation 0007). These flows still require remaining manual verification:
 
-- Long-press camera capture (device picker, shutter, photo snap)
-- Long-press progress feedback and Öppna kamera fallback (especially iPhone Safari — Field Validation 0007 pending)
-- PWA install guidance surfaces and placement beneath SNAP (Pixel fallback, iPhone Home Screen guidance, Redmi regression)
+- Long-press camera capture (device picker, shutter, photo snap) — especially iPhone Safari
+- Long-press progress feedback and Öppna kamera fallback (iPhone Safari — Field Validation 0007 pending)
+- PWA install guidance surfaces and placement beneath SNAP (iPhone Home Screen guidance; optional Redmi regression)
 - Location permission denied card and retry when geolocation is blocked
 - HTTPS over Tailscale/LAN IP with certificate warnings
+
+**Closed for Wave 2 institutional status:** Pixel installation fallback guidance — physically validated.
 
 ---
 

@@ -280,8 +280,149 @@ MapSnap belongs not only to its creator, but to the world.
 
 ---
 
+## CHRONICLE-MSN-0002 — Organization Becomes a Product Layer
+
+**Date:** 2026-08-02  
+**Type:** Product Evolution Chronicle  
+**Status:** Ratified — Permanent — do not modify
+
+### Summary
+
+On 2 August 2026, Wave 2 — Organization / Early Discover — was institutionally closed.
+
+MapSnap had already proven that a place could be captured before it disappeared.
+
+Wave 2 proved something further:
+
+A growing personal collection of places could be found again without becoming a map application, a social feed, or a productivity system.
+
+Organization matured into a complete product layer.
+
+### How MapSnap Evolved
+
+Wave 1 had given MapSnap its core value.
+
+Capture was reliable enough to trust.
+
+Enrichment existed after the Snap — title, notes, favorite, image save, Quick Share.
+
+Identity was clear on every card.
+
+But as the collection grew, speed of capture alone was no longer enough.
+
+The product needed calm ways to return to what the user had already chosen to keep.
+
+Wave 2 answered that need without changing the meaning of SNAP.
+
+### What Became Mature
+
+Several capabilities reached product maturity together:
+
+- Compact Cards made the collection scannable
+- Search made memory retrievable
+- Smart Sorting made recency and proximity useful without continuous tracking
+- Filter made favorites and images separable from noise
+- Tags completed Enrich as lightweight metadata and bridged into Discover through search
+
+Capture itself also matured under real platform pressure.
+
+Long-press reliability, progressive install guidance, and contextual placement beneath SNAP made Capture more honest across browsers — without advertising, without modal weight, and without altering the protected interaction contract.
+
+### Organization as a Complete Layer
+
+Organization in MapSnap is not filing.
+
+It is rediscovery of one's own meaningful places.
+
+By the close of Wave 2, the user could:
+
+capture a place,
+
+enrich it later,
+
+and find it again through search, sort, filter, and tags.
+
+That sequence is complete for early Discover.
+
+Collections, engines, public place discovery, and social attention remain outside the product.
+
+Discover remains grounded in what the user chose to save.
+
+### Field Truth
+
+Institutional close-out recorded the validation state honestly:
+
+Desktop verified.
+
+Android / Pixel physically validated.
+
+iPhone Field Validation still pending.
+
+The product does not claim completion where a device has not spoken.
+
+### Historical Significance
+
+This Chronicle does not celebrate individual features.
+
+It records the moment MapSnap stopped being only a capture tool and became a calm personal place memory with organization that feels lighter than it is.
+
+Wave 3 may explore Snaptisers and contextual rediscovery.
+
+That work begins as Discovery — not as implementation debt left by Wave 2.
+
+### Institutional Closing Statement
+
+2 August 2026
+
+Wave 2 is Institutionally Complete.
+
+Implementation complete.
+
+Documentation synchronized.
+
+Baseline synchronized.
+
+Verification complete.
+
+Pixel field validation complete.
+
+iPhone validation pending only.
+
+Organization is now a finished layer of the product.
+
+### Related ADRs
+
+- ADR-012 — Protected SNAP interaction contract
+- ADR-017 — Compact Card Experiment
+- ADR-019 — Snap model evolution (optional `tags`)
+- ADR-020 — Core lifecycle pillars; Discover emerging
+- ADR-023 — Capture Reliability and Progressive PWA Install Guidance
+- ADR-024 — Contextual Guidance Placement
+
+### Related doctrines
+
+- `source/ux_doctrine.md`
+- `source/capture_doctrine.md`
+- `source/snap_model.md`
+- `source/snaptiser_doctrine.md`
+- `source/chronicles/chronicles_scope_doctrine.md`
+
+### Related phase documents
+
+- `source/current_phase.md` — Wave 2 Institutionally Complete; Wave 3 Discovery active
+- `source/product_roadmap.md` — Wave 2 completed implementation
+- `source/baseline_reconciliation.md` — Wave 2 Institutional Close-Out
+- `source/field_validation_log.md` — Field Validation 0007
+
+### Related Evidence Packs
+
+- None
+
+---
+
 ## Entry Index
 
 | ID | Date | Title | Type |
 |----|------|-------|------|
 | CHRONICLE-MSN-0001 | 2026-07-11 | The First Public Presence | Foundational Product Chronicle |
+| CHRONICLE-MSN-0002 | 2026-08-02 | Organization Becomes a Product Layer | Product Evolution Chronicle |

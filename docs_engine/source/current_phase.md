@@ -2,15 +2,15 @@
 
 
 
-**Phase:** Wave 2 — Organization / Early Discover  
+**Phase:** Wave 3 Discovery  
 
-**Pass type:** None active — Feature Pass — Tags complete 2026-08-02
+**Pass type:** None active — Reconciliation & Ratification Pass — Wave 2 complete 2026-08-02
 
-**Status:** **Feature Pass — Tags shipped** — create/edit/remove/display tags; search includes tags with title and notes. Wave 2 organization track (search, sort, filter, tags) complete for early Discover retrieval.
+**Status:** **Wave 2 — Institutionally Complete.** Implementation complete. Documentation synchronized. Baseline synchronized. Verification complete. Pixel field validation complete. iPhone Field Validation 0007 pending only.
 
-**Previous:** Tags Documentation Pass complete 2026-08-02; Install Guidance Repositioning UX Pass complete 2026-08-02 (ADR-024); Capture Reliability Feature Pass complete 2026-08-02 (ADR-023); WP-AGSE-MSP-0001 Product Integration complete 2026-07-25  
+**Previous:** Feature Pass — Tags shipped 2026-08-02; Tags Documentation Pass complete 2026-08-02; Install Guidance Repositioning UX Pass complete 2026-08-02 (ADR-024); Capture Reliability Feature Pass complete 2026-08-02 (ADR-023); WP-AGSE-MSP-0001 Product Integration complete 2026-07-25  
 
-**Next product feature:** Order 11 — Snaptiser feasibility spike (research) when scoped
+**Next product feature:** Order 11 — Snaptiser feasibility spike (research) when scoped — Wave 3 Discovery only; do not begin implementation
 
 **Product Integration:** WP-AGSE-MSP-0001 complete — Shared Discovery / Discovery Separation / Product Integration methodology only; product architecture unchanged; Foundation capability ownership remains outside MapSnap
 
@@ -42,54 +42,44 @@
 
 **Wave 1 Action Icon Polish completed:** 2026-07-14
 
+**Wave 2 Institutionally Complete:** 2026-08-02
+
 
 
 ## Goal
 
-Feature Pass — Tags shipped. Wave 2 early-organization items (search, sort, filter, tags) complete. Do not expand Tags beyond shipped exclusions. Do not move Discover into collections/engine scope. Preserve Field Validation 0007 as pending until physical iPhone validation.
+Wave 2 is institutionally closed. Active planning phase is **Wave 3 Discovery** — scope Snaptiser feasibility and contextual Discover without implementation. Preserve Field Validation 0007 iPhone items as pending until physical iPhone validation. Do not expand Tags beyond shipped exclusions. Do not advance Wave 3 into Feature Pass until discovery is complete and explicitly scoped.
 
 
 
-## Feature Gate — Tags (Documentation Pass)
+## Wave 2 — Institutional Close-Out — Completed
 
-**Pillars:** ENRICH (strengthened) · DISCOVER (strengthened, bridge)  
-**Neutral:** Share · Protect  
-**No impact:** Capture  
-**Experience qualities:** Remember (Enrich) · Return via rediscovery (Discover bridge)  
-**Affects SNAP interaction contract:** No — post-capture Enrich only (ADR-012)
-
-| # | Question | Answer |
-|---|----------|--------|
-| 1 | Slow or complicate the Snap moment? | No — never before SNAP; edit after capture |
-| 2 | Strengthen a Core Pillar without weakening others? | Yes — Enrich + Discover bridge; Capture/Share/Protect not weakened |
-| 3 | Understandable without a manual? | Yes — free-form tags in post-capture edit |
-| 4 | Preserve offline / local-first? | Yes — optional `tags` on Snap; no backend |
-| 5 | Disproportionate interface weight? | No — lightweight card metadata; ~five recommended |
-| 6 | Live after capture? | Yes — Enrich only |
-| 7 | Preserve calm / minimal identity? | Yes — no hierarchy/colors/clouds/AI |
-
-**Discover guardrails:** Helps rediscover own tagged content via search — not social feed, not public place discovery.
-
-**Guardrails:** None violated. **Approved for Feature Pass** under Wave 2 scope only.
-
-Full detail: `product_roadmap.md` Wave 2 item 4 · `implementation_readiness.md` order 10.
+- [x] Compact Cards Iteration 1
+- [x] Search (title, notes, tags)
+- [x] Smart Sorting
+- [x] Filter
+- [x] Capture Reliability (ADR-023)
+- [x] Progressive Install Guidance (ADR-023)
+- [x] Install Guidance Repositioning / Contextual Guidance Principle (ADR-024)
+- [x] Tags (Feature Pass)
+- [x] Documentation synchronized
+- [x] Baseline synchronized
+- [x] Verification complete (desktop + docs)
+- [x] Pixel field validation complete
+- [ ] iPhone Field Validation 0007 — pending only
+- [x] Chronicle CHRONICLE-MSN-0002 recorded
+- [x] Roadmap status: Wave 2 completed implementation
+- [x] Active phase: Wave 3 Discovery
 
 
 
-## Wave 2 Docs Pass — Tags Institutionalization — Completed
+## Field Validation Status (institutional)
 
-- [x] Pass type: Documentation Pass declared
-- [x] Tags definition institutionalized
-- [x] Lifecycle role: Enrich with Discover bridge documented
-- [x] Wave 2 in-scope / out-of-scope exclusions documented
-- [x] UX principles institutionalized
-- [x] Feature Gate completed — Capture no impact; Enrich strengthened; Share/Protect neutral; Discover strengthened
-- [x] Implementation readiness updated — Feature Pass — Tags next
-- [x] Roadmap updated — Tags remain Wave 2; Discover not moved
-- [x] ADR review — no new ADR (feature definition only; ADR-019 covers optional schema)
-- [x] Baseline / reconciliation updated for institutional decisions only — no implementation claimed
-- [x] Docs Engine outputs regenerated; `validate_docs.mjs` pass
-- [ ] Feature Pass — Tags implementation — **ready to begin** (not started)
+| Surface | Status |
+|---------|--------|
+| Desktop | ✓ verified |
+| Android / Pixel | ✓ physically validated |
+| iPhone | Field Validation 0007 remains pending |
 
 
 
@@ -123,7 +113,7 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 
 
-## Wave 2 Compatibility — Capture Reliability and PWA Installation Guidance — Completed (implementation)
+## Wave 2 Compatibility — Capture Reliability and PWA Installation Guidance — Completed
 
 - [x] Pass type: Feature Pass declared
 - [x] Long-press progress feedback — prompt, cancellable, reduced-motion aware
@@ -133,10 +123,9 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 - [x] Dismissal persistence; engagement-gated placement
 - [x] Unit tests for gesture + install helpers
 - [x] Docs Engine source + outputs synchronized; ADR-023
-- [x] Field Validation 0007 recorded (verified / implemented / pending)
-- [ ] iPhone Safari Field Validation — pending (no device this pass)
-- [ ] Pixel install fallback + Redmi regression — pending physical retest
-- [x] Tags documentation institutionalized (2026-08-02); UI not started
+- [x] Field Validation 0007 recorded
+- [x] Desktop verified; Android / Pixel physically validated
+- [ ] iPhone Safari Field Validation — pending (do not claim complete)
 
 ## Wave 2 UX Pass — Install Guidance Repositioning — Completed
 
@@ -152,7 +141,6 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 - [x] Unit tests for reveal-delay helper + placement verification script
 - [x] Docs outputs, validation, baseline verification
 - [ ] iPhone Field Validation 0007 — still pending (not claimed)
-- [x] Tags documentation institutionalized (2026-08-02); UI not started
 
 
 
@@ -320,7 +308,7 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 
 - [x] aria-label, keyboard navigation, focus ring, minimum 44px touch target preserved
 
-- [x] Share, favorite, edit, save image, maps, delete behaviour unchanged
+- [x] Share, favorite, save image, maps, delete behaviour unchanged
 
 
 
@@ -330,8 +318,8 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 |------|-------|---------|
 | 0 | Baseline reconciliation | No |
 | 1 | Core value (UX polish, title, notes, save image, Quick Share, favorite, signature, compact cards) | No |
-| 2 | Organization / early Discover (search, sort, filter, tags) + Capture Reliability compatibility pass | No |
-| 3 | Snaptisers / contextual Discover | No for MVP |
+| 2 | Organization / early Discover (search, sort, filter, tags) + Capture Reliability compatibility pass — **Institutionally Complete** | No |
+| 3 | Snaptisers / contextual Discover — **Discovery active** | No for MVP |
 | 4 | Image + Professional Share | No |
 | 5 | Protect (backup, restore, data-loss education) | No |
 | 6 | MapSnap-to-MapSnap Share / cloud | Deferred |
@@ -351,17 +339,17 @@ Full detail: `product_roadmap.md`.
 - [x] All card actions preserved: favorite, maps, edit, share, save image, delete
 - [x] 48px touch targets and SVG icon system unchanged
 - [x] MapSnap signature, SnapSpot label, typography hierarchy preserved
-- [ ] Square thumbnail + detail view — Iteration 2 (ADR-017)
+- [ ] Square thumbnail + detail view — Iteration 2 (ADR-017) — deferred beyond Wave 2 close
 - [ ] Measurable recognition test — Iteration 2 field validation
 
 ## Wave 2 Sprint 2 — Search — Completed
 
 - [x] Pass type: Feature Pass declared
-- [x] Search field above snap list — title and notes only; case-insensitive partial match
+- [x] Search field above snap list — title, notes, and tags; case-insensitive partial match
 - [x] Real-time filter on loaded collection — local only; no backend
 - [x] Search empty state: "Inga Snappar matchar din sökning."
 - [x] Clear button, search icon, Swedish placeholder
-- [x] Memoized filtering; no filter or tags UI
+- [x] Memoized filtering
 
 ## Wave 2 Sprint 3 — Smart Sorting — Completed
 
@@ -395,6 +383,6 @@ Full detail: `product_roadmap.md`.
 - [x] No hierarchy, colors, groups, AI, Discover engine, backend, or cloud
 - [x] Behaviour + visual regression; docs synchronized
 
-## Next (ready to begin)
+## Next (Wave 3 Discovery — planning only)
 
-**Order 11 — Snaptiser feasibility spike** (research only) when scoped. See `next_task.md` and `implementation_readiness.md`.
+**Order 11 — Snaptiser feasibility spike** (research only) when scoped. See `next_task.md` and `implementation_readiness.md`. Do not begin Wave 3 implementation in this phase.

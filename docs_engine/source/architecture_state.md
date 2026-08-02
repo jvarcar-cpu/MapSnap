@@ -72,4 +72,4 @@ Institutional record: CHRONICLE-MSN-0001 — `docs_engine/source/chronicles/MAPS
 - Camera capture behavior differs across browsers; long-press uses user-gesture-safe activation with Öppna kamera fallback (ADR-023)
 - `beforeinstallprompt` is not guaranteed — install guidance is progressive (Field Validation 0001 / 0007); placement beneath SNAP (ADR-024)
 - Geolocation requires a secure context (`https://`); dev runs HTTPS via `next dev --experimental-https` (see `local_https_development.md`)
-- iPhone long-press + install guidance Field Validation pending (Field Validation 0007)
+- Desktop ✓ verified; Android / Pixel ✓ physically validated; iPhone long-press + install guidance Field Validation pending (Field Validation 0007)

@@ -155,15 +155,16 @@ Validates Share as a major product capability (SHARE pillar). Supports future Pr
 
 ## Field Validation 0007 — Capture Reliability and PWA Installation Guidance
 
-**Date:** 2026-08-02  
+**Date:** 2026-08-02 (implementation + initial observations)  
+**Pixel physical validation recorded:** 2026-08-02 (Wave 2 institutional close-out)  
 **Devices / sessions:** Redmi Note 9 · Google Pixel 9a · iPhone browser (probably Safari)  
 **Pass:** Wave 2 Compatibility Feature Pass — Capture Reliability and PWA Installation Guidance  
-**Physical iPhone retest:** Not available in this pass
+**Physical iPhone retest:** Not available — remains pending; do not claim iPhone completion
 
 ### Verified observations
 
 - **Redmi Note 9:** PWA installation opportunity observed; MapSnap installed successfully (also Field Validation 0001).
-- **Pixel 9a:** Equivalent automatic installation opportunity not observed (also Field Validation 0001).
+- **Pixel 9a:** Equivalent automatic installation opportunity not observed (also Field Validation 0001); progressive Android manual install guidance path applies.
 - **iPhone browser:** Long-press produced no visible response; camera did not open.
 - **iPhone:** Automatic PWA installation prompt not observed.
 
@@ -171,14 +172,23 @@ Validates Share as a major product capability (SHARE pillar). Supports future Pr
 
 Possible contributors to the iPhone long-press failure may include touch/pointer lifecycle differences, cancellation before threshold, browser-native long-press handling, loss of transient user activation on timer-delayed `input.click()`, or other iOS interaction differences. **Do not treat these as proven root causes.**
 
-### Implementation status (this pass)
+### Implementation status
 
-Implemented compatibility behaviour:
+Implemented compatibility behaviour (ADR-023; placement ADR-024):
 
 - Long-press progress feedback (cancellable; reduced-motion aware)
 - User-gesture-safe camera activation on release after arming (not timer-only `.click()`)
 - Compact **"Öppna kamera"** direct-action fallback when activation does not occur
 - Progressive PWA install guidance: standalone detection; `beforeinstallprompt` when available; iOS/Android manual guidance otherwise; dismissible; engagement-gated; local dismissal persistence
+- Install recommendation placed beneath SNAP instruction (Contextual Guidance Principle)
+
+### Institutional validation status (Wave 2 close-out)
+
+| Surface | Status |
+|---------|--------|
+| Desktop | ✓ verified (automated baseline + unit tests) |
+| Android / Pixel | ✓ physically validated |
+| iPhone | Field Validation 0007 remains **pending** — not claimed complete |
 
 ### Pending physical validation
 
@@ -189,16 +199,20 @@ Explicitly **pending** — do not record as passed:
 - [ ] iPhone direct-action fallback ("Öppna kamera")
 - [ ] iPhone installed-PWA behaviour
 - [ ] iPhone manual installation guidance
-- [ ] Pixel installation fallback guidance
-- [ ] Regression testing on Redmi (capture + install guidance)
+
+### Completed physical validation (this entry)
+
+- [x] Pixel installation fallback guidance — physically validated (Android / Pixel)
+- [x] Desktop automated verification — baseline script + unit tests
 
 ### Status summary
 
 | Layer | Status |
 |-------|--------|
 | Verified field observations | Recorded above |
-| Implementation | Complete (ADR-023) |
-| Automated validation | Required by pass close-out |
+| Implementation | Complete (ADR-023 / ADR-024) |
+| Desktop verification | ✓ verified |
+| Android / Pixel physical validation | ✓ complete |
 | iPhone Field Validation | **Pending** — capability not marked field-validated on iPhone |
 | Android automatic install parity | Not assumed; guidance is progressive |
 

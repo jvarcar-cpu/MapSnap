@@ -4,7 +4,7 @@
 
 **Locked:** 2026-06-28  
 **Updated:** 2026-08-02  
-**Status:** MVP 0.1 stable — Wave 2 Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) + Feature Pass — Tags shipped; iPhone Field Validation pending
+**Status:** MVP 0.1 stable — Wave 2 Institutionally Complete; Capture Reliability (ADR-023) + Install Guidance (ADR-024) + Tags shipped; Desktop ✓; Pixel ✓; iPhone Field Validation pending
 
 ## Wave Summary
 
@@ -25,44 +25,27 @@
 - ✓ Action Button Polish
 - ✓ Native Icons
 
-### Wave 2 Sprint 1 — Completed
+### Wave 2 — Institutionally Complete (2026-08-02)
 
 - ✓ Compact Cards Iteration 1 — banner compression, action-group divider
-
-### Wave 2 Sprint 2 — Completed
-
 - ✓ Search — local title/notes/tags filter, search bar, search empty state
-
-### Wave 2 Sprint 3 — Completed
-
 - ✓ Smart Sorting — Nyast / Äldst / Närmast, memoized sort, nearest one-time GPS
-
-### Wave 2 Sprint 4 — Completed
-
 - ✓ Filter — Alla / Favoriter / Med bild, memoized filter, search → filter → sort pipeline
-
-### Wave 2 Compatibility — Completed (implementation)
-
 - ✓ Capture Reliability — long-press progress, user-gesture-safe camera activation, Öppna kamera fallback
 - ✓ Progressive PWA install guidance — prompt / iOS manual / Android manual / standalone hidden (ADR-023)
 - ✓ Install Guidance Repositioning — beneath SNAP instruction; Contextual Guidance Principle (ADR-024)
-- ⏳ iPhone Field Validation pending (Field Validation 0007)
+- ✓ Tags — create/edit/remove/display + search (Feature Pass)
+- ✓ Desktop verified
+- ✓ Android / Pixel physically validated
+- ⏳ iPhone Field Validation pending only (Field Validation 0007)
 
 ### Product Integration — Completed (2026-07-25)
 
 - ✓ WP-AGSE-MSP-0001 — Shared Discovery / Discovery Separation / Product Integration methodology (ADR-022); product architecture unchanged
 
-### Tags — Shipped (Feature Pass 2026-08-02)
-
-- ✓ Definition, Wave 2 scope, UX principles, Feature Gate documented
-- ✓ Create / edit / remove tags after capture
-- ✓ Display on Snap card (subtle pills)
-- ✓ Search includes tags with title and notes
-- ✓ Normalization + legacy / backup compatibility
-
 ### Current Status
 
-Wave 2 early organization complete for search, sort, filter, and tags. Next: Order 11 Snaptiser spike when scoped.
+Wave 2 Institutionally Complete. Organization is a complete early Discover product layer. Active phase: **Wave 3 Discovery** (planning only). Next research unit when scoped: Order 11 Snaptiser spike.
 
 ## Interaction Baseline
 
@@ -103,9 +86,15 @@ Wave 2 early organization complete for search, sort, filter, and tags. Next: Ord
 
 ## Field Validation
 
+| Surface | Status |
+|---------|--------|
+| Desktop | ✓ verified |
+| Android / Pixel | ✓ physically validated |
+| iPhone | Field Validation 0007 remains pending |
+
 - Field Validation 0005 — UX polish on Pixel 9a and Redmi Note 9 (2026-07-14)
 - Field Validation 0006 — Quick Share SMS on Pixel 9a (2026-07-14)
-- Field Validation 0007 — Capture Reliability / PWA install observations recorded; iPhone physical validation pending (2026-08-02)
+- Field Validation 0007 — Capture Reliability / PWA install; Pixel physical validation complete; iPhone physical validation pending (2026-08-02)
 
 ## Snap Model (Sprint 2A)
 
@@ -201,7 +190,7 @@ Wave 2 early organization complete for search, sort, filter, and tags. Next: Ord
 - Long-press progress ring; arm at ~600ms; camera on release; Öppna kamera fallback
 - Install guidance: engagement-gated; standalone hidden; prompt / iOS / Android modes
 - Code: `lib/longPressGesture.ts`, `lib/pwaInstall.ts`, `SnapButton.tsx`, `InstallGuidance.tsx`
-- ADR-023; Field Validation 0007
+- ADR-023; Field Validation 0007 — Desktop ✓; Pixel ✓; iPhone pending
 
 ## Install Guidance Placement (UX Pass — ADR-024)
 
@@ -225,8 +214,8 @@ Wave 2 early organization complete for search, sort, filter, and tags. Next: Ord
 - Automated: `node scripts/verify-baseline.mjs [url]` — use URL printed by `npm run dev`
 - Unit: `npm test` — includes `lib/snapTags.test.ts`, `lib/longPressGesture.test.ts`, `lib/pwaInstall.test.ts`, plus prior lib tests
 - Docs: `node scripts/validate_docs.mjs`
-- Reconciliation: `baseline_reconciliation.md` — Wave 0 + Wave 1 + Wave 2 Compatibility + UX placement + Tags Docs + Tags Feature Pass
-- Manual mobile: long-press camera, Öppna kamera fallback, install guidance placement, denied-permission card (OPS-002)
+- Reconciliation: `baseline_reconciliation.md` — Wave 0 + Wave 1 + Wave 2 Compatibility + UX placement + Tags + Wave 2 Institutional Close-Out
+- Manual mobile: long-press camera, Öppna kamera fallback, install guidance placement, denied-permission card (OPS-002) — iPhone remaining
 - Field: `field_validation_log.md` — Field Validation 0005, 0006, 0007
 
 ## Completion Rule

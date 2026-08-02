@@ -54,13 +54,14 @@ PDE Foundation Institutional Integration does **not** directly mutate MapSnap. M
 | **MapSnap receipt** | Product Integration Pass WP-AGSE-MSP-0001 — development methodology only |
 | **Product architecture** | **Unchanged** — that Foundation capability is not MapSnap architecture, subsystem, or product constitutional surface |
 | **Status** | **Complete** (2026-07-25) |
-| **Resume point** | Wave 2 — Feature Pass — Tags shipped; next Order 11 Snaptiser spike when scoped |
+| **Resume point** | Wave 2 Institutionally Complete; Wave 3 Discovery active; Order 11 Snaptiser spike when scoped |
 
 ## Institutional Memory Entries
 
 | Date | Entry | Significance |
 |------|-------|--------------|
 | 2026-07-11 | CHRONICLE-MSN-0001 — *The First Public Presence* | MapSnap became publicly available at https://mapsnap.se — first public production domain in this product lineage |
+| 2026-08-02 | CHRONICLE-MSN-0002 — *Organization Becomes a Product Layer* | Wave 2 Institutionally Complete — Organization matured into a complete early Discover layer |
 | 2026-07-11 | Pre-PDE lineage preserved | MapSnap was not created by PDE; developed independently before PDE Foundation operational maturity |
 | 2026-07-11 | Product Onboarding reference case (discovery only) | MapSnap may later inform how externally created products enter the PDE ecosystem — not a ratified PDE decision |
 | 2026-07-12 | Official product roadmap ratified | `product_roadmap.md` — Waves 0–5, Feature Gate, ADRs 012–018; post-MVP 0.1 governance pass |
@@ -79,6 +80,7 @@ PDE Foundation Institutional Integration does **not** directly mutate MapSnap. M
 | 2026-08-02 | ADR-024 — Contextual Guidance Placement | Install guidance repositioned beneath SNAP; Contextual Guidance Principle in UX doctrine; capability remains ADR-023; Tags remains next |
 | 2026-08-02 | Tags Documentation Pass | Tags institutionalized — definition, Wave 2 scope, UX principles, Feature Gate; Feature Pass — Tags ready; no new ADR; no implementation |
 | 2026-08-02 | Feature Pass — Tags | Create/edit/remove/display tags; search title+notes+tags; normalization; legacy compatible; Wave 2 early organization complete for tags |
+| 2026-08-02 | Wave 2 Institutionally Complete | Reconciliation & Ratification Pass; Organization complete product layer; Pixel field validation complete; iPhone FV 0007 pending only; CHRONICLE-MSN-0002; Wave 3 Discovery active |
 
 ## Production Domain Record
 

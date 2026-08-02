@@ -4,8 +4,8 @@
 > Product philosophy: `Identity/product_doctrine.md` · Feature gate: `feature_gate.md` · Readiness: `implementation_readiness.md`
 
 **Ratified:** 2026-07-12  
-**Updated:** 2026-08-02 (Feature Pass — Tags shipped)  
-**Status:** Active  
+**Updated:** 2026-08-02 (Wave 2 Institutionally Complete; Wave 3 Discovery active)  
+**Status:** Active — Wave 2 completed implementation; Wave 3 Discovery (planning only)  
 **Supersedes:** informal Phase 0.2 preview in `current_phase.md` (2026-07-11)
 
 ---
@@ -264,19 +264,21 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 
 **Backend:** None
 
+**Wave status:** **Institutionally Complete** (2026-08-02) — completed implementation. Documentation, baseline, verification, and Pixel field validation synchronized. iPhone Field Validation 0007 remains pending only. Do not treat pending iPhone validation as incomplete Wave 2 scope. Later Planned/Experimental items (5–7) are post-Wave-2 Discover extensions, not open Wave 2 delivery debt.
+
 | # | Item | Status | Pillar | Complexity | Affects SNAP | ADR |
 |---|------|--------|--------|------------|--------------|-----|
 | 1 | Search (title, notes) | **Shipped** | DISCOVER / ENRICH | Medium | No | — |
 | 2 | Sort (newest, oldest, nearest) | **Shipped** | DISCOVER | Medium | No | — |
 | 3 | Filter (all, favorites, with images) | **Shipped** | DISCOVER | Low–Medium | No | — |
-| 3b | Capture Reliability + PWA install guidance | **Shipped** (implementation; iPhone field validation pending) | CAPTURE | Medium | Yes — reliability only; contract meaning unchanged (ADR-012) | ADR-023 |
+| 3b | Capture Reliability + PWA install guidance | **Shipped** (desktop ✓; Pixel ✓; iPhone FV pending) | CAPTURE | Medium | Yes — reliability only; contract meaning unchanged (ADR-012) | ADR-023 |
 | 3c | Install Guidance Repositioning | **Shipped** (UX Pass) | CAPTURE | Low | No — placement / presentation only | ADR-024 |
 | 4 | Tags | **Shipped** | ENRICH / DISCOVER | Medium | No | No new ADR (ADR-019 covers schema) |
 | 5 | Nearby / collection views | Planned | DISCOVER | Medium | No | Feature gate |
 | 6 | Color / category markers | Experimental | ENRICH | Medium | No | Feature gate |
 | 7 | Quick edit (title, note) | Planned | ENRICH | Low | No | — |
 
-**Compatibility ordering:** Item 3b ships before Tags because it protects primary Capture reliability. It does not replace Tags as the next organization feature.
+**Institutional close-out record:** Implementation complete · Documentation synchronized · Baseline synchronized · Verification complete · Pixel field validation complete · iPhone validation pending only. Chronicle: CHRONICLE-MSN-0002.
 
 **Discover guardrail:** Every Wave 2 item must help the user rediscover their own meaningful content — not introduce unrelated attention or noise.
 
@@ -367,7 +369,7 @@ Tags belong to **Enrich** while creating the first bridge toward **Discover**. T
 
 | Field | Value |
 |-------|-------|
-| Status | **Shipped** — Wave 2 Compatibility Feature Pass (2026-08-02); iPhone Field Validation **pending** |
+| Status | **Shipped** — Wave 2 Compatibility Feature Pass (2026-08-02); desktop ✓ verified; Pixel ✓ physically validated; iPhone Field Validation **pending** |
 | User value | Reliable long-press photo capture across browsers; clear install path without assuming `beforeinstallprompt` |
 | Pillar | CAPTURE |
 | Backend | No |
@@ -431,6 +433,8 @@ Tags belong to **Enrich** while creating the first bridge toward **Discover**. T
 ---
 
 ## Wave 3 — Snaptisers / Contextual Discover
+
+**Current phase:** **Wave 3 Discovery** — planning / feasibility only. Do not begin implementation until discovery is complete and a Feature Pass is explicitly scoped.
 
 **Strategic capability — approved for roadmap.** See `snaptiser_doctrine.md`.
 

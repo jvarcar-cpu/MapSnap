@@ -4,7 +4,7 @@
 
 MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backend.
 
-**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Wave 2 Sprint 4 Filter shipped. Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) shipped 2026-08-02; iPhone Field Validation pending. Feature Pass — Tags shipped 2026-08-02. WP-AGSE-MSP-0001 Product Integration complete (methodology only). Public: https://mapsnap.se.
+**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Wave 2 Institutionally Complete 2026-08-02 (CHRONICLE-MSN-0002). Desktop ✓ verified; Android / Pixel ✓ physically validated; iPhone Field Validation 0007 pending only. Wave 3 Discovery active (planning only). WP-AGSE-MSP-0001 Product Integration complete (methodology only). Public: https://mapsnap.se.
 
 ## Current Product Status
 
@@ -17,19 +17,20 @@ MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backe
 | Wave 2 Sprint 2 | Search shipped — local title/notes/tags filter, search bar, search empty state |
 | Wave 2 Sprint 3 | Smart Sorting shipped — Nyast / Äldst / Närmast, memoized sort, nearest GPS |
 | Wave 2 Sprint 4 | Filter shipped — Alla / Favoriter / Med bild, memoized filter, search → filter → sort |
-| Capture Reliability | Shipped 2026-08-02 — long-press progress, user-gesture-safe camera, Öppna kamera fallback, progressive install guidance (ADR-023); iPhone FV pending |
+| Capture Reliability | Shipped 2026-08-02 — long-press progress, user-gesture-safe camera, Öppna kamera fallback, progressive install guidance (ADR-023); Desktop ✓; Pixel ✓; iPhone FV pending |
 | Install Guidance UX | Shipped 2026-08-02 — recommendation beneath SNAP instruction; Contextual Guidance Principle (ADR-024) |
 | Product Integration | WP-AGSE-MSP-0001 complete — Shared Discovery / Discovery Separation methodology (ADR-022); product architecture unchanged |
 | Tags | Feature Pass shipped 2026-08-02 — create/edit/remove/display + search |
-| Next implementation | Order 11 — Snaptiser feasibility spike (research) when scoped |
+| Wave 2 institutional | **Institutionally Complete** 2026-08-02 — CHRONICLE-MSN-0002 |
+| Next phase | Wave 3 Discovery — Order 11 Snaptiser feasibility spike (research) when scoped; no implementation |
 | Backend / cloud | Deferred — Wave 6 (ADR-016) |
 | Production | Vercel · https://mapsnap.se · client-only data model |
 
 ## Current Phase
 
-**Wave 2 — Organization / Early Discover** — Sprint 4 + Tags complete. Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) complete. Product Integration methodology integrated.
+**Wave 3 Discovery** — Wave 2 Institutionally Complete. Organization is a finished early Discover product layer. Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) + Tags complete.
 
-**Next:** Order 11 — Snaptiser feasibility spike (research) when scoped — see `implementation_readiness.md` and `next_task.md`.
+**Next:** Wave 3 Discovery planning; Order 11 — Snaptiser feasibility spike (research) when scoped — see `implementation_readiness.md` and `next_task.md`. Do not begin Wave 3 implementation.
 
 ## Architecture
 
@@ -151,7 +152,7 @@ Pass types (one at a time): Bug Fix, Feature, UX, Docs, Storage, Stabilization. 
 6. Read `docs_engine/source/ux_doctrine.md` (Approved UI Baseline)
 7. Check `docs_engine/source/current_phase.md` for scope
 8. Read `docs_engine/source/product_roadmap.md` and `feature_gate.md` before any feature work
-9. Review `docs_engine/source/baseline_reconciliation.md` — Wave 1 + Wave 2 Compatibility sections
+9. Review `docs_engine/source/baseline_reconciliation.md` — Wave 1 + Wave 2 + Institutional Close-Out sections
 
 ## Hard Rules
 

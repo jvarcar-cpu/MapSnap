@@ -3,7 +3,7 @@
 > Recommended build sequence after roadmap ratification. **Do not start until explicitly scoped as a Feature or UX pass.**
 
 **Ratified:** 2026-07-12  
-**Updated:** 2026-08-02 — Feature Pass — Tags shipped  
+**Updated:** 2026-08-02 — Wave 2 Institutionally Complete; Wave 3 Discovery active  
 **Roadmap:** `product_roadmap.md`
 
 ---
@@ -88,11 +88,24 @@ Full answers: `product_roadmap.md` Wave 2 item 4.
 
 ---
 
-## Recommended First Implementation Pass
+## Wave 2 — Institutionally Complete
 
-**Historical:** Orders 1–10 shipped or closed as documented above.
+**Closed:** 2026-08-02. Orders 1–10 shipped or closed. Organization / Early Discover delivery complete for Compact Cards Iteration 1, Search, Smart Sorting, Filter, Capture Reliability, Progressive Install Guidance, Contextual Guidance Principle, and Tags.
 
-**Next code pass:** Order 11 — Snaptiser feasibility spike (research only) when explicitly scoped.
+| Close-out criterion | Status |
+|---------------------|--------|
+| Implementation complete | ✓ |
+| Documentation synchronized | ✓ |
+| Baseline synchronized | ✓ |
+| Verification complete | ✓ (desktop) |
+| Pixel field validation complete | ✓ |
+| iPhone Field Validation 0007 | Pending only — not Wave 2 delivery debt |
+
+## Recommended Next Phase
+
+**Wave 3 Discovery** — planning / feasibility only. Do not begin implementation.
+
+**Next research unit when scoped:** Order 11 — Snaptiser feasibility spike (research only).
 
 ---
 

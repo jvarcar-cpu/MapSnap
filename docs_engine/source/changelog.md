@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.25-docs] — 2026-08-02
+
+### Documented (Reconciliation & Ratification Pass — Wave 2 Institutional Close-Out)
+
+- **Wave 2 Institutionally Complete** — Compact Cards, Search, Smart Sorting, Filter, Capture Reliability, Progressive Install Guidance, Contextual Guidance Principle, Tags
+- **Field validation status** — Desktop ✓ verified; Android / Pixel ✓ physically validated; iPhone Field Validation 0007 remains pending
+- **Chronicle** — CHRONICLE-MSN-0002 — *Organization Becomes a Product Layer*
+- **Phase transition** — active planning phase becomes Wave 3 Discovery (no Wave 3 implementation)
+- **Roadmap** — Wave 2 completed implementation; outstanding iPhone validation note preserved
+
+### Not changed
+
+- No application feature implementation
+- No UX or architectural changes
+- SNAP contract unchanged (ADR-012)
+- Wave 3 not advanced beyond Discovery
+- iPhone Field Validation not claimed complete
+
+### Docs
+
+- Updated `current_phase.md`, `product_roadmap.md`, `next_task.md`, `implementation_readiness.md`, `baseline_reconciliation.md`, `field_validation_log.md`, `known_issues.md`, `architecture_state.md`, `knowledge_continuity.md`, Chronicles
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.24] — 2026-08-02
 
 ### Added (Wave 2 — Feature Pass: Tags)
