@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.2.22] — 2026-08-02
+
+### Changed (UX Pass — Install Guidance Repositioning)
+
+- **Install guidance placement** — compact recommendation moves from the lower backup / utility area to directly beneath the SNAP instruction
+- **Presentation** — Rekommenderas · Installera MapSnap · Snabbare start • Bättre kamera • Helskärm; visually subordinate to SNAP
+- **Motion** — gentle enter after first-Snap feedback (~400–600 ms); calm collapse on dismiss / installed / standalone; reduced-motion aware
+- **Hierarchy** — MapSnap identity → SNAP → instruction → install recommendation → saved snaps
+
+### Not changed
+
+- Progressive install capability and platform modes remain ADR-023
+- SNAP contract meaning unchanged (ADR-012)
+- Engagement gate, dismiss persistence, and standalone hide preserved
+- No Tags, backend, cloud, service worker, or Product Identity changes
+- Field Validation 0007 iPhone physical validation remains pending
+
+### Docs
+
+- Contextual Guidance Principle in `ux_doctrine.md`; ADR-024; baseline / phase / reconciliation / continuity updates
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.21] — 2026-08-02
 
 ### Added (Wave 2 Compatibility Feature Pass — Capture Reliability and PWA Installation Guidance)

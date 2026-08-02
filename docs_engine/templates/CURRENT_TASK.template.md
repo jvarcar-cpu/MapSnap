@@ -16,6 +16,10 @@
 
 {{pass_type}}
 
+## Context
+
+{{context}}
+
 ## Task
 
 {{task_summary}}
@@ -24,6 +28,10 @@
 
 {{prerequisites}}
 
-## Done When
+## Acceptance Criteria
 
-{{done_when}}
+{{acceptance}}
+
+## Reference
+
+{{reference}}

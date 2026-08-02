@@ -4,7 +4,7 @@
 > Product philosophy: `Identity/product_doctrine.md` · Feature gate: `feature_gate.md` · Readiness: `implementation_readiness.md`
 
 **Ratified:** 2026-07-12  
-**Updated:** 2026-08-02 (Capture Reliability / PWA install guidance — ADR-023)  
+**Updated:** 2026-08-02 (Install Guidance Repositioning — ADR-024; capability ADR-023)  
 **Status:** Active  
 **Supersedes:** informal Phase 0.2 preview in `current_phase.md` (2026-07-11)
 
@@ -270,6 +270,7 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 | 2 | Sort (newest, oldest, nearest) | **Shipped** | DISCOVER | Medium | No | — |
 | 3 | Filter (all, favorites, with images) | **Shipped** | DISCOVER | Low–Medium | No | — |
 | 3b | Capture Reliability + PWA install guidance | **Shipped** (implementation; iPhone field validation pending) | CAPTURE | Medium | Yes — reliability only; contract meaning unchanged (ADR-012) | ADR-023 |
+| 3c | Install Guidance Repositioning | **Shipped** (UX Pass) | CAPTURE | Low | No — placement / presentation only | ADR-024 |
 | 4 | Tags | Planned | ENRICH / DISCOVER | Medium | No | — |
 | 5 | Nearby / collection views | Planned | DISCOVER | Medium | No | Feature gate |
 | 6 | Color / category markers | Experimental | ENRICH | Medium | No | Feature gate |
@@ -295,6 +296,22 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 | Affects SNAP interaction | Reliability/activation timing only — contract meaning unchanged (ADR-012) |
 | Shipped | `lib/longPressGesture.ts`, `lib/pwaInstall.ts`, `components/SnapButton.tsx`, `components/InstallGuidance.tsx` |
 | Field Validation | See Field Validation 0007 — verified Android install variance + iPhone long-press observation; iPhone pass **not** claimed |
+
+#### 3c. Install Guidance Repositioning — shipped (UX Pass)
+
+| Field | Value |
+|-------|-------|
+| Status | **Shipped** — Wave 2 UX Pass (2026-08-02) |
+| User value | Install recommendation feels connected to SNAP (faster start, better camera, fullscreen) |
+| Pillar | CAPTURE |
+| Backend | No |
+| Complexity | Low |
+| Dependencies | ADR-023 install capability |
+| Risk | Advertising tone — reject; competing with SNAP — reject; capability redesign — reject |
+| Acceptance | Beneath SNAP instruction; approved compact copy; engagement/platform modes preserved; calm motion; ADR-024; no Tags |
+| Feature Gate | See `current_phase.md` UX Pass answers |
+| Affects SNAP interaction | No — placement/presentation only |
+| Shipped | `InstallGuidance.tsx`, `app/page.tsx`, `lib/pwaInstall.ts` reveal helpers, `ux_doctrine.md` Contextual Guidance Principle |
 
 #### 2. Sort (Smart Sorting) — shipped
 

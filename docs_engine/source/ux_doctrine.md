@@ -121,6 +121,14 @@ Do not redesign. Restore and preserve this baseline unless explicitly instructed
 - No dashboard, no tabs, no settings screen in MVP
 - Saved list scrolls below the capture zone
 
+## Contextual Guidance Principle
+
+Guidance should appear adjacent to the capability it improves. Recommendations are part of the user journey, not standalone features. Guidance must never compete with primary interactions or interrupt capture.
+
+**Rationale (Install Guidance):** Install Guidance was originally placed near secondary utilities. UX review determined that this weakened the conceptual relationship between installation and SNAP. Because installation primarily improves access speed, camera compatibility, and fullscreen use, the recommendation belongs directly beneath the SNAP interaction.
+
+Apply this principle narrowly. Do not expand every utility into a hero-adjacent recommendation. See ADR-024.
+
 ## SNAP Button
 
 - Large, centered, impossible to miss
@@ -234,13 +242,19 @@ Installable as standalone app via Web App Manifest. Works offline for viewing sa
 
 ### Installation guidance (progressive enhancement)
 
-- Hidden when already running as installed standalone (`display-mode: standalone` / iOS `navigator.standalone`)
+Capability and platform modes: **ADR-023**. Placement and UX relationship: **ADR-024** (Contextual Guidance Principle).
+
+- Hidden when already running as installed standalone (`display-mode: standalone` / iOS `navigator.standalone`) — collapse with no empty layout space
 - Where `beforeinstallprompt` is available: capture event; show user-initiated **Installera**; call `prompt()` only from a direct gesture
 - iOS/iPadOS without programmatic prompt: concise Swedish Share → Lägg till på hemskärmen guidance — do not claim MapSnap can open the install dialog
 - Android without `beforeinstallprompt`: neutral menu guidance — do not promise a native prompt
-- Placement: engagement-based (after at least one Snap exists), below list/backup — dismissible, non-blocking, subordinate to Capture
+- **Placement:** directly beneath the SNAP instruction (after MapSnap identity → SNAP → instruction); engagement-gated (after at least one Snap); not in the backup / secondary utility area
+- **Copy (compact):** Rekommenderas · Installera MapSnap · Snabbare start • Bättre kamera • Helskärm — calm, helpful, visually subordinate to SNAP; avoid app-imitation wording
+- **Reveal timing:** after first qualifying Snap, allow "Snap sparad" feedback to complete, then enter gently (~400–600 ms later); reduced-motion aware; do not interrupt capture
+- **Removal:** dismiss, install success / `appinstalled`, or standalone detection collapses smoothly — no celebratory interrupt; do not falsely claim install success without a reliable signal
 - Dismissal persisted in `localStorage` (`mapsnap.installGuidance.dismissed.v1`)
 - Never show install prompt on page load without user interaction; installation remains optional
+- Do not claim installation always improves camera behaviour on every platform
 
 ## Optional Onboarding Hint (planned, complements Wave 1 instruction)
 

@@ -10,6 +10,7 @@ This document freezes the approved MapSnap MVP baseline. Do not change behaviour
 |---------|-------------|
 | **SNAP button** | Circular, large (~70% width, max 320px), green radial 3D gradient, dark ring, glow/shadow, breathe idle animation |
 | **Hero zone** | Title "MapSnap"; permanent instruction *"Tryck för position · Håll inne för position + bild"* below button |
+| **Install guidance** | Compact recommendation directly beneath SNAP instruction when engaged; not in backup utility area; collapses with no empty gap when hidden (ADR-024) |
 | **Toast** | "Snap sparad" floats above button (~650ms) |
 | **List section** | Header "MINA SNAPPAR" (uppercase, tracked) |
 | **Cards** | `rounded-3xl`, `card-shadow`, elevated background, optional photo banner |
@@ -47,6 +48,7 @@ This document freezes the approved MapSnap MVP baseline. Do not change behaviour
 | **Share** | "Dela" on every card — native Web Share; text + Google Maps link; image file when supported |
 | **Storage** | IndexedDB `mapsnap-db` / `snaps` (legacy `mapsnap.snaps.v1` localStorage migrated on load) |
 | **Backup** | JSON export/import/merge by id (`mapsnap-snaps-array-v1`) |
+| **Install guidance** | Engagement-gated progressive PWA UX (ADR-023); placement beneath SNAP instruction (ADR-024); hidden standalone; dismissible |
 
 ### Wave 1 card baseline (shipped)
 

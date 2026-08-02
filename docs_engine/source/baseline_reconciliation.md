@@ -196,3 +196,26 @@ Wave 1 Core Value track is institutionally closed. **Compact Cards Iteration 1**
 | Dismissal persistence | ✅ Pass | `INSTALL_DISMISS_KEY` localStorage |
 | Tags not started | ✅ Pass | Roadmap item 4 remains Planned |
 | Schema / continuous GPS unchanged | ✅ Pass | IndexedDB v1; one-shot GPS only |
+
+---
+
+# Baseline Reconciliation — Wave 2 UX Pass (Install Guidance Placement)
+
+**Verified:** 2026-08-02  
+**Method:** Repository implementation + unit tests + docs validation + production build + baseline script  
+**ADR:** ADR-024 (placement); ADR-023 (capability unchanged)  
+**Field Validation:** 0007 iPhone physical validation remains pending — not claimed complete
+
+| Check | Result | Evidence |
+|-------|--------|----------|
+| Install guidance beneath SNAP instruction | ✅ Pass | `app/page.tsx` — after instruction, before status / list |
+| Removed from backup utility area | ✅ Pass | No `InstallGuidance` after `SnapBackupPanel` |
+| Approved benefit copy | ✅ Pass | Rekommenderas / Installera MapSnap / Snabbare start • Bättre kamera • Helskärm |
+| Engagement gate preserved | ✅ Pass | `selectInstallGuidanceMode` + `engaged={places.length > 0}` |
+| Reveal after Snap feedback | ✅ Pass | `installGuidanceRevealDelayMs` — feedback + ~500 ms |
+| Standalone / dismiss collapse | ✅ Pass | mode `hidden` → motion exit → unmount; no empty gap |
+| Platform modes unchanged | ✅ Pass | prompt / ios-manual / android-manual (ADR-023) |
+| No duplicate InstallGuidance | ✅ Pass | Single render site in hero SNAP section |
+| SNAP contract unchanged | ✅ Pass | ADR-012 meaning preserved |
+| Tags not started | ✅ Pass | Roadmap item 4 remains Planned |
+| Contextual Guidance Principle documented | ✅ Pass | `ux_doctrine.md` + ADR-024 |

@@ -4,11 +4,11 @@
 
 **Phase:** Wave 2 — Organization / Early Discover  
 
-**Pass type:** None active — Capture Reliability and PWA Installation Guidance (Feature Pass) complete 2026-08-02
+**Pass type:** None active — Install Guidance Repositioning UX Pass complete 2026-08-02
 
-**Status:** **Wave 2 Compatibility Feature Pass complete** — Capture Reliability and PWA Installation Guidance shipped 2026-08-02 (implementation + automated validation); iPhone Field Validation pending (Field Validation 0007). Wave 2 Sprint 4 Filter shipped 2026-07-14; Product Integration methodology integrated 2026-07-25  
+**Status:** **UX Pass complete** — Install Guidance Repositioning and Contextual Guidance Principle shipped (ADR-024). Capture Reliability + PWA install capability remains ADR-023. iPhone Field Validation pending (Field Validation 0007). Tags not started.
 
-**Previous:** Wave 2 Sprint 4 Filter shipped 2026-07-14; WP-AGSE-MSP-0001 Product Integration (Docs Pass) complete 2026-07-25  
+**Previous:** Wave 2 Compatibility Feature Pass — Capture Reliability and PWA Installation Guidance complete 2026-08-02; WP-AGSE-MSP-0001 Product Integration (Docs Pass) complete 2026-07-25  
 
 **Next product feature:** Tags — not started
 
@@ -46,7 +46,25 @@
 
 ## Goal
 
-Protect Capture reliability across browsers before Tags. Long-press feedback, user-gesture-safe camera activation, Öppna kamera fallback, and progressive PWA install guidance (ADR-023). Tags remains the next unstarted organization feature.
+Install Guidance Repositioning UX Pass complete. Next authorized product feature remains Tags. Do not redesign install capability (ADR-023). Preserve Field Validation 0007 as pending until physical iPhone validation.
+
+## Feature Gate — Install Guidance Repositioning (UX Pass)
+
+**Pillar:** CAPTURE (access speed, camera compatibility, fullscreen) — strengthens Capture without weakening Enrich / Share / Protect.  
+**Experience qualities:** Delight (calm, helpful) · Return (faster reopen).  
+**Affects SNAP interaction contract:** No — gestures and meaning unchanged (ADR-012).
+
+| # | Question | Answer |
+|---|----------|--------|
+| 1 | Slow or complicate the Snap moment? | No — appears only after engagement; delayed until after "Snap sparad" feedback; visually subordinate |
+| 2 | Strengthen a Core Pillar without weakening others? | Yes — CAPTURE via contextual install recommendation; no other pillar weakened |
+| 3 | Understandable without a manual? | Yes — Rekommenderas / Installera MapSnap / three calm benefits |
+| 4 | Preserve offline / local-first? | Yes — no backend; local dismissal persistence unchanged |
+| 5 | Disproportionate interface weight? | No — compact card beneath instruction; collapses to zero when hidden |
+| 6 | Live after capture? | Yes — engagement-gated after at least one Snap |
+| 7 | Preserve calm / minimal identity? | Yes — helpful recommendation, not advertisement; no app-imitation wording |
+
+**Approved to implement** under UX Pass scope only.
 
 
 
@@ -93,6 +111,22 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 - [x] Field Validation 0007 recorded (verified / implemented / pending)
 - [ ] iPhone Safari Field Validation — pending (no device this pass)
 - [ ] Pixel install fallback + Redmi regression — pending physical retest
+- [x] Tags not started
+
+## Wave 2 UX Pass — Install Guidance Repositioning — Completed
+
+- [x] Pass type: UX Pass declared
+- [x] Feature Gate documented before implementation
+- [x] Install guidance moved beneath SNAP instruction
+- [x] Removed from lower backup / utility area
+- [x] Approved compact copy (Rekommenderas / Installera MapSnap / benefits)
+- [x] Engagement gate + platform modes + dismiss preserved (ADR-023)
+- [x] Reveal after Snap feedback; calm enter/exit; reduced-motion aware
+- [x] Contextual Guidance Principle in `ux_doctrine.md`
+- [x] ADR-024 recorded
+- [x] Unit tests for reveal-delay helper + placement verification script
+- [x] Docs outputs, validation, baseline verification
+- [ ] iPhone Field Validation 0007 — still pending (not claimed)
 - [x] Tags not started
 
 

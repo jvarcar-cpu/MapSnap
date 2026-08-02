@@ -35,7 +35,7 @@ Automated baseline verification (`scripts/verify-baseline.mjs`) covers desktop b
 
 - Long-press camera capture (device picker, shutter, photo snap)
 - Long-press progress feedback and Öppna kamera fallback (especially iPhone Safari — Field Validation 0007 pending)
-- PWA install guidance surfaces (Pixel fallback, iPhone Home Screen guidance, Redmi regression)
+- PWA install guidance surfaces and placement beneath SNAP (Pixel fallback, iPhone Home Screen guidance, Redmi regression)
 - Location permission denied card and retry when geolocation is blocked
 - HTTPS over Tailscale/LAN IP with certificate warnings
 

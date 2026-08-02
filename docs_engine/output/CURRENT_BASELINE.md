@@ -4,7 +4,7 @@
 
 **Locked:** 2026-06-28  
 **Updated:** 2026-08-02  
-**Status:** MVP 0.1 stable — Wave 2 Capture Reliability + PWA install guidance shipped (ADR-023); iPhone Field Validation pending
+**Status:** MVP 0.1 stable — Wave 2 Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) shipped; iPhone Field Validation pending
 
 ## Wave Summary
 
@@ -27,7 +27,7 @@
 
 ### Wave 2 Sprint 1 — Completed
 
-- ✓ Compact Cards Iteration 1 — reduced-height banner layout, action-group divider
+- ✓ Compact Cards Iteration 1 — banner compression, action-group divider
 
 ### Wave 2 Sprint 2 — Completed
 
@@ -44,7 +44,8 @@
 ### Wave 2 Compatibility — Completed (implementation)
 
 - ✓ Capture Reliability — long-press progress, user-gesture-safe camera activation, Öppna kamera fallback
-- ✓ Progressive PWA install guidance — prompt / iOS manual / Android manual / standalone hidden
+- ✓ Progressive PWA install guidance — prompt / iOS manual / Android manual / standalone hidden (ADR-023)
+- ✓ Install Guidance Repositioning — beneath SNAP instruction; Contextual Guidance Principle (ADR-024)
 - ⏳ iPhone Field Validation pending (Field Validation 0007)
 
 ### Product Integration — Completed (2026-07-25)
@@ -70,7 +71,7 @@ Wave 2 in progress. Tags next.
 | Search | Search field above list when snaps exist — filters loaded collection by title and notes in real time; clear button; search empty state when no matches |
 | Filter | Segmented control below search when snaps exist — Alla / Favoriter / Med bild; applies after search, before sort |
 | Sort | Segmented control below filter when snaps exist — Nyast / Äldst / Närmast; reorder after search and filter; nearest uses one-time GPS; failure reverts to Nyast |
-| Install guidance | Engagement-gated progressive PWA install UX; hidden when standalone; dismissible |
+| Install guidance | Engagement-gated progressive PWA install UX beneath SNAP instruction; hidden when standalone; dismissible (ADR-023 / ADR-024) |
 | Storage | IndexedDB primary; legacy localStorage migrates on load; Snap normalization on load |
 | Backup | JSON array export/import/merge by id (`mapsnap-snaps-array-v1`) |
 
@@ -80,6 +81,7 @@ Wave 2 in progress. Tags next.
 |---------|-------------|
 | SNAP button | Circular, large (~70% width, max 320px), green radial 3D gradient; long-press progress ring |
 | Hero | Title "MapSnap"; instruction *"Tryck för position · Håll inne för position + bild"* |
+| Install guidance | Compact dashed recommendation directly beneath SNAP instruction; Rekommenderas / Installera MapSnap / Snabbare start • Bättre kamera • Helskärm; collapses with no empty gap |
 | List | Header "MINA SNAPPAR"; search field above cards when snaps exist; filter control below search; sort control below filter; compact styled cards; user title left when present; **MapSnap signature** upper-right always; notes line-clamped; list gap `gap-3` |
 | Search bar | Rounded-full, lightweight; search icon; placeholder "Sök bland dina Snappar"; clear (X) when text present |
 | Filter bar | Rounded-full segmented control; label "Filtrera"; options Alla / Favoriter / Med bild; active segment elevated white pill |
@@ -88,7 +90,6 @@ Wave 2 in progress. Tags next.
 | Card actions | Favorite star (overlay) → Navigation: Maps (brand icons) → divider → Actions: two-column grid Redigera / Dela, Spara bild / Ta bort (Spara bild if image); SVG icons ~18px |
 | Card location | `📍 SnapSpot` — category not shown on card (metadata only) |
 | Backup panel | Dashed border, rounded-2xl |
-| Install guidance | Dashed border, rounded-2xl; below backup when engaged; dismissible |
 | Permission card | Rounded-3xl, elevated, retry button |
 
 ## Field Validation
@@ -182,6 +183,14 @@ Wave 2 in progress. Tags next.
 - Code: `lib/longPressGesture.ts`, `lib/pwaInstall.ts`, `SnapButton.tsx`, `InstallGuidance.tsx`
 - ADR-023; Field Validation 0007
 
+## Install Guidance Placement (UX Pass — ADR-024)
+
+- Placement: directly beneath SNAP instruction — not in backup / secondary utility area
+- Copy: Rekommenderas · Installera MapSnap · Snabbare start • Bättre kamera • Helskärm
+- Reveal after Snap feedback + calm pause; enter/exit motion; reduced-motion aware
+- Contextual Guidance Principle in `ux_doctrine.md`
+- Capability authority remains ADR-023
+
 ## Snap Card Polish
 
 - Two-column action grid with equal-width 48px buttons and recognizable SVG icons (~18px)
@@ -196,8 +205,8 @@ Wave 2 in progress. Tags next.
 - Automated: `node scripts/verify-baseline.mjs [url]` — use URL printed by `npm run dev`
 - Unit: `npm test` — includes `lib/longPressGesture.test.ts`, `lib/pwaInstall.test.ts`, plus prior lib tests
 - Docs: `node scripts/validate_docs.mjs`
-- Reconciliation: `baseline_reconciliation.md` — Wave 0 + Wave 1 + Wave 2 Compatibility
-- Manual mobile: long-press camera, Öppna kamera fallback, install guidance, denied-permission card (OPS-002)
+- Reconciliation: `baseline_reconciliation.md` — Wave 0 + Wave 1 + Wave 2 Compatibility + UX placement
+- Manual mobile: long-press camera, Öppna kamera fallback, install guidance placement, denied-permission card (OPS-002)
 - Field: `field_validation_log.md` — Field Validation 0005, 0006, 0007
 
 ## Completion Rule

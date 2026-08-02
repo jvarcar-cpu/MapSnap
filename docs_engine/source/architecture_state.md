@@ -9,7 +9,7 @@
 | Styling | Tailwind CSS |
 | Geolocation | Browser Geolocation API |
 | Persistence | IndexedDB (`mapsnap-db`) |
-| PWA | Web App Manifest (+ progressive install guidance; no service worker yet) |
+| PWA | Web App Manifest (+ progressive install guidance beneath SNAP; no service worker yet) |
 
 ## Directory Layout
 
@@ -70,6 +70,6 @@ Institutional record: CHRONICLE-MSN-0001 — `docs_engine/source/chronicles/MAPS
 - Legacy `mapsnap.snaps.v1` in localStorage is migrated once on load; not deleted automatically
 - GPS accuracy varies by device and environment
 - Camera capture behavior differs across browsers; long-press uses user-gesture-safe activation with Öppna kamera fallback (ADR-023)
-- `beforeinstallprompt` is not guaranteed — install guidance is progressive (Field Validation 0001 / 0007)
+- `beforeinstallprompt` is not guaranteed — install guidance is progressive (Field Validation 0001 / 0007); placement beneath SNAP (ADR-024)
 - Geolocation requires a secure context (`https://`); dev runs HTTPS via `next dev --experimental-https` (see `local_https_development.md`)
 - iPhone long-press + install guidance Field Validation pending (Field Validation 0007)

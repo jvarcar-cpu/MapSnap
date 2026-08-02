@@ -132,6 +132,14 @@ body {
       0 6px 28px -6px rgba(0, 0, 0, 0.1),
       0 2px 10px -3px rgba(0, 0, 0, 0.05);
   }
+
+  .install-guidance-enter {
+    animation: install-guidance-in 0.32s ease forwards;
+  }
+
+  .install-guidance-exit {
+    animation: install-guidance-out 0.22s ease forwards;
+  }
 }
 
 @keyframes snap-celebrate-pulse {
@@ -169,6 +177,32 @@ body {
   }
 }
 
+@keyframes install-guidance-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 220px;
+  }
+}
+
+@keyframes install-guidance-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 220px;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-4px);
+    max-height: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .snap-celebrate-pulse,
   .snap-sonar-wave {
@@ -179,5 +213,10 @@ body {
   .snap-longpress-ring {
     animation: none !important;
     stroke-dashoffset: 0 !important;
+  }
+
+  .install-guidance-enter,
+  .install-guidance-exit {
+    animation: none !important;
   }
 }

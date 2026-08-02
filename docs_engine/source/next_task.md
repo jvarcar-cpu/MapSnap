@@ -2,7 +2,7 @@
 
 **Updated:** 2026-08-02  
 
-**Pass type:** None active — Capture Reliability and PWA Installation Guidance complete (implementation); iPhone Field Validation pending
+**Pass type:** None active — Install Guidance Repositioning UX Pass complete (ADR-024)
 
 ## Recommended Next Task
 
@@ -14,6 +14,7 @@
 2. Generated steering docs current (`docs_engine/output/`)
 3. Feature Gate answers documented for tags
 4. Capture Reliability / PWA install guidance shipped (2026-08-02) — iPhone Field Validation still recommended when a device is available
+5. Install Guidance Repositioning UX Pass closed (2026-08-02)
 
 ## Acceptance Criteria
 
@@ -21,7 +22,7 @@ See `CURRENT_TASK.md` — Tags criteria when scoped.
 
 ## Not Next
 
-- Re-opening Capture Reliability as Tags scope
+- Re-opening Capture Reliability or install placement as Tags scope
 - Data Protection implementation (documented in roadmap only)
 - Backend or cloud sync (Wave 6 — deferred)
 - Changing SNAP short/long-press contract meaning
@@ -39,7 +40,7 @@ See `CURRENT_TASK.md` — Tags criteria when scoped.
 | `product_roadmap.md` | Authoritative phased roadmap |
 | `implementation_readiness.md` | Build sequence and rollback |
 | `feature_gate.md` | Gate before any feature |
-| `ux_doctrine.md` | Card layout + RETURN actions |
+| `ux_doctrine.md` | Card layout + Contextual Guidance Principle |
 | `capture_doctrine.md` | Capture + long-press reliability |
 | `field_validation_log.md` | Verified field observations (0007 pending iPhone) |
 | `knowledge_continuity.md` | Continuity index |

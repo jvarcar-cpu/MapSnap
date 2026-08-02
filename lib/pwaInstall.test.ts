@@ -2,9 +2,11 @@ import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import {
   INSTALL_DISMISS_KEY,
+  INSTALL_GUIDANCE_POST_FEEDBACK_MS,
   canOfferAndroidManualGuidance,
   canOfferIosHomeScreenGuidance,
   clearInstallGuidanceDismissed,
+  installGuidanceRevealDelayMs,
   isInstallGuidanceDismissed,
   isRunningStandalone,
   persistInstallGuidanceDismissed,
@@ -163,5 +165,48 @@ describe("dismissal persistence", () => {
     assert.equal(isInstallGuidanceDismissed(storage), true);
     clearInstallGuidanceDismissed(storage);
     assert.equal(isInstallGuidanceDismissed(storage), false);
+  });
+});
+
+describe("installGuidanceRevealDelayMs", () => {
+  it("waits for Snap feedback plus calm pause after first engagement", () => {
+    assert.equal(
+      installGuidanceRevealDelayMs({
+        engagedTransition: true,
+        feedbackMs: 650,
+        reducedMotion: false,
+      }),
+      650 + INSTALL_GUIDANCE_POST_FEEDBACK_MS
+    );
+  });
+
+  it("skips post-feedback pause when reduced motion prefers immediacy after toast", () => {
+    assert.equal(
+      installGuidanceRevealDelayMs({
+        engagedTransition: true,
+        feedbackMs: 480,
+        reducedMotion: true,
+      }),
+      480
+    );
+  });
+
+  it("uses a short delay when already engaged (returning visit)", () => {
+    assert.equal(
+      installGuidanceRevealDelayMs({
+        engagedTransition: false,
+        feedbackMs: 650,
+        reducedMotion: false,
+      }),
+      80
+    );
+    assert.equal(
+      installGuidanceRevealDelayMs({
+        engagedTransition: false,
+        feedbackMs: 650,
+        reducedMotion: true,
+      }),
+      0
+    );
   });
 });

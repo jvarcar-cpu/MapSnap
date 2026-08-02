@@ -264,6 +264,11 @@ export default function HomePage() {
             Tryck för position · Håll inne för position + bild
           </p>
 
+          <InstallGuidance
+            engaged={places.length > 0}
+            feedbackMs={FEEDBACK_MS}
+          />
+
           <div className="mt-8 flex h-5 items-center justify-center">
             {capturing && (
               <p className="animate-fade-in text-sm text-snap" role="status">
@@ -342,7 +347,6 @@ export default function HomePage() {
           newestId={newestId}
         />
         <SnapBackupPanel onImportSuccess={handleImportSuccess} />
-        <InstallGuidance engaged={places.length > 0} />
       </section>
     </main>
   );

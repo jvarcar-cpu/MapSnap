@@ -5,12 +5,37 @@
 
 export const INSTALL_DISMISS_KEY = "mapsnap.installGuidance.dismissed.v1";
 
+/** Wait after Snap feedback ends before revealing install guidance (calm, non-interruptive). */
+export const INSTALL_GUIDANCE_POST_FEEDBACK_MS = 500;
+
+/** Enter / exit motion durations — keep subordinate to SNAP celebrate (~650ms). */
+export const INSTALL_GUIDANCE_ENTER_MS = 320;
+export const INSTALL_GUIDANCE_EXIT_MS = 220;
+
 export type InstallGuidanceMode =
   | "hidden"
   | "prompt"
   | "ios-manual"
   | "android-manual";
 
+/**
+ * Delay before first paint of install guidance.
+ * After false→true engagement: wait for Snap feedback, then a short calm pause.
+ * When already engaged (returning visit): minimal or zero delay.
+ */
+export function installGuidanceRevealDelayMs(options: {
+  engagedTransition: boolean;
+  feedbackMs: number;
+  reducedMotion: boolean;
+}): number {
+  if (!options.engagedTransition) {
+    return options.reducedMotion ? 0 : 80;
+  }
+  const postFeedback = options.reducedMotion
+    ? 0
+    : INSTALL_GUIDANCE_POST_FEEDBACK_MS;
+  return Math.max(0, options.feedbackMs) + postFeedback;
+}
 export type NavigatorInstallSignals = {
   userAgent?: string;
   platform?: string;

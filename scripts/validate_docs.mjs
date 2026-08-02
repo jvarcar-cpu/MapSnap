@@ -97,7 +97,14 @@ mustContain(decisions, "ADR-019", "ADR-019 snap model evolution");
 mustContain(decisions, "ADR-020", "ADR-020 core lifecycle pillars");
 mustContain(decisions, "ADR-021", "ADR-021 MapSnap signature");
 mustContain(decisions, "ADR-023", "ADR-023 capture reliability");
+mustContain(decisions, "ADR-024", "ADR-024 contextual guidance placement");
 mustContain(fieldValidation, "Field Validation 0007", "field validation 0007");
+const uxDoctrine = readSource("ux_doctrine.md");
+mustContain(
+  uxDoctrine,
+  "Contextual Guidance Principle",
+  "ux doctrine: contextual guidance principle"
+);
 
 // Identity preserved + extended
 mustContain(identity, "Coordinates are Truth", "Identity: coordinates principle preserved");

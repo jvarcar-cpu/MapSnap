@@ -239,5 +239,25 @@
 
 **Feature Gate:** Strengthens CAPTURE reliability without slowing short press; install UI is post-engagement and optional; offline/local-first preserved; calm identity preserved.
 
-**Consequences:** `lib/longPressGesture.ts`, `lib/pwaInstall.ts`, `SnapButton.tsx`, `InstallGuidance.tsx`. Tags remains next unstarted product feature. iPhone field validation remains pending.
+**Consequences:** `lib/longPressGesture.ts`, `lib/pwaInstall.ts`, `SnapButton.tsx`, `InstallGuidance.tsx`. Tags remains next unstarted product feature. iPhone field validation remains pending. Placement relationship later refined by ADR-024 without rewriting this capability decision.
+
+---
+
+## ADR-024: Contextual Guidance Placement
+
+**Status:** Accepted  
+**Date:** 2026-08-02  
+**Context:** Progressive PWA install guidance shipped under ADR-023 was placed near secondary utilities (below backup). UX review found this weakened the conceptual relationship between installation and SNAP. Installation is not a standalone product feature — it improves the primary capture experience through faster access, better camera compatibility, and fullscreen presentation.
+
+**Decision:**
+
+1. **Contextual Guidance Principle:** Guidance belongs adjacent to the capability it improves. Recommendations are part of the user journey, not independent product features.
+2. Installation guidance belongs directly beneath the SNAP instruction, visually subordinate to the SNAP button, and must not interrupt capture.
+3. Guidance must remain compact, calm, dismissible, and non-advertising. Approved benefit language includes Helskärm; avoid implying MapSnap merely imitates a native app.
+4. **ADR-023 remains the authority** for installation capability and progressive platform behaviour (`beforeinstallprompt`, iOS/Android manual modes, standalone hide, engagement gate, dismiss persistence).
+5. **ADR-024 governs placement and UX relationship** only — not a redesign of install capability, service worker strategy, or SNAP contract meaning (ADR-012).
+
+**Feature Gate:** Documented in `current_phase.md` for the UX Pass — strengthens CAPTURE without slowing Snap; post-engagement; local-first; calm identity preserved.
+
+**Consequences:** `InstallGuidance` relocates in `app/page.tsx` hero/SNAP section; `ux_doctrine.md` records Contextual Guidance Principle; motion helpers in `lib/pwaInstall.ts`. Tags remains next unstarted product feature. No Chronicle entry (focused UX placement, not a foundational institutional milestone).
 
