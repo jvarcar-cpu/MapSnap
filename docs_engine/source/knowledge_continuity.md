@@ -54,7 +54,7 @@ PDE Foundation Institutional Integration does **not** directly mutate MapSnap. M
 | **MapSnap receipt** | Product Integration Pass WP-AGSE-MSP-0001 — development methodology only |
 | **Product architecture** | **Unchanged** — that Foundation capability is not MapSnap architecture, subsystem, or product constitutional surface |
 | **Status** | **Complete** (2026-07-25) |
-| **Resume point** | Wave 2 — Tags Documentation Pass complete; **Feature Pass — Tags** ready to begin |
+| **Resume point** | Wave 2 — Feature Pass — Tags shipped; next Order 11 Snaptiser spike when scoped |
 
 ## Institutional Memory Entries
 
@@ -78,6 +78,7 @@ PDE Foundation Institutional Integration does **not** directly mutate MapSnap. M
 | 2026-08-02 | ADR-023 — Capture Reliability + PWA install guidance | Long-press user-gesture-safe activation, progress feedback, Öppna kamera fallback; progressive install guidance; Field Validation 0007 (iPhone pending); Tags remains next |
 | 2026-08-02 | ADR-024 — Contextual Guidance Placement | Install guidance repositioned beneath SNAP; Contextual Guidance Principle in UX doctrine; capability remains ADR-023; Tags remains next |
 | 2026-08-02 | Tags Documentation Pass | Tags institutionalized — definition, Wave 2 scope, UX principles, Feature Gate; Feature Pass — Tags ready; no new ADR; no implementation |
+| 2026-08-02 | Feature Pass — Tags | Create/edit/remove/display tags; search title+notes+tags; normalization; legacy compatible; Wave 2 early organization complete for tags |
 
 ## Production Domain Record
 

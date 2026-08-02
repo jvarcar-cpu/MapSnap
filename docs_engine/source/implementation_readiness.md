@@ -3,7 +3,7 @@
 > Recommended build sequence after roadmap ratification. **Do not start until explicitly scoped as a Feature or UX pass.**
 
 **Ratified:** 2026-07-12  
-**Updated:** 2026-08-02 — Tags institutionalized; Feature Pass — Tags is next implementation item  
+**Updated:** 2026-08-02 — Feature Pass — Tags shipped  
 **Roadmap:** `product_roadmap.md`
 
 ---
@@ -28,7 +28,7 @@
 | 9b | Sort / filter | List controls only | Search, favorite | Low | Performance with many snaps | Hide controls | `product_roadmap.md` status | **Completed** (Sprint 3 sort; Sprint 4 filter) |
 | 9c | Capture Reliability + PWA install guidance | Long-press reliability, camera fallback, progressive install UX | SNAP button, manifest | Low–Medium | Gesture + install unit tests; iPhone field validation pending | Revert SnapButton / hide InstallGuidance | ADR-023, `capture_doctrine.md`, `ux_doctrine.md` | **Completed** (implementation 2026-08-02; iPhone FV pending) |
 | 9d | Install Guidance Repositioning | Place install recommendation beneath SNAP; Contextual Guidance Principle | InstallGuidance, page hero | Low | Placement + reveal-delay unit tests | Move guidance back / hide | ADR-024, `ux_doctrine.md` | **Completed** (UX Pass 2026-08-02) |
-| 10 | Tags | **Next** — Feature Pass ready; lightweight tags on snap (create/edit/remove/display + search) | Edit UI; schema `tags` ready | Low | Backup import of `tags`; search regression | Remove tags UI; field optional | `data_doctrine.md`, `ux_doctrine.md`, `product_roadmap.md` | **Ready** |
+| 10 | Tags | **Completed** — create/edit/remove/display + search with title/notes | Edit UI; schema `tags` ready | Low | Backup import of `tags`; search regression | Remove tags UI; field optional | `data_doctrine.md`, `ux_doctrine.md`, `product_roadmap.md` | **Completed** |
 | 11 | Snaptiser feasibility spike | Research only — notifications, geofencing | None | None | Document FEAS-002 findings | N/A | `snaptiser_doctrine.md`, `known_issues.md` |
 | 12 | Time-based Snaptiser MVP | Local scheduled notification | Spike approval | Medium | Permission denied; app closed behavior | Disable feature flag | ADR-015 |
 | 13 | Proximity Snaptiser experiment | Opt-in geolocation watch or periodic check | Time MVP | High | Battery; honesty about limits | Disable experiment | `snaptiser_doctrine.md` |
@@ -48,33 +48,23 @@
 
 ---
 
-## Next Implementation Item — Feature Pass: Tags
+## Completed — Feature Pass: Tags (Order 10)
 
-**Order 10.** Documentation Pass complete 2026-08-02. Feature Gate passed. Ready to begin when Feature Pass is declared in `current_phase.md`.
-
-### Prerequisites (Tags)
-
-1. Generated steering docs current (`docs_engine/output/`)
-2. Feature Pass declared in `current_phase.md`
-3. Identity documents loaded for Swedish tag UI copy
-4. Feature Gate documented in `product_roadmap.md` Wave 2 item 4 — **passed**
-5. Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) closed — iPhone FV remaining recommended, not a Tags blocker
-6. Existing edit UI (`SnapEditForm` / title + notes) available as post-capture Enrich surface
-7. Schema field `tags?: string[]` already present — no IndexedDB version bump expected (ADR-019)
+**Shipped:** 2026-08-02. Documentation Pass + Feature Gate preceded implementation.
 
 ### Acceptance criteria (Tags Feature Pass)
 
-- [ ] Create, edit, and remove tags on a Snap after capture
-- [ ] Tags displayed on the Snap card — visually lightweight; metadata, not primary content
-- [ ] Tags never shown or required before SNAP
-- [ ] Free-form user tags allowed; approximately five tags recommended without a hard technical limit
-- [ ] Search includes tags together with title and notes (combined retrieval)
-- [ ] Backup/import round-trips `tags`
-- [ ] SNAP contract unchanged (ADR-012); Capture / Share / Protect behaviour unchanged
-- [ ] Behaviour + visual regression checklists pass
-- [ ] Docs Engine source + outputs synchronized; `validate_docs.mjs` passes
+- [x] Create, edit, and remove tags on a Snap after capture
+- [x] Tags displayed on the Snap card — visually lightweight; metadata, not primary content
+- [x] Tags never shown or required before SNAP
+- [x] Free-form user tags allowed; approximately five tags recommended without a hard technical limit
+- [x] Search includes tags together with title and notes (combined retrieval)
+- [x] Backup/import round-trips `tags`
+- [x] SNAP contract unchanged (ADR-012); Capture / Share / Protect behaviour unchanged
+- [x] Behaviour + visual regression checklists pass
+- [x] Docs Engine source + outputs synchronized; `validate_docs.mjs` passes
 
-### Explicit non-goals (Tags Feature Pass)
+### Explicit non-goals (preserved)
 
 - Tag hierarchy, groups, colors, favorites, statistics, or tag cloud
 - AI-generated or recommended tags
@@ -83,7 +73,6 @@
 - Advanced filtering beyond current roadmap
 - Pre-capture tag UI
 - Backend, cloud, or schema-required migration
-- Moving Discover out of Wave 2 early-organization scope
 
 ### Feature Gate summary
 
@@ -95,15 +84,15 @@
 | Protect | Neutral |
 | Discover | Strengthened |
 
-No Feature Gate guardrails violated. Full answers: `product_roadmap.md` Wave 2 item 4.
+Full answers: `product_roadmap.md` Wave 2 item 4.
 
 ---
 
 ## Recommended First Implementation Pass
 
-**Historical:** Orders 1–9d shipped or closed as documented above.
+**Historical:** Orders 1–10 shipped or closed as documented above.
 
-**Next code pass:** **Order 10 — Feature Pass: Tags** when explicitly scoped in `current_phase.md`.
+**Next code pass:** Order 11 — Snaptiser feasibility spike (research only) when explicitly scoped.
 
 ---
 

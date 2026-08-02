@@ -27,10 +27,17 @@ function optionalCategory(value: unknown): SnapCategory | undefined {
 
 function optionalStringArray(value: unknown): string[] | undefined {
   if (!Array.isArray(value)) return undefined;
-  const tags = value
-    .filter((item): item is string => typeof item === "string")
-    .map((item) => item.trim())
-    .filter((item) => item.length > 0);
+  const seen = new Set<string>();
+  const tags: string[] = [];
+  for (const item of value) {
+    if (typeof item !== "string") continue;
+    const trimmed = item.trim();
+    if (!trimmed) continue;
+    const key = trimmed.toLocaleLowerCase("sv-SE");
+    if (seen.has(key)) continue;
+    seen.add(key);
+    tags.push(trimmed);
+  }
   return tags.length > 0 ? tags : undefined;
 }
 

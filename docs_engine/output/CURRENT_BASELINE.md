@@ -4,7 +4,7 @@
 
 **Locked:** 2026-06-28  
 **Updated:** 2026-08-02  
-**Status:** MVP 0.1 stable — Wave 2 Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) shipped; Tags Documentation Pass complete; Feature Pass — Tags ready; iPhone Field Validation pending
+**Status:** MVP 0.1 stable — Wave 2 Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) + Feature Pass — Tags shipped; iPhone Field Validation pending
 
 ## Wave Summary
 
@@ -31,7 +31,7 @@
 
 ### Wave 2 Sprint 2 — Completed
 
-- ✓ Search — local title/notes filter, search bar, search empty state
+- ✓ Search — local title/notes/tags filter, search bar, search empty state
 
 ### Wave 2 Sprint 3 — Completed
 
@@ -52,15 +52,17 @@
 
 - ✓ WP-AGSE-MSP-0001 — Shared Discovery / Discovery Separation / Product Integration methodology (ADR-022); product architecture unchanged
 
-### Tags — Institutionalized (Documentation Pass 2026-08-02)
+### Tags — Shipped (Feature Pass 2026-08-02)
 
 - ✓ Definition, Wave 2 scope, UX principles, Feature Gate documented
-- ✓ Next implementation item: **Feature Pass — Tags**
-- ○ Tags UI / create-edit-remove-display / search-with-tags — **not implemented**
+- ✓ Create / edit / remove tags after capture
+- ✓ Display on Snap card (subtle pills)
+- ✓ Search includes tags with title and notes
+- ✓ Normalization + legacy / backup compatibility
 
 ### Current Status
 
-Wave 2 in progress. **Feature Pass — Tags** ready to begin.
+Wave 2 early organization complete for search, sort, filter, and tags. Next: Order 11 Snaptiser spike when scoped.
 
 ## Interaction Baseline
 
@@ -70,11 +72,12 @@ Wave 2 in progress. **Feature Pass — Tags** ready to begin.
 | Long press (~600ms) | Progress feedback → arm → camera/file input on release → photo as `photoDataUrl` → GPS → save; Öppna kamera fallback if needed |
 | Maps | Google Maps and Waze open with saved coordinates |
 | Delete | Removes from list and IndexedDB |
-| Edit | "Redigera" on card → optional title (`name`) + notes (`note`) → `saveSnap()` |
+| Edit | "Redigera" on card → optional title (`name`) + notes (`note`) + tags (`tags`) → `saveSnap()` |
+| Tags | Post-capture only; subtle pills on card; create/edit/remove in edit form |
 | Favorite | Star toggle upper-right overlay on card → optimistic `saveSnap()`; `favorite: true` only |
 | Save image | "Spara bild" on cards with `photoDataUrl` — device copy only; hidden without image |
 | Share | "Dela" on every snap card — native Web Share; text + Google Maps link always; image file when `photoDataUrl` present |
-| Search | Search field above list when snaps exist — filters loaded collection by title and notes in real time; clear button; search empty state when no matches |
+| Search | Search field above list when snaps exist — filters by title, notes, and tags in real time; clear button; search empty state when no matches |
 | Filter | Segmented control below search when snaps exist — Alla / Favoriter / Med bild; applies after search, before sort |
 | Sort | Segmented control below filter when snaps exist — Nyast / Äldst / Närmast; reorder after search and filter; nearest uses one-time GPS; failure reverts to Nyast |
 | Install guidance | Engagement-gated progressive PWA install UX beneath SNAP instruction; hidden when standalone; dismissible (ADR-023 / ADR-024) |
@@ -154,26 +157,26 @@ Wave 2 in progress. **Feature Pass — Tags** ready to begin.
 - Typography hierarchy and 48px touch targets preserved; existing SVG icons unchanged
 - Code: `PlaceCard.tsx`, `MapOpenButtons.tsx`, `PlaceList.tsx`
 
-## Search (Wave 2 Sprint 2)
+## Search (Wave 2 Sprint 2 + Tags)
 
 - Search field above snap list when snaps exist — filters loaded collection in real time
-- Fields today: title (`name`) and notes (`note`) only — case-insensitive, partial match, whitespace trimmed
-- **Tags Feature Pass (approved):** search must also include tags with title and notes as one combined retrieval experience
-- Excludes (until Tags ships): tags matching; coordinates, timestamps, category, favorite, image metadata remain excluded from search fields beyond title/notes/tags plan
+- Fields: title (`name`), notes (`note`), and tags — case-insensitive, partial match, whitespace trimmed
+- Excludes: coordinates, timestamps, category, favorite, image metadata
 - Empty state: "Inga Snappar matchar din sökning." — no errors
 - UI: rounded-full search bar, search icon, clear button, placeholder "Sök bland dina Snappar"
 - Memoized filtering via `filterSnapsBySearch()` — no backend, no cloud, no AI
 - Code: `lib/snapSearch.ts`, `components/SnapSearchBar.tsx`, `app/page.tsx`
 
-## Tags (Wave 2 — institutionalized; UI not implemented)
+## Tags (Wave 2 Feature Pass — shipped)
 
-- Optional `tags?: string[]` on Snap — schema-ready (ADR-019); Enrich metadata; Discover bridge
-- Never before SNAP; create/edit/remove in post-capture editing; lightweight card display
+- Optional `tags?: string[]` on Snap — ADR-019; Enrich metadata; Discover bridge
+- Never before SNAP; create/edit/remove in Redigera (Titel → Anteckning → Taggar → Spara)
+- Card: subtle rounded pills after notes, before SnapSpot
 - Free-form; ~five recommended without hard technical limit
-- Wave 2 exclusions: hierarchy, groups, AI/recommended/favorite/colored tags, statistics, tag cloud, shared tags, Discover engine, collections
-- Feature Gate: Capture no impact; Enrich/Discover strengthened; Share/Protect neutral
+- Normalization: trim, drop empties, case-insensitive dedupe
+- Wave 2 exclusions preserved: hierarchy, groups, AI/recommended/favorite/colored tags, statistics, tag cloud, shared tags, Discover engine, collections
+- Code: `lib/snapTags.ts`, `lib/snapEdit.ts`, `components/SnapEditForm.tsx`, `components/PlaceCard.tsx`
 - Authority: `product_roadmap.md` item 4 · `implementation_readiness.md` order 10 · `ux_doctrine.md`
-- **No application code in Documentation Pass**
 
 ## Filter (Wave 2 Sprint 4)
 
@@ -220,9 +223,9 @@ Wave 2 in progress. **Feature Pass — Tags** ready to begin.
 ## Verification
 
 - Automated: `node scripts/verify-baseline.mjs [url]` — use URL printed by `npm run dev`
-- Unit: `npm test` — includes `lib/longPressGesture.test.ts`, `lib/pwaInstall.test.ts`, plus prior lib tests
+- Unit: `npm test` — includes `lib/snapTags.test.ts`, `lib/longPressGesture.test.ts`, `lib/pwaInstall.test.ts`, plus prior lib tests
 - Docs: `node scripts/validate_docs.mjs`
-- Reconciliation: `baseline_reconciliation.md` — Wave 0 + Wave 1 + Wave 2 Compatibility + UX placement + Tags Docs Pass
+- Reconciliation: `baseline_reconciliation.md` — Wave 0 + Wave 1 + Wave 2 Compatibility + UX placement + Tags Docs + Tags Feature Pass
 - Manual mobile: long-press camera, Öppna kamera fallback, install guidance placement, denied-permission card (OPS-002)
 - Field: `field_validation_log.md` — Field Validation 0005, 0006, 0007
 

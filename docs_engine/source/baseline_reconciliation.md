@@ -227,7 +227,7 @@ Wave 1 Core Value track is institutionally closed. **Compact Cards Iteration 1**
 **Verified:** 2026-08-02  
 **Method:** Documentation Pass only — governing docs review; no application code changes  
 **Scope:** Institutional decisions for Tags Feature Gate and readiness  
-**Implementation claimed:** **None**
+**Implementation claimed:** **None** (superseded by Feature Pass reconciliation below)
 
 | Check | Result | Evidence |
 |-------|--------|----------|
@@ -237,9 +237,30 @@ Wave 1 Core Value track is institutionally closed. **Compact Cards Iteration 1**
 | UX principles documented | ✅ Pass | `ux_doctrine.md` Tags section |
 | Feature Gate completed | ✅ Pass | Capture no impact; Enrich/Discover strengthened; Share/Protect neutral |
 | Guardrails not violated | ✅ Pass | Seven questions + Discover guardrails in roadmap / current_phase |
-| Readiness next item = Feature Pass — Tags | ✅ Pass | `implementation_readiness.md` order 10 |
+| Readiness next item = Feature Pass — Tags | ✅ Pass | `implementation_readiness.md` order 10 (at docs pass time) |
 | Tags remain Wave 2; Discover not moved | ✅ Pass | `product_roadmap.md` |
 | No new ADR required | ✅ Pass | Feature definition only; ADR-019 covers optional `tags` |
-| Locked behaviour baseline unmodified | ✅ Pass | `stable_baseline.md` interaction/visual tables unchanged |
-| Tags UI / code not implemented | ✅ Pass | No app/component/lib changes in this pass |
 | Schema still optional `tags` | ✅ Pass | `snap_model.md`; IndexedDB v1 unchanged |
+
+---
+
+# Baseline Reconciliation — Wave 2 Feature Pass (Tags)
+
+**Verified:** 2026-08-02  
+**Method:** Implementation + unit tests + docs validation + production build + baseline script  
+**Scope:** Wave 2 Tags — create/edit/remove/display + search  
+**ADR:** None new (ADR-019)
+
+| Check | Result | Evidence |
+|-------|--------|----------|
+| Create / edit / remove tags after capture | ✅ Pass | `SnapEditForm` Taggar field; `applySnapEdit` + baseline |
+| Tags displayed on Snap card | ✅ Pass | Subtle pills in `PlaceCard`; baseline |
+| Never before SNAP | ✅ Pass | Edit-only; Capture / SnapButton untouched |
+| Free-form; ~five recommended, no hard limit | ✅ Pass | UX copy + `RECOMMENDED_TAG_COUNT`; no storage cap |
+| Search includes tags with title and notes | ✅ Pass | `snapSearch.ts` + tests + baseline |
+| Normalization (whitespace, empties, dedupe) | ✅ Pass | `snapTags.ts` / `snapModel.ts` + tests |
+| Backup/import / legacy without tags | ✅ Pass | Optional field; unit round-trip tests |
+| SNAP / Capture / Share / Protect unchanged | ✅ Pass | No SnapButton / backup / share changes |
+| Memoized search preserved | ✅ Pass | `page.tsx` `useMemo` + `filterSnapsBySearch` |
+| Exclusions respected | ✅ Pass | No hierarchy/colors/AI/Discover/backend |
+| Docs Engine synchronized | ✅ Pass | Sources + regenerated outputs; `validate_docs.mjs` |

@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.2.24] — 2026-08-02
+
+### Added (Wave 2 — Feature Pass: Tags)
+
+- **Tags** — create, edit, and remove free-form tags in post-capture Redigera (Titel → Anteckning → Taggar → Spara)
+- **Card display** — subtle rounded tag pills on Snap cards; metadata weight only; never before SNAP
+- **Search** — title, notes, and tags as one combined retrieval experience; memoized filter preserved
+- **Normalization** — trim whitespace, drop empties, case-insensitive dedupe; legacy snaps without tags unchanged
+- **Helpers + tests** — `lib/snapTags.ts`; edit/search/storage compatibility coverage
+
+### Not changed
+
+- SNAP contract unchanged (ADR-012)
+- Capture Reliability / Install Guidance / backup behaviour unchanged
+- No hierarchy, colors, groups, AI, autocomplete beyond add, tag cloud, statistics, advanced filtering, Discover, backend, or cloud
+- No new ADR — optional `tags` covered by ADR-019
+- Product Identity unchanged
+- Field Validation 0007 iPhone physical validation remains pending
+
+### Docs
+
+- Updated `product_roadmap.md`, `implementation_readiness.md`, `current_phase.md`, `next_task.md`, `ux_doctrine.md`, `data_doctrine.md`, `snap_model.md`, `stable_baseline.md`, `baseline_reconciliation.md`, `knowledge_continuity.md`
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.23-docs] — 2026-08-02
 
 ### Documented (Wave 2 — Tags Documentation Pass)

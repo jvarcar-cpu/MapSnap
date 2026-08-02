@@ -99,14 +99,14 @@ Do not redesign. Restore and preserve this baseline unless explicitly instructed
 **Snap list**
 
 - Section header: "MINA SNAPPAR" (uppercase, tracked)
-- **Search (Wave 2 Sprint 2 — shipped):** rounded search field above list when snaps exist; placeholder "Sök bland dina Snappar"; search icon; clear (X) when text present; filters loaded collection by title (`name`) and notes (`note`) — case-insensitive, partial match; search empty state "Inga Snappar matchar din sökning." **Tags Feature Pass (approved, not implemented):** search must also include tags with title and notes as one combined retrieval experience.
+- **Search (Wave 2 Sprint 2 + Tags Feature Pass — shipped):** rounded search field above list when snaps exist; placeholder "Sök bland dina Snappar"; search icon; clear (X) when text present; filters loaded collection by title (`name`), notes (`note`), and tags — case-insensitive, partial match; one combined retrieval experience; search empty state "Inga Snappar matchar din sökning."
 - **Filter (Wave 2 Sprint 4 — shipped):** segmented control below search when snaps exist — Alla / Favoriter / Med bild; client-side filter after search, before sort; favorites match `favorite: true` only; with-images match snaps with `photoDataUrl`; filter empty state "Inga Snappar matchar filtret."; combined search+filter empty state "Inga Snappar matchar dina val."
 - **Smart Sorting (Wave 2 Sprint 3 — shipped):** segmented control below filter when snaps exist — Nyast / Äldst / Närmast; client-side reorder after search and filter; nearest uses one-time GPS read (no continuous tracking); failure reverts to Nyast with calm message
 - Empty state: pin illustration + "Inga snappar ännu."
 - Cards: rounded-3xl, soft shadow, optional photo banner (2.4:1); user title left when present; **MapSnap signature** upper-right always (ADR-021)
 - Favorite toggle: small star upper-right overlay on card; ☆ inactive, ★ active with subtle gold — must not collide with signature
 - **SnapSpot:** canonical visible label for the location line on every card (`📍 SnapSpot`) — not the user title; category remains metadata only (not shown on card) for future Discover
-- **Tags (Wave 2 — approved, not implemented):** lightweight display on card after Enrich; never before SNAP; metadata weight only — see Tags section below
+- **Tags (Wave 2 Feature Pass — shipped):** subtle rounded pills on card after notes, before SnapSpot; never before SNAP; metadata weight only — see Tags section below
 - **Card actions:** two-column grid after Maps links — Redigera / Dela, then Spara bild / Ta bort (Spara bild hidden without image); equal-width 48px targets; recognizable SVG icons (~18px) beside labels; Google Maps and Waze use official brand icons; Dela uses Share2, Spara bild uses Download; subtle accent colors on icons only
 
 **Design tokens**
@@ -213,7 +213,7 @@ MapSnap should feel calm, professional and familiar rather than decorative.
 
 Users never fill in fields before their first save. Optional enrichment (name, note, title, favorite, tags) happens after capture — see `product_roadmap.md` Wave 1–2.
 
-## Tags (Wave 2 — institutionalized; UI not yet implemented)
+## Tags (Wave 2 Feature Pass — shipped)
 
 Tags are lightweight user-defined metadata for retrieval and organization.
 
@@ -222,13 +222,14 @@ Tags are lightweight user-defined metadata for retrieval and organization.
 **UX principles:**
 
 - Never shown before SNAP
-- Created during post-capture editing
-- Visually lightweight — metadata, not primary content
+- Created during post-capture editing (Redigera → Titel → Anteckning → Taggar → Spara)
+- Visually lightweight — metadata, not primary content; small rounded pills
 - Free-form user tags allowed
 - Recommend approximately five tags without a hard technical limit
 - Search treats title, notes, and tags as one combined retrieval experience
+- Edit quality matches title and notes — simple, fast, no modal, no separate management screen
 
-**Wave 2 UI scope:** create, edit, remove, display on Snap card, include in search. Hierarchy, groups, AI/recommended/favorite/colored tags, statistics, tag cloud, shared tags, Discover engine, and collections are out of scope.
+**Wave 2 UI scope (shipped):** create, edit, remove, display on Snap card, include in search. Hierarchy, groups, AI/recommended/favorite/colored tags, statistics, tag cloud, shared tags, Discover engine, and collections remain out of scope.
 
 Full Feature Gate and exclusions: `product_roadmap.md` Wave 2 item 4 · Readiness: `implementation_readiness.md` order 10.
 

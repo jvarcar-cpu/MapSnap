@@ -4,13 +4,13 @@
 
 **Phase:** Wave 2 — Organization / Early Discover  
 
-**Pass type:** None active — Tags Documentation Pass complete 2026-08-02
+**Pass type:** None active — Feature Pass — Tags complete 2026-08-02
 
-**Status:** **Documentation Pass complete** — Tags institutionalized (definition, Wave 2 scope, UX principles, Feature Gate). **Feature Pass — Tags** ready to begin when declared. No Tags UI or code implementation in this pass.
+**Status:** **Feature Pass — Tags shipped** — create/edit/remove/display tags; search includes tags with title and notes. Wave 2 organization track (search, sort, filter, tags) complete for early Discover retrieval.
 
-**Previous:** Install Guidance Repositioning UX Pass complete 2026-08-02 (ADR-024); Capture Reliability Feature Pass complete 2026-08-02 (ADR-023); WP-AGSE-MSP-0001 Product Integration complete 2026-07-25  
+**Previous:** Tags Documentation Pass complete 2026-08-02; Install Guidance Repositioning UX Pass complete 2026-08-02 (ADR-024); Capture Reliability Feature Pass complete 2026-08-02 (ADR-023); WP-AGSE-MSP-0001 Product Integration complete 2026-07-25  
 
-**Next product feature:** **Feature Pass — Tags** — ready to begin
+**Next product feature:** Order 11 — Snaptiser feasibility spike (research) when scoped
 
 **Product Integration:** WP-AGSE-MSP-0001 complete — Shared Discovery / Discovery Separation / Product Integration methodology only; product architecture unchanged; Foundation capability ownership remains outside MapSnap
 
@@ -46,7 +46,7 @@
 
 ## Goal
 
-Tags Documentation Pass complete. Feature Gate passed. Next authorized work is **Feature Pass — Tags**. Do not implement Tags until Feature Pass is declared. Do not move Discover. Do not expand Wave 2 Tags scope beyond institutionalized exclusions. Preserve Field Validation 0007 as pending until physical iPhone validation.
+Feature Pass — Tags shipped. Wave 2 early-organization items (search, sort, filter, tags) complete. Do not expand Tags beyond shipped exclusions. Do not move Discover into collections/engine scope. Preserve Field Validation 0007 as pending until physical iPhone validation.
 
 
 
@@ -382,6 +382,19 @@ Full detail: `product_roadmap.md`.
 - [x] Rollback path: hide filter control without data loss
 - [x] No tags UI, backend, or cloud
 
+## Wave 2 — Feature Pass: Tags — Completed
+
+- [x] Pass type: Feature Pass declared and shipped
+- [x] Create, edit, remove tags after capture (Redigera — Titel / Anteckning / Taggar)
+- [x] Tags displayed on Snap card — subtle pills; metadata weight only
+- [x] Tags never before SNAP; Capture unchanged
+- [x] Free-form tags; ~five recommended without hard storage limit
+- [x] Search includes tags with title and notes; memoization preserved
+- [x] Normalization: whitespace, empties, case-insensitive dedupe
+- [x] Backup/import / legacy snaps without tags compatible
+- [x] No hierarchy, colors, groups, AI, Discover engine, backend, or cloud
+- [x] Behaviour + visual regression; docs synchronized
+
 ## Next (ready to begin)
 
-**Feature Pass — Tags** — create/edit/remove/display tags; search includes tags with title and notes. See `next_task.md`, `implementation_readiness.md` order 10, and `CURRENT_TASK.md`.
+**Order 11 — Snaptiser feasibility spike** (research only) when scoped. See `next_task.md` and `implementation_readiness.md`.

@@ -4,7 +4,7 @@
 > Product philosophy: `Identity/product_doctrine.md` · Feature gate: `feature_gate.md` · Readiness: `implementation_readiness.md`
 
 **Ratified:** 2026-07-12  
-**Updated:** 2026-08-02 (Tags Documentation Pass — Feature Gate passed; ready for Feature Pass)  
+**Updated:** 2026-08-02 (Feature Pass — Tags shipped)  
 **Status:** Active  
 **Supersedes:** informal Phase 0.2 preview in `current_phase.md` (2026-07-11)
 
@@ -271,7 +271,7 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 | 3 | Filter (all, favorites, with images) | **Shipped** | DISCOVER | Low–Medium | No | — |
 | 3b | Capture Reliability + PWA install guidance | **Shipped** (implementation; iPhone field validation pending) | CAPTURE | Medium | Yes — reliability only; contract meaning unchanged (ADR-012) | ADR-023 |
 | 3c | Install Guidance Repositioning | **Shipped** (UX Pass) | CAPTURE | Low | No — placement / presentation only | ADR-024 |
-| 4 | Tags | **Approved** — Feature Gate passed; ready for Feature Pass | ENRICH / DISCOVER | Medium | No | No new ADR (ADR-019 covers schema) |
+| 4 | Tags | **Shipped** | ENRICH / DISCOVER | Medium | No | No new ADR (ADR-019 covers schema) |
 | 5 | Nearby / collection views | Planned | DISCOVER | Medium | No | Feature gate |
 | 6 | Color / category markers | Experimental | ENRICH | Medium | No | Feature gate |
 | 7 | Quick edit (title, note) | Planned | ENRICH | Low | No | — |
@@ -280,7 +280,7 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 
 **Discover guardrail:** Every Wave 2 item must help the user rediscover their own meaningful content — not introduce unrelated attention or noise.
 
-#### 4. Tags — Approved (Documentation Pass complete; ready for Feature Pass)
+#### 4. Tags — Shipped (Feature Pass 2026-08-02)
 
 **Definition:** Tags are lightweight user-defined metadata that improve retrieval, organization, and future discovery of Snaps. Tags are optional, created after SNAP, part of Enrich, primarily valuable for Discover, and never part of the protected SNAP interaction.
 
@@ -294,7 +294,7 @@ Tags belong to **Enrich** while creating the first bridge toward **Discover**. T
 
 | Field | Value |
 |-------|-------|
-| Status | **Approved** — institutionalized 2026-08-02; Feature Pass may begin when scoped |
+| Status | **Shipped** — Feature Pass 2026-08-02 |
 | User value | Organize and find own Snaps via free-form tags alongside title and notes |
 | Pillar | ENRICH (primary) / DISCOVER (bridge) |
 | Backend | No |
@@ -359,7 +359,9 @@ Tags belong to **Enrich** while creating the first bridge toward **Discover**. T
 
 **Discover guardrails:** Helps the user rediscover their own tagged content via search — not a social feed, not public place discovery, not unrelated attention.
 
-**Guardrails:** None violated. Approved for Feature Pass under Wave 2 scope only.
+**Guardrails:** None violated. Feature Pass shipped under Wave 2 scope only.
+
+**Shipped:** `lib/snapTags.ts`, `lib/snapEdit.ts`, `lib/snapSearch.ts`, `lib/snapModel.ts`, `components/SnapEditForm.tsx`, `components/PlaceCard.tsx`; unit + baseline coverage for create/edit/remove/display/search/normalization/legacy.
 
 #### 3b. Capture Reliability and PWA Installation Guidance — shipped (implementation)
 

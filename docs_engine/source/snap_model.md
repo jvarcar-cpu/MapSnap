@@ -35,11 +35,11 @@ Single definition of what a Snap is on disk, in IndexedDB, and in JSON backup. S
 | `accuracy` | — | number | GPS accuracy in metres |
 | `photoDataUrl` | bild | string | Base64 data URL (ADR-004) |
 | `favorite` | favorit | boolean | Toggle on card (Sprint 5); persists `true` only |
-| `tags` | taggar | string[] | Schema-ready; Wave 2 Feature Pass approved (create/edit/remove/display + search); optional Enrich metadata — never required before capture |
+| `tags` | taggar | string[] | Wave 2 Feature Pass shipped (create/edit/remove/display + search); optional Enrich metadata — never required before capture |
 
 **Naming rule:** User-facing copy says *titel* / *anteckningar* / *taggar*. Persisted keys remain `name`, `note`, and `tags` for backward compatibility with all existing backups and IndexedDB records.
 
-### Tags product definition (institutional — UI not yet implemented)
+### Tags product definition (shipped)
 
 Tags are lightweight user-defined metadata that improve retrieval, organization, and future discovery of Snaps.
 
@@ -47,7 +47,8 @@ Tags are lightweight user-defined metadata that improve retrieval, organization,
 - **After SNAP** — Enrich only; never part of protected SNAP interaction
 - **Lifecycle:** Capture → Enrich → Share → Protect → Discover — Tags belong to Enrich and bridge toward Discover
 - **Free-form** — user-defined strings; recommend ~five without a hard technical limit
-- **Search:** title + notes + tags as one combined retrieval experience (Feature Pass)
+- **Normalization** — trim whitespace; drop empties; case-insensitive dedupe (preserve first casing)
+- **Search:** title + notes + tags as one combined retrieval experience
 
 Out of scope for Wave 2 Tags: hierarchy, groups, AI/recommended/favorite/colored tags, statistics, tag cloud, shared tags, Discover engine, collections. See `product_roadmap.md` Wave 2 item 4.
 

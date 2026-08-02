@@ -316,6 +316,11 @@ try {
     await editBtn.click();
     await page.getByLabel("Titel").fill("Testplats Sprint 2B");
     await page.getByLabel("Anteckning").fill("Rad ett\nRad två");
+    const tagsInput = page.getByRole("textbox", { name: "Taggar" });
+    await tagsInput.fill("fiske");
+    await page.getByRole("button", { name: "Lägg till" }).click();
+    await tagsInput.fill("brygga");
+    await page.getByRole("button", { name: "Lägg till" }).click();
     await page.getByRole("button", { name: "Spara" }).click();
     await page.waitForSelector("text=Testplats Sprint 2B", { timeout: 5000 });
     const snapsAfterEdit = await readSnapsFromIndexedDb(page);
@@ -323,11 +328,51 @@ try {
     if (
       edited?.name === "Testplats Sprint 2B" &&
       edited?.note === "Rad ett\nRad två" &&
+      Array.isArray(edited?.tags) &&
+      edited.tags.includes("fiske") &&
+      edited.tags.includes("brygga") &&
       edited?.latitude === 59.3293
     ) {
-      pass("Title and notes edit persists");
+      pass("Title, notes, and tags edit persists");
     } else {
-      fail("Title and notes edit persists", JSON.stringify(edited));
+      fail("Title, notes, and tags edit persists", JSON.stringify(edited));
+    }
+    if ((await card.getByText("fiske", { exact: true }).count()) >= 1) {
+      pass("Tags displayed on Snap card");
+    } else {
+      fail("Tags displayed on Snap card", "tag pill not found");
+    }
+    await editBtn.click();
+    await page.getByRole("button", { name: "Ta bort taggen fiske" }).click();
+    await page.getByRole("button", { name: "Spara" }).click();
+    await page.waitForTimeout(300);
+    const snapsAfterTagRemove = await readSnapsFromIndexedDb(page);
+    const afterTagRemove = snapsAfterTagRemove[0];
+    if (
+      Array.isArray(afterTagRemove?.tags) &&
+      !afterTagRemove.tags.includes("fiske") &&
+      afterTagRemove.tags.includes("brygga")
+    ) {
+      pass("Tag remove persists");
+    } else {
+      fail("Tag remove persists", JSON.stringify(afterTagRemove));
+    }
+    const searchInput = page.getByPlaceholder("Sök bland dina Snappar");
+    if (await searchInput.isVisible()) {
+      await searchInput.fill("brygga");
+      await page.waitForTimeout(100);
+      if ((await page.locator("article").count()) === 1) {
+        pass("Search matches tags with title and notes");
+      } else {
+        fail(
+          "Search matches tags with title and notes",
+          `article count=${await page.locator("article").count()}`
+        );
+      }
+      await searchInput.fill("");
+      await page.waitForTimeout(100);
+    } else {
+      fail("Search matches tags with title and notes", "search input missing");
     }
     if (await page.getByText("Sparad plats").count() === 0) {
       pass("Titled snap shows user title without fallback");

@@ -52,6 +52,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
   const [editing, setEditing] = useState(false);
   const [draftTitle, setDraftTitle] = useState("");
   const [draftNote, setDraftNote] = useState("");
+  const [draftTags, setDraftTags] = useState<string[]>([]);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [savingImage, setSavingImage] = useState(false);
@@ -79,6 +80,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
     const draft = snapEditDraftFromSnap(place);
     setDraftTitle(draft.name);
     setDraftNote(draft.note);
+    setDraftTags(draft.tags);
     setSaveError(null);
     setEditing(true);
   }, [place]);
@@ -88,6 +90,7 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
     setSaveError(null);
     setDraftTitle("");
     setDraftNote("");
+    setDraftTags([]);
   }, []);
 
   const handleShare = useCallback(() => {
@@ -151,7 +154,11 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
     setSaveError(null);
 
     const updated = normalizeSnap(
-      applySnapEdit(place, { name: draftTitle, note: draftNote })
+      applySnapEdit(place, {
+        name: draftTitle,
+        note: draftNote,
+        tags: draftTags,
+      })
     );
     if (!updated) {
       setSaveError("Kunde inte uppdatera snap.");
@@ -168,11 +175,12 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
       onUpdate(updated);
       closeEdit();
     });
-  }, [place, draftTitle, draftNote, onUpdate, closeEdit]);
+  }, [place, draftTitle, draftNote, draftTags, onUpdate, closeEdit]);
 
   const userTitle = snapCardTitle(place);
   const snapLabel = userTitle || "snap";
   const noteText = place.note?.trim();
+  const cardTags = place.tags?.length ? place.tags : null;
 
   return (
     <article
@@ -221,6 +229,21 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
               {noteText}
             </p>
           )}
+          {cardTags && !editing && (
+            <ul
+              className="mt-2 flex flex-wrap gap-1"
+              aria-label="Taggar"
+            >
+              {cardTags.map((tag) => (
+                <li
+                  key={tag}
+                  className="max-w-full truncate rounded-full border border-black/[0.05] bg-black/[0.025] px-2 py-0.5 text-[11px] leading-relaxed text-secondary/75"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          )}
           <p className="mt-1 text-sm font-medium text-snap">
             📍 SnapSpot
           </p>
@@ -240,10 +263,12 @@ export function PlaceCard({ place, onDelete, onUpdate, animate }: PlaceCardProps
           <SnapEditForm
             titleValue={draftTitle}
             noteValue={draftNote}
+            tagsValue={draftTags}
             saving={saving}
             error={saveError}
             onTitleChange={setDraftTitle}
             onNoteChange={setDraftNote}
+            onTagsChange={setDraftTags}
             onSave={handleSave}
             onCancel={closeEdit}
           />

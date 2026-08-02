@@ -42,7 +42,8 @@ This document freezes the approved MapSnap MVP baseline. Do not change behaviour
 | **Camera cancel / failure** | Mild Swedish message when picker cancelled; compact Öppna kamera when activation blocked; no broken snap |
 | **Maps** | Google Maps and Waze open with saved coordinates |
 | **Delete** | Removes from list and IndexedDB |
-| **Edit** | "Redigera" on card → optional title (`name`) + notes (`note`) → `saveSnap()` |
+| **Edit** | "Redigera" on card → optional title (`name`) + notes (`note`) + tags (`tags`) → `saveSnap()` |
+| **Tags** | Post-capture only; subtle pills on card; create/edit/remove in edit form; search includes tags with title and notes |
 | **Favorite** | Star toggle upper-right → optimistic `saveSnap()`; `favorite: true` only |
 | **Save image** | "Spara bild" on cards with `photoDataUrl` — copy only; hidden without image |
 | **Share** | "Dela" on every card — native Web Share; text + Google Maps link; image file when supported |
@@ -69,7 +70,7 @@ This document freezes the approved MapSnap MVP baseline. Do not change behaviour
 | **Photo banner** | Aspect `3:1` (was `2.4:1`); `object-cover`; no square thumbnail yet |
 | **Content padding** | `p-4` (was `p-5`) |
 | **List gap** | `gap-3` between cards (was `gap-4`) |
-| **Metadata spacing** | Title → note → SnapSpot → date → coords hierarchy preserved; tighter vertical rhythm |
+| **Metadata spacing** | Title → note → tags (optional pills) → SnapSpot → date → coords hierarchy preserved; tighter vertical rhythm |
 | **Action groups** | Navigation (Google Maps, Waze) then subtle divider (`bg-black/[0.04]`) then action grid — no group labels |
 | **Touch targets** | 48px minimum on map links and action buttons unchanged |
 | **Icons** | Existing SVG system authoritative — spacing only |

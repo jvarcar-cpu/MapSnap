@@ -2,11 +2,11 @@
 
 ## Status
 
-Wave 2 Tags Documentation Pass complete 2026-08-02 — Feature Gate passed; Feature Pass — Tags ready. Install Guidance Repositioning and Contextual Guidance Principle (ADR-024) shipped. Capture Reliability + progressive install capability remain ADR-023. iPhone Field Validation pending (Field Validation 0007). Wave 2 Sprint 4 Filter shipped 2026-07-14. WP-AGSE-MSP-0001 Product Integration complete 2026-07-25 (methodology only). MVP baseline stable at https://mapsnap.se.
+Wave 2 Feature Pass — Tags shipped 2026-08-02. Install Guidance Repositioning and Contextual Guidance Principle (ADR-024) shipped. Capture Reliability + progressive install capability remain ADR-023. iPhone Field Validation pending (Field Validation 0007). Wave 2 Sprint 4 Filter shipped 2026-07-14. WP-AGSE-MSP-0001 Product Integration complete 2026-07-25 (methodology only). MVP baseline stable at https://mapsnap.se.
 
 ## Phase
 
-Wave 2 — Organization / Early Discover. Capture Reliability (ADR-023) + Install Guidance placement (ADR-024) complete. Sprint 4 (Filter) complete. Tags institutionalized (docs only). Product Integration methodology integrated. **Next: Feature Pass — Tags.**
+Wave 2 — Organization / Early Discover. Tags Feature Pass complete. Capture Reliability (ADR-023) + Install Guidance placement (ADR-024) complete. Sprint 4 (Filter) complete. Product Integration methodology integrated. **Next: Order 11 Snaptiser feasibility spike when scoped.**
 
 ## What Works
 
@@ -17,6 +17,7 @@ Wave 2 — Organization / Early Discover. Capture Reliability (ADR-023) + Instal
 - Coordinated SNAP feedback, hero microcopy, field validated (Field Validation 0005)
 - Snap model — normalization, legacy aliases, backup round-trip (Sprint 2A; ADR-019)
 - Title + notes post-capture edit (Sprint 2B)
+- **Tags** — create/edit/remove in Redigera; subtle card pills; search includes tags with title and notes
 - Save image — "Spara bild" on photo snaps only (Sprint 3)
 - Quick Share — "Dela" on every snap card; `📍 SnapSpot` + Google Maps link; image file when supported; SMS field validated (Field Validation 0006)
 - Favorite — star toggle on cards; optimistic save (Sprint 5)
@@ -24,7 +25,7 @@ Wave 2 — Organization / Early Discover. Capture Reliability (ADR-023) + Instal
 - Snap card polish — two-column action grid; SnapSpot location label; category hidden on card
 - Action icon polish — Google Maps / Waze brand SVG icons; card action SVGs (~18px); Dela Share2, Spara bild Download; subtle accent colors on icons only
 - **Compact Cards Iteration 1** — banner aspect `3:1`, tighter padding/spacing, navigation/action divider
-- **Search** — local title/notes filter; search bar with clear button; search empty state
+- **Search** — local title/notes/tags filter; search bar with clear button; search empty state
 - **Filter** — Alla / Favoriter / Med bild segmented control; memoized filter; search → filter → sort pipeline
 - **Smart Sorting** — Nyast / Äldst / Närmast segmented control; memoized sort; nearest one-time GPS
 - Large tactile SNAP button: circular, green, 3D gradient, ~70% width
@@ -38,7 +39,7 @@ Wave 2 — Organization / Early Discover. Capture Reliability (ADR-023) + Instal
 - Baseline verification script and unit tests pass
 - Public production: https://mapsnap.se
 
-## Official Roadmap (ratified, updated ADR-020 / ADR-023 / ADR-024 / Tags Docs Pass)
+## Official Roadmap (ratified, updated ADR-020 / ADR-023 / ADR-024 / Tags Feature Pass)
 
 Single source: `docs_engine/source/product_roadmap.md`
 
@@ -47,7 +48,7 @@ Single source: `docs_engine/source/product_roadmap.md`
 | Wave | Focus |
 |------|-------|
 | 1 | Core value — **institutionally closed** |
-| 2 | Organization / early Discover — Sprint 1–4 shipped; Capture Reliability + install placement shipped (iPhone FV pending); Tags Feature Gate passed — Feature Pass ready |
+| 2 | Organization / early Discover — Sprint 1–4 + Capture Reliability + install placement + **Tags shipped** (iPhone FV pending) |
 | 3 | Snaptisers / contextual Discover |
 | 4 | Image + Professional Share |
 | 5 | Protect |
@@ -56,7 +57,7 @@ Single source: `docs_engine/source/product_roadmap.md`
 ## Known Limitations
 
 - Compact Cards Iteration 2 not started — square thumbnail, detail view (ADR-017)
-- Tags UI not implemented — Feature Pass ready (schema `tags` present; institutionalized 2026-08-02)
+- Tags exclusions remain (hierarchy, colors, AI, Discover engine, collections) — by design
 - iPhone long-press / install guidance Field Validation pending (Field Validation 0007)
 - Photo storage as inline base64 — quota limits (MVP-001)
 - Image save per-platform field verification incomplete (FEAS-001)
@@ -77,8 +78,8 @@ Next.js 15 · TypeScript · Tailwind · Geolocation API · IndexedDB · PWA · V
 
 ## Next Step
 
-**Feature Pass — Tags** — create/edit/remove/display; search includes tags with title and notes. See `next_task.md` and `implementation_readiness.md` order 10. Declare Feature Pass in `current_phase.md` before coding.
+**Order 11 — Snaptiser feasibility spike** (research only) when explicitly scoped. See `next_task.md` and `implementation_readiness.md`.
 
 ## Institutional Memory
 
-CHRONICLE-MSN-0001 — *The First Public Presence* (2026-07-11). ADR-020 — Core lifecycle pillars (2026-07-14). ADR-021 — MapSnap Signature (2026-07-14). ADR-022 — Shared Discovery Separation and Product Integration (2026-07-25). ADR-023 — Capture Reliability and Progressive PWA Install Guidance (2026-08-02). ADR-024 — Contextual Guidance Placement (2026-08-02). Tags Documentation Pass (2026-08-02). Wave 1 reconciliation (2026-07-14). Wave 2 Sprint 1–4 (2026-07-14). Capture Reliability Feature Pass (2026-08-02). Install Guidance UX Pass (2026-08-02). WP-AGSE-MSP-0001 Product Integration complete (2026-07-25).
+CHRONICLE-MSN-0001 — *The First Public Presence* (2026-07-11). ADR-020 — Core lifecycle pillars (2026-07-14). ADR-021 — MapSnap Signature (2026-07-14). ADR-022 — Shared Discovery Separation and Product Integration (2026-07-25). ADR-023 — Capture Reliability and Progressive PWA Install Guidance (2026-08-02). ADR-024 — Contextual Guidance Placement (2026-08-02). Tags Documentation Pass (2026-08-02). Feature Pass — Tags (2026-08-02). Wave 1 reconciliation (2026-07-14). Wave 2 Sprint 1–4 (2026-07-14). Capture Reliability Feature Pass (2026-08-02). Install Guidance UX Pass (2026-08-02). WP-AGSE-MSP-0001 Product Integration complete (2026-07-25).

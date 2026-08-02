@@ -31,7 +31,7 @@ export type Snap = {
 
   /** Wave 1 — optional; toggled on card. */
   favorite?: boolean;
-  /** Wave 2+ — optional tag labels; no UI until scoped. */
+  /** Wave 2 — optional user-defined tags; post-capture Enrich metadata. */
   tags?: string[];
 };
 
