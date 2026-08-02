@@ -4,7 +4,7 @@
 > Product philosophy: `Identity/product_doctrine.md` · Feature gate: `feature_gate.md` · Readiness: `implementation_readiness.md`
 
 **Ratified:** 2026-07-12  
-**Updated:** 2026-08-02 (Install Guidance Repositioning — ADR-024; capability ADR-023)  
+**Updated:** 2026-08-02 (Tags Documentation Pass — Feature Gate passed; ready for Feature Pass)  
 **Status:** Active  
 **Supersedes:** informal Phase 0.2 preview in `current_phase.md` (2026-07-11)
 
@@ -271,7 +271,7 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 | 3 | Filter (all, favorites, with images) | **Shipped** | DISCOVER | Low–Medium | No | — |
 | 3b | Capture Reliability + PWA install guidance | **Shipped** (implementation; iPhone field validation pending) | CAPTURE | Medium | Yes — reliability only; contract meaning unchanged (ADR-012) | ADR-023 |
 | 3c | Install Guidance Repositioning | **Shipped** (UX Pass) | CAPTURE | Low | No — placement / presentation only | ADR-024 |
-| 4 | Tags | Planned | ENRICH / DISCOVER | Medium | No | — |
+| 4 | Tags | **Approved** — Feature Gate passed; ready for Feature Pass | ENRICH / DISCOVER | Medium | No | No new ADR (ADR-019 covers schema) |
 | 5 | Nearby / collection views | Planned | DISCOVER | Medium | No | Feature gate |
 | 6 | Color / category markers | Experimental | ENRICH | Medium | No | Feature gate |
 | 7 | Quick edit (title, note) | Planned | ENRICH | Low | No | — |
@@ -279,6 +279,87 @@ Shipped — see `stable_baseline.md`, `current_phase.md`, Field Validation 0003�
 **Compatibility ordering:** Item 3b ships before Tags because it protects primary Capture reliability. It does not replace Tags as the next organization feature.
 
 **Discover guardrail:** Every Wave 2 item must help the user rediscover their own meaningful content — not introduce unrelated attention or noise.
+
+#### 4. Tags — Approved (Documentation Pass complete; ready for Feature Pass)
+
+**Definition:** Tags are lightweight user-defined metadata that improve retrieval, organization, and future discovery of Snaps. Tags are optional, created after SNAP, part of Enrich, primarily valuable for Discover, and never part of the protected SNAP interaction.
+
+**Product role — Snap lifecycle:**
+
+```
+Capture → Enrich → Share → Protect → Discover
+```
+
+Tags belong to **Enrich** while creating the first bridge toward **Discover**. They do not move Discover into the current implementation wave beyond early retrieval (search includes tags). Collections, Discover engine, and advanced Discover surfaces remain later roadmap.
+
+| Field | Value |
+|-------|-------|
+| Status | **Approved** — institutionalized 2026-08-02; Feature Pass may begin when scoped |
+| User value | Organize and find own Snaps via free-form tags alongside title and notes |
+| Pillar | ENRICH (primary) / DISCOVER (bridge) |
+| Backend | No |
+| Complexity | Medium |
+| Dependencies | Edit UI (title/notes); schema field `tags?: string[]` already present (ADR-019) |
+| Risk | Pre-capture tags — reject; heavy tag UI competing with card content — reject; Discover engine scope creep — reject |
+| Affects SNAP interaction | No |
+| ADR | None new — optional field evolution already covered by ADR-019 |
+
+**Wave 2 scope (in):**
+
+- Create tags
+- Edit tags
+- Remove tags
+- Display tags on the Snap card (visually lightweight)
+- Search includes tags together with title and notes (one combined retrieval experience)
+
+**Wave 2 scope (out — explicit exclusions):**
+
+- Tag hierarchy
+- Tag groups
+- AI-generated tags
+- Recommended tags
+- Favorite tags
+- Colored tags
+- Statistics
+- Tag cloud
+- Shared tags
+- Discover engine
+- Collections
+- Advanced filtering beyond current roadmap
+
+**UX principles (binding for Feature Pass):**
+
+- Tags are never shown before SNAP
+- Tags are created during post-capture editing
+- Tags remain visually lightweight
+- Tags are metadata, not primary content
+- Free-form user tags are allowed
+- Recommend approximately five tags without enforcing a hard technical limit
+- Search treats title, notes, and tags as one combined retrieval experience
+
+**Feature Gate:**
+
+| Pillar | Impact |
+|--------|--------|
+| Capture | No impact |
+| Enrich | Strengthened |
+| Share | Neutral |
+| Protect | Neutral |
+| Discover | Strengthened |
+
+| # | Question | Answer |
+|---|----------|--------|
+| 1 | Slow or complicate the Snap moment? | No — post-capture only; never on SNAP |
+| 2 | Strengthen a Core Pillar without weakening others? | Yes — ENRICH + Discover bridge; Capture/Share/Protect unchanged |
+| 3 | Understandable without a manual? | Yes — free-form tags via familiar edit flow |
+| 4 | Preserve offline / local-first? | Yes — optional `tags` on Snap; IndexedDB; no backend |
+| 5 | Disproportionate interface weight? | No — lightweight card display; metadata not primary content |
+| 6 | Live after capture? | Yes — Enrich only |
+| 7 | Preserve calm / minimal identity? | Yes — ~five recommended; no hierarchy/colors/clouds |
+
+**Discover guardrails:** Helps the user rediscover their own tagged content via search — not a social feed, not public place discovery, not unrelated attention.
+
+**Guardrails:** None violated. Approved for Feature Pass under Wave 2 scope only.
 
 #### 3b. Capture Reliability and PWA Installation Guidance — shipped (implementation)
 

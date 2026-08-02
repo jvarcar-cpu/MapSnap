@@ -4,13 +4,13 @@
 
 **Phase:** Wave 2 — Organization / Early Discover  
 
-**Pass type:** None active — Install Guidance Repositioning UX Pass complete 2026-08-02
+**Pass type:** None active — Tags Documentation Pass complete 2026-08-02
 
-**Status:** **UX Pass complete** — Install Guidance Repositioning and Contextual Guidance Principle shipped (ADR-024). Capture Reliability + PWA install capability remains ADR-023. iPhone Field Validation pending (Field Validation 0007). Tags not started.
+**Status:** **Documentation Pass complete** — Tags institutionalized (definition, Wave 2 scope, UX principles, Feature Gate). **Feature Pass — Tags** ready to begin when declared. No Tags UI or code implementation in this pass.
 
-**Previous:** Wave 2 Compatibility Feature Pass — Capture Reliability and PWA Installation Guidance complete 2026-08-02; WP-AGSE-MSP-0001 Product Integration (Docs Pass) complete 2026-07-25  
+**Previous:** Install Guidance Repositioning UX Pass complete 2026-08-02 (ADR-024); Capture Reliability Feature Pass complete 2026-08-02 (ADR-023); WP-AGSE-MSP-0001 Product Integration complete 2026-07-25  
 
-**Next product feature:** Tags — not started
+**Next product feature:** **Feature Pass — Tags** — ready to begin
 
 **Product Integration:** WP-AGSE-MSP-0001 complete — Shared Discovery / Discovery Separation / Product Integration methodology only; product architecture unchanged; Foundation capability ownership remains outside MapSnap
 
@@ -46,25 +46,50 @@
 
 ## Goal
 
-Install Guidance Repositioning UX Pass complete. Next authorized product feature remains Tags. Do not redesign install capability (ADR-023). Preserve Field Validation 0007 as pending until physical iPhone validation.
+Tags Documentation Pass complete. Feature Gate passed. Next authorized work is **Feature Pass — Tags**. Do not implement Tags until Feature Pass is declared. Do not move Discover. Do not expand Wave 2 Tags scope beyond institutionalized exclusions. Preserve Field Validation 0007 as pending until physical iPhone validation.
 
-## Feature Gate — Install Guidance Repositioning (UX Pass)
 
-**Pillar:** CAPTURE (access speed, camera compatibility, fullscreen) — strengthens Capture without weakening Enrich / Share / Protect.  
-**Experience qualities:** Delight (calm, helpful) · Return (faster reopen).  
-**Affects SNAP interaction contract:** No — gestures and meaning unchanged (ADR-012).
+
+## Feature Gate — Tags (Documentation Pass)
+
+**Pillars:** ENRICH (strengthened) · DISCOVER (strengthened, bridge)  
+**Neutral:** Share · Protect  
+**No impact:** Capture  
+**Experience qualities:** Remember (Enrich) · Return via rediscovery (Discover bridge)  
+**Affects SNAP interaction contract:** No — post-capture Enrich only (ADR-012)
 
 | # | Question | Answer |
 |---|----------|--------|
-| 1 | Slow or complicate the Snap moment? | No — appears only after engagement; delayed until after "Snap sparad" feedback; visually subordinate |
-| 2 | Strengthen a Core Pillar without weakening others? | Yes — CAPTURE via contextual install recommendation; no other pillar weakened |
-| 3 | Understandable without a manual? | Yes — Rekommenderas / Installera MapSnap / three calm benefits |
-| 4 | Preserve offline / local-first? | Yes — no backend; local dismissal persistence unchanged |
-| 5 | Disproportionate interface weight? | No — compact card beneath instruction; collapses to zero when hidden |
-| 6 | Live after capture? | Yes — engagement-gated after at least one Snap |
-| 7 | Preserve calm / minimal identity? | Yes — helpful recommendation, not advertisement; no app-imitation wording |
+| 1 | Slow or complicate the Snap moment? | No — never before SNAP; edit after capture |
+| 2 | Strengthen a Core Pillar without weakening others? | Yes — Enrich + Discover bridge; Capture/Share/Protect not weakened |
+| 3 | Understandable without a manual? | Yes — free-form tags in post-capture edit |
+| 4 | Preserve offline / local-first? | Yes — optional `tags` on Snap; no backend |
+| 5 | Disproportionate interface weight? | No — lightweight card metadata; ~five recommended |
+| 6 | Live after capture? | Yes — Enrich only |
+| 7 | Preserve calm / minimal identity? | Yes — no hierarchy/colors/clouds/AI |
 
-**Approved to implement** under UX Pass scope only.
+**Discover guardrails:** Helps rediscover own tagged content via search — not social feed, not public place discovery.
+
+**Guardrails:** None violated. **Approved for Feature Pass** under Wave 2 scope only.
+
+Full detail: `product_roadmap.md` Wave 2 item 4 · `implementation_readiness.md` order 10.
+
+
+
+## Wave 2 Docs Pass — Tags Institutionalization — Completed
+
+- [x] Pass type: Documentation Pass declared
+- [x] Tags definition institutionalized
+- [x] Lifecycle role: Enrich with Discover bridge documented
+- [x] Wave 2 in-scope / out-of-scope exclusions documented
+- [x] UX principles institutionalized
+- [x] Feature Gate completed — Capture no impact; Enrich strengthened; Share/Protect neutral; Discover strengthened
+- [x] Implementation readiness updated — Feature Pass — Tags next
+- [x] Roadmap updated — Tags remain Wave 2; Discover not moved
+- [x] ADR review — no new ADR (feature definition only; ADR-019 covers optional schema)
+- [x] Baseline / reconciliation updated for institutional decisions only — no implementation claimed
+- [x] Docs Engine outputs regenerated; `validate_docs.mjs` pass
+- [ ] Feature Pass — Tags implementation — **ready to begin** (not started)
 
 
 
@@ -111,7 +136,7 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 - [x] Field Validation 0007 recorded (verified / implemented / pending)
 - [ ] iPhone Safari Field Validation — pending (no device this pass)
 - [ ] Pixel install fallback + Redmi regression — pending physical retest
-- [x] Tags not started
+- [x] Tags documentation institutionalized (2026-08-02); UI not started
 
 ## Wave 2 UX Pass — Install Guidance Repositioning — Completed
 
@@ -127,7 +152,7 @@ See `stable_baseline.md` and `baseline_reconciliation.md`.
 - [x] Unit tests for reveal-delay helper + placement verification script
 - [x] Docs outputs, validation, baseline verification
 - [ ] iPhone Field Validation 0007 — still pending (not claimed)
-- [x] Tags not started
+- [x] Tags documentation institutionalized (2026-08-02); UI not started
 
 
 
@@ -336,7 +361,7 @@ Full detail: `product_roadmap.md`.
 - [x] Real-time filter on loaded collection — local only; no backend
 - [x] Search empty state: "Inga Snappar matchar din sökning."
 - [x] Clear button, search icon, Swedish placeholder
-- [x] Memoized filtering; no filter or tags
+- [x] Memoized filtering; no filter or tags UI
 
 ## Wave 2 Sprint 3 — Smart Sorting — Completed
 
@@ -345,7 +370,7 @@ Full detail: `product_roadmap.md`.
 - [x] Client-side reorder only — applies after search and filter; memoized `sortSnaps()`
 - [x] Nearest uses one-time GPS read — no continuous tracking
 - [x] Location failure reverts to Nyast with calm Swedish message
-- [x] No tags, backend, or cloud
+- [x] No tags UI, backend, or cloud
 
 ## Wave 2 Sprint 4 — Filter — Completed
 
@@ -355,8 +380,8 @@ Full detail: `product_roadmap.md`.
 - [x] Works with search and sort — pipeline search → filter → sort → render
 - [x] Filter empty states — calm Swedish messages; no errors
 - [x] Rollback path: hide filter control without data loss
-- [x] No tags, backend, or cloud
+- [x] No tags UI, backend, or cloud
 
-## Next (when explicitly scoped)
+## Next (ready to begin)
 
-**Tags** — lightweight tag list on snap. See `next_task.md` and `CURRENT_TASK.md`.
+**Feature Pass — Tags** — create/edit/remove/display tags; search includes tags with title and notes. See `next_task.md`, `implementation_readiness.md` order 10, and `CURRENT_TASK.md`.

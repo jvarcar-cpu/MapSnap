@@ -15,7 +15,7 @@ Every saved place must have:
 
 Everything else is optional metadata.
 
-Planned optional fields (roadmap): `tags`, Snaptiser — see `snap_model.md` and `product_roadmap.md`. `favorite` shipped Sprint 5.
+Planned optional fields (roadmap): Snaptiser — see `snap_model.md` and `product_roadmap.md`. `favorite` shipped Sprint 5. **Tags** — schema-ready (`tags?: string[]`); UI Feature Pass approved after Documentation Pass 2026-08-02 (Enrich + Discover bridge; post-capture only).
 
 ## Product vs Persisted Names
 
@@ -23,6 +23,7 @@ Planned optional fields (roadmap): `tags`, Snaptiser — see `snap_model.md` and
 |----------------------|---------------|
 | title / titel | `name` |
 | notes / anteckningar | `note` |
+| tags / taggar | `tags` |
 
 Legacy aliases `title` and `notes` normalize to `name` / `note` on load and import (ADR-019).
 

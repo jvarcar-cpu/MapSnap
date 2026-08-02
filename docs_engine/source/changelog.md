@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.2.23-docs] — 2026-08-02
+
+### Documented (Wave 2 — Tags Documentation Pass)
+
+- **Tags definition** — lightweight user-defined metadata; optional; after SNAP; Enrich; Discover bridge; never part of protected SNAP interaction
+- **Lifecycle role** — Capture → Enrich → Share → Protect → Discover; Tags belong to Enrich while bridging toward Discover
+- **Wave 2 scope** — create, edit, remove, display on Snap card; search includes tags with title and notes
+- **Explicit exclusions** — hierarchy, groups, AI/recommended/favorite/colored tags, statistics, tag cloud, shared tags, Discover engine, collections, advanced filtering beyond roadmap
+- **UX principles** — never before SNAP; post-capture edit; visually lightweight; metadata not primary content; free-form; ~five recommended without hard limit; combined title/notes/tags search
+- **Feature Gate** — Capture no impact; Enrich strengthened; Share/Protect neutral; Discover strengthened; no guardrails violated
+- **Readiness** — next implementation item is **Feature Pass — Tags**
+- **ADR review** — no new ADR; optional field evolution covered by ADR-019
+
+### Not changed
+
+- No Tags UI or application code
+- Locked behaviour baseline unmodified (`stable_baseline.md`)
+- Discover not moved; Wave 2 Tags remain the next organization feature
+- SNAP contract unchanged (ADR-012)
+- Product Identity unchanged
+- Field Validation 0007 iPhone physical validation remains pending
+
+### Docs
+
+- Updated `product_roadmap.md`, `implementation_readiness.md`, `current_phase.md`, `next_task.md`, `ux_doctrine.md`, `data_doctrine.md`, `snap_model.md`, `capture_doctrine.md`, `baseline_reconciliation.md`, `knowledge_continuity.md`
+- Regenerated steering outputs in `docs_engine/output/`
+
 ## [0.2.22] — 2026-08-02
 
 ### Changed (UX Pass — Install Guidance Repositioning)

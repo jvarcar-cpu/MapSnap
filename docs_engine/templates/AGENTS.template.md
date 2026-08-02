@@ -4,7 +4,7 @@
 
 MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backend.
 
-**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Wave 2 Sprint 4 Filter shipped. Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) shipped 2026-08-02; iPhone Field Validation pending. WP-AGSE-MSP-0001 Product Integration complete (methodology only). Public: https://mapsnap.se.
+**Status:** MVP 0.1 stable. Wave 1 institutionally closed 2026-07-14. Wave 2 Sprint 4 Filter shipped. Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) shipped 2026-08-02; iPhone Field Validation pending. Tags Documentation Pass complete 2026-08-02 — Feature Gate passed; Feature Pass — Tags ready. WP-AGSE-MSP-0001 Product Integration complete (methodology only). Public: https://mapsnap.se.
 
 ## Current Product Status
 
@@ -20,15 +20,16 @@ MapSnap is a local-first PWA for instant GPS place capture. Swedish UI. No backe
 | Capture Reliability | Shipped 2026-08-02 — long-press progress, user-gesture-safe camera, Öppna kamera fallback, progressive install guidance (ADR-023); iPhone FV pending |
 | Install Guidance UX | Shipped 2026-08-02 — recommendation beneath SNAP instruction; Contextual Guidance Principle (ADR-024) |
 | Product Integration | WP-AGSE-MSP-0001 complete — Shared Discovery / Discovery Separation methodology (ADR-022); product architecture unchanged |
-| Next implementation | **Tags** (lightweight tag list on snap) |
+| Tags institutionalization | Documentation Pass complete 2026-08-02 — Feature Gate passed; Wave 2 scope fixed; UI not started |
+| Next implementation | **Feature Pass — Tags** (ready to begin) |
 | Backend / cloud | Deferred — Wave 6 (ADR-016) |
 | Production | Vercel · https://mapsnap.se · client-only data model |
 
 ## Current Phase
 
-**Wave 2 — Organization / Early Discover** — Sprint 4 complete. Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) complete. Product Integration methodology integrated.
+**Wave 2 — Organization / Early Discover** — Sprint 4 complete. Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) complete. Tags Documentation Pass complete. Product Integration methodology integrated.
 
-**Next sprint (when scoped):** Tags per `implementation_readiness.md` and `next_task.md`.
+**Next:** **Feature Pass — Tags** — ready to begin per `implementation_readiness.md` and `next_task.md`.
 
 ## Architecture
 
@@ -84,7 +85,7 @@ Authoritative type: `Snap` in `types/place.ts`. Normalization: `lib/snapModel.ts
 | `photoDataUrl` | bild | From long-press camera capture |
 | `favorite` | favorit | `true` only when starred; field removed when false |
 | `category` | kategori | Default `Annat` on capture; metadata only — not shown on card |
-| `tags` | taggar | Schema-ready; UI in Wave 2 |
+| `tags` | taggar | Schema-ready; Feature Pass approved (create/edit/remove/display + search); UI not started |
 
 Legacy aliases `title` → `name`, `notes` → `note` normalize on load. IndexedDB version `1` unchanged. Full spec: `docs_engine/source/snap_model.md`.
 

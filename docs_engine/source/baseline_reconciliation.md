@@ -219,3 +219,27 @@ Wave 1 Core Value track is institutionally closed. **Compact Cards Iteration 1**
 | SNAP contract unchanged | ✅ Pass | ADR-012 meaning preserved |
 | Tags not started | ✅ Pass | Roadmap item 4 remains Planned |
 | Contextual Guidance Principle documented | ✅ Pass | `ux_doctrine.md` + ADR-024 |
+
+---
+
+# Baseline Reconciliation — Wave 2 Docs Pass (Tags Institutionalization)
+
+**Verified:** 2026-08-02  
+**Method:** Documentation Pass only — governing docs review; no application code changes  
+**Scope:** Institutional decisions for Tags Feature Gate and readiness  
+**Implementation claimed:** **None**
+
+| Check | Result | Evidence |
+|-------|--------|----------|
+| Tags definition institutionalized | ✅ Pass | `product_roadmap.md` Wave 2 item 4; `snap_model.md` |
+| Lifecycle: Enrich + Discover bridge | ✅ Pass | Roadmap + `ux_doctrine.md` + `current_phase.md` |
+| Wave 2 in/out scope documented | ✅ Pass | Roadmap exclusions; readiness non-goals |
+| UX principles documented | ✅ Pass | `ux_doctrine.md` Tags section |
+| Feature Gate completed | ✅ Pass | Capture no impact; Enrich/Discover strengthened; Share/Protect neutral |
+| Guardrails not violated | ✅ Pass | Seven questions + Discover guardrails in roadmap / current_phase |
+| Readiness next item = Feature Pass — Tags | ✅ Pass | `implementation_readiness.md` order 10 |
+| Tags remain Wave 2; Discover not moved | ✅ Pass | `product_roadmap.md` |
+| No new ADR required | ✅ Pass | Feature definition only; ADR-019 covers optional `tags` |
+| Locked behaviour baseline unmodified | ✅ Pass | `stable_baseline.md` interaction/visual tables unchanged |
+| Tags UI / code not implemented | ✅ Pass | No app/component/lib changes in this pass |
+| Schema still optional `tags` | ✅ Pass | `snap_model.md`; IndexedDB v1 unchanged |

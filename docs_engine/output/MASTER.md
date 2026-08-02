@@ -14,7 +14,7 @@ Open. SNAP. Close. **Capture first. Organize later.**
 
 ## Current Phase
 
-**Wave 2 — Organization / Early Discover** — Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) complete 2026-08-02; iPhone Field Validation pending. Sprint 4 Filter shipped 2026-07-14. WP-AGSE-MSP-0001 Product Integration complete 2026-07-25 (methodology only). MVP 0.1 stable at https://mapsnap.se. Product lifecycle pillars ratified (ADR-020).
+**Wave 2 — Organization / Early Discover** — Tags Documentation Pass complete 2026-08-02 (Feature Gate passed; Feature Pass — Tags ready). Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) complete; iPhone Field Validation pending. Sprint 4 Filter shipped 2026-07-14. WP-AGSE-MSP-0001 Product Integration complete 2026-07-25 (methodology only). MVP 0.1 stable at https://mapsnap.se. Product lifecycle pillars ratified (ADR-020).
 
 ## Product Identity
 
@@ -49,7 +49,7 @@ Product Identity defines who MapSnap is — philosophy, voice, and language. See
 |------|-------|
 | 0 | Baseline reconciliation (complete) |
 | 1 | Core value: UX polish, title, notes, save image, Quick Share, favorite, signature, action icons — **institutionally closed** |
-| 2 | Organization / early Discover — Sprint 1–4 shipped; Capture Reliability + install placement shipped (iPhone FV pending); Tags next |
+| 2 | Organization / early Discover — Sprint 1–4 shipped; Capture Reliability + install placement shipped (iPhone FV pending); Tags Feature Gate passed — Feature Pass ready |
 | 3 | Snaptisers / contextual Discover |
 | 4 | Image + Professional Share |
 | 5 | Protect |
@@ -99,6 +99,7 @@ Key libs: `snapModel`, `snapEdit`, `snapFavorite`, `saveSnapImage`, `shareSnap`,
 - Filter — Alla / Favoriter / Med bild, memoized filter, search → filter → sort — **shipped**
 - Smart Sorting — Nyast / Äldst / Närmast, memoized sort, nearest one-time GPS — **shipped**
 - Delete, empty state, Google Maps, Waze, backup/import — **existing**
+- Tags — **institutionalized** (docs); UI Feature Pass ready — **not implemented**
 - Wave 1 institutionally closed; Wave 2 Sprint 1–4 complete; Capture Reliability + install placement complete (iPhone FV pending)
 
 ## Recent Decisions
@@ -108,14 +109,15 @@ Key libs: `snapModel`, `snapEdit`, `snapFavorite`, `saveSnapImage`, `shareSnap`,
 - **ADR-015:** Snaptisers strategic capability
 - **ADR-016:** Backend deferral (now Wave 6)
 - **ADR-018:** Coordinated feedback with radial waves
-- **ADR-019:** Snap model evolution policy
+- **ADR-019:** Snap model evolution policy (covers optional `tags`)
 - **ADR-020:** Core lifecycle pillars + experience model; Share product track; Protect before cloud
 - **ADR-017:** Compact Card Experiment — Iteration 1 shipped; Iteration 2 (thumbnail + detail view) planned
 - **ADR-021:** MapSnap Signature — User first. Product second.
 - **ADR-022:** Shared Discovery Separation and Product Integration
 - **ADR-023:** Capture Reliability and Progressive PWA Install Guidance
 - **ADR-024:** Contextual Guidance Placement
+- **Tags Docs Pass (2026-08-02):** No new ADR — feature definition only
 
 ## Last Updated
 
-2026-08-02 — Wave 2 Install Guidance Repositioning (UX Pass, ADR-024)
+2026-08-02 — Wave 2 Tags Documentation Pass (Feature Gate passed; Feature Pass — Tags ready)

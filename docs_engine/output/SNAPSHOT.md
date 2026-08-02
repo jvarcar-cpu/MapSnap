@@ -2,11 +2,11 @@
 
 ## Status
 
-Wave 2 UX Pass complete 2026-08-02 — Install Guidance Repositioning and Contextual Guidance Principle (ADR-024). Capture Reliability + progressive install capability remain ADR-023. iPhone Field Validation pending (Field Validation 0007). Wave 2 Sprint 4 Filter shipped 2026-07-14. WP-AGSE-MSP-0001 Product Integration complete 2026-07-25 (methodology only). MVP baseline stable at https://mapsnap.se.
+Wave 2 Tags Documentation Pass complete 2026-08-02 — Feature Gate passed; Feature Pass — Tags ready. Install Guidance Repositioning and Contextual Guidance Principle (ADR-024) shipped. Capture Reliability + progressive install capability remain ADR-023. iPhone Field Validation pending (Field Validation 0007). Wave 2 Sprint 4 Filter shipped 2026-07-14. WP-AGSE-MSP-0001 Product Integration complete 2026-07-25 (methodology only). MVP baseline stable at https://mapsnap.se.
 
 ## Phase
 
-Wave 2 — Organization / Early Discover. Capture Reliability (ADR-023) + Install Guidance placement (ADR-024) complete. Sprint 4 (Filter) complete. Product Integration methodology integrated. Tags next.
+Wave 2 — Organization / Early Discover. Capture Reliability (ADR-023) + Install Guidance placement (ADR-024) complete. Sprint 4 (Filter) complete. Tags institutionalized (docs only). Product Integration methodology integrated. **Next: Feature Pass — Tags.**
 
 ## What Works
 
@@ -38,7 +38,7 @@ Wave 2 — Organization / Early Discover. Capture Reliability (ADR-023) + Instal
 - Baseline verification script and unit tests pass
 - Public production: https://mapsnap.se
 
-## Official Roadmap (ratified, updated ADR-020 / ADR-023 / ADR-024)
+## Official Roadmap (ratified, updated ADR-020 / ADR-023 / ADR-024 / Tags Docs Pass)
 
 Single source: `docs_engine/source/product_roadmap.md`
 
@@ -47,7 +47,7 @@ Single source: `docs_engine/source/product_roadmap.md`
 | Wave | Focus |
 |------|-------|
 | 1 | Core value — **institutionally closed** |
-| 2 | Organization / early Discover — Sprint 1–4 shipped; Capture Reliability + install placement shipped (iPhone FV pending); Tags next |
+| 2 | Organization / early Discover — Sprint 1–4 shipped; Capture Reliability + install placement shipped (iPhone FV pending); Tags Feature Gate passed — Feature Pass ready |
 | 3 | Snaptisers / contextual Discover |
 | 4 | Image + Professional Share |
 | 5 | Protect |
@@ -56,7 +56,7 @@ Single source: `docs_engine/source/product_roadmap.md`
 ## Known Limitations
 
 - Compact Cards Iteration 2 not started — square thumbnail, detail view (ADR-017)
-- No tags — Wave 2 roadmap item 4
+- Tags UI not implemented — Feature Pass ready (schema `tags` present; institutionalized 2026-08-02)
 - iPhone long-press / install guidance Field Validation pending (Field Validation 0007)
 - Photo storage as inline base64 — quota limits (MVP-001)
 - Image save per-platform field verification incomplete (FEAS-001)
@@ -77,8 +77,8 @@ Next.js 15 · TypeScript · Tailwind · Geolocation API · IndexedDB · PWA · V
 
 ## Next Step
 
-Tags (lightweight tag list on snap). See `next_task.md` and `implementation_readiness.md` order 10. Do not start Tags until Feature Pass is declared.
+**Feature Pass — Tags** — create/edit/remove/display; search includes tags with title and notes. See `next_task.md` and `implementation_readiness.md` order 10. Declare Feature Pass in `current_phase.md` before coding.
 
 ## Institutional Memory
 
-CHRONICLE-MSN-0001 — *The First Public Presence* (2026-07-11). ADR-020 — Core lifecycle pillars (2026-07-14). ADR-021 — MapSnap Signature (2026-07-14). ADR-022 — Shared Discovery Separation and Product Integration (2026-07-25). ADR-023 — Capture Reliability and Progressive PWA Install Guidance (2026-08-02). ADR-024 — Contextual Guidance Placement (2026-08-02). Wave 1 reconciliation (2026-07-14). Wave 2 Sprint 1–4 (2026-07-14). Capture Reliability Feature Pass (2026-08-02). Install Guidance UX Pass (2026-08-02). WP-AGSE-MSP-0001 Product Integration complete (2026-07-25).
+CHRONICLE-MSN-0001 — *The First Public Presence* (2026-07-11). ADR-020 — Core lifecycle pillars (2026-07-14). ADR-021 — MapSnap Signature (2026-07-14). ADR-022 — Shared Discovery Separation and Product Integration (2026-07-25). ADR-023 — Capture Reliability and Progressive PWA Install Guidance (2026-08-02). ADR-024 — Contextual Guidance Placement (2026-08-02). Tags Documentation Pass (2026-08-02). Wave 1 reconciliation (2026-07-14). Wave 2 Sprint 1–4 (2026-07-14). Capture Reliability Feature Pass (2026-08-02). Install Guidance UX Pass (2026-08-02). WP-AGSE-MSP-0001 Product Integration complete (2026-07-25).

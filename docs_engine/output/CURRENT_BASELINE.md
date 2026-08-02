@@ -4,7 +4,7 @@
 
 **Locked:** 2026-06-28  
 **Updated:** 2026-08-02  
-**Status:** MVP 0.1 stable — Wave 2 Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) shipped; iPhone Field Validation pending
+**Status:** MVP 0.1 stable — Wave 2 Capture Reliability (ADR-023) + Install Guidance Repositioning (ADR-024) shipped; Tags Documentation Pass complete; Feature Pass — Tags ready; iPhone Field Validation pending
 
 ## Wave Summary
 
@@ -52,9 +52,15 @@
 
 - ✓ WP-AGSE-MSP-0001 — Shared Discovery / Discovery Separation / Product Integration methodology (ADR-022); product architecture unchanged
 
+### Tags — Institutionalized (Documentation Pass 2026-08-02)
+
+- ✓ Definition, Wave 2 scope, UX principles, Feature Gate documented
+- ✓ Next implementation item: **Feature Pass — Tags**
+- ○ Tags UI / create-edit-remove-display / search-with-tags — **not implemented**
+
 ### Current Status
 
-Wave 2 in progress. Tags next.
+Wave 2 in progress. **Feature Pass — Tags** ready to begin.
 
 ## Interaction Baseline
 
@@ -151,12 +157,23 @@ Wave 2 in progress. Tags next.
 ## Search (Wave 2 Sprint 2)
 
 - Search field above snap list when snaps exist — filters loaded collection in real time
-- Fields: title (`name`) and notes (`note`) only — case-insensitive, partial match, whitespace trimmed
-- Excludes: coordinates, timestamps, category, favorite, image metadata
+- Fields today: title (`name`) and notes (`note`) only — case-insensitive, partial match, whitespace trimmed
+- **Tags Feature Pass (approved):** search must also include tags with title and notes as one combined retrieval experience
+- Excludes (until Tags ships): tags matching; coordinates, timestamps, category, favorite, image metadata remain excluded from search fields beyond title/notes/tags plan
 - Empty state: "Inga Snappar matchar din sökning." — no errors
 - UI: rounded-full search bar, search icon, clear button, placeholder "Sök bland dina Snappar"
 - Memoized filtering via `filterSnapsBySearch()` — no backend, no cloud, no AI
 - Code: `lib/snapSearch.ts`, `components/SnapSearchBar.tsx`, `app/page.tsx`
+
+## Tags (Wave 2 — institutionalized; UI not implemented)
+
+- Optional `tags?: string[]` on Snap — schema-ready (ADR-019); Enrich metadata; Discover bridge
+- Never before SNAP; create/edit/remove in post-capture editing; lightweight card display
+- Free-form; ~five recommended without hard technical limit
+- Wave 2 exclusions: hierarchy, groups, AI/recommended/favorite/colored tags, statistics, tag cloud, shared tags, Discover engine, collections
+- Feature Gate: Capture no impact; Enrich/Discover strengthened; Share/Protect neutral
+- Authority: `product_roadmap.md` item 4 · `implementation_readiness.md` order 10 · `ux_doctrine.md`
+- **No application code in Documentation Pass**
 
 ## Filter (Wave 2 Sprint 4)
 
@@ -205,7 +222,7 @@ Wave 2 in progress. Tags next.
 - Automated: `node scripts/verify-baseline.mjs [url]` — use URL printed by `npm run dev`
 - Unit: `npm test` — includes `lib/longPressGesture.test.ts`, `lib/pwaInstall.test.ts`, plus prior lib tests
 - Docs: `node scripts/validate_docs.mjs`
-- Reconciliation: `baseline_reconciliation.md` — Wave 0 + Wave 1 + Wave 2 Compatibility + UX placement
+- Reconciliation: `baseline_reconciliation.md` — Wave 0 + Wave 1 + Wave 2 Compatibility + UX placement + Tags Docs Pass
 - Manual mobile: long-press camera, Öppna kamera fallback, install guidance placement, denied-permission card (OPS-002)
 - Field: `field_validation_log.md` — Field Validation 0005, 0006, 0007
 

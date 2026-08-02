@@ -54,11 +54,12 @@ Target: under 3 seconds from tap to "Snap sparad" on a typical mobile connection
 
 ## Anti-Patterns
 
-- Requiring name, category, or note before save
+- Requiring name, category, note, or tags before save
 - Showing a confirmation dialog before save (except compact camera fallback when activation fails)
 - Continuous background location tracking
 - Blocking save on optional field validation
 - Silently doing nothing after a completed long-press gesture
+- Showing or collecting tags before SNAP (tags are Enrich-only — Wave 2)
 
 ## Error Philosophy
 

@@ -261,3 +261,12 @@
 
 **Consequences:** `InstallGuidance` relocates in `app/page.tsx` hero/SNAP section; `ux_doctrine.md` records Contextual Guidance Principle; motion helpers in `lib/pwaInstall.ts`. Tags remains next unstarted product feature. No Chronicle entry (focused UX placement, not a foundational institutional milestone).
 
+---
+
+## ADR review note — Tags Documentation Pass (2026-08-02)
+
+**Status:** No new ADR created  
+**Context:** Tags were institutionalized (definition, Wave 2 scope, UX principles, Feature Gate) before Feature Pass implementation.  
+**Conclusion:** No architectural decision beyond feature definition. Optional `tags?: string[]` and schema evolution policy already covered by **ADR-019**. Capture contract unchanged (**ADR-012**). Discover remains emerging under **ADR-020** without scope expansion into Discover engine or collections.  
+**Authority:** Feature Gate and scope live in `product_roadmap.md` Wave 2 item 4 and `implementation_readiness.md` order 10.
+
